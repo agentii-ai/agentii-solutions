@@ -2,25 +2,25 @@ import { ArrowRight, Database, Network, Sigma, TableProperties } from "lucide-re
 import { Button } from "@/components/ui/button";
 
 const mappingRows = [
-  { label: "Entity graph", value: "issuer → account → transaction → obligation" },
-  { label: "Field lineage", value: "page 02 · table B · row 14 · cell 06" },
-  { label: "Reasoning index", value: "retrieval-ready evidence + typed schema" },
+  { label: "Entity graph", value: "issuer → account → transaction → obligation — explicit relationships agents traverse, not infer" },
+  { label: "Field lineage", value: "page 02 · table B · row 14 · cell 06 — every value traceable to its source coordinate" },
+  { label: "Reasoning index", value: "retrieval-ready evidence with typed schema — agents query by field, entity, or time period, not by keyword similarity" },
 ];
 
 const capabilities = [
   {
     title: "Reasoning",
-    description: "Give agents explicit semantic relationships instead of forcing them to infer structure from raw text.",
+    description: "Agents traverse explicit semantic relationships instead of inferring structure from raw text. Entity graphs connect issuers to accounts to transactions — no guesswork.",
     icon: Network,
   },
   {
     title: "Retrieval",
-    description: "Route each query to the correct field, table, entity, and evidence trace with higher precision.",
+    description: "Route each query to the exact field, table, and entity — with evidence traces. Traditional RAG hits 25-30% on financial questions. Agentic data maps reach 99%.",
     icon: Database,
   },
   {
     title: "Calculation",
-    description: "Anchor numerical operations to normalized values so comparisons, ratios, and totals stay reliable.",
+    description: "Anchor numerical operations to normalized, typed values with source lineage. Comparisons, ratios, and totals stay reliable because every number is traceable.",
     icon: Sigma,
   },
 ];
@@ -33,18 +33,18 @@ const DocumentProcessingDataMappingSection = () => {
           <div className="bg-background px-0 pb-12 pt-0 lg:px-0 lg:pb-0 lg:pr-12">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">Data mapping</p>
             <h2 className="mt-5 max-w-[520px] font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[62px]">
-              Agents are only as reliable as the data map they can retrieve.
+              Agents are only as reliable as the data map they retrieve.
             </h2>
             <p className="mt-6 max-w-[560px] text-lg leading-relaxed text-muted-foreground">
-              Our document processing solution builds a data map for agents after extraction, turning processed documents into structured sources that support more accurate reasoning, retrieval, and numerical calculation.
+              Traditional RAG achieves 25-30% accuracy on financial questions. Our agentic data maps achieve 99%. The difference: structured entity graphs, field-level lineage, and retrieval-ready indexes that agents can navigate with precision — not guess from raw embeddings.
             </p>
 
             <div className="mt-8 max-w-[560px] space-y-4 border-l-2 border-primary pl-5">
               <p className="text-sm leading-relaxed text-foreground">
-                The data map connects entities, fields, tables, and evidence locations so agentic workflows can operate on trustworthy structured records instead of fragmented document text.
+                The data map connects entities, fields, tables, and evidence locations — so agents operate on structured records, not fragmented document text.
               </p>
               <p className="text-sm leading-relaxed text-foreground">
-                This mapping layer is key to higher-confidence answers, sharper retrieval, and dependable computations across finance-heavy workflows.
+                This is the layer that separates keyword-matching from financial-grade retrieval: every query resolves to the correct entity, time period, and source coordinate.
               </p>
             </div>
 

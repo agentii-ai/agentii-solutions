@@ -41,10 +41,10 @@ const DocumentProcessingTableSection = () => {
               Smart table extraction
             </p>
             <h2 className="mt-5 max-w-[460px] font-brand text-[36px] leading-[1.04] tracking-[-0.03em] text-background md:text-[48px] lg:text-[58px]">
-              No more manual look-and-compare tasks.
+              Capture every row, column, and nested structure.
             </h2>
             <p className="mt-6 max-w-[500px] text-lg leading-relaxed text-background/78">
-              Send statements, ledgers, and operational reports in any format and extract the table structure required for analysis, reconciliation, and downstream agent decisions.
+              Extract tabular data from financial statements, rent rolls, and operational reports — then pass structured records to the data mapping layer for semantic indexing.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               <div className="border border-background/15 bg-background/5 px-4 py-4">

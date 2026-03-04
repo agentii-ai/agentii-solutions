@@ -20,17 +20,17 @@ const DocumentProcessingIngestionSection = () => {
               Ingestion
             </p>
             <h2 className="mt-5 max-w-[520px] font-brand text-[36px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-              Take control of how documents enter agent workflows.
+              Standardize document intake across every source.
             </h2>
             <p className="mt-6 max-w-[520px] text-lg leading-relaxed text-muted-foreground">
-              Pull PDFs, scans, images, and inbound messages into a single intake layer so downstream agents receive clean, typed records instead of fragmented files.
+              Pull from inboxes, scanners, portals, and shared drives into one pipeline. Every file is parsed, validated, and routed before agents see it.
             </p>
             <div className="mt-8 max-w-[520px] space-y-4 border-l-2 border-primary pl-5">
               <p className="text-sm leading-relaxed text-foreground">
-                Standardize source capture across inboxes, scanners, portals, and shared drives without changing existing operational tooling.
+                Supports PDF, PNG, HTML, email attachments, and scanned images.
               </p>
               <p className="text-sm leading-relaxed text-foreground">
-                Route every file through the same evidence-preserving pipeline before classification, validation, and action orchestration.
+                No changes to existing operational tooling required.
               </p>
             </div>
             <div className="mt-10 flex flex-wrap gap-4">

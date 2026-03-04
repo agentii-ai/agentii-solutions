@@ -81,10 +81,10 @@ const DocumentProcessingClassificationSection = () => {
               Document classification
             </p>
             <h2 className="mt-5 max-w-[520px] font-brand text-[36px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-              Classify incoming documents on your own terms.
+              Classify first. Extract with precision.
             </h2>
             <p className="mt-6 max-w-[520px] text-lg leading-relaxed text-muted-foreground">
-              Automate sorting into predefined or custom categories so low-value repetitive work is removed before reviewers or downstream agents ever touch the file.
+              Identify document types, segment pages, and route each section to the right extraction model — before extraction begins.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               <div className="border border-border bg-card px-4 py-4">

@@ -2,9 +2,9 @@ import { ArrowRight, CheckCircle2, FileSearch, TableProperties } from "lucide-re
 import { Button } from "@/components/ui/button";
 
 const bulletPoints = [
-  "Plug-and-play document AI flows tuned for financial, operational, and compliance-heavy inputs.",
-  "Extract single values, line items, and nested tables into machine-readable records agents can act on.",
-  "Cut manual review with auditable outputs, schema validation, and exception routing.",
+  "Extract fields, line items, and nested tables from statements, reports, and compliance documents.",
+  "Every output includes confidence scores, field lineage, and evidence traces.",
+  "Exception routing keeps agents moving — only edge cases reach human review.",
 ];
 
 const metricCards = [
@@ -73,9 +73,11 @@ const DocumentProcessingHeroSection = () => {
               Solutions
             </div>
             <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[80px]">
-              Document processing
+              Agent-use-ready
               <br />
-              for agent workflows.
+              document extraction.
+              <br />
+              <span className="text-primary">Financial-grade precision.</span>
             </h1>
           </div>
         </div>
@@ -86,7 +88,7 @@ const DocumentProcessingHeroSection = () => {
           <div className="flex flex-col justify-between px-6 py-12 md:px-10 md:py-14 lg:px-12">
             <div>
               <p className="max-w-[520px] text-lg leading-relaxed text-foreground md:text-[20px]">
-                Extract document data instantly and accurately with structured outputs designed for downstream agents, evaluations, and workflow automation.
+                Turn PDFs, scans, and forms into structured records with reasoning traces — so agents can act on the data, not just read it.
               </p>
 
               <div className="mt-8 space-y-5">

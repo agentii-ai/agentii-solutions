@@ -32,7 +32,7 @@ const DocumentProcessingCTASection = () => {
           <div className="mx-auto max-w-[760px] text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">Use cases</p>
             <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-              See how businesses are using it.
+              Built for regulated, data-heavy industries.
             </h2>
           </div>
 
@@ -73,7 +73,8 @@ const DocumentProcessingCTASection = () => {
             ))}
           </div>
 
-          <div className="mt-12 flex justify-center">
+          <div className="mt-12 flex flex-col items-center gap-4">
+            <p className="text-lg text-muted-foreground">See it work on your documents.</p>
             <Button size="lg" className="rounded-lg px-8">
               Request a Demo <ArrowRight size={16} />
             </Button>

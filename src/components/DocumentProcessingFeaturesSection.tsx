@@ -5,19 +5,19 @@ const featureCards = [
   {
     title: "Field + table extraction",
     description:
-      "Capture single fields, repeated sections, and full tabular structures from statements, reports, and operational documents.",
+      "Single fields, repeated sections, nested tables, and multi-page structures — all typed and schema-validated.",
     icon: DatabaseZap,
   },
   {
-    title: "Agent-ready validation",
+    title: "Confidence-scored validation",
     description:
-      "Layer confidence thresholds, review states, and exception queues so agents know what can be executed automatically.",
+      "Every extracted value carries a confidence score, field lineage, and review state. Agents know what to trust.",
     icon: ShieldCheck,
   },
   {
-    title: "Workflow orchestration",
+    title: "Agent handoff",
     description:
-      "Pass normalized document outputs into reconciliation, underwriting, compliance, or reporting agents with clear schemas.",
+      "Pass validated records into reconciliation, underwriting, or compliance agents with clear schemas and evidence traces.",
     icon: Bot,
   },
 ];
@@ -35,12 +35,12 @@ const DocumentProcessingFeaturesSection = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:gap-16">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">Document system</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">Extraction pipeline</p>
             <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-              Production-grade extraction for data-heavy operations.
+              Structured extraction that agents trust.
             </h2>
             <p className="mt-6 max-w-[520px] text-lg leading-relaxed text-muted-foreground">
-              Built for teams that need more than OCR: schema control, table fidelity, traceable outputs, and clean handoff into agentic workflows.
+              Schema control, table fidelity, and evidence traces — every output is validated before it reaches a downstream agent.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-lg px-8">

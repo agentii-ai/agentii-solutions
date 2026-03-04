@@ -2,7 +2,7 @@ import { ArrowRight, BadgeCheck, Check, FileText, ShieldCheck, X } from "lucide-
 import { Button } from "@/components/ui/button";
 
 const reviewTabs = [
-  "Document annotation",
+  "Field-level annotation",
   "Edge-case handling",
   "Shareable review screen",
   "Role-based access",
@@ -21,7 +21,7 @@ const HumanReviewSection = () => {
         <div className="mx-auto max-w-[860px] text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-background/58">Human review</p>
           <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-background md:text-[48px] lg:text-[60px]">
-            Automate document review from end-to-end.
+            Human review where it matters. Automation everywhere else.
           </h2>
         </div>
 
@@ -43,10 +43,10 @@ const HumanReviewSection = () => {
         <div className="mt-12 grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-center lg:gap-16">
           <div>
             <h3 className="font-brand text-[32px] leading-[1.04] tracking-[-0.03em] text-background md:text-[40px]">
-              Avoid any data oversights.
+              Confidence thresholds determine what flows and what stops.
             </h3>
             <p className="mt-6 max-w-[460px] text-lg leading-relaxed text-background/78">
-              Close automation gaps in extraction by routing uncertain fields into a reviewer workspace built for exceptions, evidence checks, and fast approval loops.
+              Flagged fields get annotation. Resolved fields flow downstream. Every correction feeds back into the extraction model — so the exception queue shrinks over time.
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
