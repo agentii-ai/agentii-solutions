@@ -4,6 +4,7 @@ import DocumentProcessingHeroSection from "@/components/DocumentProcessingHeroSe
 import DocumentProcessingFeaturesSection from "@/components/DocumentProcessingFeaturesSection";
 import DocumentProcessingIngestionSection from "@/components/DocumentProcessingIngestionSection";
 import DocumentProcessingClassificationSection from "@/components/DocumentProcessingClassificationSection";
+import DocumentProcessingHumanReviewSection from "@/components/DocumentProcessingHumanReviewSection";
 import DocumentProcessingTableSection from "@/components/DocumentProcessingTableSection";
 
 const DocumentProcessing = () => {
@@ -15,6 +16,7 @@ const DocumentProcessing = () => {
         <DocumentProcessingFeaturesSection />
         <DocumentProcessingIngestionSection />
         <DocumentProcessingClassificationSection />
+        <DocumentProcessingHumanReviewSection />
         <DocumentProcessingTableSection />
       </main>
       <Footer />
