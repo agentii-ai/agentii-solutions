@@ -4,7 +4,10 @@ import DocumentProcessingHeroSection from "@/components/DocumentProcessingHeroSe
 import DocumentProcessingFeaturesSection from "@/components/DocumentProcessingFeaturesSection";
 import DocumentProcessingIngestionSection from "@/components/DocumentProcessingIngestionSection";
 import DocumentProcessingClassificationSection from "@/components/DocumentProcessingClassificationSection";
+import DocumentProcessingHumanReviewSection from "@/components/DocumentProcessingHumanReviewSection";
 import DocumentProcessingTableSection from "@/components/DocumentProcessingTableSection";
+import DocumentProcessingDataMappingSection from "@/components/DocumentProcessingDataMappingSection";
+import DocumentProcessingCTASection from "@/components/DocumentProcessingCTASection";
 
 const DocumentProcessing = () => {
   return (
@@ -16,6 +19,9 @@ const DocumentProcessing = () => {
         <DocumentProcessingIngestionSection />
         <DocumentProcessingClassificationSection />
         <DocumentProcessingTableSection />
+        <DocumentProcessingDataMappingSection />
+        <DocumentProcessingHumanReviewSection />
+        <DocumentProcessingCTASection />
       </main>
       <Footer />
     </div>
