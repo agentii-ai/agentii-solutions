@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { Menu, X, Globe, ChevronDown, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface DropdownItem {
