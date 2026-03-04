@@ -72,13 +72,13 @@ const DocumentProcessingTableSection = () => {
                 <div className="absolute left-[20%] top-[18%] h-[72%] w-[34%] rotate-[-17deg] border border-border bg-background/90 shadow-sm" />
                 <div className="absolute left-[42%] top-[8%] h-[80%] w-[44%] rotate-[-4deg] border border-border bg-background/95 shadow-sm" />
 
-                <div className="relative ml-auto h-[84%] w-[56%] border border-border bg-background shadow-sm">
+                <div className="relative ml-auto h-[84%] w-[64%] border border-border bg-background shadow-sm">
                   <div className="border-b-8 border-primary px-5 py-4">
                     <p className="text-center text-sm font-semibold tracking-[0.08em] text-foreground">Acord Forms</p>
                   </div>
 
                   <div className="px-5 py-4">
-                    <div className="mb-4 grid grid-cols-5 gap-3 border-b border-border pb-3 text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
+                    <div className="mb-4 grid grid-cols-[34px_28px_1fr_1fr_52px] gap-1.5 border-b border-border pb-3 text-[8px] font-mono uppercase tracking-[0.14em] text-muted-foreground">
                       {tableRows[0].map((cell) => (
                         <span key={cell}>{cell}</span>
                       ))}
@@ -86,7 +86,7 @@ const DocumentProcessingTableSection = () => {
 
                     <div className="space-y-3">
                       {tableRows.slice(1).map((row, rowIndex) => (
-                        <div key={rowIndex} className="grid grid-cols-5 gap-3 bg-secondary/60 px-3 py-3 text-[11px] text-foreground">
+                        <div key={rowIndex} className="grid grid-cols-[34px_28px_1fr_1fr_52px] gap-1.5 bg-secondary/60 px-3 py-3 text-[10px] tabular-nums text-foreground">
                           {row.map((cell) => (
                             <span key={cell}>{cell}</span>
                           ))}
