@@ -46,6 +46,9 @@
     --color-teal: 168 80% 38%;            /* #14B8A6 */
     --color-teal-dark: 170 78% 29%;       /* #0D9488 */
     --color-teal-light: 167 85% 89%;      /* #CCFBF1 */
+    --color-purple: 262 83% 66%;          /* #8B5CF6 */
+    --color-purple-dark: 263 70% 57%;     /* #7C3AED */
+    --color-purple-light: 268 100% 95%;   /* #F3E8FF */
     --color-cyan: 189 94% 43%;            /* #06B6D4 */
     --color-cyan-dark: 192 91% 37%;       /* #0891B2 */
     --color-cyan-light: 183 100% 90%;     /* #CFFAFE */
