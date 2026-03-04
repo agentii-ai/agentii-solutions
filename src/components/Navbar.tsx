@@ -75,7 +75,7 @@ const navItems: NavItem[] = [
     href: "#pipeline",
   },
   {
-    label: "Resources",
+    label: "Researches",
     href: "#differentiators",
   },
   {
