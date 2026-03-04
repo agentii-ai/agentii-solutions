@@ -76,11 +76,11 @@ const DocumentProcessingIngestionSection = () => {
                 </div>
               </div>
 
-              <div className="space-y-4 border-l border-primary/20 bg-navy px-5 py-5 text-slate-200">
-                <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-slate-400">Destinations</p>
+              <div className="space-y-4 border-l border-primary/20 bg-foreground px-5 py-5 text-background">
+                <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-background/60">Destinations</p>
                 {destinationSystems.map((system) => (
-                  <div key={system} className="flex items-center justify-between border border-slate-700/80 bg-background/5 px-4 py-4">
-                    <span className="text-sm font-medium uppercase tracking-[0.16em] text-slate-300">{system}</span>
+                  <div key={system} className="flex items-center justify-between border border-background/15 bg-background/5 px-4 py-4">
+                    <span className="text-sm font-medium uppercase tracking-[0.16em] text-background/80">{system}</span>
                     <span className="h-2.5 w-2.5 bg-primary" aria-hidden="true" />
                   </div>
                 ))}
