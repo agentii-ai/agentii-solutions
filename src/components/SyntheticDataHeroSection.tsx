@@ -1,0 +1,173 @@
+import { ArrowRight, Binary, Blocks, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const topBars = [
+  "bg-purple/95 w-6",
+  "bg-purple/80 w-4",
+  "bg-primary/80 w-3",
+  "bg-primary/65 w-2.5",
+  "bg-cyan/70 w-3",
+  "bg-purple/70 w-2.5",
+  "bg-purple/55 w-4",
+  "bg-slate-200/90 w-3",
+  "bg-slate-200/70 w-2.5",
+  "bg-slate-400/70 w-4",
+  "bg-slate-400/45 w-5",
+  "bg-primary/35 w-6",
+  "bg-purple/55 w-8",
+  "bg-purple/70 w-12",
+  "bg-primary/45 w-16",
+];
+
+const bottomBars = [
+  "bg-purple/35 w-8",
+  "bg-purple/55 w-3",
+  "bg-purple/75 w-2.5",
+  "bg-primary/90 w-3",
+  "bg-cyan/70 w-2.5",
+  "bg-purple/65 w-3",
+  "bg-purple/45 w-4",
+  "bg-primary/95 w-3",
+  "bg-primary/80 w-2.5",
+  "bg-slate-200/90 w-3",
+  "bg-slate-200/65 w-4",
+  "bg-slate-400/40 w-5",
+  "bg-purple/35 w-16",
+  "bg-cyan/30 w-20",
+  "bg-primary/40 w-16",
+  "bg-purple/55 w-24",
+];
+
+const signalCards = [
+  {
+    label: "Scenario Engine",
+    value: "Generate edge cases, cohorts, and behavior shifts.",
+    icon: Blocks,
+  },
+  {
+    label: "Reasoning Trace",
+    value: "Produce tool calls, decisions, and outcome states.",
+    icon: Sparkles,
+  },
+  {
+    label: "Data Shape",
+    value: "Structured synthetic records ready for training and evals.",
+    icon: Binary,
+  },
+];
+
+const SyntheticDataHeroSection = () => {
+  return (
+    <section className="bg-background pt-[88px] md:pt-[96px]">
+      <div className="bg-navy text-slate-200">
+        <div className="container mx-auto px-6 pt-16 pb-0 md:pt-24 lg:px-12 lg:pt-28">
+          <div className="max-w-[820px] pb-14 md:pb-20">
+            <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
+              <span className="h-[3px] w-4 bg-purple" aria-hidden="true" />
+              Use Cases
+            </div>
+            <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[80px]">
+              Agentic data for
+              <br />
+              synthetic datasets.
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-secondary">
+        <div className="container mx-auto grid items-stretch gap-0 px-0 md:grid-cols-[minmax(0,560px)_1fr] lg:px-12">
+          <div className="flex flex-col justify-between px-6 py-10 md:px-10 md:py-12 lg:px-12">
+            <div>
+              <p className="max-w-[500px] text-lg leading-relaxed text-foreground md:text-[20px]">
+                Turn sparse real-world signals into controllable synthetic records, reasoning traces, and evaluation sets that agents can train on with confidence.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Button size="lg" className="rounded-lg px-8">
+                  Request a Demo
+                </Button>
+                <Button variant="outline" size="lg" className="rounded-lg px-8">
+                  Explore Features <ArrowRight size={16} />
+                </Button>
+              </div>
+            </div>
+
+            <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-3">
+              {signalCards.map(({ label, value, icon: Icon }) => (
+                <div key={label} className="bg-background px-4 py-4 transition-transform duration-300 hover:-translate-y-1">
+                  <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+                    <Icon className="h-4 w-4 text-purple" />
+                    {label}
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground">{value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden bg-navy px-4 py-6 md:px-0 md:py-0">
+            <div className="absolute inset-y-0 left-0 hidden w-px bg-slate-700/70 md:block" aria-hidden="true" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--slate-700)/0.35)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--slate-700)/0.2)_1px,transparent_1px)] bg-[size:72px_72px] opacity-60" aria-hidden="true" />
+            <div className="absolute right-8 top-8 hidden h-24 w-24 border border-purple/30 md:block" aria-hidden="true" />
+            <div className="absolute right-16 top-16 hidden h-24 w-24 border border-primary/25 md:block" aria-hidden="true" />
+            <div className="absolute bottom-0 left-0 right-0 h-8 bg-secondary" aria-hidden="true" />
+
+            <div className="relative flex min-h-[260px] flex-col justify-center px-2 py-10 md:min-h-[320px] md:px-8 lg:px-10">
+              <div className="mb-5 flex items-center justify-between border-b border-slate-700/80 pb-4">
+                <div>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400">Synthetic signal stack</p>
+                  <p className="mt-2 text-sm text-slate-300">Controls, distributions, labels, and verified trajectories.</p>
+                </div>
+                <div className="hidden items-center gap-2 md:flex">
+                  <span className="h-2.5 w-2.5 rounded-full bg-purple" aria-hidden="true" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-primary" aria-hidden="true" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-slate-500" aria-hidden="true" />
+                </div>
+              </div>
+
+              <div className="grid gap-4 border border-slate-700/80 bg-slate-900/40 p-4 md:grid-cols-[1.1fr_0.9fr]">
+                <div className="space-y-4">
+                  <div className="relative flex h-[72px] items-end gap-[10px]">
+                    {topBars.map((bar, index) => (
+                      <span
+                        key={`top-${index}`}
+                        className={`${bar} block h-full shrink-0 transition-transform duration-300 hover:-translate-y-1`}
+                        aria-hidden="true"
+                      />
+                    ))}
+                  </div>
+                  <div className="relative flex h-[72px] items-start gap-[10px]">
+                    {bottomBars.map((bar, index) => (
+                      <span
+                        key={`bottom-${index}`}
+                        className={`${bar} block h-full shrink-0 transition-transform duration-300 hover:translate-y-1`}
+                        aria-hidden="true"
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid gap-px border border-slate-700/80 bg-slate-700/80 self-stretch">
+                  <div className="bg-navy px-4 py-3">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">Source</p>
+                    <p className="mt-2 text-sm text-slate-200">Rules, prompts, and observed patterns</p>
+                  </div>
+                  <div className="bg-navy px-4 py-3">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">Generator</p>
+                    <p className="mt-2 text-sm text-slate-200">Scenario expansion with variance controls</p>
+                  </div>
+                  <div className="bg-navy px-4 py-3">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">Output</p>
+                    <p className="mt-2 text-sm text-slate-200">Auditable synthetic datasets for agents</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SyntheticDataHeroSection;

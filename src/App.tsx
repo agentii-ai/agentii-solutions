@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FinanceUseCase from "./pages/FinanceUseCase";
 import VideoUseCase from "./pages/VideoUseCase";
+import SyntheticDataUseCase from "./pages/SyntheticDataUseCase";
+import About from "./pages/About";
+import DocumentProcessing from "./pages/DocumentProcessing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -18,9 +21,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/solutions/document-processing" element={<DocumentProcessing />} />
           <Route path="/use-cases/finance" element={<FinanceUseCase />} />
           <Route path="/use-cases/video-generation" element={<VideoUseCase />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/use-cases/synthetic-data" element={<SyntheticDataUseCase />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

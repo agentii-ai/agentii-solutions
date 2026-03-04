@@ -6,19 +6,19 @@ const solutions = [
     icon: FileText,
     title: "Document Processing",
     description: "Transform complex financial documents into structured, agent-ready data with enterprise-grade accuracy.",
-    link: "#",
+    link: "/solutions/document-processing",
   },
   {
     icon: Video,
     title: "Video & Audio Intelligence",
     description: "Extract, annotate, and structure multimodal data from video and audio sources for AI training pipelines.",
-    link: "#",
+    link: "/use-cases/video-generation",
   },
   {
     icon: Cpu,
     title: "Synthetic Data Generation",
     description: "Generate high-fidelity synthetic datasets for training, testing, and validating agentic AI models.",
-    link: "#",
+    link: "/use-cases/synthetic-data",
   },
 ];
 
