@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { Menu, X, Globe, ChevronDown, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface DropdownItem {
@@ -205,27 +205,63 @@ const Navbar = () => {
 
         {/* Right side actions */}
         <div className="hidden lg:flex items-center gap-3">
-          <button
-            className={`flex items-center gap-1.5 text-sm transition-colors duration-150 ${
-              scrolled
-                ? "text-slate-400 hover:text-slate-200"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
+          {/* Language Selector */}
+          <div
+            className="relative"
+            onMouseEnter={() => handleMouseEnter("__lang")}
+            onMouseLeave={handleMouseLeave}
           >
-            <Globe size={16} />
-            EN
-          </button>
-          <Button
-            variant="outline"
-            size="sm"
-            className={`rounded-lg transition-all duration-300 ${
-              scrolled
-                ? "border-slate-400 text-slate-200 hover:bg-white/10"
-                : "border-foreground text-foreground hover:bg-foreground hover:text-background"
-            }`}
-          >
-            Log In
-          </Button>
+            <button
+              className={`flex items-center justify-center w-10 h-10 rounded-full border transition-colors duration-150 ${
+                scrolled
+                  ? "border-slate-400/40 text-slate-400 hover:text-slate-200 hover:border-slate-200/40"
+                  : "border-border text-muted-foreground hover:text-foreground hover:border-foreground/30"
+              }`}
+              aria-label="Select language"
+            >
+              <Globe size={18} />
+            </button>
+            {activeDropdown === "__lang" && (
+              <div
+                className="absolute top-full right-0 mt-2 pt-0"
+                onMouseEnter={() => handleMouseEnter("__lang")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div className="bg-background border border-border rounded-lg shadow-lg min-w-[160px] p-2">
+                  <p className="text-[11px] font-semibold text-muted-foreground tracking-[0.08em] uppercase px-3 pt-2 pb-2">
+                    LANGUAGE
+                  </p>
+                  {[
+                    { code: "EN", label: "English" },
+                    { code: "中文", label: "中文" },
+                  ].map((lang) => (
+                    <button
+                      key={lang.code}
+                      className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                        lang.code === "EN"
+                          ? "bg-muted text-foreground"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                      }`}
+                      onClick={() => setActiveDropdown(null)}
+                    >
+                      <span
+                        className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                          lang.code === "EN"
+                            ? "border-foreground"
+                            : "border-border"
+                        }`}
+                      >
+                        {lang.code === "EN" && (
+                          <span className="w-2 h-2 rounded-full bg-foreground" />
+                        )}
+                      </span>
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
           <Button
             size="sm"
             className="rounded-lg bg-teal hover:bg-teal-dark text-primary-foreground"
