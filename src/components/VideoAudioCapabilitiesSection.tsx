@@ -29,8 +29,8 @@ const VideoAudioCapabilitiesSection = () => {
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid gap-10 border border-border bg-secondary p-6 shadow-sm md:p-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12 lg:p-10">
-          <div className="max-w-[520px]">
+        <div className="border border-border bg-secondary p-6 shadow-sm md:p-8 lg:p-10">
+          <div className="max-w-[720px]">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal">Capability stack</p>
             <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
               Multimodal annotations become a data map agents can actually use.
@@ -62,7 +62,7 @@ const VideoAudioCapabilitiesSection = () => {
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
             {annotationCards.map(({ title, description, detail, icon: Icon }) => (
               <article
                 key={title}
