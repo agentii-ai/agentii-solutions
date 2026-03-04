@@ -6,6 +6,7 @@ import DocumentProcessingIngestionSection from "@/components/DocumentProcessingI
 import DocumentProcessingClassificationSection from "@/components/DocumentProcessingClassificationSection";
 import DocumentProcessingHumanReviewSection from "@/components/DocumentProcessingHumanReviewSection";
 import DocumentProcessingTableSection from "@/components/DocumentProcessingTableSection";
+import DocumentProcessingDataMappingSection from "@/components/DocumentProcessingDataMappingSection";
 import DocumentProcessingCTASection from "@/components/DocumentProcessingCTASection";
 
 const DocumentProcessing = () => {
@@ -18,6 +19,7 @@ const DocumentProcessing = () => {
         <DocumentProcessingIngestionSection />
         <DocumentProcessingClassificationSection />
         <DocumentProcessingTableSection />
+        <DocumentProcessingDataMappingSection />
         <DocumentProcessingHumanReviewSection />
         <DocumentProcessingCTASection />
       </main>
