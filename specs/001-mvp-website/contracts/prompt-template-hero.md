@@ -125,11 +125,11 @@ This is the hero section for the landing page. It serves as the first impression
 ## Content
 
 **Headline**:
-You have the data.
-Your agents don't.
+Data by agents, for agents.
+Agent-Use-Ready Data at Scale.
 
 **Tagline**:
-The hard part? Making agentic AI work in the enterprise. That's where we come in.
+From financial documents to reasoning traces — structured for agents to act on, not humans to review.
 
 **Primary CTA Button**:
 - Label: "Contact Us"
