@@ -26,18 +26,40 @@ const metricCards = [
 ];
 
 const fieldRows = [
-  { label: "Ratios", value: "Current ratio" },
-  { label: "Gross Profit", value: "$ 1,619,389" },
-  { label: "Net Income", value: "$ 483,232", active: true },
-  { label: "Net Sales", value: "$ 4,358,100" },
+  { label: "Net Revenue (Q3)", value: "$ 4,891,200" },
+  { label: "Gross Profit", value: "$ 1,878,400" },
+  { label: "Operating Income", value: "$ 937,700", active: true },
+  { label: "Net Income", value: "$ 626,900" },
+  { label: "EBITDA", value: "$ 1,071,600" },
+  { label: "EPS — Diluted", value: "$ 3.09" },
 ];
 
-const statementRows = [
-  "Income statement",
-  "$ 4,358,100",
-  "$ 1,619,389",
-  "$ 483,232",
-  "$ 4,358,100",
+const incomeStatementRows: { label: string; q1: string; q2: string; q3: string; bold?: boolean }[] = [
+  { label: "Net Revenue", q1: "4,358,100", q2: "4,612,400", q3: "4,891,200", bold: true },
+  { label: "Cost of Revenue", q1: "(2,738,711)", q2: "(2,887,300)", q3: "(3,012,800)" },
+  { label: "Gross Profit", q1: "1,619,389", q2: "1,725,100", q3: "1,878,400", bold: true },
+  { label: "Selling & Marketing", q1: "(312,400)", q2: "(328,100)", q3: "(341,600)" },
+  { label: "General & Admin", q1: "(245,800)", q2: "(251,200)", q3: "(263,400)" },
+  { label: "R&D Expenses", q1: "(189,600)", q2: "(195,400)", q3: "(201,800)" },
+  { label: "Depreciation", q1: "(86,200)", q2: "(88,100)", q3: "(89,700)" },
+  { label: "Amortization", q1: "(42,100)", q2: "(43,600)", q3: "(44,200)" },
+  { label: "Restructuring", q1: "—", q2: "(12,400)", q3: "—" },
+  { label: "Total OpEx", q1: "(876,100)", q2: "(918,800)", q3: "(940,700)", bold: true },
+  { label: "Operating Income", q1: "743,289", q2: "806,300", q3: "937,700", bold: true },
+  { label: "Interest Income", q1: "12,400", q2: "14,200", q3: "15,800" },
+  { label: "Interest Expense", q1: "(68,900)", q2: "(65,200)", q3: "(61,400)" },
+  { label: "FX Gain / (Loss)", q1: "(3,200)", q2: "7,800", q3: "(1,400)" },
+  { label: "Other Income", q1: "8,200", q2: "3,800", q3: "9,400" },
+  { label: "Pre-Tax Income", q1: "691,789", q2: "766,900", q3: "900,100", bold: true },
+  { label: "Provision for Tax", q1: "(208,537)", q2: "(233,400)", q3: "(273,200)" },
+  { label: "Net Income", q1: "483,232", q2: "533,500", q3: "626,900", bold: true },
+  { label: "Basic EPS", q1: "2.41", q2: "2.67", q3: "3.13" },
+  { label: "Diluted EPS", q1: "2.38", q2: "2.63", q3: "3.09" },
+  { label: "Shares Out. (M)", q1: "200.4", q2: "200.0", q3: "200.2" },
+  { label: "EBITDA", q1: "871,589", q2: "937,000", q3: "1,071,600", bold: true },
+  { label: "Gross Margin %", q1: "37.2%", q2: "37.4%", q3: "38.4%" },
+  { label: "Operating Margin %", q1: "17.1%", q2: "17.5%", q3: "19.2%" },
+  { label: "Net Margin %", q1: "11.1%", q2: "11.6%", q3: "12.8%" },
 ];
 
 const DocumentProcessingHeroSection = () => {
@@ -107,20 +129,34 @@ const DocumentProcessingHeroSection = () => {
             <div className="absolute right-12 top-12 hidden h-12 w-12 border border-foreground/15 md:block" aria-hidden="true" />
             <div className="absolute bottom-16 left-16 hidden h-20 w-20 bg-[radial-gradient(circle,hsl(var(--foreground))_1.2px,transparent_1.2px)] bg-[length:10px_10px] opacity-90 md:block" aria-hidden="true" />
 
-            <div className="relative flex min-h-[320px] items-center justify-center py-4 md:min-h-[420px]">
+            <div className="relative flex min-h-[420px] items-center justify-center py-4 md:min-h-[540px]">
               <div className="relative w-full max-w-[560px]">
-                <div className="absolute right-0 top-0 h-[360px] w-[70%] border border-border bg-background/95 shadow-sm md:h-[420px]">
-                  <div className="flex h-full flex-col justify-between px-8 py-8">
-                    <p className="text-center font-brand text-[18px] tracking-[-0.01em] text-foreground">INCOME STATEMENT</p>
-                    <div className="space-y-5">
-                      {statementRows.slice(1).map((row) => (
-                        <div key={row} className="flex items-center justify-between border-b border-border/70 pb-3 text-sm text-foreground">
-                          <span className="h-3 w-28 bg-secondary" aria-hidden="true" />
-                          <span>{row}</span>
+                <div className="absolute right-0 top-0 h-[480px] w-[74%] border border-border bg-background/95 shadow-sm md:h-[560px]">
+                  <div className="flex h-full flex-col px-3 py-3 md:px-4 md:py-4">
+                    <p className="text-center font-brand text-[12px] tracking-[-0.01em] text-foreground md:text-[14px]">CONSOLIDATED INCOME STATEMENT</p>
+                    <p className="mb-1.5 text-center text-[7px] text-muted-foreground md:text-[8px]">Unaudited, in thousands ($)</p>
+                    <div className="grid grid-cols-[1fr_46px_46px_46px] gap-x-1 border-b border-border/80 pb-1 text-[7px] font-semibold uppercase tracking-wider text-muted-foreground md:grid-cols-[1fr_54px_54px_54px] md:gap-x-1.5 md:text-[8px]">
+                      <span />
+                      <span className="text-right">Q1 FY24</span>
+                      <span className="text-right">Q2 FY24</span>
+                      <span className="text-right">Q3 FY24</span>
+                    </div>
+                    <div className="flex-1 overflow-hidden">
+                      {incomeStatementRows.map((row) => (
+                        <div
+                          key={row.label}
+                          className={`grid grid-cols-[1fr_46px_46px_46px] gap-x-1 border-b border-border/30 py-[2px] text-[7.5px] tabular-nums md:grid-cols-[1fr_54px_54px_54px] md:gap-x-1.5 md:py-[3px] md:text-[9px] ${
+                            row.bold ? "font-semibold text-foreground" : "text-foreground/70"
+                          }`}
+                        >
+                          <span className="truncate pr-1">{row.label}</span>
+                          <span className="text-right">{row.q1}</span>
+                          <span className="text-right">{row.q2}</span>
+                          <span className="text-right">{row.q3}</span>
                         </div>
                       ))}
                     </div>
-                    <div className="border-t-2 border-primary pt-4" />
+                    <div className="border-t-2 border-primary mt-1" />
                   </div>
                 </div>
 
@@ -148,7 +184,7 @@ const DocumentProcessingHeroSection = () => {
 
                 <div className="absolute bottom-[52px] left-[52%] hidden w-[160px] rotate-[18deg] border-t-2 border-foreground/70 md:block" aria-hidden="true" />
                 <div className="absolute bottom-8 right-6 hidden border border-primary bg-background px-3 py-1 text-xs font-medium text-foreground md:block" aria-hidden="true">
-                  $ 483,232
+                  $ 626,900
                 </div>
               </div>
             </div>

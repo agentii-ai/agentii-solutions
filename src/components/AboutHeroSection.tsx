@@ -26,7 +26,7 @@ const signals = [
   },
   {
     label: "Global Team",
-    value: "Boston-rooted with cross-market delivery depth.",
+    value: "Experts with cross-market delivery depth.",
     icon: Users2,
   },
   {
@@ -65,7 +65,7 @@ const AboutHeroSection = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-[920px]">
             <h2 className="font-brand text-[34px] leading-[1.05] tracking-[-0.02em] text-foreground md:text-[48px] lg:text-[60px]">
-              Headquartered in Boston with a global team, we build agentic-native data systems that make AI useful in production.
+              We build agentic-native data systems that make AI useful in production.
             </h2>
           </div>
 
