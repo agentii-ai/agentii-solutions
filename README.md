@@ -18,9 +18,12 @@ Changes made via Lovable will be committed automatically to this repo.
 
 If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+This project runs on Vite. You can use either Bun (recommended for this repo) or Node.js/npm.
 
-Follow these steps:
+- Bun: https://bun.sh
+- Node.js: [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+### Run locally (recommended: Bun)
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
@@ -30,11 +33,35 @@ git clone <YOUR_GIT_URL>
 cd <YOUR_PROJECT_NAME>
 
 # Step 3: Install the necessary dependencies.
-npm i
+bun install
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
+bun run dev
+```
+
+Then open:
+
+- http://localhost:8080
+
+### Run locally (Node.js + npm)
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm install
+
+# Step 4: Start the development server.
 npm run dev
 ```
+
+Then open:
+
+- http://localhost:8080
 
 **Edit a file directly in GitHub**
 
@@ -63,6 +90,16 @@ This project is built with:
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+
+### Build + preview locally
+
+```sh
+# Production build
+bun run build
+
+# Preview the production build
+bun run preview
+```
 
 ## Can I connect a custom domain to my Lovable project?
 
