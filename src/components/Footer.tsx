@@ -53,7 +53,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-slate-400">
-            © 2026 agentii.Solutions. All rights reserved.
+            © 2024 agentii.Solutions. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-slate-400 hover:text-teal transition-colors">
