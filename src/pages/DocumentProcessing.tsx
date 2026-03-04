@@ -2,6 +2,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DocumentProcessingHeroSection from "@/components/DocumentProcessingHeroSection";
 import DocumentProcessingFeaturesSection from "@/components/DocumentProcessingFeaturesSection";
+import DocumentProcessingIngestionSection from "@/components/DocumentProcessingIngestionSection";
+import DocumentProcessingClassificationSection from "@/components/DocumentProcessingClassificationSection";
+import DocumentProcessingTableSection from "@/components/DocumentProcessingTableSection";
 
 const DocumentProcessing = () => {
   return (
@@ -10,6 +13,9 @@ const DocumentProcessing = () => {
       <main>
         <DocumentProcessingHeroSection />
         <DocumentProcessingFeaturesSection />
+        <DocumentProcessingIngestionSection />
+        <DocumentProcessingClassificationSection />
+        <DocumentProcessingTableSection />
       </main>
       <Footer />
     </div>
