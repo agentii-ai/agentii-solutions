@@ -4,6 +4,7 @@ import DocumentProcessingHeroSection from "@/components/DocumentProcessingHeroSe
 import DocumentProcessingFeaturesSection from "@/components/DocumentProcessingFeaturesSection";
 import DocumentProcessingIngestionSection from "@/components/DocumentProcessingIngestionSection";
 import DocumentProcessingClassificationSection from "@/components/DocumentProcessingClassificationSection";
+import DocumentProcessingTableSection from "@/components/DocumentProcessingTableSection";
 
 const DocumentProcessing = () => {
   return (
@@ -14,6 +15,7 @@ const DocumentProcessing = () => {
         <DocumentProcessingFeaturesSection />
         <DocumentProcessingIngestionSection />
         <DocumentProcessingClassificationSection />
+        <DocumentProcessingTableSection />
       </main>
       <Footer />
     </div>
