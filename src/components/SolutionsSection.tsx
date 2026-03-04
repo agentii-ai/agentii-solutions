@@ -12,7 +12,7 @@ const solutions = [
     icon: Video,
     title: "Video & Audio Intelligence",
     description: "Extract, annotate, and structure multimodal data from video and audio sources for AI training pipelines.",
-    link: "/use-cases/video-generation",
+    link: "/solutions/video-audio",
   },
   {
     icon: Cpu,

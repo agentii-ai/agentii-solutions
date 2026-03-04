@@ -9,6 +9,7 @@ import VideoUseCase from "./pages/VideoUseCase";
 import SyntheticDataUseCase from "./pages/SyntheticDataUseCase";
 import About from "./pages/About";
 import DocumentProcessing from "./pages/DocumentProcessing";
+import VideoAudioSolution from "./pages/VideoAudioSolution";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/solutions/document-processing" element={<DocumentProcessing />} />
+          <Route path="/solutions/video-audio" element={<VideoAudioSolution />} />
           <Route path="/use-cases/finance" element={<FinanceUseCase />} />
           <Route path="/use-cases/video-generation" element={<VideoUseCase />} />
           <Route path="/use-cases/synthetic-data" element={<SyntheticDataUseCase />} />
