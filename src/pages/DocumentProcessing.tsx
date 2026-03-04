@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import DocumentProcessingHeroSection from "@/components/DocumentProcessingHeroSection";
 import DocumentProcessingFeaturesSection from "@/components/DocumentProcessingFeaturesSection";
 import DocumentProcessingIngestionSection from "@/components/DocumentProcessingIngestionSection";
+import DocumentProcessingClassificationSection from "@/components/DocumentProcessingClassificationSection";
 
 const DocumentProcessing = () => {
   return (
@@ -12,6 +13,7 @@ const DocumentProcessing = () => {
         <DocumentProcessingHeroSection />
         <DocumentProcessingFeaturesSection />
         <DocumentProcessingIngestionSection />
+        <DocumentProcessingClassificationSection />
       </main>
       <Footer />
     </div>
