@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import VideoAudioHeroSection from "@/components/VideoAudioHeroSection";
+import VideoAudioCapabilitiesSection from "@/components/VideoAudioCapabilitiesSection";
 
 const VideoAudioSolution = () => {
   return (
@@ -8,6 +9,7 @@ const VideoAudioSolution = () => {
       <Navbar />
       <main>
         <VideoAudioHeroSection />
+        <VideoAudioCapabilitiesSection />
       </main>
       <Footer />
     </div>
@@ -15,3 +17,4 @@ const VideoAudioSolution = () => {
 };
 
 export default VideoAudioSolution;
+
