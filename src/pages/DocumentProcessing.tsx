@@ -16,8 +16,8 @@ const DocumentProcessing = () => {
         <DocumentProcessingFeaturesSection />
         <DocumentProcessingIngestionSection />
         <DocumentProcessingClassificationSection />
-        <DocumentProcessingHumanReviewSection />
         <DocumentProcessingTableSection />
+        <DocumentProcessingHumanReviewSection />
       </main>
       <Footer />
     </div>
