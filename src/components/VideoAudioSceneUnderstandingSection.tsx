@@ -72,7 +72,7 @@ const VideoAudioSceneUnderstandingSection = () => {
                   </div>
                 </div>
 
-                <div className="relative aspect-[16/10] overflow-hidden bg-[radial-gradient(circle_at_15%_20%,hsl(var(--teal)/0.18),transparent_20%),radial-gradient(circle_at_72%_32%,hsl(var(--primary)/0.12),transparent_22%),linear-gradient(180deg,hsl(var(--muted))_0%,hsl(var(--background))_100%)]">
+                <div className="relative aspect-[16/10] overflow-hidden bg-[radial-gradient(circle_at_15%_20%,hsl(var(--color-teal)/0.18),transparent_20%),radial-gradient(circle_at_72%_32%,hsl(var(--primary)/0.12),transparent_22%),linear-gradient(180deg,hsl(var(--muted))_0%,hsl(var(--background))_100%)]">
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(var(--background)/0.02)_0%,hsl(var(--background)/0.28)_100%)]" />
                   <div className="absolute inset-x-10 top-10 h-32 border border-teal/30 bg-teal/10" />
                   <div className="absolute left-[12%] top-[34%] h-28 w-20 border border-primary/30 bg-primary/10" />
