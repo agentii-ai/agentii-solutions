@@ -210,9 +210,9 @@ touch src/components/landing/HeroSection.tsx
 
 // After (refined):
 <h1 className="font-brand text-[56px] md:text-[72px] font-bold text-[#1F2937] leading-[1.05] tracking-[-0.02em]">
-  You have the data.
+  Data by agents, for agents.
   <br />
-  Your agents don't.
+  Agent-Use-Ready Data at Scale.
 </h1>
 ```
 
@@ -287,9 +287,9 @@ src/components/landing/HeroSection.tsx
 ```tsx
 // Update headline text
 <h1 className="font-brand text-[56px] md:text-[72px] font-bold text-[#1F2937] leading-[1.05] tracking-[-0.02em] mb-6">
-  You have the data.
+  Data by agents, for agents.
   <br />
-  Your agents don't.
+  Agent-Use-Ready Data at Scale.
 </h1>
 
 // Update tagline

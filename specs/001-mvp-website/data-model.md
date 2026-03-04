@@ -147,7 +147,7 @@ Represents a Lovable.dev prompt file for generating a specific section.
   "design_guidelines_appended": true,
   "content_sections": {
     "context": "Hero section for landing page, first impression for visitors",
-    "content": "Headline: 'You have the data. Your agents don't.' ...",
+    "content": "Headline: 'Data by agents, for agents. Agent-Use-Ready Data at Scale.' ...",
     "layout": "Single-column layout, max-width 820px, headline + tagline + CTA buttons",
     "design_specs": "Futura 56-72px, #3B82F6 primary blue, 8px spacing grid"
   },

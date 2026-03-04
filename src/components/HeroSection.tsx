@@ -7,14 +7,13 @@ const HeroSection = () => {
       {/* Main Hero Content */}
       <div className="container mx-auto px-6 lg:px-12 pt-[120px] pb-16 lg:pt-[160px] lg:pb-24">
         <div className="max-w-[820px]">
-          <h1 className="font-brand text-[44px] md:text-[56px] lg:text-[72px] font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-6">
+          <h1 className="font-brand text-[32px] md:text-[40px] lg:text-[52px] font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-6">
             Data by agents, for agents.
             <br />
             Agent-Use-Ready Data at Scale.
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-[580px] leading-relaxed mb-10">
-            The hard part? Making agentic AI work in
-            the enterprise. That's where we come in.
+            From financial documents to reasoning traces — structured for agents to act on, not humans to review.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button variant="teal" size="lg" className="rounded-lg px-8">
