@@ -124,7 +124,7 @@ const DocumentProcessingHeroSection = () => {
                   </div>
                 </div>
 
-                <div className="relative mt-10 w-[68%] border border-border bg-[#efe7d7]/80 px-5 py-5 shadow-sm backdrop-blur-sm">
+                <div className="relative mt-10 w-[68%] border border-border bg-secondary/80 px-5 py-5 shadow-sm backdrop-blur-sm">
                   <div className="flex items-center justify-between border-b border-border/60 pb-4">
                     <p className="font-brand text-[18px] tracking-[-0.01em] text-foreground">Income statement</p>
                     <span className="inline-flex h-5 w-5 items-center justify-center bg-primary text-primary-foreground">‹</span>
