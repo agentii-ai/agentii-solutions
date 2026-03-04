@@ -32,9 +32,9 @@ const navItems: NavItem[] = [
       {
         heading: "DATA SOLUTIONS",
         items: [
-          { label: "Document Processing", href: "#solutions" },
-          { label: "Video & Audio Data", href: "#solutions" },
-          { label: "Synthetic Data", href: "#solutions" },
+          { label: "Document Processing", href: "/solutions/document-processing" },
+          { label: "Video & Audio Data", href: "/use-cases/video-generation" },
+          { label: "Synthetic Data", href: "/use-cases/synthetic-data" },
         ],
       },
       {
