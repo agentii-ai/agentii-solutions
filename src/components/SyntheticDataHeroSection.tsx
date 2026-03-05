@@ -1,164 +1,194 @@
-import { ArrowRight, Binary, Blocks, Sparkles } from "lucide-react";
+import { ArrowRight, Binary, Blocks, Braces, Calculator, ChevronRight, Sparkles, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const topBars = [
-  "bg-purple/95 w-6",
-  "bg-purple/80 w-4",
-  "bg-primary/80 w-3",
-  "bg-primary/65 w-2.5",
-  "bg-cyan/70 w-3",
-  "bg-purple/70 w-2.5",
-  "bg-purple/55 w-4",
-  "bg-slate-200/90 w-3",
-  "bg-slate-200/70 w-2.5",
-  "bg-slate-400/70 w-4",
-  "bg-slate-400/45 w-5",
-  "bg-primary/35 w-6",
-  "bg-purple/55 w-8",
-  "bg-purple/70 w-12",
-  "bg-primary/45 w-16",
+const capabilityTabs = [
+  "Reasoning",
+  "Coding",
+  "Maths",
+  "Tool calling",
 ];
 
-const bottomBars = [
-  "bg-purple/35 w-8",
-  "bg-purple/55 w-3",
-  "bg-purple/75 w-2.5",
-  "bg-primary/90 w-3",
-  "bg-cyan/70 w-2.5",
-  "bg-purple/65 w-3",
-  "bg-purple/45 w-4",
-  "bg-primary/95 w-3",
-  "bg-primary/80 w-2.5",
-  "bg-slate-200/90 w-3",
-  "bg-slate-200/65 w-4",
-  "bg-slate-400/40 w-5",
-  "bg-purple/35 w-16",
-  "bg-cyan/30 w-20",
-  "bg-primary/40 w-16",
-  "bg-purple/55 w-24",
-];
-
-const signalCards = [
+const trainingTracks = [
   {
-    label: "Scenario Engine",
-    value: "Generate edge cases, cohorts, and behavior shifts.",
-    icon: Blocks,
-  },
-  {
-    label: "Reasoning Trace",
-    value: "Produce tool calls, decisions, and outcome states.",
+    label: "Reasoning",
+    detail: "Multi-step traces, verifiable outcomes, and critique loops.",
     icon: Sparkles,
   },
   {
-    label: "Data Shape",
-    value: "Structured synthetic records ready for training and evals.",
-    icon: Binary,
+    label: "Coding",
+    detail: "Execution-aware samples with patches, tests, and failure recovery.",
+    icon: Braces,
+  },
+  {
+    label: "Maths",
+    detail: "Symbolic steps, grounded calculations, and numeric consistency checks.",
+    icon: Calculator,
+  },
+  {
+    label: "Tool calling",
+    detail: "Structured actions, argument schemas, and stateful agent workflows.",
+    icon: Wrench,
+  },
+];
+
+const orchestrationNodes = [
+  {
+    label: "Source signals",
+    value: "Prompts, policies, structured records",
+    accent: "bg-purple",
+  },
+  {
+    label: "Scenario engine",
+    value: "Generate edge cases, branches, and adversarial paths",
+    accent: "bg-primary",
+  },
+  {
+    label: "Data map",
+    value: "Link entities, evidence, tools, and numeric states for agents",
+    accent: "bg-cyan",
+  },
+  {
+    label: "Training output",
+    value: "Agent-ready datasets for evals, fine-tuning, and retrieval",
+    accent: "bg-purple",
   },
 ];
 
 const SyntheticDataHeroSection = () => {
   return (
     <section className="bg-background pt-[88px] md:pt-[96px]">
-      <div className="bg-navy text-slate-200">
-        <div className="container mx-auto px-6 pt-16 pb-0 md:pt-24 lg:px-12 lg:pt-28">
-          <div className="max-w-[820px] pb-14 md:pb-20">
-            <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
-              <span className="h-[3px] w-4 bg-purple" aria-hidden="true" />
-              Use Cases
-            </div>
-            <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[80px]">
-              Agentic data for
-              <br />
-              synthetic datasets.
-            </h1>
-          </div>
-        </div>
-      </div>
-
       <div className="bg-secondary">
-        <div className="container mx-auto grid items-stretch gap-0 px-0 md:grid-cols-[minmax(0,560px)_1fr] lg:px-12">
-          <div className="flex flex-col justify-between px-6 py-10 md:px-10 md:py-12 lg:px-12">
-            <div>
-              <p className="max-w-[500px] text-lg leading-relaxed text-foreground md:text-[20px]">
-                Turn sparse real-world signals into controllable synthetic records, reasoning traces, and evaluation sets that agents can train on with confidence.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button size="lg" className="rounded-lg px-8">
-                  Request a Demo
-                </Button>
-                <Button variant="outline" size="lg" className="rounded-lg px-8">
-                  Explore Features <ArrowRight size={16} />
-                </Button>
-              </div>
+        <div className="container mx-auto px-6 py-16 lg:px-12 lg:py-24">
+          <div className="mx-auto max-w-[920px] text-center">
+            <div className="mb-6 inline-flex items-center gap-3 border border-border bg-background px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+              <span className="h-[3px] w-4 bg-purple" aria-hidden="true" />
+              Synthetic Data Solution
             </div>
+            <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-foreground md:text-[64px] lg:text-[80px]">
+              Agentic-native
+              <br />
+              training data.
+            </h1>
+            <p className="mx-auto mt-6 max-w-[860px] text-lg leading-relaxed text-muted-foreground md:text-[20px]">
+              Build a data map for agents across reasoning, coding, maths, and tool calling. This greatly increases agentic work on structured data sources after processing, making the data map the key to accurate agentic reasoning, retrieval, and numerical calculation.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <Button size="lg" className="rounded-lg px-8">
+                Book a Demo <ArrowRight size={16} />
+              </Button>
+              <Button variant="outline" size="lg" className="rounded-lg px-8">
+                Explore Features <ChevronRight size={16} />
+              </Button>
+            </div>
+          </div>
 
-            <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-3">
-              {signalCards.map(({ label, value, icon: Icon }) => (
-                <div key={label} className="bg-background px-4 py-4 transition-transform duration-300 hover:-translate-y-1">
-                  <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
-                    <Icon className="h-4 w-4 text-purple" />
-                    {label}
-                  </div>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground">{value}</p>
+          <div className="mx-auto mt-12 max-w-[1120px]">
+            <div className="grid gap-3 md:grid-cols-4">
+              {capabilityTabs.map((tab, index) => (
+                <div
+                  key={tab}
+                  className={`border px-5 py-4 text-sm font-medium transition-all duration-300 ${
+                    index === 2
+                      ? "border-purple bg-background text-foreground shadow-[0_0_0_1px_hsl(var(--purple))]"
+                      : "border-border bg-background text-muted-foreground hover:border-purple/60 hover:text-foreground"
+                  }`}
+                >
+                  {tab}
                 </div>
               ))}
             </div>
-          </div>
 
-          <div className="relative overflow-hidden bg-navy px-4 py-6 md:px-0 md:py-0">
-            <div className="absolute inset-y-0 left-0 hidden w-px bg-slate-700/70 md:block" aria-hidden="true" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--slate-700)/0.35)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--slate-700)/0.2)_1px,transparent_1px)] bg-[size:72px_72px] opacity-60" aria-hidden="true" />
-            <div className="absolute right-8 top-8 hidden h-24 w-24 border border-purple/30 md:block" aria-hidden="true" />
-            <div className="absolute right-16 top-16 hidden h-24 w-24 border border-primary/25 md:block" aria-hidden="true" />
-            <div className="absolute bottom-0 left-0 right-0 h-8 bg-secondary" aria-hidden="true" />
-
-            <div className="relative flex min-h-[260px] flex-col justify-center px-2 py-10 md:min-h-[320px] md:px-8 lg:px-10">
-              <div className="mb-5 flex items-center justify-between border-b border-slate-700/80 pb-4">
+            <div className="mt-4 grid overflow-hidden border border-border bg-background md:grid-cols-[360px_minmax(0,1fr)]">
+              <div className="flex flex-col justify-between border-b border-border p-8 md:border-b-0 md:border-r">
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400">Synthetic signal stack</p>
-                  <p className="mt-2 text-sm text-slate-300">Controls, distributions, labels, and verified trajectories.</p>
+                  <div className="inline-flex h-12 w-12 items-center justify-center border border-purple/30 bg-purple/10 text-purple">
+                    <Binary className="h-6 w-6" />
+                  </div>
+                  <h2 className="mt-8 font-brand text-[34px] leading-tight tracking-[-0.02em] text-foreground md:text-[42px]">
+                    Agentic-native training data
+                  </h2>
+                  <p className="mt-4 text-lg leading-relaxed text-foreground">
+                    Structured synthetic datasets for reasoning-heavy systems.
+                  </p>
+                  <p className="mt-4 max-w-[280px] text-base leading-relaxed text-muted-foreground">
+                    Our synthetic data system builds a durable data map for agents so every prompt, tool call, code action, and numeric step stays machine-readable and auditable.
+                  </p>
                 </div>
-                <div className="hidden items-center gap-2 md:flex">
-                  <span className="h-2.5 w-2.5 rounded-full bg-purple" aria-hidden="true" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-primary" aria-hidden="true" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-slate-500" aria-hidden="true" />
-                </div>
+
+                <a
+                  href="#"
+                  className="mt-10 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-foreground transition-colors duration-300 hover:text-purple"
+                >
+                  Learn more
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
 
-              <div className="grid gap-4 border border-slate-700/80 bg-slate-900/40 p-4 md:grid-cols-[1.1fr_0.9fr]">
-                <div className="space-y-4">
-                  <div className="relative flex h-[72px] items-end gap-[10px]">
-                    {topBars.map((bar, index) => (
-                      <span
-                        key={`top-${index}`}
-                        className={`${bar} block h-full shrink-0 transition-transform duration-300 hover:-translate-y-1`}
-                        aria-hidden="true"
-                      />
-                    ))}
+              <div className="relative overflow-hidden bg-[linear-gradient(135deg,hsl(var(--background))_0%,hsl(var(--secondary))_55%,hsl(var(--purple)/0.08)_100%)] p-6 md:p-8">
+                <div className="absolute inset-y-0 left-0 hidden w-px bg-border md:block" aria-hidden="true" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:72px_72px] opacity-40" aria-hidden="true" />
+
+                <div className="relative grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
+                  <div className="border border-border bg-background/85 p-5 backdrop-blur-sm">
+                    <div className="flex items-center justify-between border-b border-border pb-4">
+                      <div>
+                        <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
+                          Training lattice
+                        </p>
+                        <p className="mt-2 text-sm text-foreground">
+                          Reasoning, code, maths, and action traces linked in one data map.
+                        </p>
+                      </div>
+                      <div className="hidden items-center gap-2 sm:flex">
+                        <span className="h-2.5 w-2.5 bg-purple" aria-hidden="true" />
+                        <span className="h-2.5 w-2.5 bg-primary" aria-hidden="true" />
+                        <span className="h-2.5 w-2.5 bg-cyan" aria-hidden="true" />
+                      </div>
+                    </div>
+
+                    <div className="mt-5 grid gap-px border border-border bg-border sm:grid-cols-2">
+                      {trainingTracks.map(({ label, detail, icon: Icon }) => (
+                        <div key={label} className="bg-background p-4 transition-transform duration-300 hover:-translate-y-1">
+                          <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+                            <Icon className="h-4 w-4 text-purple" />
+                            {label}
+                          </div>
+                          <p className="mt-3 text-sm leading-relaxed text-foreground">{detail}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="relative flex h-[72px] items-start gap-[10px]">
-                    {bottomBars.map((bar, index) => (
-                      <span
-                        key={`bottom-${index}`}
-                        className={`${bar} block h-full shrink-0 transition-transform duration-300 hover:translate-y-1`}
-                        aria-hidden="true"
-                      />
+
+                  <div className="grid gap-4">
+                    {orchestrationNodes.map(({ label, value, accent }, index) => (
+                      <div key={label} className="relative border border-border bg-background/90 p-4 backdrop-blur-sm">
+                        {index < orchestrationNodes.length - 1 && (
+                          <div className="absolute left-6 top-full h-4 w-px bg-border" aria-hidden="true" />
+                        )}
+                        <div className="flex items-start gap-4">
+                          <span className={`mt-1 h-3 w-3 shrink-0 ${accent}`} aria-hidden="true" />
+                          <div>
+                            <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{label}</p>
+                            <p className="mt-2 text-sm leading-relaxed text-foreground">{value}</p>
+                          </div>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="grid gap-px border border-slate-700/80 bg-slate-700/80 self-stretch">
-                  <div className="bg-navy px-4 py-3">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">Source</p>
-                    <p className="mt-2 text-sm text-slate-200">Rules, prompts, and observed patterns</p>
+                <div className="relative mt-6 grid gap-px border border-border bg-border md:grid-cols-3">
+                  <div className="bg-background px-4 py-4">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Coverage</p>
+                    <p className="mt-2 text-sm text-foreground">Reasoning chains, execution states, retrieval evidence, and numeric checkpoints.</p>
                   </div>
-                  <div className="bg-navy px-4 py-3">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">Generator</p>
-                    <p className="mt-2 text-sm text-slate-200">Scenario expansion with variance controls</p>
+                  <div className="bg-background px-4 py-4">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Agentic fit</p>
+                    <p className="mt-2 text-sm text-foreground">Designed for tool-using systems that need structured, verifiable trajectories.</p>
                   </div>
-                  <div className="bg-navy px-4 py-3">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">Output</p>
-                    <p className="mt-2 text-sm text-slate-200">Auditable synthetic datasets for agents</p>
+                  <div className="bg-background px-4 py-4">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Outcome</p>
+                    <p className="mt-2 text-sm text-foreground">Higher quality training and eval data for safer, more reliable agent performance.</p>
                   </div>
                 </div>
               </div>
@@ -171,3 +201,4 @@ const SyntheticDataHeroSection = () => {
 };
 
 export default SyntheticDataHeroSection;
+
