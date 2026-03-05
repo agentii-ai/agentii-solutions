@@ -123,7 +123,7 @@ const RequestDemo = () => {
 
                 <div className="overflow-hidden rounded-xl border border-border bg-navy text-slate-200 shadow-[0_18px_60px_-30px_hsl(var(--color-navy)/0.55)]">
                   <div className="border-b border-slate-700/80 px-7 py-6">
-                    <p className="font-brand text-[34px] leading-[1.02] tracking-[-0.03em] text-white md:text-[46px]">
+                    <p className="font-brand text-[34px] leading-[1.02] tracking-[-0.03em] text-primary-foreground md:text-[46px]">
                       Quickly deliver structured data that improves agent performance.
                     </p>
                   </div>
@@ -140,7 +140,7 @@ const RequestDemo = () => {
                           <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-lilac" aria-hidden="true" />
                           <p className="text-[22px] leading-8 text-slate-200">{outcome.label}</p>
                         </div>
-                        <p className="font-brand text-[64px] leading-none tracking-[-0.05em] text-white md:text-right">
+                        <p className="font-brand text-[64px] leading-none tracking-[-0.05em] text-primary-foreground md:text-right">
                           {outcome.value}
                         </p>
                       </div>

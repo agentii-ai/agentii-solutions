@@ -124,13 +124,19 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
   const logoPrimaryClass = scrolled ? "text-slate-200" : aboutTone ? "text-navy" : demoTone ? "text-lilac-dark" : "text-primary";
   const logoSecondaryClass = scrolled ? "text-slate-200" : "text-foreground";
   const desktopLinkBaseClass = scrolled
-    ? "text-slate-200 hover:text-white"
+    ? "text-slate-200 hover:text-primary-foreground"
     : aboutTone
       ? "text-foreground hover:text-purple"
       : demoTone
         ? "text-foreground hover:text-lilac-dark"
         : "text-foreground hover:text-primary";
-  const activeBorderClass = scrolled ? "border-teal text-white" : aboutTone ? "border-purple text-foreground" : demoTone ? "border-lilac-dark text-foreground" : "border-primary text-foreground";
+  const activeBorderClass = scrolled
+    ? "border-teal text-primary-foreground"
+    : aboutTone
+      ? "border-purple text-foreground"
+      : demoTone
+        ? "border-lilac-dark text-foreground"
+        : "border-primary text-foreground";
   const actionButtonClass = aboutTone
     ? "rounded-lg bg-purple hover:bg-purple-dark text-primary-foreground"
     : demoTone
