@@ -11,6 +11,7 @@ import SyntheticDataSolution from "./pages/SyntheticDataSolution";
 import About from "./pages/About";
 import DocumentProcessing from "./pages/DocumentProcessing";
 import VideoAudioSolution from "./pages/VideoAudioSolution";
+import RequestDemo from "./pages/RequestDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/request-demo" element={<RequestDemo />} />
           <Route path="/solutions/document-processing" element={<DocumentProcessing />} />
           <Route path="/solutions/video-audio" element={<VideoAudioSolution />} />
           <Route path="/use-cases/finance" element={<FinanceUseCase />} />
