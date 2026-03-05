@@ -18,7 +18,7 @@ const solutions = [
     icon: Cpu,
     title: "Synthetic Data Generation",
     description: "Generate high-fidelity synthetic datasets for training, testing, and validating agentic AI models.",
-    link: "/use-cases/synthetic-data",
+    link: "/solutions/synthetic-data",
   },
 ];
 
