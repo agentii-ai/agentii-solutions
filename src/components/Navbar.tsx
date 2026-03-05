@@ -70,8 +70,8 @@ const navItems: NavItem[] = [
         heading: "BY APPLICATION",
         items: [
           { label: "Document Extraction", href: "/solutions/document-processing" },
-          { label: "Synthetic Generation", href: "/solutions/synthetic-data" },
-          { label: "Agent Training Data", href: "/solutions/synthetic-data" },
+          { label: "Synthetic Data Generation", href: "/use-cases/synthetic-data" },
+          { label: "Video AI Training", href: "/solutions/video-audio" },
         ],
       },
     ],
@@ -82,7 +82,7 @@ const navItems: NavItem[] = [
   },
   {
     label: "Research",
-    href: "#differentiators",
+    href: "/research/agentic-search",
   },
   {
     label: "About",

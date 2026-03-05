@@ -7,18 +7,21 @@
 
 ## 🗺️ Site Structure
 
-### **Main Pages** (8 pages total)
+### **Main Pages** (12 pages total)
 
 | Route | Page Component | Status | Sections |
 |-------|---------------|--------|----------|
 | `/` | Index.tsx | ✅ Complete | 9 sections |
-| `/about` | About.tsx | ✅ Complete | 1 section |
+| `/about` | About.tsx | ⚠️ Minimal | 1 section |
+| `/request-demo` | RequestDemo.tsx | ✅ Complete | Form + highlights |
 | `/solutions/document-processing` | DocumentProcessing.tsx | ✅ Complete | 8 sections |
 | `/solutions/video-audio` | VideoAudioSolution.tsx | ✅ Complete | 6 sections |
-| `/solutions/synthetic-data` | SyntheticDataSolution.tsx | ✅ Complete | 6 sections |
+| `/solutions/synthetic-data` | SyntheticDataSolution.tsx | ✅ Complete | 7 sections |
 | `/use-cases/finance` | FinanceUseCase.tsx | ✅ Complete | 6 sections |
 | `/use-cases/insurance` | InsuranceUseCase.tsx | ✅ Complete | 6 sections |
 | `/use-cases/video-generation` | VideoUseCase.tsx | ⚠️ Incomplete | 1 section only |
+| `/use-cases/synthetic-data` | SyntheticUseCase.tsx | ✅ Complete | 5 sections |
+| `/research/agentic-search` | AgenticSearch.tsx | ✅ Complete | 6 sections |
 | `*` (404) | NotFound.tsx | ✅ Complete | Error page |
 
 ---
