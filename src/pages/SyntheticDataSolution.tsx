@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SyntheticDataHeroSection from "@/components/SyntheticDataHeroSection";
 import SyntheticDataFabricationSection from "@/components/SyntheticDataFabricationSection";
+import SyntheticDataPipelineSection from "@/components/SyntheticDataPipelineSection";
 import SyntheticDataImpactSection from "@/components/SyntheticDataImpactSection";
 import SyntheticDataBenefitsSection from "@/components/SyntheticDataBenefitsSection";
 import SyntheticDataScaleSection from "@/components/SyntheticDataScaleSection";
@@ -14,6 +15,7 @@ const SyntheticDataSolution = () => {
       <main>
         <SyntheticDataHeroSection />
         <SyntheticDataFabricationSection />
+        <SyntheticDataPipelineSection />
         <SyntheticDataImpactSection />
         <SyntheticDataBenefitsSection />
         <SyntheticDataScaleSection />

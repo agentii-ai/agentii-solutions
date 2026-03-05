@@ -1,7 +1,22 @@
 const footerLinks = {
-  Solutions: ["Document Processing", "Video & Audio", "Synthetic Data", "Custom Pipelines"],
-  Company: ["About", "Careers", "Partners", "Press"],
-  Resources: ["Blog", "Documentation", "Support", "API Reference"],
+  Solutions: [
+    { label: "Document Processing", href: "/solutions/document-processing" },
+    { label: "Video & Audio", href: "/solutions/video-audio" },
+    { label: "Synthetic Data", href: "/solutions/synthetic-data" },
+    { label: "Custom Pipelines", href: "#" },
+  ],
+  Company: [
+    { label: "About", href: "/about" },
+    { label: "Careers", href: "#" },
+    { label: "Partners", href: "#" },
+    { label: "Press", href: "#" },
+  ],
+  Resources: [
+    { label: "Blog", href: "#" },
+    { label: "Documentation", href: "#" },
+    { label: "Support", href: "#" },
+    { label: "API Reference", href: "#" },
+  ],
 };
 
 const Footer = () => {
@@ -36,12 +51,12 @@ const Footer = () => {
               </h4>
               <ul className="space-y-3">
                 {links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-sm text-slate-400 hover:text-teal transition-colors duration-150"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -53,7 +68,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-slate-400">
-            © 2024 agentii.Solutions. All rights reserved.
+            © 2026 agentii.Solutions. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-slate-400 hover:text-teal transition-colors">

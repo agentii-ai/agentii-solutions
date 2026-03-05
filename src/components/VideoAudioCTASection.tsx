@@ -41,16 +41,16 @@ const VideoAudioCTASection = () => {
               size="lg"
               className="min-h-11 rounded-lg bg-teal px-8 text-base font-medium text-primary-foreground hover:bg-teal-dark"
             >
-              Start Building a Data Map for Agents
+              Start Your Annotation Pipeline
             </Button>
           </div>
 
           <div className="mx-auto mt-16 max-w-[920px] text-center">
             <h2 className="font-brand text-[36px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[56px]">
-              Structured video and audio data that agents can reason over.
+              Model-Ready Training Data for Video Generation.
             </h2>
             <p className="mx-auto mt-6 max-w-[840px] text-base leading-8 text-muted-foreground md:text-lg">
-              Our document processing solution will build a data map for agents, greatly increasing agentic work on structured data sources after processing. The data map is key to accurate agentic reasoning, retrieval, and numerical calculation.
+              Scene semantics, persistent object tracking, physical motion, camera grammar, and multi-track audio—annotated at frame-level precision and structured for Seedance, Sora, and Veo training pipelines.
             </p>
           </div>
 

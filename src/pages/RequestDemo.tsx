@@ -64,11 +64,36 @@ const RequestDemo = () => {
     },
   });
 
-  const onSubmit = (values: RequestDemoValues) => {
-    toast({
-      title: "Demo request ready",
-      description: `Thanks ${values.firstName} — your request is validated in the UI and ready for backend wiring.`,
-    });
+  const onSubmit = async (values: RequestDemoValues) => {
+    try {
+      const response = await fetch("http://localhost:3001/api/demo-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Demo request submitted",
+          description: `Thanks ${values.firstName} — we'll be in touch soon.`,
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Something went wrong",
+          description: data.message || "Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch {
+      toast({
+        title: "Connection error",
+        description: "Could not reach the server. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (

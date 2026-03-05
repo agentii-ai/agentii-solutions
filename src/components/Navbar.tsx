@@ -40,8 +40,8 @@ const navItems: NavItem[] = [
       {
         heading: "INDUSTRIES",
         items: [
-          { label: "Financial Services", href: "#use-cases" },
-          { label: "Insurance", href: "#use-cases" },
+          { label: "Financial Services", href: "/use-cases/finance" },
+          { label: "Insurance", href: "/use-cases/insurance" },
         ],
       },
       {
@@ -61,17 +61,17 @@ const navItems: NavItem[] = [
       {
         heading: "BY INDUSTRY",
         items: [
-          { label: "Finance & Banking", href: "#use-cases" },
-          { label: "Insurance", href: "#use-cases" },
-          { label: "Video AI Training", href: "#use-cases" },
+          { label: "Finance & Banking", href: "/use-cases/finance" },
+          { label: "Insurance", href: "/use-cases/insurance" },
+          { label: "Video AI Training", href: "/use-cases/video-generation" },
         ],
       },
       {
         heading: "BY APPLICATION",
         items: [
-          { label: "Document Extraction", href: "#use-cases" },
-          { label: "Synthetic Generation", href: "#use-cases" },
-          { label: "Agent Training Data", href: "#use-cases" },
+          { label: "Document Extraction", href: "/solutions/document-processing" },
+          { label: "Synthetic Generation", href: "/solutions/synthetic-data" },
+          { label: "Agent Training Data", href: "/solutions/synthetic-data" },
         ],
       },
     ],
@@ -81,7 +81,7 @@ const navItems: NavItem[] = [
     href: "#pipeline",
   },
   {
-    label: "Researches",
+    label: "Research",
     href: "#differentiators",
   },
   {

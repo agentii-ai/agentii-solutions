@@ -77,7 +77,7 @@ const SyntheticDataImpactSection = () => {
 
           <div className="mt-14 text-center">
             <p className="font-brand text-[28px] leading-tight tracking-[-0.02em] text-foreground md:text-[40px]">
-              See how Gretel, Tonic, and Snorkel use synthetic data to train specialized agents.
+              See how DeepSeek, Qwen, and Seed use synthetic data to train specialized agents.
             </p>
           </div>
         </div>
