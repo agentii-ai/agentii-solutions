@@ -93,7 +93,7 @@ In Vercel → Domains → Set `www.agentii.net` as **Primary Domain**
   │ CNAME │ www  │ cname.vercel-dns.com │ b82e8c4cbba36872.vercel-dns-017.com. │ 600 │
   └───────┴──────┴──────────────────────┴──────────────────────────────────────┴─────┘
 
-  
+
 ---
 
 ## Part 3: Bilingual Website Implementation
@@ -121,6 +121,8 @@ In Vercel → Domains → Set `www.agentii.net` as **Primary Domain**
 **Decision: Use react-i18next**
 
 ---
+
+use option A for bilingual implementation
 
 ## Part 4: react-i18next Implementation Plan
 
