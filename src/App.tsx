@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FinanceUseCase from "./pages/FinanceUseCase";
 import VideoUseCase from "./pages/VideoUseCase";
-import SyntheticDataUseCase from "./pages/SyntheticDataUseCase";
+import SyntheticDataSolution from "./pages/SyntheticDataSolution";
 import About from "./pages/About";
 import DocumentProcessing from "./pages/DocumentProcessing";
 import VideoAudioSolution from "./pages/VideoAudioSolution";
@@ -27,7 +27,7 @@ const App = () => (
           <Route path="/solutions/video-audio" element={<VideoAudioSolution />} />
           <Route path="/use-cases/finance" element={<FinanceUseCase />} />
           <Route path="/use-cases/video-generation" element={<VideoUseCase />} />
-          <Route path="/use-cases/synthetic-data" element={<SyntheticDataUseCase />} />
+          <Route path="/solutions/synthetic-data" element={<SyntheticDataSolution />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

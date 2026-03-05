@@ -7,7 +7,7 @@ import SyntheticDataBenefitsSection from "@/components/SyntheticDataBenefitsSect
 import SyntheticDataScaleSection from "@/components/SyntheticDataScaleSection";
 import SyntheticDataSuiteSection from "@/components/SyntheticDataSuiteSection";
 
-const SyntheticDataUseCase = () => {
+const SyntheticDataSolution = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -24,4 +24,4 @@ const SyntheticDataUseCase = () => {
   );
 };
 
-export default SyntheticDataUseCase;
+export default SyntheticDataSolution;
