@@ -263,8 +263,8 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
               </div>
             )}
           </div>
-          <Button size="sm" className={actionButtonClass}>
-            Request a Demo
+          <Button size="sm" className={actionButtonClass} asChild>
+            <a href="/request-demo">Request a Demo</a>
           </Button>
         </div>
 
@@ -289,7 +289,9 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
               {item.label}
             </a>
           ))}
-          <Button className={actionButtonClass}>Request a Demo</Button>
+          <Button className={actionButtonClass} asChild>
+            <a href="/request-demo">Request a Demo</a>
+          </Button>
         </div>
       )}
     </nav>
