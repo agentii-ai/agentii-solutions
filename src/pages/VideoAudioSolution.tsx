@@ -5,6 +5,7 @@ import VideoAudioCapabilitiesSection from "@/components/VideoAudioCapabilitiesSe
 import VideoAudioSceneUnderstandingSection from "@/components/VideoAudioSceneUnderstandingSection";
 import VideoAudioTrackingSegmentationSection from "@/components/VideoAudioTrackingSegmentationSection";
 import VideoAudioAnnotationShowcaseSection from "@/components/VideoAudioAnnotationShowcaseSection";
+import VideoAudioCTASection from "@/components/VideoAudioCTASection";
 
 const VideoAudioSolution = () => {
   return (
@@ -16,6 +17,7 @@ const VideoAudioSolution = () => {
         <VideoAudioSceneUnderstandingSection />
         <VideoAudioTrackingSegmentationSection />
         <VideoAudioAnnotationShowcaseSection />
+        <VideoAudioCTASection />
       </main>
       <Footer />
     </div>
