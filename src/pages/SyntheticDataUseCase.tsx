@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SyntheticDataHeroSection from "@/components/SyntheticDataHeroSection";
 import SyntheticDataFabricationSection from "@/components/SyntheticDataFabricationSection";
+import SyntheticDataImpactSection from "@/components/SyntheticDataImpactSection";
 
 const SyntheticDataUseCase = () => {
   return (
@@ -10,6 +11,7 @@ const SyntheticDataUseCase = () => {
       <main>
         <SyntheticDataHeroSection />
         <SyntheticDataFabricationSection />
+        <SyntheticDataImpactSection />
       </main>
       <Footer />
     </div>
