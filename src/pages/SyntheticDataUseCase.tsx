@@ -1,6 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SyntheticDataHeroSection from "@/components/SyntheticDataHeroSection";
+import SyntheticDataFabricationSection from "@/components/SyntheticDataFabricationSection";
+import SyntheticDataImpactSection from "@/components/SyntheticDataImpactSection";
+import SyntheticDataBenefitsSection from "@/components/SyntheticDataBenefitsSection";
+import SyntheticDataScaleSection from "@/components/SyntheticDataScaleSection";
+import SyntheticDataSuiteSection from "@/components/SyntheticDataSuiteSection";
 
 const SyntheticDataUseCase = () => {
   return (
@@ -8,6 +13,11 @@ const SyntheticDataUseCase = () => {
       <Navbar />
       <main>
         <SyntheticDataHeroSection />
+        <SyntheticDataFabricationSection />
+        <SyntheticDataImpactSection />
+        <SyntheticDataBenefitsSection />
+        <SyntheticDataScaleSection />
+        <SyntheticDataSuiteSection />
       </main>
       <Footer />
     </div>
