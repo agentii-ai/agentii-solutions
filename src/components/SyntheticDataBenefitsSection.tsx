@@ -3,21 +3,21 @@ import { Button } from "@/components/ui/button";
 
 const benefitCards = [
   {
-    title: "Rapid data refresh",
+    title: "Scalability",
     description:
-      "Build synthetic structured datasets quickly so teams can refresh agent training corpora without waiting on fragile manual preparation cycles.",
+      "Generate millions of training examples without human annotation. Automated pipelines scale from 1K to 100K+ samples with consistent quality.",
     icon: DatabaseZap,
   },
   {
-    title: "Accelerated development",
+    title: "Verifiability",
     description:
-      "Increase agentic work on structured data after processing by supplying machine-readable states, evidence links, and scenario branches.",
+      "Every code sample executes, every math proof validates, every tool call checks against schemas. Execution-based filtering ensures training data is correct, not hallucinated.",
     icon: Rocket,
   },
   {
-    title: "Reliable evaluation",
+    title: "Diversity",
     description:
-      "Use the data map to support accurate agentic reasoning, retrieval, and numerical calculation across repeatable test conditions.",
+      "Evol-Instruct and difficulty adaptation create training curricula from simple to complex. Clustering-based diversity metrics prevent overfitting on narrow distributions.",
     icon: ShieldCheck,
   },
 ];
@@ -25,31 +25,31 @@ const benefitCards = [
 const tableRows = [
   {
     id: "1",
-    entity: "Reasoning trace",
-    state: "Evidence-linked",
-    metric: "92.4%",
-    output: "Verified answer path",
+    entity: "SFT datasets",
+    state: "JSON-L format",
+    metric: "100K+",
+    output: "Reasoning traces + answers",
   },
   {
     id: "2",
-    entity: "Tool call",
-    state: "Schema-safe",
-    metric: "99.1%",
-    output: "Validated action record",
+    entity: "RLHF preferences",
+    state: "Paired format",
+    metric: "50K+",
+    output: "Chosen vs. rejected samples",
   },
   {
     id: "3",
-    entity: "Math state",
-    state: "Checkpointed",
-    metric: "97.8%",
-    output: "Grounded numeric chain",
+    entity: "Eval benchmarks",
+    state: "Parquet format",
+    metric: "10K+",
+    output: "Execution-verified tests",
   },
   {
     id: "4",
-    entity: "Coding run",
-    state: "Execution-aware",
-    metric: "94.7%",
-    output: "Patch + tests bundle",
+    entity: "Curriculum stages",
+    state: "Difficulty-sorted",
+    metric: "5 stages",
+    output: "Simple → expert progression",
   },
 ];
 
@@ -60,7 +60,7 @@ const SyntheticDataBenefitsSection = () => {
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-[980px] text-center">
             <h2 className="font-brand text-[34px] leading-[1.06] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[56px]">
-              Increase synthetic data output for agentic productivity.
+              Why Synthetic Data for Agent Training?
             </h2>
           </div>
 
@@ -84,7 +84,7 @@ const SyntheticDataBenefitsSection = () => {
           <div className="mt-20 grid items-start gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
             <div className="max-w-[620px]">
               <p className="font-brand text-[34px] leading-[1.08] tracking-[-0.03em] text-foreground md:text-[52px]">
-                The synthetic data platform for agentic systems.
+                The Training Data Platform for Agentic LLMs.
               </p>
             </div>
             <div className="lg:pt-6">
@@ -99,10 +99,10 @@ const SyntheticDataBenefitsSection = () => {
             <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
               <div className="border-b border-border p-8 lg:border-b-0 lg:border-r lg:p-10">
                 <p className="font-brand text-[26px] leading-tight tracking-[-0.02em] text-foreground md:text-[38px]">
-                  Consistent data maps across structured sources.
+                  From seed prompts to verified training datasets.
                 </p>
                 <p className="mt-5 text-[17px] leading-8 text-foreground/80">
-                  Our synthetic data solution builds a data map for agents, greatly increasing agentic work on structured data sources after processing. The data map is key to accurate agentic reasoning, retrieval, and numerical calculation.
+                  We handle the full synthesis pipeline: seed prompts → evolve variations → execute verification → export training datasets. Fine-tune on reasoning traces, run RLHF on tool-calling preferences, evaluate on execution-verified benchmarks.
                 </p>
                 <a
                   href="#"
@@ -117,7 +117,7 @@ const SyntheticDataBenefitsSection = () => {
                 <div className="overflow-hidden rounded-[14px] border border-[hsl(var(--color-gray-700))] bg-background shadow-[0_16px_44px_-24px_hsl(var(--color-navy)/0.4)]">
                   <div className="flex items-center justify-between border-b border-border px-4 py-3">
                     <span className="font-mono-data text-[12px] uppercase tracking-[0.18em] text-foreground">
-                      Agent-ready data map
+                      Training data formats
                     </span>
                     <div className="flex gap-2">
                       <span className="h-2.5 w-2.5 rounded-full border border-[hsl(var(--color-gray-500))]" />

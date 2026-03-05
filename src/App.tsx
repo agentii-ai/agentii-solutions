@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FinanceUseCase from "./pages/FinanceUseCase";
+import InsuranceUseCase from "./pages/InsuranceUseCase";
 import VideoUseCase from "./pages/VideoUseCase";
 import SyntheticDataSolution from "./pages/SyntheticDataSolution";
 import About from "./pages/About";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/solutions/document-processing" element={<DocumentProcessing />} />
           <Route path="/solutions/video-audio" element={<VideoAudioSolution />} />
           <Route path="/use-cases/finance" element={<FinanceUseCase />} />
+          <Route path="/use-cases/insurance" element={<InsuranceUseCase />} />
           <Route path="/use-cases/video-generation" element={<VideoUseCase />} />
           <Route path="/solutions/synthetic-data" element={<SyntheticDataSolution />} />
           <Route path="*" element={<NotFound />} />

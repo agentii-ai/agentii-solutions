@@ -4,23 +4,23 @@ import { Button } from "@/components/ui/button";
 const synthesisModes = [
   {
     title: "Reasoning traces",
-    detail: "Generate structured multi-step outcomes, critiques, and evidence links for agent evaluation.",
-    stat: "4 modes",
+    detail: "Multi-step CoT with critique loops and evidence graphs. Methods: Self-Instruct, STaR, Process Reward Models.",
+    stat: "Verified",
   },
   {
-    title: "Coding runs",
-    detail: "Create execution-aware tasks with patches, logs, tests, and recovery branches.",
-    stat: "Patch-ready",
+    title: "Code execution",
+    detail: "Execution-aware samples with tests, patches, and error recovery. Methods: OSS-Instruct, Evol-Instruct.",
+    stat: "Runnable",
   },
   {
-    title: "Math states",
-    detail: "Preserve intermediate calculations, symbolic transformations, and numeric checkpoints.",
-    stat: "Step-safe",
+    title: "Math proofs",
+    detail: "Symbolic steps with checkpoints and formal verification. Methods: MetaMath, NuminaMath, theorem proving.",
+    stat: "Proven",
   },
   {
     title: "Tool calling",
-    detail: "Map intents to schema-safe actions, arguments, and expected machine states.",
-    stat: "API-linked",
+    detail: "Schema-safe actions with argument validation and state tracking. Methods: APIGen, ToolACE, environment simulation.",
+    stat: "Validated",
   },
 ];
 
@@ -58,10 +58,10 @@ const SyntheticDataFabricationSection = () => {
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-[760px] text-center">
             <p className="font-mono-data text-[11px] font-medium uppercase tracking-[0.28em] text-[hsl(var(--color-purple))]">
-              Synthetic data system
+              Synthesis methods
             </p>
             <h2 className="mt-4 font-brand text-[34px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[56px]">
-              Build the data map that agents train on.
+              Generate Training Data From First Principles.
             </h2>
           </div>
 
@@ -89,17 +89,17 @@ const SyntheticDataFabricationSection = () => {
                   </div>
                   <div>
                     <p className="font-mono-data text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
-                      Agentic-native training data
+                      Synthetic training data
                     </p>
-                    <p className="mt-1 text-sm font-medium text-foreground">Reasoning, coding, maths, and tool calling</p>
+                    <p className="mt-1 text-sm font-medium text-foreground">Fine-tuning, RLHF, and evaluation datasets</p>
                   </div>
                 </div>
 
                 <h3 className="mt-8 font-brand text-[32px] leading-tight tracking-[-0.02em] text-foreground md:text-[42px]">
-                  Generate structured synthetic datasets from first principles.
+                  Compound AI synthesis: Ideate, Generate, Verify.
                 </h3>
                 <p className="mt-5 text-base leading-8 text-muted-foreground md:text-lg">
-                  Our synthetic data solution builds a data map for agents, greatly increasing agentic work on structured data sources after processing. That data map is key to accurate agentic reasoning, retrieval, and numerical calculation.
+                  We use multi-agent pipelines—Ideator agents brainstorm edge cases, Generator agents synthesize trajectories, Evaluator agents verify correctness. The result: diverse, execution-verified training data at scale.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
@@ -211,7 +211,7 @@ const SyntheticDataFabricationSection = () => {
                   style={{ transform: "rotate(-10deg)" }}
                 />
                 <p className="relative max-w-[560px] font-brand text-[30px] leading-tight tracking-[-0.02em] text-[hsl(var(--primary-foreground))] md:text-[42px]">
-                  Find the training design that fits your agent pipeline.
+                  Find the training data pipeline that fits your fine-tuning workflow.
                 </p>
               </div>
               <Button size="lg" className="rounded-lg bg-[hsl(var(--color-purple-dark))] px-8 text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--color-purple))]">

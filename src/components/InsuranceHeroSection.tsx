@@ -2,18 +2,18 @@ import { ArrowRight, CheckCircle2, FileSearch, TableProperties } from "lucide-re
 import { Button } from "@/components/ui/button";
 
 const bulletPoints = [
-  "Extract fields, tables, and line items from 10-Ks, bank statements, and loan packages.",
-  "Every value carries confidence scores, field lineage, and GAAP/IFRS mapping.",
-  "Exception routing sends only low-confidence extractions to human review.",
+  "Extract fields, tables, and clauses from policies, claims, and medical records.",
+  "Every output includes confidence scores, field lineage, and regulatory mapping.",
+  "Exception routing sends ambiguous claims and edge cases to adjuster review.",
 ];
 
 const metricCards = [
-  { label: "Document types", value: "10-K · 10-Q · statements · contracts", icon: FileSearch },
-  { label: "Output shape", value: "Typed JSON · GAAP-mapped · evidence traces", icon: TableProperties },
-  { label: "Accuracy", value: "99% on financial Q&A benchmarks", icon: CheckCircle2 },
+  { label: "Document types", value: "ACORD forms · policies · claims · medical records", icon: FileSearch },
+  { label: "Output shape", value: "Typed JSON · clause-mapped · evidence traces", icon: TableProperties },
+  { label: "Accuracy", value: "99% on claims data extraction benchmarks", icon: CheckCircle2 },
 ];
 
-const FinanceHeroSection = () => {
+const InsuranceHeroSection = () => {
   return (
     <section className="bg-background pt-[88px] md:pt-[96px]">
       <div className="bg-navy text-slate-200">
@@ -21,12 +21,12 @@ const FinanceHeroSection = () => {
           <div className="max-w-[820px] pb-14 md:pb-20">
             <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
               <span className="h-[3px] w-4 bg-primary" aria-hidden="true" />
-              Use Cases · Finance & Banking
+              Use Cases · Insurance
             </div>
             <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[80px]">
               Agent-use-ready data
               <br />
-              for financial operations.
+              for insurance operations.
             </h1>
           </div>
         </div>
@@ -37,7 +37,7 @@ const FinanceHeroSection = () => {
           <div className="flex flex-col justify-between px-6 py-12 md:px-10 md:py-14 lg:px-12">
             <div>
               <p className="max-w-[520px] text-lg leading-relaxed text-foreground md:text-[20px]">
-                Turn SEC filings, bank statements, and loan documents into structured records that reconciliation, underwriting, and compliance agents act on — without post-processing.
+                Turn ACORD forms, policy documents, and claims files into structured records that underwriting, claims, and compliance agents act on — without manual data entry.
               </p>
               <div className="mt-8 space-y-5">
                 {bulletPoints.map((point) => (
@@ -79,4 +79,4 @@ const FinanceHeroSection = () => {
   );
 };
 
-export default FinanceHeroSection;
+export default InsuranceHeroSection;

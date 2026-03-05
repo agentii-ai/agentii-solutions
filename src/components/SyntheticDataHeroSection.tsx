@@ -2,31 +2,31 @@ import { ArrowRight, Binary, Blocks, Braces, Calculator, ChevronRight, Sparkles,
 import { Button } from "@/components/ui/button";
 
 const capabilityTabs = [
-  "Reasoning",
-  "Coding",
-  "Maths",
-  "Tool calling",
+  "Reasoning Traces",
+  "Code Execution",
+  "Math Proofs",
+  "Tool Calling",
 ];
 
 const trainingTracks = [
   {
     label: "Reasoning",
-    detail: "Multi-step traces, verifiable outcomes, and critique loops.",
+    detail: "Multi-step CoT with critique loops and evidence graphs for fine-tuning.",
     icon: Sparkles,
   },
   {
     label: "Coding",
-    detail: "Execution-aware samples with patches, tests, and failure recovery.",
+    detail: "Execution-verified samples with tests, patches, and error recovery paths.",
     icon: Braces,
   },
   {
     label: "Maths",
-    detail: "Symbolic steps, grounded calculations, and numeric consistency checks.",
+    detail: "Symbolic proofs with checkpoints and formal verification for RLHF.",
     icon: Calculator,
   },
   {
     label: "Tool calling",
-    detail: "Structured actions, argument schemas, and stateful agent workflows.",
+    detail: "Schema-safe actions with argument validation and state tracking.",
     icon: Wrench,
   },
 ];
@@ -34,22 +34,22 @@ const trainingTracks = [
 const orchestrationNodes = [
   {
     label: "Source signals",
-    value: "Prompts, policies, structured records",
+    value: "Seed prompts, policies, domain knowledge",
     accent: "bg-purple",
   },
   {
-    label: "Scenario engine",
-    value: "Generate edge cases, branches, and adversarial paths",
+    label: "Synthesis engine",
+    value: "Generate reasoning traces, code paths, tool sequences",
     accent: "bg-primary",
   },
   {
-    label: "Data map",
-    value: "Link entities, evidence, tools, and numeric states for agents",
+    label: "Verification layer",
+    value: "Execution checks, formal proofs, multi-model consensus",
     accent: "bg-cyan",
   },
   {
     label: "Training output",
-    value: "Agent-ready datasets for evals, fine-tuning, and retrieval",
+    value: "Fine-tuning datasets, RLHF preferences, evaluation benchmarks",
     accent: "bg-purple",
   },
 ];
@@ -62,15 +62,13 @@ const SyntheticDataHeroSection = () => {
           <div className="mx-auto max-w-[920px] text-center">
             <div className="mb-6 inline-flex items-center gap-3 border border-border bg-background px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
               <span className="h-[3px] w-4 bg-purple" aria-hidden="true" />
-              Synthetic Data Solution
+              Synthetic Training Data for Agentic LLMs
             </div>
             <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-foreground md:text-[64px] lg:text-[80px]">
-              Agentic-native
-              <br />
-              training data.
+              Train LLMs to Reason, Plan, and Act With Synthetic Data.
             </h1>
             <p className="mx-auto mt-6 max-w-[860px] text-lg leading-relaxed text-muted-foreground md:text-[20px]">
-              Build a data map for agents across reasoning, coding, maths, and tool calling. This greatly increases agentic work on structured data sources after processing, making the data map the key to accurate agentic reasoning, retrieval, and numerical calculation.
+              Generate structured training datasets for fine-tuning, RLHF, and evaluation. We synthesize reasoning traces, tool-calling trajectories, code execution paths, and mathematical proofs—the training signals that transform base LLMs into capable agents.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Button size="lg" className="rounded-lg px-8">
@@ -105,13 +103,13 @@ const SyntheticDataHeroSection = () => {
                     <Binary className="h-6 w-6" />
                   </div>
                   <h2 className="mt-8 font-brand text-[34px] leading-tight tracking-[-0.02em] text-foreground md:text-[42px]">
-                    Agentic-native training data
+                    Training Data for Agentic Capabilities
                   </h2>
                   <p className="mt-4 text-lg leading-relaxed text-foreground">
-                    Structured synthetic datasets for reasoning-heavy systems.
+                    Structured datasets for fine-tuning and RLHF.
                   </p>
                   <p className="mt-4 max-w-[280px] text-base leading-relaxed text-muted-foreground">
-                    Our synthetic data system builds a durable data map for agents so every prompt, tool call, code action, and numeric step stays machine-readable and auditable.
+                    We generate the multi-step reasoning traces, execution-aware code samples, and tool-calling trajectories that LLMs need to learn agentic behaviors. Every dataset includes verification, critique loops, and failure recovery paths.
                   </p>
                 </div>
 
@@ -133,10 +131,10 @@ const SyntheticDataHeroSection = () => {
                     <div className="flex items-center justify-between border-b border-border pb-4">
                       <div>
                         <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
-                          Training lattice
+                          Training pipeline
                         </p>
                         <p className="mt-2 text-sm text-foreground">
-                          Reasoning, code, maths, and action traces linked in one data map.
+                          Reasoning, code, math, and tool-calling datasets for fine-tuning and RLHF.
                         </p>
                       </div>
                       <div className="hidden items-center gap-2 sm:flex">
@@ -179,16 +177,16 @@ const SyntheticDataHeroSection = () => {
 
                 <div className="relative mt-6 grid gap-px border border-border bg-border md:grid-cols-3">
                   <div className="bg-background px-4 py-4">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Coverage</p>
-                    <p className="mt-2 text-sm text-foreground">Reasoning chains, execution states, retrieval evidence, and numeric checkpoints.</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">100K+ samples</p>
+                    <p className="mt-2 text-sm text-foreground">Scale to millions of training examples with automated synthesis pipelines.</p>
                   </div>
                   <div className="bg-background px-4 py-4">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Agentic fit</p>
-                    <p className="mt-2 text-sm text-foreground">Designed for tool-using systems that need structured, verifiable trajectories.</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Execution-verified</p>
+                    <p className="mt-2 text-sm text-foreground">Code runs, math checks, tool calls validate against schemas.</p>
                   </div>
                   <div className="bg-background px-4 py-4">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Outcome</p>
-                    <p className="mt-2 text-sm text-foreground">Higher quality training and eval data for safer, more reliable agent performance.</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">RLHF-ready</p>
+                    <p className="mt-2 text-sm text-foreground">Preference pairs for reasoning quality, safety, and alignment.</p>
                   </div>
                 </div>
               </div>

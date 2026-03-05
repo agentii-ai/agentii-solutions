@@ -2,21 +2,21 @@ import { ArrowRight, Boxes, Database, FileText, Layers3 } from "lucide-react";
 
 const suiteCards = [
   {
-    title: "Reasoning Fabrication",
+    title: "Reasoning Datasets",
     description:
-      "Generate agent-ready reasoning traces with structured evidence, critiques, and decision branches for repeatable evaluation.",
+      "Multi-step CoT traces for GSM8K, MATH, ARC, HellaSwag. Includes critique loops, evidence graphs, and verification steps. Format: JSON-L with reasoning chains and final answers.",
     icon: Layers3,
   },
   {
-    title: "Structured Mapping",
+    title: "Code Execution Datasets",
     description:
-      "Create high-fidelity data maps that turn processed records into machine-readable states for retrieval and numerical work.",
+      "Execution-aware samples for HumanEval, MBPP, SWE-Bench. Includes patches, tests, error recovery, and repo-level context. Format: Parquet with code, tests, execution logs.",
     icon: Database,
   },
   {
-    title: "Textual Synthesis",
+    title: "Tool-Calling Datasets",
     description:
-      "Produce controlled synthetic corpora for prompts, edge cases, and domain-specific examples used in agent training loops.",
+      "Schema-safe trajectories for API calling, web navigation, CLI tools. Includes intent mapping, argument validation, state tracking. Format: JSON-L with tool schemas and execution traces.",
     icon: FileText,
   },
 ] as const;
@@ -29,13 +29,13 @@ const SyntheticDataSuiteSection = () => {
           <article className="grid overflow-hidden border border-border bg-background shadow-[0_18px_50px_-34px_hsl(var(--color-navy)/0.18)] lg:grid-cols-2">
             <div className="flex flex-col justify-center p-8 lg:p-10">
               <p className="font-mono-data text-[11px] uppercase tracking-[0.24em] text-[hsl(var(--color-purple-dark))]">
-                Enterprise integrations
+                Training data products
               </p>
               <h2 className="mt-4 max-w-[520px] font-brand text-[34px] leading-[1.06] tracking-[-0.03em] text-foreground md:text-[46px]">
-                Cross-platform synthetic data workflows for enterprise systems.
+                Pre-built training datasets for common agentic capabilities.
               </h2>
               <p className="mt-5 max-w-[520px] text-[17px] leading-8 text-foreground/80">
-                Our synthetic data solution builds a data map for agents, greatly increasing agentic work on structured data sources after processing. The data map is key to accurate agentic reasoning, retrieval, and numerical calculation.
+                Custom synthesis for your domain: legal reasoning, medical coding, financial tool use. Integrate with your fine-tuning infrastructure: HuggingFace, Weights & Biases, Vertex AI.
               </p>
               <a
                 href="#"
@@ -89,7 +89,7 @@ const SyntheticDataSuiteSection = () => {
 
           <div className="mt-20 text-center">
             <h3 className="font-brand text-[36px] leading-[1.08] tracking-[-0.03em] text-foreground md:text-[52px]">
-              The synthetic data product suite
+              The training data product suite
             </h3>
           </div>
 

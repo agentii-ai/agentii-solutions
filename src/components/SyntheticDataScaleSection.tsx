@@ -2,28 +2,28 @@ import { ArrowRight, Database, ShieldCheck, Workflow } from "lucide-react";
 
 const featureCards = [
   {
-    eyebrow: "Structured subsetting",
-    title: "Build a data map for agents working on structured sources.",
+    eyebrow: "Difficulty adaptation",
+    title: "Curriculum learning: start simple, evolve to complex.",
     description:
-      "Our synthetic data solution builds a data map for agents, greatly increasing agentic work on structured data sources after processing. The data map is key to accurate agentic reasoning, retrieval, and numerical calculation.",
+      "Bidirectional evolution ensures coverage from trivial to expert-level tasks. Dynamic difficulty scaling based on model's current solvability. Prevents plateauing on simple tasks while maintaining learning curve.",
     linkLabel: "Learn more",
     alignment: "visual-left",
     icon: Database,
   },
   {
-    eyebrow: "Scenario performance",
-    title: "Optimize synthetic generation for large-scale agent pipelines.",
+    eyebrow: "Execution verification",
+    title: "Code runs, math validates, tool calls check schemas.",
     description:
-      "Generate reasoning, coding, maths, and tool-calling states in a repeatable lattice so teams can expand coverage without turning data access into a development bottleneck.",
+      "Every code sample executes in sandboxes, every math proof validates against formal systems, every tool call checks API schemas. Multi-model consensus for subjective tasks. Rejection sampling filters hallucinations.",
     linkLabel: "Learn more",
     alignment: "visual-right",
     icon: Workflow,
   },
   {
-    eyebrow: "Governance layer",
-    title: "Keep synthetic datasets visible, testable, and secure.",
+    eyebrow: "Diversity control",
+    title: "Clustering-based metrics ensure semantic coverage.",
     description:
-      "Standardize validation rules, review checkpoints, and access controls around generated records so agent training data remains inspectable across staging, QA, and production workflows.",
+      "Evol-Instruct generates variations: harder, easier, different constraints. Clustering-based diversity metrics prevent overfitting. Covers wide semantic area across problem space to avoid model collapse.",
     linkLabel: "Learn more",
     alignment: "visual-left",
     icon: ShieldCheck,
@@ -37,10 +37,10 @@ const SyntheticDataScaleSection = () => {
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-[760px] text-center">
             <p className="font-mono-data text-[11px] font-medium uppercase tracking-[0.28em] text-[hsl(var(--color-purple-dark))]">
-              Synthetic data architecture
+              Training data architecture
             </p>
             <h2 className="mt-4 font-brand text-[34px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[56px]">
-              Scale structured datasets with a precise agent-ready lattice.
+              Scale From 1K Seed Examples to 100K Training Samples.
             </h2>
           </div>
 
@@ -67,7 +67,7 @@ const SyntheticDataScaleSection = () => {
                         }}
                       />
 
-                      {eyebrow === "Structured subsetting" && (
+                      {eyebrow === "Difficulty adaptation" && (
                         <div className="relative flex w-full max-w-[360px] items-center justify-center">
                           <div className="absolute left-0 top-8 h-36 w-40 border border-[hsl(var(--color-gray-300))] bg-background shadow-[0_12px_30px_-20px_hsl(var(--color-navy)/0.18)]" />
                           <div className="absolute left-4 top-4 h-36 w-40 border border-[hsl(var(--color-gray-300))] bg-background shadow-[0_12px_30px_-20px_hsl(var(--color-navy)/0.18)]" />
@@ -83,7 +83,7 @@ const SyntheticDataScaleSection = () => {
                         </div>
                       )}
 
-                      {eyebrow === "Scenario performance" && (
+                      {eyebrow === "Execution verification" && (
                         <div className="relative flex w-full max-w-[360px] items-center justify-center">
                           <div
                             className="pointer-events-none absolute inset-x-0 top-1/2 h-40 -translate-y-1/2 opacity-90"
@@ -101,7 +101,7 @@ const SyntheticDataScaleSection = () => {
                         </div>
                       )}
 
-                      {eyebrow === "Governance layer" && (
+                      {eyebrow === "Diversity control" && (
                         <div className="relative flex w-full max-w-[380px] items-center justify-center">
                           <div className="grid grid-cols-3 gap-6">
                             <div className="flex flex-col items-center gap-3">

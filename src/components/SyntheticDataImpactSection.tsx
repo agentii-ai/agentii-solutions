@@ -3,28 +3,28 @@ import { Button } from "@/components/ui/button";
 
 const metrics = [
   {
-    value: "8×",
-    label: "Faster scenario coverage",
+    value: "3.2×",
+    label: "Reasoning accuracy improvement on benchmarks",
   },
   {
-    value: "1000+",
-    label: "Structured agent records generated",
+    value: "100K+",
+    label: "Diverse training samples per capability domain",
   },
   {
-    value: "4×",
-    label: "Return on synthetic data investment",
+    value: "95%",
+    label: "Execution-verified or consensus-validated",
   },
 ];
 
 const logos = [
   "Reasoning",
-  "Coding",
-  "Maths",
-  "Tool calling",
-  "Eval design",
-  "Retrieval",
-  "Agent QA",
-  "Numerics",
+  "Planning",
+  "Tool Use",
+  "Code Gen",
+  "Math Solving",
+  "Long-Context",
+  "Multimodal",
+  "Safety",
 ];
 
 const SyntheticDataImpactSection = () => {
@@ -34,13 +34,13 @@ const SyntheticDataImpactSection = () => {
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-[920px] text-center">
             <p className="font-mono-data text-[11px] font-medium uppercase tracking-[0.28em] text-[hsl(var(--color-purple-dark))]">
-              Structured data impact
+              Training impact
             </p>
             <h2 className="mt-4 font-brand text-[36px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[52px] lg:text-[64px]">
-              Build data maps that make agent training more reliable.
+              Synthetic Data That Improves Model Capabilities.
             </h2>
             <p className="mx-auto mt-6 max-w-[860px] text-lg leading-8 text-foreground/80 md:text-[20px]">
-              Our synthetic data solution builds a data map for agents, greatly increasing agentic work on structured data sources after processing. The data map is key to accurate agentic reasoning, retrieval, and numerical calculation.
+              Training on synthetic data isn't just augmentation—it's how modern LLMs learn to reason, code, and use tools. Our datasets are designed for the training loops that matter: supervised fine-tuning, RLHF, and continuous evaluation.
             </p>
             <div className="mt-10 flex justify-center">
               <Button size="lg" className="rounded-lg bg-[hsl(var(--color-purple-dark))] px-8 text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--color-purple))]">
@@ -77,7 +77,7 @@ const SyntheticDataImpactSection = () => {
 
           <div className="mt-14 text-center">
             <p className="font-brand text-[28px] leading-tight tracking-[-0.02em] text-foreground md:text-[40px]">
-              Optimize synthetic data generation for agentic productivity.
+              See how Gretel, Tonic, and Snorkel use synthetic data to train specialized agents.
             </p>
           </div>
         </div>
