@@ -4,6 +4,7 @@ import SyntheticDataHeroSection from "@/components/SyntheticDataHeroSection";
 import SyntheticDataFabricationSection from "@/components/SyntheticDataFabricationSection";
 import SyntheticDataImpactSection from "@/components/SyntheticDataImpactSection";
 import SyntheticDataBenefitsSection from "@/components/SyntheticDataBenefitsSection";
+import SyntheticDataScaleSection from "@/components/SyntheticDataScaleSection";
 
 const SyntheticDataUseCase = () => {
   return (
@@ -14,6 +15,7 @@ const SyntheticDataUseCase = () => {
         <SyntheticDataFabricationSection />
         <SyntheticDataImpactSection />
         <SyntheticDataBenefitsSection />
+        <SyntheticDataScaleSection />
       </main>
       <Footer />
     </div>
