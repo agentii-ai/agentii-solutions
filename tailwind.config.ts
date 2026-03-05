@@ -59,6 +59,11 @@ export default {
           dark: "hsl(var(--color-purple-dark))",
           light: "hsl(var(--color-purple-light))",
         },
+        lilac: {
+          DEFAULT: "hsl(var(--color-lilac))",
+          dark: "hsl(var(--color-lilac-dark))",
+          light: "hsl(var(--color-lilac-light))",
+        },
         cyan: {
           DEFAULT: "hsl(var(--color-cyan))",
           dark: "hsl(var(--color-cyan-dark))",

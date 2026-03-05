@@ -18,7 +18,7 @@ interface NavItem {
   dropdown?: DropdownColumn[];
 }
 
-type NavbarTone = "default" | "about";
+type NavbarTone = "default" | "about" | "demo";
 
 interface NavbarProps {
   tone?: NavbarTone;
@@ -96,6 +96,7 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const aboutTone = tone === "about";
+  const demoTone = tone === "demo";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -116,19 +117,31 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
     ? "bg-navy/95 backdrop-blur-md shadow-lg"
     : aboutTone
       ? "bg-teal-light/95 backdrop-blur-sm border-b border-primary/10"
-      : "bg-background/95 backdrop-blur-sm";
+      : demoTone
+        ? "bg-lilac-light/95 backdrop-blur-sm border-b border-foreground/10"
+        : "bg-background/95 backdrop-blur-sm";
 
-  const logoPrimaryClass = scrolled ? "text-slate-200" : aboutTone ? "text-navy" : "text-primary";
+  const logoPrimaryClass = scrolled ? "text-slate-200" : aboutTone ? "text-navy" : demoTone ? "text-lilac-dark" : "text-primary";
   const logoSecondaryClass = scrolled ? "text-slate-200" : "text-foreground";
   const desktopLinkBaseClass = scrolled
-    ? "text-slate-200 hover:text-white"
+    ? "text-slate-200 hover:text-primary-foreground"
     : aboutTone
       ? "text-foreground hover:text-purple"
-      : "text-foreground hover:text-primary";
-  const activeBorderClass = scrolled ? "border-teal text-white" : aboutTone ? "border-purple text-foreground" : "border-primary text-foreground";
+      : demoTone
+        ? "text-foreground hover:text-lilac-dark"
+        : "text-foreground hover:text-primary";
+  const activeBorderClass = scrolled
+    ? "border-teal text-primary-foreground"
+    : aboutTone
+      ? "border-purple text-foreground"
+      : demoTone
+        ? "border-lilac-dark text-foreground"
+        : "border-primary text-foreground";
   const actionButtonClass = aboutTone
     ? "rounded-lg bg-purple hover:bg-purple-dark text-primary-foreground"
-    : "rounded-lg bg-teal hover:bg-teal-dark text-primary-foreground";
+    : demoTone
+      ? "rounded-lg bg-lilac-dark hover:bg-lilac text-primary-foreground"
+      : "rounded-lg bg-teal hover:bg-teal-dark text-primary-foreground";
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navShellClass}`}>
@@ -256,8 +269,8 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
               </div>
             )}
           </div>
-          <Button size="sm" className={actionButtonClass}>
-            Request a Demo
+          <Button size="sm" className={actionButtonClass} asChild>
+            <a href="/request-demo">Request a Demo</a>
           </Button>
         </div>
 
@@ -282,7 +295,9 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
               {item.label}
             </a>
           ))}
-          <Button className={actionButtonClass}>Request a Demo</Button>
+          <Button className={actionButtonClass} asChild>
+            <a href="/request-demo">Request a Demo</a>
+          </Button>
         </div>
       )}
     </nav>
