@@ -2,9 +2,9 @@ import { ArrowRight, Database, Network, Sigma, TableProperties } from "lucide-re
 import { Button } from "@/components/ui/button";
 
 const mappingRows = [
-  { label: "Entity graph", value: "issuer → account → transaction → obligation — explicit relationships agents traverse, not infer" },
-  { label: "Field lineage", value: "page 02 · table B · row 14 · cell 06 — every value traceable to its source coordinate" },
-  { label: "Reasoning index", value: "retrieval-ready evidence with typed schema — agents query by field, entity, or time period, not by keyword similarity" },
+  { label: "KG-RAG", value: "Multi-hop reasoning over knowledge graphs — high construction cost, limited scalability", pct: 65 },
+  { label: "NL2SQL", value: "Structured queries against relational databases — schema-dependent, structured data only", pct: 70 },
+  { label: "Agentic Search", value: "Multi-agent verification + iterative refinement — production-grade financial accuracy", pct: 99 },
 ];
 
 const capabilities = [
@@ -73,18 +73,18 @@ const DocumentProcessingDataMappingSection = () => {
               </div>
 
               <div className="mt-6 space-y-4">
-                {mappingRows.map((row, index) => (
+                {mappingRows.map((row) => (
                   <div key={row.label} className="grid gap-3 md:grid-cols-[170px_1fr] md:items-center">
                     <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{row.label}</p>
                     <div className="relative h-10 overflow-hidden border border-border bg-secondary">
                       <div
-                        className="absolute inset-y-0 left-0 bg-primary"
-                        style={{ width: `${index === 0 ? 88 : index === 1 ? 82 : 94}%` }}
+                        className={`absolute inset-y-0 left-0 ${row.pct >= 99 ? "bg-primary" : "bg-primary/50"}`}
+                        style={{ width: `${row.pct}%` }}
                         aria-hidden="true"
                       />
                       <div className="relative flex h-full items-center justify-between px-3 text-sm text-foreground">
                         <span className="truncate pr-3">{row.value}</span>
-                        <span className="font-medium">{index === 0 ? "88%" : index === 1 ? "82%" : "94%"}</span>
+                        <span className="font-semibold">{row.pct}%</span>
                       </div>
                     </div>
                   </div>

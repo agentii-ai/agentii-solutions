@@ -5,7 +5,7 @@ const ingestionSources = [
   { label: "PDF", icon: FileImage },
   { label: "PNG", icon: FileImage },
   { label: "Email", icon: Inbox },
-  { label: "TIFF", icon: FileImage },
+  { label: "HTML", icon: FileImage },
 ];
 
 const destinationSystems = ["ERP", "CRM", "Claims", "Audit"];

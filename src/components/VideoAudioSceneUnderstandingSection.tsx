@@ -3,15 +3,15 @@ import { Button } from "@/components/ui/button";
 
 const understandingLayers = [
   {
-    title: "Scene semantics",
-    description: "Identify scene type, clip intent, actors, actions, and event boundaries with synchronized visual and language signals.",
-    metric: "Scene graph · intent labels · event spans",
+    title: "Scene classification & intent",
+    description: "Classify scene type (urban crossing, indoor cafe, wuxia fight), narrative beat (setup, climax, resolution), and actor roles—the semantic anchor for all other dimensions.",
+    metric: "Scene type · narrative beat · actor roles · event boundaries",
     icon: ScanSearch,
   },
   {
-    title: "Multimodal alignment",
-    description: "Link dialogue, ambient cues, camera movement, and object state changes so every sequence becomes machine-readable for downstream agents.",
-    metric: "Speech sync · motion cues · evidence links",
+    title: "Cross-modal evidence linking",
+    description: "Link dialogue to speaker, sound effects to visual events, and camera movement to narrative intent—so every annotation references the scene foundation.",
+    metric: "Speaker links · action-sound pairs · camera-narrative mapping",
     icon: Waves,
   },
 ];
@@ -23,15 +23,15 @@ const VideoAudioSceneUnderstandingSection = () => {
         <div className="border border-border bg-background shadow-sm">
           <div className="grid gap-12 px-6 py-8 md:px-8 md:py-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:px-10 lg:py-12">
             <div className="flex flex-col justify-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal">Scene level multimodal understanding</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal">Dimension 1: Scene Understanding</p>
               <h2 className="mt-5 font-brand text-[34px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[44px] lg:text-[52px]">
-                Build the data map agents need to reason over structured outputs.
+                The Foundation Layer: What's Happening, Where, and Why.
               </h2>
               <p className="mt-6 text-base leading-8 text-muted-foreground md:text-lg">
-                Our processing solution builds a data map for agents, turning scene-level multimodal signals into structured sources that greatly increase agentic work after processing.
+                Before tracking objects or annotating audio, we establish the scene foundation: What type of scene is this? What's the narrative intent? Who are the actors? What actions are unfolding?
               </p>
               <p className="mt-4 text-base leading-8 text-muted-foreground md:text-lg">
-                That data map is key to accurate agentic reasoning, sharper retrieval, and more reliable numerical calculation across downstream workflows.
+                This semantic layer anchors all other annotations. Every tracking ID, motion label, camera movement, and audio cue references this foundation.
               </p>
 
               <div className="mt-8 space-y-4 border-l-2 border-teal pl-5">

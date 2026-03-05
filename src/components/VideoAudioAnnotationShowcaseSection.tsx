@@ -1,41 +1,41 @@
-import { Play, ScanLine, Waves, Route, Sparkles } from "lucide-react";
+import { Play, ScanLine, Waves, Camera, Zap } from "lucide-react";
 
 const annotationExamples = [
   {
-    title: "Skeletal motion annotation",
+    title: "Physical Motion Dynamics",
     description:
-      "Track joints, pose states, and movement transitions across sequences so agents can reason over action, intent, and temporal change.",
-    metric: "Pose graph · action states · timecode sync",
+      "Gravity, momentum, collision, material deformation—annotated with physics scoring per frame. Models learn what physically plausible motion looks like.",
+    metric: "Physics score · collision events · material properties",
     tone: "from-teal/30 via-background to-background",
-    overlay: "Skeleton trace",
-    icon: Sparkles,
+    overlay: "Physical",
+    icon: Zap,
   },
   {
-    title: "Polygon object masks",
+    title: "Camera Grammar & Cinematography",
     description:
-      "Outline irregular objects frame by frame with precise boundaries that support segmentation workflows, retrieval, and training-quality labels.",
-    metric: "Masks · object classes · contour precision",
+      "Shot types (close-up, wide, medium), camera movements (dolly, pan, crane, Hitchcock zoom), transitions, and composition rules—the vocabulary of cinematic generation.",
+    metric: "Shot types · camera movements · transitions · composition",
     tone: "from-primary/20 via-background to-background",
-    overlay: "Polygon mask",
-    icon: ScanLine,
+    overlay: "Camera",
+    icon: Camera,
   },
   {
-    title: "Path and lane tracking",
+    title: "Dialogue & Music",
     description:
-      "Map linear structures, movement corridors, and directional traces so downstream agents can follow routes, motion flow, and scene geometry.",
-    metric: "Trajectories · lanes · motion vectors",
+      "Phoneme-level lip-sync with SyncNet validation (offset ≤3 frames). Beat markers and tempo detection for rhythm-aligned generation. Speaker ID and emotion labels across multilingual content.",
+    metric: "Lip-sync · beat markers · speaker ID · emotion · multilingual",
     tone: "from-teal/20 via-background to-background",
-    overlay: "Trajectory map",
-    icon: Route,
+    overlay: "Dialogue and Music",
+    icon: Waves,
   },
   {
-    title: "Key points and audio sync",
+    title: "Sound Effects & Ambient",
     description:
-      "Align facial landmarks, speech cues, and soundtrack events into synchronized multimodal signals for richer reasoning and evaluation.",
-    metric: "Landmarks · speech cues · audio events",
+      "Causal action-sound correspondence: blade clash at frame 78, mud splash at frame 82. Material property labels, spatial positioning, and room tone for physically plausible Foley audio.",
+    metric: "Action-sound pairs · material labels · spatial audio · room tone",
     tone: "from-primary/15 via-background to-background",
-    overlay: "AV sync layer",
-    icon: Waves,
+    overlay: "SFX",
+    icon: ScanLine,
   },
 ];
 
@@ -54,12 +54,12 @@ const VideoAudioAnnotationShowcaseSection = () => {
 
       <div className="container relative mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal">Annotation examples</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal">Dimensions 4–8: Motion, Camera, Audio</p>
           <h2 className="mt-5 font-brand text-[36px] leading-[1.04] tracking-[-0.03em] md:text-[48px] lg:text-[56px]">
-            Built to scale with your video and audio data.
+            The Full Multimodal Stack: Motion, Camera, and Audio Layers.
           </h2>
           <p className="mt-6 text-base leading-7 text-primary-foreground/78 md:text-lg">
-            From segmentation to synchronized soundtrack labeling, each output is structured to become agent-ready data rather than isolated annotations.
+            Beyond scene semantics and object tracking, we annotate the dimensions that make video generation cinematic: physical motion dynamics, camera grammar, dialogue, music, and sound effects—all synchronized to frame-level precision.
           </p>
         </div>
 

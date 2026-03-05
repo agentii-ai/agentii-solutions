@@ -2,27 +2,27 @@ import { ArrowRight, Play, ScanLine, Volume2, Waves, Clapperboard } from "lucide
 import { Button } from "@/components/ui/button";
 
 const signalTracks = [
-  { label: "Scene", value: "12 active labels", width: "w-[88%]", tone: "bg-teal" },
-  { label: "Motion", value: "Camera + object paths", width: "w-[76%]", tone: "bg-cyan" },
-  { label: "Audio", value: "Dialogue, music, SFX", width: "w-[68%]", tone: "bg-primary" },
-  { label: "Reasoning", value: "Agent-ready retrieval map", width: "w-[82%]", tone: "bg-teal/80" },
+  { label: "Scene", value: "Semantics + narrative", width: "w-[88%]", tone: "bg-teal" },
+  { label: "Tracking", value: "Persistent IDs + masks", width: "w-[76%]", tone: "bg-cyan" },
+  { label: "Motion", value: "Physics + camera grammar", width: "w-[72%]", tone: "bg-primary" },
+  { label: "Audio", value: "Dialogue · music · SFX", width: "w-[68%]", tone: "bg-teal/80" },
 ];
 
-const outputCards = [
+const trustIndicators = [
   {
     icon: ScanLine,
-    title: "Frame semantics",
-    copy: "Label scenes, actors, actions, and object state shifts with timeline precision.",
+    title: "100K+ hours",
+    copy: "Automated MLLM pipelines scale to 100K+ hours with consistent quality.",
   },
   {
     icon: Volume2,
-    title: "Audio structure",
-    copy: "Separate dialogue, music, ambience, and sound effects into machine-readable layers.",
+    title: "Frame-level precision",
+    copy: "33ms temporal precision at 30fps. Phoneme-level alignment for dialogue.",
   },
   {
     icon: Waves,
-    title: "Agent data map",
-    copy: "Build multimodal maps that improve agentic reasoning, retrieval, and numerical calculations after processing.",
+    title: "Model compatibility",
+    copy: "Direct input to Seedance, Sora, Veo, Kling, Wan training pipelines.",
   },
 ];
 
@@ -41,16 +41,16 @@ const VideoAudioHeroSection = () => {
           <div className="max-w-[760px]">
             <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
               <span className="h-px w-10 bg-teal" aria-hidden="true" />
-              Video &amp; Audio Data
+              Video &amp; Audio Annotation
             </div>
             <p className="mb-5 max-w-[520px] text-[18px] leading-relaxed text-slate-300 md:text-[22px]">
-              Agentic-native multimodal annotation for training, evaluation, and retrieval workflows.
+              8-dimension multimodal annotation for video generation models.
             </p>
             <h1 className="max-w-[980px] font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[78px]">
-              Video and audio data that helps agents reason across time, motion, and sound.
+              Train Video Generation Models With Real Multimodal Data.
             </h1>
             <p className="mt-6 max-w-[620px] text-base leading-8 text-slate-300 md:text-[18px]">
-              We turn raw footage into structured, labeled data maps for agents—connecting scenes, motion, camera behavior, dialogue, music, and sound effects so downstream reasoning, retrieval, and calculation work with far more accuracy.
+              From raw footage to model-ready training data—we annotate the 8 dimensions that Seedance, Sora, and Veo actually need: scene semantics, object tracking, physical motion, camera grammar, dialogue, music, and sound effects.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -104,8 +104,8 @@ const VideoAudioHeroSection = () => {
                 <div className="absolute left-5 right-5 bottom-5 border border-slate-700/70 bg-navy/88 p-4 backdrop-blur-sm">
                   <div className="mb-4 flex items-center justify-between">
                     <div>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-slate-400">Annotation stack</p>
-                      <p className="mt-1 text-sm text-slate-300">Scene, motion, audio, and agent retrieval layers synchronized to time.</p>
+                      <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-slate-400">8-dimension stack</p>
+                      <p className="mt-1 text-sm text-slate-300">Scene, tracking, motion, camera, and audio layers synchronized to frame-level precision.</p>
                     </div>
                     <span className="inline-flex items-center gap-2 border border-teal/30 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-teal">
                       <span className="h-2 w-2 bg-teal" aria-hidden="true" />
@@ -129,7 +129,7 @@ const VideoAudioHeroSection = () => {
             </div>
 
             <div className="mt-6 grid gap-px border border-slate-700/70 bg-slate-700/70 md:grid-cols-3">
-              {outputCards.map(({ icon: Icon, title, copy }) => (
+              {trustIndicators.map(({ icon: Icon, title, copy }) => (
                 <div key={title} className="bg-navy/95 px-5 py-5 transition-transform duration-300 hover:-translate-y-1">
                   <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">
                     <Icon className="h-4 w-4 text-teal" />

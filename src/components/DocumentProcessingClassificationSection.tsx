@@ -1,11 +1,11 @@
-import { ArrowRight, FileText, FolderOpen, ScanSearch, Tags } from "lucide-react";
+import { ArrowRight, ChevronRight, FileText, ScanSearch, Tags } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const classificationItems = [
-  { label: "1040 Forms", icon: FileText },
-  { label: "W2 Forms", icon: FolderOpen },
-  { label: "Bank Statement", icon: FolderOpen },
-  { label: "Invoice", icon: FolderOpen },
+const classificationCategories = [
+  { group: "SEC Filings", types: ["10-K", "10-Q", "8-K", "Exhibits"] },
+  { group: "Tax Forms", types: ["1040", "W-2", "W-9"] },
+  { group: "Banking", types: ["Bank Statement", "Ledger"] },
+  { group: "Commercial", types: ["Invoice", "Receipt", "Contract"] },
 ];
 
 const extractionSignals = [
@@ -21,56 +21,58 @@ const DocumentProcessingClassificationSection = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-16">
           <div className="relative overflow-hidden bg-secondary px-6 py-8 md:px-8 md:py-10 lg:px-10">
-            <div className="absolute inset-0 opacity-40" aria-hidden="true">
-              <div className="absolute -left-16 top-8 h-48 w-48 rounded-full border border-primary/20" />
-              <div className="absolute right-6 -top-12 h-40 w-40 rounded-full border border-primary/15" />
-              <div className="absolute left-10 bottom-4 h-28 w-28 rounded-full border border-primary/10" />
-            </div>
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:56px_56px] opacity-50" aria-hidden="true" />
 
-            <div className="relative grid gap-5 md:grid-cols-[minmax(0,1fr)_176px] md:items-start">
-              <div className="border border-border bg-foreground p-5 shadow-sm md:p-6">
-                <div className="flex items-center gap-2 border-b border-background/10 pb-4">
+            <div className="relative grid gap-4 md:grid-cols-[0.40fr_0.60fr] md:items-stretch">
+              <div className="flex flex-col border border-border bg-foreground p-5 shadow-sm">
+                <div className="flex items-center gap-2 border-b border-background/10 pb-3">
                   <span className="h-2.5 w-2.5 bg-primary" aria-hidden="true" />
                   <span className="h-2.5 w-2.5 bg-primary/70" aria-hidden="true" />
                   <span className="h-2.5 w-2.5 bg-primary/40" aria-hidden="true" />
                 </div>
 
-                <div className="mt-5 flex items-start justify-between gap-4">
-                  <div className="inline-flex h-14 w-14 items-center justify-center border-2 border-dashed border-background/40 bg-primary text-primary-foreground">
-                    <Tags className="h-5 w-5" />
+                <div className="mt-4 flex items-center gap-3">
+                  <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center border-2 border-dashed border-background/40 bg-primary text-primary-foreground">
+                    <Tags className="h-4 w-4" />
                   </div>
-                  <p className="max-w-[220px] text-right font-brand text-[28px] leading-[0.95] tracking-[-0.03em] text-background md:text-[36px]">
-                    AUTO-
-                    <br />
-                    CLASSIFICATION
+                  <p className="font-brand text-[18px] leading-[0.95] tracking-[-0.02em] text-background md:text-[22px]">
+                    AUTO-CLASSIFICATION
                   </p>
                 </div>
 
-                <div className="mt-6 space-y-3">
+                <div className="mt-5 space-y-2">
                   {extractionSignals.map((signal, index) => (
                     <div
                       key={signal}
-                      className="border border-background/10 bg-background/5 px-4 py-3 text-sm text-background/75"
-                      style={{ width: `${100 - index * 10}%` }}
+                      className="border border-background/10 bg-background/5 px-3 py-2 text-xs text-background/70"
+                      style={{ width: `${100 - index * 8}%` }}
                     >
                       {signal}
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-6 border border-background/10 bg-background p-3">
-                  <div className="aspect-[4/3] w-full border border-border bg-[linear-gradient(135deg,hsl(var(--primary)/0.2),hsl(var(--background))_42%,hsl(var(--secondary)))]" />
+                <div className="mt-auto flex items-center gap-2 pt-6">
+                  <span className="h-px flex-1 bg-background/20" />
+                  <span className="inline-flex h-7 w-7 items-center justify-center bg-primary text-primary-foreground">
+                    <ChevronRight className="h-4 w-4" />
+                  </span>
                 </div>
               </div>
 
-              <div className="space-y-4 pt-2 md:pt-0">
-                {classificationItems.map(({ label, icon: Icon }) => (
-                  <article key={label} className="flex items-center gap-4 border border-border bg-background px-4 py-4 shadow-sm">
-                    <div className="inline-flex h-11 w-11 items-center justify-center border border-primary/20 bg-primary-light text-primary">
-                      <Icon className="h-4 w-4" />
+              <div className="space-y-2.5">
+                {classificationCategories.map(({ group, types }) => (
+                  <div key={group} className="border border-border bg-background px-4 py-3 shadow-sm">
+                    <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">{group}</p>
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {types.map((type) => (
+                        <span key={type} className="inline-flex items-center gap-1.5 border border-border bg-secondary px-2.5 py-1.5 text-xs font-medium text-foreground">
+                          <FileText className="h-3 w-3 text-primary" />
+                          {type}
+                        </span>
+                      ))}
                     </div>
-                    <span className="text-lg leading-tight text-foreground">{label}</span>
-                  </article>
+                  </div>
                 ))}
               </div>
             </div>
