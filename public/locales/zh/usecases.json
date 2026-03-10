@@ -1,8 +1,8 @@
 {
   "finance": {
     "breadcrumb": "应用场景 · 金融与银行",
-    "heroTitle1": "Agent-use-ready 数据",
-    "heroTitle2": "服务于金融运营",
+    "heroTitle1": "agent-use-ready 数据",
+    "heroTitle2": "服务于金融行业",
     "heroDescription": "将 SEC 文件、银行对账单和贷款文档转化为结构化记录，供对账、承保和合规 agent 直接使用——无需后处理",
     "bulletPoints": [
       "从 10-K、银行对账单和贷款包中提取字段、表格和行项目",
