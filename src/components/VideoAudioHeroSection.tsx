@@ -1,9 +1,11 @@
 import { ArrowRight, Play, ScanLine, Volume2, Waves, Clapperboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const VideoAudioHeroSection = () => {
   const { t } = useTranslation('solutions');
+  const { ref: trackRef, isVisible: trackVisible } = useScrollReveal({ threshold: 0.2 });
 
   const signalTracks = [
     { label: t('videoAudio.scene'), value: t('videoAudio.sceneValue'), width: "w-[88%]", tone: "bg-teal" },
@@ -42,21 +44,21 @@ const VideoAudioHeroSection = () => {
       <div className="container relative mx-auto px-6 pb-20 pt-16 lg:px-12 lg:pb-24 lg:pt-24">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(420px,0.85fr)] lg:gap-16">
           <div className="max-w-[760px]">
-            <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
+            <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400 animate-fade-in-up">
               <span className="h-px w-10 bg-teal" aria-hidden="true" />
               {t('videoAudio.breadcrumb')}
             </div>
-            <p className="mb-5 max-w-[520px] text-[18px] leading-relaxed text-slate-300 md:text-[22px]">
+            <p className="mb-5 max-w-[520px] text-[18px] leading-relaxed text-slate-300 md:text-[22px] animate-fade-in-left delay-100">
               {t('videoAudio.subtitle')}
             </p>
-            <h1 className="max-w-[980px] font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[78px]">
+            <h1 className="max-w-[980px] font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[78px] animate-fade-in-left delay-200">
               {t('videoAudio.heroTitle')}
             </h1>
-            <p className="mt-6 max-w-[620px] text-base leading-8 text-slate-300 md:text-[18px]">
+            <p className="mt-6 max-w-[620px] text-base leading-8 text-slate-300 md:text-[18px] animate-fade-in-up delay-300">
               {t('videoAudio.heroDescription')}
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4 animate-scale-in delay-500">
               <Button size="lg" className="rounded-lg bg-teal px-8 text-primary-foreground hover:bg-teal-dark">
                 {t('buttons.requestDemo', { ns: 'common' })}
               </Button>
@@ -104,24 +106,27 @@ const VideoAudioHeroSection = () => {
                   <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-slate-400">{t('videoAudio.camera')}</p>
                   <p className="mt-1 text-sm text-slate-200">{t('videoAudio.trackingLeftRight')}</p>
                 </div>
-                <div className="absolute left-5 right-5 bottom-5 border border-slate-700/70 bg-navy/88 p-4 backdrop-blur-sm">
+                <div className="absolute left-5 right-5 bottom-5 border border-slate-700/70 bg-navy/88 p-4 backdrop-blur-sm" ref={trackRef}>
                   <div className="mb-4 flex items-center justify-between">
                     <div>
                       <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-slate-400">{t('videoAudio.dimensionStack')}</p>
                       <p className="mt-1 text-sm text-slate-300">{t('videoAudio.dimensionStackDesc')}</p>
                     </div>
-                    <span className="inline-flex items-center gap-2 border border-teal/30 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-teal">
+                    <span className={`inline-flex items-center gap-2 border border-teal/30 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-teal ${trackVisible ? "animate-pulse-glow" : ""}`}>
                       <span className="h-2 w-2 bg-teal" aria-hidden="true" />
                       {t('videoAudio.timecoded')}
                     </span>
                   </div>
 
                   <div className="space-y-3">
-                    {signalTracks.map((track) => (
+                    {signalTracks.map((track, i) => (
                       <div key={track.label} className="grid grid-cols-[88px_minmax(0,1fr)_132px] items-center gap-3 text-[11px] uppercase tracking-[0.18em] text-slate-400">
                         <span>{track.label}</span>
                         <div className="h-2 overflow-hidden bg-slate-700/70">
-                          <div className={`h-full ${track.width} ${track.tone}`} />
+                          <div
+                            className={`h-full ${track.tone} transition-all duration-1000 ease-out`}
+                            style={{ width: trackVisible ? track.width.replace("w-[", "").replace("]", "") : "0%", transitionDelay: `${i * 150}ms` }}
+                          />
                         </div>
                         <span className="text-right normal-case tracking-normal text-slate-300">{track.value}</span>
                       </div>
@@ -132,8 +137,8 @@ const VideoAudioHeroSection = () => {
             </div>
 
             <div className="mt-6 grid gap-px border border-slate-700/70 bg-slate-700/70 md:grid-cols-3">
-              {trustIndicators.map(({ icon: Icon, title, copy }) => (
-                <div key={title} className="bg-navy/95 px-5 py-5 transition-transform duration-300 hover:-translate-y-1">
+              {trustIndicators.map(({ icon: Icon, title, copy }, i) => (
+                <div key={title} className={`bg-navy/95 px-5 py-5 transition-transform duration-300 hover:-translate-y-1 ${trackVisible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: trackVisible ? `${i * 120}ms` : undefined }}>
                   <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">
                     <Icon className="h-4 w-4 text-teal" />
                     {title}

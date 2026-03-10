@@ -1,6 +1,7 @@
 import { ArrowRight, BadgeCheck, Check, FileText, ShieldCheck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const reviewRows = [
   { label: "Invoice No", value: "RC20-0827", state: "flagged" },
@@ -10,15 +11,16 @@ const reviewRows = [
 
 const HumanReviewSection = () => {
   const { t } = useTranslation('solutions');
+  const { ref, isVisible } = useScrollReveal();
 
   const reviewTabs = t('documentProcessing.humanReview.tabs', { returnObjects: true }) as string[];
 
   return (
-    <section className="bg-foreground py-20 text-background md:py-24 lg:py-28">
+    <section className="bg-foreground py-20 text-background md:py-24 lg:py-28" ref={ref}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[860px] text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-background/58">{t('documentProcessing.humanReview.breadcrumb')}</p>
-          <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-background md:text-[48px] lg:text-[60px]">
+          <p className={`text-xs font-semibold uppercase tracking-[0.28em] text-background/58 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>{t('documentProcessing.humanReview.breadcrumb')}</p>
+          <h2 className={`mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-background md:text-[48px] lg:text-[60px] ${isVisible ? "animate-fade-in-up delay-100" : "opacity-0"}`}>
             {t('documentProcessing.humanReview.heading')}
           </h2>
         </div>
@@ -31,7 +33,8 @@ const HumanReviewSection = () => {
                 index === 1
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "bg-background/16 text-background/84"
-              }`}
+              } ${isVisible ? "animate-scale-in" : "opacity-0"}`}
+              style={{ animationDelay: isVisible ? `${200 + index * 60}ms` : undefined }}
             >
               {tab}
             </div>

@@ -1,9 +1,11 @@
 import { ArrowRight, FileCode2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from 'react-i18next';
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const SyntheticDataPipelineSection = () => {
   const { t } = useTranslation('solutions');
+  const { ref, isVisible } = useScrollReveal();
 
   const syntheticRows = t('syntheticData.pipeline.items', { returnObjects: true }) as Array<{
     id: string;
@@ -19,10 +21,10 @@ const SyntheticDataPipelineSection = () => {
   }>;
 
   return (
-    <section className="bg-background py-20 md:py-24 lg:py-28">
+    <section className="bg-background py-20 md:py-24 lg:py-28" ref={ref}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[1180px]">
-          <div className="grid gap-0 overflow-hidden border border-border bg-background shadow-[0_24px_80px_-40px_hsl(var(--color-navy)/0.28)] lg:grid-cols-[1fr_1.2fr]">
+          <div className={`grid gap-0 overflow-hidden border border-border bg-background shadow-[0_24px_80px_-40px_hsl(var(--color-navy)/0.28)] lg:grid-cols-[1fr_1.2fr] ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
             <div className="relative border-b border-border p-8 lg:border-b-0 lg:border-r lg:p-10">
               <div
                 className="pointer-events-none absolute -left-10 top-16 hidden h-44 w-44 md:block"
@@ -125,8 +127,8 @@ const SyntheticDataPipelineSection = () => {
               </div>
 
               <div className="mt-6 grid grid-cols-3 gap-3">
-                {pipelineMetrics.map(({ label, value, sub }) => (
-                  <div key={label} className="border border-border bg-background px-4 py-4 text-center">
+                {pipelineMetrics.map(({ label, value, sub }, i) => (
+                  <div key={label} className={`border border-border bg-background px-4 py-4 text-center ${isVisible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: isVisible ? `${600 + i * 100}ms` : undefined }}>
                     <p className="font-mono-data text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{label}</p>
                     <p className="mt-2 font-brand text-[24px] leading-tight tracking-[-0.02em] text-foreground">{value}</p>
                     <p className="mt-1 text-xs text-muted-foreground">{sub}</p>

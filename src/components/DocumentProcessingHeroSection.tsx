@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2, FileSearch, TableProperties } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const fieldRows = [
   { label: "Net Revenue (Q3)", value: "$ 4,891,200" },
@@ -41,6 +42,7 @@ const incomeStatementRows: { label: string; q1: string; q2: string; q3: string; 
 
 const DocumentProcessingHeroSection = () => {
   const { t } = useTranslation('solutions');
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   const bulletPoints = t('documentProcessing.bulletPoints', { returnObjects: true }) as string[];
 
@@ -67,32 +69,30 @@ const DocumentProcessingHeroSection = () => {
       <div className="bg-navy text-slate-200">
         <div className="container mx-auto px-6 pt-16 pb-0 md:pt-24 lg:px-12 lg:pt-28">
           <div className="max-w-[820px] pb-14 md:pb-20">
-            <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
+            <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400 animate-fade-in-up">
               <span className="h-[3px] w-4 bg-primary" aria-hidden="true" />
               {t('documentProcessing.breadcrumb')}
             </div>
             <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[80px]">
-              {t('documentProcessing.heroTitle1')}
-              <br />
-              {t('documentProcessing.heroTitle2')}
-              <br />
-              <span className="text-primary">{t('documentProcessing.heroTitle3')}</span>
+              <span className="block animate-fade-in-left">{t('documentProcessing.heroTitle1')}</span>
+              <span className="block animate-fade-in-left delay-100">{t('documentProcessing.heroTitle2')}</span>
+              <span className="block text-primary animate-fade-in-left delay-200">{t('documentProcessing.heroTitle3')}</span>
             </h1>
           </div>
         </div>
       </div>
 
-      <div className="bg-primary-light">
+      <div className="bg-primary-light" ref={ref}>
         <div className="container mx-auto grid items-stretch gap-0 px-0 md:grid-cols-[minmax(0,560px)_1fr] lg:px-12">
           <div className="flex flex-col justify-between px-6 py-12 md:px-10 md:py-14 lg:px-12">
             <div>
-              <p className="max-w-[520px] text-lg leading-relaxed text-foreground md:text-[20px]">
+              <p className={`max-w-[520px] text-lg leading-relaxed text-foreground md:text-[20px] ${isVisible ? "animate-fade-in-left" : "opacity-0"}`}>
                 {t('documentProcessing.heroDescription')}
               </p>
 
               <div className="mt-8 space-y-5">
-                {bulletPoints.map((point) => (
-                  <div key={point} className="flex items-start gap-3">
+                {bulletPoints.map((point, i) => (
+                  <div key={point} className={`flex items-start gap-3 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: isVisible ? `${200 + i * 100}ms` : undefined }}>
                     <span className="mt-1 inline-flex h-5 w-5 items-center justify-center border border-primary/35 bg-background text-primary">
                       <CheckCircle2 className="h-3.5 w-3.5" />
                     </span>
@@ -101,7 +101,7 @@ const DocumentProcessingHeroSection = () => {
                 ))}
               </div>
 
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className={`mt-10 flex flex-wrap gap-4 ${isVisible ? "animate-scale-in" : "opacity-0"}`} style={{ animationDelay: isVisible ? "500ms" : undefined }}>
                 <Button size="lg" className="rounded-lg px-8">
                   {t('buttons.getStarted', { ns: 'common' })}
                 </Button>
@@ -111,7 +111,7 @@ const DocumentProcessingHeroSection = () => {
               </div>
             </div>
 
-            <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-3">
+            <div className={`mt-10 grid gap-px border border-border bg-border sm:grid-cols-3 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: isVisible ? "600ms" : undefined }}>
               {metricCards.map(({ label, value, icon: Icon }) => (
                 <div key={label} className="bg-background px-4 py-4 transition-transform duration-300 hover:-translate-y-1">
                   <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
@@ -124,7 +124,7 @@ const DocumentProcessingHeroSection = () => {
             </div>
           </div>
 
-          <div className="relative overflow-hidden border-l border-border/70 px-4 py-10 md:px-8 lg:px-10">
+          <div className={`relative overflow-hidden border-l border-border/70 px-4 py-10 md:px-8 lg:px-10 ${isVisible ? "animate-fade-in-right" : "opacity-0"}`} style={{ animationDelay: isVisible ? "200ms" : undefined }}>
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:56px_56px] opacity-70" aria-hidden="true" />
             <div className="absolute bottom-10 left-10 hidden h-14 w-14 border border-primary/25 md:block" aria-hidden="true" />
             <div className="absolute right-12 top-12 hidden h-12 w-12 border border-foreground/15 md:block" aria-hidden="true" />

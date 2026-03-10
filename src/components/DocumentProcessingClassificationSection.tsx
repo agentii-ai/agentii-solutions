@@ -1,9 +1,11 @@
 import { ArrowRight, ChevronRight, FileText, ScanSearch, Tags } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const DocumentProcessingClassificationSection = () => {
   const { t } = useTranslation('solutions');
+  const { ref, isVisible } = useScrollReveal();
 
   const classificationCategories = [
     { group: t('documentProcessing.classification.secFilings'), types: ["10-K", "10-Q", "8-K", "Exhibits"] },
@@ -20,10 +22,10 @@ const DocumentProcessingClassificationSection = () => {
   ];
 
   return (
-    <section className="bg-background py-20 md:py-24 lg:py-28">
+    <section className="bg-background py-20 md:py-24 lg:py-28" ref={ref}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-16">
-          <div className="relative overflow-hidden bg-secondary px-6 py-8 md:px-8 md:py-10 lg:px-10">
+          <div className={`relative overflow-hidden bg-secondary px-6 py-8 md:px-8 md:py-10 lg:px-10 ${isVisible ? "animate-fade-in-left" : "opacity-0"}`}>
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:56px_56px] opacity-50" aria-hidden="true" />
 
             <div className="relative grid gap-4 md:grid-cols-[0.40fr_0.60fr] md:items-stretch">
@@ -82,26 +84,26 @@ const DocumentProcessingClassificationSection = () => {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+            <p className={`text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground ${isVisible ? "animate-fade-in-right" : "opacity-0"}`}>
               {t('documentProcessing.classification.breadcrumb')}
             </p>
-            <h2 className="mt-5 max-w-[520px] font-brand text-[36px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
+            <h2 className={`mt-5 max-w-[520px] font-brand text-[36px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px] ${isVisible ? "animate-fade-in-right delay-100" : "opacity-0"}`}>
               {t('documentProcessing.classification.heading')}
             </h2>
-            <p className="mt-6 max-w-[520px] text-lg leading-relaxed text-muted-foreground">
+            <p className={`mt-6 max-w-[520px] text-lg leading-relaxed text-muted-foreground ${isVisible ? "animate-fade-in-right delay-200" : "opacity-0"}`}>
               {t('documentProcessing.classification.description')}
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <div className="border border-border bg-card px-4 py-4">
+              <div className={`border border-border bg-card px-4 py-4 ${isVisible ? "animate-fade-in-up delay-300" : "opacity-0"}`}>
                 <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{t('documentProcessing.classification.signalModel')}</p>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">{t('documentProcessing.classification.signalModelDesc')}</p>
               </div>
-              <div className="border border-border bg-card px-4 py-4">
+              <div className={`border border-border bg-card px-4 py-4 ${isVisible ? "animate-fade-in-up delay-400" : "opacity-0"}`}>
                 <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{t('documentProcessing.classification.opsControl')}</p>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">{t('documentProcessing.classification.opsControlDesc')}</p>
               </div>
             </div>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className={`mt-10 flex flex-wrap gap-4 ${isVisible ? "animate-scale-in delay-500" : "opacity-0"}`}>
               <Button size="lg" className="rounded-lg px-8">
                 {t('buttons.learnMore', { ns: 'common' })} <ArrowRight size={16} />
               </Button>
@@ -109,7 +111,7 @@ const DocumentProcessingClassificationSection = () => {
                 {t('documentProcessing.classification.viewRoutingModel')}
               </Button>
             </div>
-            <div className="mt-8 flex items-start gap-3 border-l-2 border-primary pl-5">
+            <div className={`mt-8 flex items-start gap-3 border-l-2 border-primary pl-5 ${isVisible ? "animate-fade-in-right delay-600" : "opacity-0"}`}>
               <ScanSearch className="mt-1 h-5 w-5 text-primary" />
               <p className="max-w-[520px] text-sm leading-relaxed text-foreground">
                 {t('documentProcessing.classification.taxonomyNote')}

@@ -1,27 +1,29 @@
 import { Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const DifferentiatorsSection = () => {
   const { t } = useTranslation('home');
+  const { ref, isVisible } = useScrollReveal();
 
   const differentiators = t('differentiators.items', { returnObjects: true }) as string[];
   const tableRows = t('differentiators.table.rows', { returnObjects: true }) as string[];
 
   return (
-    <section className="py-24 lg:py-32 bg-gray-50">
+    <section className="py-24 lg:py-32 bg-gray-50" ref={ref}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="text-3xl lg:text-[42px] font-semibold text-foreground leading-tight tracking-tight mb-4">
+            <h2 className={`text-3xl lg:text-[42px] font-semibold text-foreground leading-tight tracking-tight mb-4 ${isVisible ? "animate-fade-in-left" : "opacity-0"}`}>
               {t('differentiators.heading')}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-[480px]">
+            <p className={`text-lg text-muted-foreground mb-8 max-w-[480px] ${isVisible ? "animate-fade-in-left delay-100" : "opacity-0"}`}>
               {t('differentiators.subheading')}
             </p>
             <ul className="space-y-4">
               {differentiators.map((d, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <Check size={18} className="text-teal mt-0.5 shrink-0" />
+                <li key={i} className={`flex items-start gap-3 ${isVisible ? "animate-fade-in-left" : "opacity-0"}`} style={{ animationDelay: isVisible ? `${200 + i * 100}ms` : undefined }}>
+                  <Check size={18} className={`text-teal mt-0.5 shrink-0 ${isVisible ? "animate-scale-in" : "opacity-0"}`} style={{ animationDelay: isVisible ? `${300 + i * 100}ms` : undefined }} />
                   <span className="text-[15px] text-foreground leading-relaxed">{d}</span>
                 </li>
               ))}
@@ -29,7 +31,7 @@ const DifferentiatorsSection = () => {
           </div>
 
           {/* Comparison table */}
-          <div className="border border-border overflow-hidden">
+          <div className={`border border-border overflow-hidden ${isVisible ? "animate-fade-in-right" : "opacity-0"}`} style={{ animationDelay: isVisible ? "200ms" : undefined }}>
             <table className="w-full">
               <thead>
                 <tr className="bg-gray-50 border-b-2 border-gray-300">
@@ -47,10 +49,10 @@ const DifferentiatorsSection = () => {
                   [tableRows[4], true, false],
                   [tableRows[5], true, false],
                 ].map(([feature, us, them], i) => (
-                  <tr key={i} className="border-b border-border hover:bg-gray-50 transition-colors">
+                  <tr key={i} className={`border-b border-border hover:bg-gray-50 transition-colors ${isVisible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: isVisible ? `${400 + i * 60}ms` : undefined }}>
                     <td className="px-4 py-3 text-foreground font-medium">{feature as string}</td>
                     <td className="px-4 py-3 text-center">
-                      {us ? <Check size={16} className="text-teal mx-auto" /> : <span className="text-gray-300">—</span>}
+                      {us ? <Check size={16} className={`text-teal mx-auto ${isVisible ? "animate-scale-in" : "opacity-0"}`} style={{ animationDelay: isVisible ? `${500 + i * 60}ms` : undefined }} /> : <span className="text-gray-300">—</span>}
                     </td>
                     <td className="px-4 py-3 text-center">
                       {them ? <Check size={16} className="text-gray-500 mx-auto" /> : <span className="text-gray-300">—</span>}

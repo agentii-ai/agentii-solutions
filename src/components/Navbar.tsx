@@ -152,7 +152,7 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
       : "rounded-lg bg-teal hover:bg-teal-dark text-primary-foreground";
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navShellClass}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 animate-fade-in-up ${navShellClass}`}>
       <div className="container mx-auto flex h-[72px] items-center justify-between px-6 lg:px-12">
         <a href="/" className="flex shrink-0 items-center gap-0">
           <span className={`font-brand text-xl font-bold tracking-tight transition-colors duration-300 ${logoPrimaryClass}`}>

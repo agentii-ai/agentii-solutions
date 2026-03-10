@@ -1,8 +1,10 @@
 import { Upload, Bot, CheckCircle, Send } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const PipelineSection = () => {
   const { t } = useTranslation('home');
+  const { ref, isVisible } = useScrollReveal();
 
   const steps = [
     { icon: Upload, label: t('pipeline.ingest.label'), description: t('pipeline.ingest.description'), color: "border-primary bg-primary/5" },
@@ -12,24 +14,27 @@ const PipelineSection = () => {
   ];
 
   return (
-    <section className="py-24 lg:py-32 gradient-hero relative overflow-hidden">
+    <section className="py-24 lg:py-32 gradient-hero relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 gradient-hero-mesh" />
       <div className="container relative mx-auto px-6 lg:px-12">
-        <h2 className="text-3xl lg:text-[42px] font-semibold text-slate-200 leading-tight tracking-tight mb-4">
+        <h2 className={`text-3xl lg:text-[42px] font-semibold text-slate-200 leading-tight tracking-tight mb-4 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           {t('pipeline.heading')}
         </h2>
-        <p className="text-lg text-slate-400 max-w-[560px] mb-16">
+        <p className={`text-lg text-slate-400 max-w-[560px] mb-16 ${isVisible ? "animate-fade-in-up delay-100" : "opacity-0"}`}>
           {t('pipeline.subheading')}
         </p>
 
         <div className="grid md:grid-cols-4 gap-0">
           {steps.map((step, i) => (
-            <div key={i} className="relative flex flex-col items-center text-center group">
+            <div key={i} className={`relative flex flex-col items-center text-center group ${isVisible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: isVisible ? `${300 + i * 400}ms` : undefined }}>
               {/* Connector line */}
               {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-[calc(50%+32px)] right-[calc(-50%+32px)] h-px border-t-2 border-dashed border-slate-700" />
+                <div
+                  className={`hidden md:block absolute top-8 left-[calc(50%+32px)] right-[calc(-50%+32px)] h-px border-t-2 border-dashed border-slate-700 origin-left ${isVisible ? "animate-draw-line" : "scale-x-0"}`}
+                  style={{ animationDelay: isVisible ? `${500 + i * 400}ms` : undefined }}
+                />
               )}
-              <div className={`w-16 h-16 flex items-center justify-center border-2 ${step.color} mb-4 transition-all duration-200 group-hover:scale-105`}>
+              <div className={`w-16 h-16 flex items-center justify-center border-2 ${step.color} mb-4 transition-all duration-200 group-hover:scale-105 ${isVisible ? "animate-pulse-glow" : ""}`} style={{ animationDelay: isVisible ? `${600 + i * 400}ms` : undefined }}>
                 <step.icon size={24} className="text-teal" />
               </div>
               <span className="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-2">

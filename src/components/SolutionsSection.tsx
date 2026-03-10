@@ -1,6 +1,7 @@
 import { FileText, Video, Cpu } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const SolutionsSection = () => {
   const { t } = useTranslation('home');
@@ -26,13 +27,15 @@ const SolutionsSection = () => {
     },
   ];
 
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section id="solutions" className="py-24 lg:py-32 bg-background">
+    <section id="solutions" className="py-24 lg:py-32 bg-background" ref={ref}>
       <div className="container mx-auto px-6 lg:px-12">
-        <h2 className="text-3xl lg:text-[42px] font-semibold text-foreground leading-tight tracking-tight mb-4">
+        <h2 className={`text-3xl lg:text-[42px] font-semibold text-foreground leading-tight tracking-tight mb-4 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           {t('solutions.heading')}
         </h2>
-        <p className="text-lg text-muted-foreground max-w-[600px] mb-16">
+        <p className={`text-lg text-muted-foreground max-w-[600px] mb-16 ${isVisible ? "animate-fade-in-up delay-100" : "opacity-0"}`}>
           {t('solutions.subheading')}
         </p>
 
@@ -40,9 +43,10 @@ const SolutionsSection = () => {
           {solutions.map((s, i) => (
             <div
               key={i}
-              className="group border border-border p-6 lg:p-8 transition-all duration-200 hover:-translate-y-1 hover:border-gray-300 hover:shadow-sm"
+              className={`group border border-border p-6 lg:p-8 transition-all duration-200 hover:-translate-y-1 hover:border-gray-300 hover:shadow-sm ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+              style={{ animationDelay: isVisible ? `${200 + i * 120}ms` : undefined }}
             >
-              <s.icon size={32} className="text-teal mb-4" />
+              <s.icon size={32} className={`text-teal mb-4 ${isVisible ? "animate-scale-in" : "opacity-0"}`} style={{ animationDelay: isVisible ? `${400 + i * 120}ms` : undefined }} />
               <h3 className="text-lg font-semibold text-foreground mb-3">{s.title}</h3>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-4">{s.description}</p>
               <a

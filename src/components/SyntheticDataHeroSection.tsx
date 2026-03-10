@@ -1,9 +1,11 @@
 import { ArrowRight, Binary, Blocks, Braces, Calculator, ChevronRight, Sparkles, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const SyntheticDataHeroSection = () => {
   const { t } = useTranslation('solutions');
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   const capabilityTabs = t('syntheticData.capabilityTabs', { returnObjects: true }) as string[];
 
@@ -58,17 +60,17 @@ const SyntheticDataHeroSection = () => {
       <div className="bg-secondary">
         <div className="container mx-auto px-6 py-16 lg:px-12 lg:py-24">
           <div className="mx-auto max-w-[920px] text-center">
-            <div className="mb-6 inline-flex items-center gap-3 border border-border bg-background px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+            <div className="mb-6 inline-flex items-center gap-3 border border-border bg-background px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground animate-fade-in-up">
               <span className="h-[3px] w-4 bg-purple" aria-hidden="true" />
               {t('syntheticData.breadcrumb')}
             </div>
-            <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-foreground md:text-[64px] lg:text-[80px]">
+            <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-foreground md:text-[64px] lg:text-[80px] animate-fade-in-up delay-100">
               {t('syntheticData.heroTitle')}
             </h1>
-            <p className="mx-auto mt-6 max-w-[860px] text-lg leading-relaxed text-muted-foreground md:text-[20px]">
+            <p className="mx-auto mt-6 max-w-[860px] text-lg leading-relaxed text-muted-foreground md:text-[20px] animate-fade-in-up delay-200">
               {t('syntheticData.heroDescription')}
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 animate-scale-in delay-400">
               <Button size="lg" className="rounded-lg px-8">
                 {t('buttons.requestDemo', { ns: 'common' })} <ArrowRight size={16} />
               </Button>
@@ -78,7 +80,7 @@ const SyntheticDataHeroSection = () => {
             </div>
           </div>
 
-          <div className="mx-auto mt-12 max-w-[1120px]">
+          <div className="mx-auto mt-12 max-w-[1120px]" ref={ref}>
             <div className="grid gap-3 md:grid-cols-4">
               {capabilityTabs.map((tab, index) => (
                 <div
@@ -87,7 +89,8 @@ const SyntheticDataHeroSection = () => {
                     index === 2
                       ? "border-purple bg-background text-foreground shadow-[0_0_0_1px_hsl(var(--purple))]"
                       : "border-border bg-background text-muted-foreground hover:border-purple/60 hover:text-foreground"
-                  }`}
+                  } ${isVisible ? "animate-scale-in" : "opacity-0"}`}
+                  style={{ animationDelay: isVisible ? `${index * 80}ms` : undefined }}
                 >
                   {tab}
                 </div>
@@ -157,9 +160,9 @@ const SyntheticDataHeroSection = () => {
 
                   <div className="grid gap-4">
                     {orchestrationNodes.map(({ label, value, accent }, index) => (
-                      <div key={label} className="relative border border-border bg-background/90 p-4 backdrop-blur-sm">
+                      <div key={label} className={`relative border border-border bg-background/90 p-4 backdrop-blur-sm ${isVisible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: isVisible ? `${600 + index * 200}ms` : undefined }}>
                         {index < orchestrationNodes.length - 1 && (
-                          <div className="absolute left-6 top-full h-4 w-px bg-border" aria-hidden="true" />
+                          <div className={`absolute left-6 top-full h-4 w-px bg-border origin-top ${isVisible ? "animate-draw-line" : "scale-y-0"}`} style={{ animationDelay: isVisible ? `${800 + index * 200}ms` : undefined }} aria-hidden="true" />
                         )}
                         <div className="flex items-start gap-4">
                           <span className={`mt-1 h-3 w-3 shrink-0 ${accent}`} aria-hidden="true" />

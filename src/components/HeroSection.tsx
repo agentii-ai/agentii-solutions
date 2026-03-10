@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ROW1_BARS = [
   { w: "w-3", h: "h-full", bg: "bg-primary" },
@@ -88,20 +89,21 @@ const HeroSection = () => {
     return () => clearTimeout(timer);
   }, [animationStarted, loopCount]);
 
+  const { ref: featureRef, isVisible: featureVisible } = useScrollReveal({ threshold: 0.2 });
+
   return (
     <section className="relative bg-background overflow-hidden">
       {/* Main Hero Content */}
       <div className="container mx-auto px-6 lg:px-12 pt-[120px] pb-16 lg:pt-[160px] lg:pb-24">
         <div className="max-w-[820px]">
           <h1 className="font-brand text-[32px] md:text-[40px] lg:text-[52px] font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-6">
-            {t('hero.headline1')}
-            <br />
-            {t('hero.headline2')}
+            <span className="block animate-fade-in-up">{t('hero.headline1')}</span>
+            <span className="block animate-fade-in-up delay-100">{t('hero.headline2')}</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-[580px] leading-relaxed mb-10">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-[580px] leading-relaxed mb-10 animate-fade-in-up delay-200">
             {t('hero.description')}
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 animate-scale-in delay-400">
             <Button variant="teal" size="lg" className="rounded-lg px-8">
               {t('buttons.contactUs', { ns: 'common' })}
             </Button>
@@ -164,9 +166,9 @@ const HeroSection = () => {
       </div>
 
       {/* Dark Feature Strip */}
-      <div className="bg-navy text-slate-200 py-16 lg:py-20 mt-0">
+      <div ref={featureRef} className="bg-navy text-slate-200 py-16 lg:py-20 mt-0">
         <div className="container mx-auto px-6 lg:px-12">
-          <h2 className="font-brand text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.15] tracking-[-0.01em] mb-10 max-w-[720px]">
+          <h2 className={`font-brand text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.15] tracking-[-0.01em] mb-10 max-w-[720px] transition-all duration-700 ${featureVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
             {t('hero.featureHeadline').split('\n').map((line: string, i: number) => (
               <span key={i}>
                 {i > 0 && <br />}
@@ -178,7 +180,8 @@ const HeroSection = () => {
             {(t('hero.features', { returnObjects: true }) as string[]).map((text, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 border border-slate-700 px-5 py-4 bg-slate/50"
+                className={`flex items-center gap-3 border border-slate-700 px-5 py-4 bg-slate/50 ${featureVisible ? "animate-fade-in-up" : "opacity-0"}`}
+                style={{ animationDelay: featureVisible ? `${i * 80}ms` : undefined }}
               >
                 <span className="w-3 h-3 bg-teal shrink-0" />
                 <span className="text-sm md:text-[15px] font-medium text-slate-200">
