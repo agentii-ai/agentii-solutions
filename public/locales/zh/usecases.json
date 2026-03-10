@@ -107,7 +107,7 @@
   },
   "insurance": {
     "breadcrumb": "应用场景 · 保险",
-    "heroTitle1": "Agent-use-ready 数据",
+    "heroTitle1": "agent-use-ready 数据",
     "heroTitle2": "服务于保险运营",
     "heroDescription": "将 ACORD 表单、保单文档和理赔文件转化为结构化记录，供承保、理赔和合规 agent 直接使用——无需手动数据录入",
     "bulletPoints": [
