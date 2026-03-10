@@ -1,21 +1,24 @@
 import { ArrowRight, ChevronRight, FileText, ScanSearch, Tags } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const classificationCategories = [
-  { group: "SEC Filings", types: ["10-K", "10-Q", "8-K", "Exhibits"] },
-  { group: "Tax Forms", types: ["1040", "W-2", "W-9"] },
-  { group: "Banking", types: ["Bank Statement", "Ledger"] },
-  { group: "Commercial", types: ["Invoice", "Receipt", "Contract"] },
-];
-
-const extractionSignals = [
-  "Layout cues",
-  "Page intent",
-  "Entity patterns",
-  "Evidence trace",
-];
+import { useTranslation } from "react-i18next";
 
 const DocumentProcessingClassificationSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const classificationCategories = [
+    { group: t('documentProcessing.classification.secFilings'), types: ["10-K", "10-Q", "8-K", "Exhibits"] },
+    { group: t('documentProcessing.classification.taxForms'), types: ["1040", "W-2", "W-9"] },
+    { group: t('documentProcessing.classification.banking'), types: ["Bank Statement", "Ledger"] },
+    { group: t('documentProcessing.classification.commercial'), types: ["Invoice", "Receipt", "Contract"] },
+  ];
+
+  const extractionSignals = [
+    t('documentProcessing.classification.layoutCues'),
+    t('documentProcessing.classification.pageIntent'),
+    t('documentProcessing.classification.entityPatterns'),
+    t('documentProcessing.classification.evidenceTrace'),
+  ];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
@@ -36,7 +39,7 @@ const DocumentProcessingClassificationSection = () => {
                     <Tags className="h-4 w-4" />
                   </div>
                   <p className="font-brand text-[18px] leading-[0.95] tracking-[-0.02em] text-background md:text-[22px]">
-                    AUTO-CLASSIFICATION
+                    {t('documentProcessing.classification.autoClassification')}
                   </p>
                 </div>
 
@@ -80,36 +83,36 @@ const DocumentProcessingClassificationSection = () => {
 
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-              Document classification
+              {t('documentProcessing.classification.breadcrumb')}
             </p>
             <h2 className="mt-5 max-w-[520px] font-brand text-[36px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-              Classify first. Extract with precision.
+              {t('documentProcessing.classification.heading')}
             </h2>
             <p className="mt-6 max-w-[520px] text-lg leading-relaxed text-muted-foreground">
-              Identify document types, segment pages, and route each section to the right extraction model — before extraction begins.
+              {t('documentProcessing.classification.description')}
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               <div className="border border-border bg-card px-4 py-4">
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">Signal model</p>
-                <p className="mt-2 text-sm leading-relaxed text-foreground">Combine content, layout, and metadata cues for reliable routing.</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{t('documentProcessing.classification.signalModel')}</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground">{t('documentProcessing.classification.signalModelDesc')}</p>
               </div>
               <div className="border border-border bg-card px-4 py-4">
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">Ops control</p>
-                <p className="mt-2 text-sm leading-relaxed text-foreground">Map categories to queues, workflows, or agent actions with clear review gates.</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{t('documentProcessing.classification.opsControl')}</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground">{t('documentProcessing.classification.opsControlDesc')}</p>
               </div>
             </div>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-lg px-8">
-                Learn More <ArrowRight size={16} />
+                {t('buttons.learnMore', { ns: 'common' })} <ArrowRight size={16} />
               </Button>
               <Button variant="outline" size="lg" className="rounded-lg px-8">
-                View routing model
+                {t('documentProcessing.classification.viewRoutingModel')}
               </Button>
             </div>
             <div className="mt-8 flex items-start gap-3 border-l-2 border-primary pl-5">
               <ScanSearch className="mt-1 h-5 w-5 text-primary" />
               <p className="max-w-[520px] text-sm leading-relaxed text-foreground">
-                Build custom document taxonomies for finance, operations, claims, or compliance-heavy workflows without sacrificing auditability.
+                {t('documentProcessing.classification.taxonomyNote')}
               </p>
             </div>
           </div>

@@ -1,0 +1,606 @@
+{
+  "documentProcessing": {
+    "breadcrumb": "解决方案",
+    "heroTitle1": "agent-use-ready",
+    "heroTitle2": "文档提取",
+    "heroTitle3": "金融级精度",
+    "heroDescription": "将 PDF、扫描件和表单转化为带有推理轨迹的结构化记录——让 agent 能够基于数据行动，而不仅仅是阅读",
+    "bulletPoints": [
+      "从报表、报告和合规文档中提取字段、行项目和嵌套表格",
+      "每个输出都包含置信度分数、字段溯源和证据轨迹",
+      "异常路由让 agent 持续运行——只有边缘案例才需要人工审核"
+    ],
+    "inputMix": "输入类型",
+    "inputMixValue": "PDF · 扫描件 · 表格 · 表单",
+    "outputShape": "输出格式",
+    "outputShapeValue": "字段 · 表格 · 推理轨迹",
+    "validation": "验证",
+    "validationValue": "置信度评分 + 审核队列",
+    "incomeStatement": "利润表",
+    "consolidatedIncomeStatement": "合并利润表",
+    "unaudited": "未经审计，单位：千美元（$）",
+    "features": {
+      "breadcrumb": "提取 Pipeline",
+      "heading": "Agent 信赖的结构化提取",
+      "description": "Schema 控制、表格保真度和证据轨迹——每个输出在到达下游 agent 之前都经过验证",
+      "seePipeline": "查看 Pipeline",
+      "fieldTableExtraction": "字段 + 表格提取",
+      "fieldTableExtractionDesc": "单字段、重复段落、嵌套表格和多页结构——全部类型化并经过 schema 验证",
+      "confidenceScored": "置信度评分验证",
+      "confidenceScoredDesc": "每个提取值都带有置信度分数、字段溯源和审核状态。Agent 知道该信任什么。",
+      "agentHandoff": "Agent 交接",
+      "agentHandoffDesc": "将验证后的记录传递给对账、承保或合规 agent，附带清晰的 schema 和证据轨迹",
+      "pipelineView": "Pipeline 视图",
+      "pipelineHeading": "从原始文档到可信的结构化记录",
+      "pipelineDescription": "格构式系统视图使页面与现有用例架构保持一致，同时引入参考中展示的文档提取工作流",
+      "source": "来源",
+      "sourceValue": "PDF、扫描件、报表、表单",
+      "parsing": "解析",
+      "parsingValue": "OCR + 版面分析 + 表格分割",
+      "structuring": "结构化",
+      "structuringValue": "类型化 JSON 记录 + 提取证据",
+      "downstream": "下游",
+      "downstreamValue": "Agent 操作、QA 队列、分析"
+    },
+    "ingestion": {
+      "breadcrumb": "数据接入",
+      "heading": "标准化每个来源的文档接入",
+      "description": "从收件箱、扫描仪、门户和共享驱动器汇入一个 pipeline。每个文件在 agent 处理前都经过解析、验证和路由。",
+      "supports": "支持 PDF、PNG、HTML、邮件附件和扫描图像",
+      "noChanges": "无需更改现有运营工具",
+      "seeIntakeModel": "查看接入模型",
+      "source": "来源",
+      "destinations": "目标系统"
+    },
+    "classification": {
+      "breadcrumb": "文档分类",
+      "heading": "先分类，再精准提取",
+      "description": "识别文档类型、分割页面，并将每个部分路由到正确的提取模型——在提取开始之前",
+      "autoClassification": "自动分类",
+      "signalModel": "信号模型",
+      "signalModelDesc": "结合内容、版面和元数据线索进行可靠路由",
+      "opsControl": "运营控制",
+      "opsControlDesc": "将类别映射到队列、工作流或 agent 操作，设置清晰的审核关卡",
+      "viewRoutingModel": "查看路由模型",
+      "taxonomyNote": "为金融、运营、理赔或合规密集型工作流构建自定义文档分类体系，同时不牺牲可审计性",
+      "layoutCues": "版面线索",
+      "pageIntent": "页面意图",
+      "entityPatterns": "实体模式",
+      "evidenceTrace": "证据轨迹",
+      "secFilings": "SEC 文件",
+      "taxForms": "税务表单",
+      "banking": "银行",
+      "bankStatement": "银行对账单",
+      "ledger": "分类账",
+      "commercial": "商业",
+      "invoice": "发票",
+      "receipt": "收据",
+      "contract": "合同"
+    },
+    "table": {
+      "tabs": [
+        "智能表格提取",
+        "标注自动化",
+        "API 集成"
+      ],
+      "breadcrumb": "智能表格提取",
+      "heading": "捕获每一行、每一列和嵌套结构",
+      "description": "从财务报表、租金明细和运营报告中提取表格数据——然后将结构化记录传递到数据映射层进行语义索引",
+      "tableFidelity": "表格保真度",
+      "tableFidelityDesc": "在复杂版面中保留行、列和键值关系",
+      "agentHandoff": "Agent 交接",
+      "agentHandoffDesc": "将标准化输出传递到审核队列、ERP 流程或规则引擎",
+      "talkToExpert": "咨询专家",
+      "checkSupportDocs": "查看支持文档",
+      "designNote": "专为金融密集型工作流设计，表格需要被信任、比较和路由，无需手动电子表格清理"
+    },
+    "dataMapping": {
+      "breadcrumb": "数据映射",
+      "heading": "Agent 的可靠性取决于其检索的数据映射",
+      "description": "传统 RAG 在金融问题上的准确率为 25-30%。我们的 agentic 数据映射达到 99%。差异在于：结构化实体图谱、字段级溯源和检索就绪的索引，agent 可以精确导航——而非从原始 embedding 中猜测。",
+      "dataMapNote1": "数据映射连接实体、字段、表格和证据位置——让 agent 在结构化记录上操作，而非碎片化的文档文本",
+      "dataMapNote2": "这是将关键词匹配与金融级检索区分开来的层：每个查询都解析到正确的实体、时间段和源坐标",
+      "exploreBenchmark": "探索基准测试",
+      "learnAboutMapping": "了解我们的映射",
+      "agentRetrievalMap": "Agent 检索映射",
+      "structuredAccess": "跨 agent 配置的结构化访问",
+      "kgRag": "KG-RAG",
+      "kgRagDesc": "知识图谱上的多跳推理——构建成本高，可扩展性有限",
+      "nl2sql": "NL2SQL",
+      "nl2sqlDesc": "针对关系数据库的结构化查询——依赖 schema，仅限结构化数据",
+      "agenticSearch": "Agentic Search",
+      "agenticSearchDesc": "多 agent 验证 + 迭代优化——生产级金融精度",
+      "reasoning": "推理",
+      "reasoningDesc": "Agent 遍历显式语义关系，而非从原始文本推断结构。实体图谱将发行人连接到账户再到交易——无需猜测。",
+      "retrieval": "检索",
+      "retrievalDesc": "将每个查询路由到精确的字段、表格和实体——附带证据轨迹。传统 RAG 在金融问题上达到 25-30%。Agentic 数据映射达到 99%。",
+      "calculation": "计算",
+      "calculationDesc": "将数值运算锚定到标准化、类型化的值及源溯源。比较、比率和总计保持可靠，因为每个数字都可追溯。"
+    },
+    "humanReview": {
+      "breadcrumb": "人工审核",
+      "heading": "在关键处人工审核，其余全部自动化",
+      "tabs": [
+        "字段级标注",
+        "边缘案例处理",
+        "可共享审核界面",
+        "基于角色的访问"
+      ],
+      "subheading": "置信度阈值决定什么通过，什么停止",
+      "description": "标记的字段获得标注。已解决的字段流向下游。每次修正都反馈到提取模型——因此异常队列会随时间缩小。",
+      "exceptionQueue": "异常队列",
+      "exceptionQueueDesc": "仅升级低置信度字段、模糊实体或缺失证据",
+      "auditTrail": "审计轨迹",
+      "auditTrailDesc": "将审核者操作、批准和修正与源记录关联",
+      "talkToExpert": "咨询专家",
+      "checkSupportDocs": "查看支持文档",
+      "reviewQueue": "审核队列",
+      "reviewerControls": "审核者控制",
+      "reviewerControlsDesc": "批准、拒绝或修正提取值，同时保留源上下文",
+      "confidenceRouting": "置信度路由",
+      "confidenceRoutingDesc": "仅将边缘案例发送给人工，可信字段自动继续"
+    },
+    "cta": {
+      "breadcrumb": "应用场景",
+      "heading": "为受监管的数据密集型行业而建",
+      "industryTabs": [
+        "金融",
+        "物流",
+        "房地产",
+        "医疗",
+        "保险"
+      ],
+      "useCases": [
+        [
+          "应付账款与对账",
+          "身份验证",
+          "银行支票处理",
+          "开户 KYC"
+        ],
+        [
+          "抵押贷款收入验证",
+          "发票数据录入",
+          "抵押贷款",
+          "贸易融资"
+        ],
+        [
+          "付款发起",
+          "采购订单发票验证",
+          "欺诈检测",
+          "商业贷款入账"
+        ]
+      ],
+      "seeItWork": "在您的文档上体验效果"
+    }
+  },
+  "videoAudio": {
+    "breadcrumb": "视频与音频标注",
+    "subtitle": "面向视频生成模型的 8 维多模态标注",
+    "heroTitle": "用真实多模态数据训练视频生成模型",
+    "heroDescription": "从原始素材到模型就绪的训练数据——我们标注 Seedance、Sora 和 Veo 实际需要的 8 个维度：场景语义、目标跟踪、物理运动、镜头语法、对话、音乐和音效",
+    "liveLabeled": "实时标注视频",
+    "playingAnnotation": "播放带同步轨道的标注时间线",
+    "active": "活跃",
+    "shotLabel": "镜头标签",
+    "wideUrban": "城市广角驾驶序列",
+    "camera": "镜头",
+    "trackingLeftRight": "从左到右跟踪",
+    "dimensionStack": "8 维堆栈",
+    "dimensionStackDesc": "场景、跟踪、运动、镜头和音频层同步到帧级精度",
+    "timecoded": "时间编码",
+    "scene": "场景",
+    "sceneValue": "语义 + 叙事",
+    "tracking": "跟踪",
+    "trackingValue": "持久 ID + 掩码",
+    "motion": "运动",
+    "motionValue": "物理 + 镜头语法",
+    "audio": "音频",
+    "audioValue": "对话 · 音乐 · 音效",
+    "hours100k": "100K+ 小时",
+    "hours100kDesc": "自动化 MLLM pipeline 可扩展至 100K+ 小时，质量一致",
+    "frameLevelPrecision": "帧级精度",
+    "frameLevelPrecisionDesc": "30fps 下 33ms 时间精度。对话的音素级对齐。",
+    "modelCompatibility": "模型兼容性",
+    "modelCompatibilityDesc": "直接输入 Seedance、Sora、Veo、Kling、Wan 训练 pipeline",
+    "capabilities": {
+      "breadcrumb": "8 个标注维度",
+      "heading": "场景理解标注：视频生成的基础",
+      "description": "最先进的视频生成模型不是在孤立标签上训练的。它们需要 8 个标注维度协同工作——场景内容、叙事弧线、目标跟踪、物理运动、镜头语法、对话、音乐和音效——全部同步到帧级精度。",
+      "foundationNote1": "场景理解标注是语义基础。它分类正在发生什么、谁参与其中、以及为什么——让每个其他维度都有上下文。",
+      "foundationNote2": "其余 7 个维度建立在该基础之上：跟踪维持身份，运动捕捉物理，镜头编码电影摄影，音频层同步对话、音乐和音效",
+      "items": [
+        {
+          "title": "场景内容与语义",
+          "description": "密集场景描述：主体、动作、环境、光照、氛围、艺术风格。所有其他维度引用的语义基础。",
+          "detail": "场景类型 · 叙事节拍 · 角色 · 事件边界"
+        },
+        {
+          "title": "叙事与故事",
+          "description": "情感进展、戏剧张力、故事节拍、角色动机。使模型能够生成连贯的叙事——而不仅仅是随机运动。",
+          "detail": "三幕结构 · 情感效价 · 叙事功能"
+        },
+        {
+          "title": "目标与角色跟踪",
+          "description": "跨遮挡和场景切换的多目标身份持久性。跨镜头维持角色一致性标签，配合姿态估计。",
+          "detail": "Persistent IDs · 跨场景重识别 · keypoint tracking"
+        },
+        {
+          "title": "物理运动动力学",
+          "description": "物理感知运动标签：重力、动量、碰撞、材料变形。标注运动是否遵循真实世界物理定律。",
+          "detail": "物理评分 · 碰撞检测 · 材料属性"
+        },
+        {
+          "title": "镜头语法与电影摄影",
+          "description": "专业电影摄影标签：镜头类型、镜头运动（推轨、摇摄、吊臂）、转场、景深、构图规则",
+          "detail": "镜头类型 · 镜头运动 · 转场 · 构图"
+        },
+        {
+          "title": "对话与语音",
+          "description": "音素级唇形同步对齐、说话人识别、情感标签、多语言/方言支持。帧精确的词-口型映射。",
+          "detail": "唇形同步 · 说话人 ID · 情感 · 多语言支持"
+        },
+        {
+          "title": "音乐与配乐",
+          "description": "节拍标记、节奏检测、流派分类、情绪标签。使模型能够生成与音乐节奏同步的视频。",
+          "detail": "节拍标记 · 节奏 · 流派 · 情绪 · 调性进行"
+        },
+        {
+          "title": "音效与环境音",
+          "description": "因果动作-声音对应：'玻璃碎裂因为它撞到了地板。'材料属性、空间定位、房间音调。",
+          "detail": "动作-声音映射 · 材料标签 · 空间音频"
+        }
+      ]
+    },
+    "sceneUnderstanding": {
+      "breadcrumb": "维度 1：场景理解",
+      "heading": "基础层：正在发生什么、在哪里、为什么",
+      "description1": "在跟踪目标或标注音频之前，我们建立场景基础：这是什么类型的场景？叙事意图是什么？谁是角色？正在展开什么动作？",
+      "description2": "这个语义层锚定所有其他标注。每个跟踪 ID、运动标签、镜头运动和音频线索都引用这个基础。",
+      "liveSceneParsing": "实时场景解析",
+      "liveSceneParsingDesc": "带有关联证据的时间编码多模态理解",
+      "sceneLabel": "场景标签",
+      "sceneLabelValue": "城市人行横道 / 行人流",
+      "multimodalLinks": "多模态链接",
+      "actors": "角色",
+      "actorsValue": "5 个跟踪中",
+      "dialogue": "对话",
+      "dialogueValue": "已对齐",
+      "intent": "意图",
+      "intentValue": "过马路场景",
+      "timeline": "时间线",
+      "timelineValue": "00:42–01:08",
+      "timelineDetail": "场景图谱 · 证据轨迹",
+      "items": [
+        {
+          "title": "场景分类与意图",
+          "description": "分类场景类型（城市人行横道、室内咖啡馆、武侠打斗）、叙事节拍（铺垫、高潮、结局）和角色——所有其他维度的语义锚点",
+          "metric": "场景类型 · 叙事节拍 · 角色 · 事件边界"
+        },
+        {
+          "title": "跨模态证据链接",
+          "description": "将对话链接到说话人，音效链接到视觉事件，镜头运动链接到叙事意图——让每个标注都引用场景基础",
+          "metric": "说话人链接 · 动作-声音对 · 镜头-叙事映射"
+        }
+      ]
+    },
+    "trackingSegmentation": {
+      "breadcrumb": "维度 2 和 3：跟踪与分割",
+      "heading": "从场景语义到目标级精度",
+      "description1": "场景基础建立后，我们跨时间跟踪单个实体。Persistent IDs 维持角色一致性。分割掩码捕捉精确边界。",
+      "description2": "两个维度都引用场景理解层作为上下文——跟踪 ID 映射到场景角色，分割掩码与场景几何对齐",
+      "items": [
+        {
+          "title": "目标与角色跟踪",
+          "description": "跨遮挡和场景切换的多目标身份持久性。Persistent IDs 维持角色一致性。姿态估计和 keypoint tracking 捕捉运动。所有跟踪引用场景理解基础作为上下文。",
+          "metric": "Persistent IDs · 跨场景重识别 · 姿态估计 · keypoint tracking"
+        },
+        {
+          "title": "实例分割",
+          "description": "逐帧像素精确的目标边界。用于物理建模的材料属性标签。遮挡处理维持掩码质量。分割引用基础层的场景几何和空间关系。",
+          "metric": "实例掩码 · 材料属性 · 遮挡处理 · 场景几何"
+        }
+      ]
+    },
+    "annotationShowcase": {
+      "breadcrumb": "维度 4–8：运动、镜头、音频",
+      "heading": "完整多模态堆栈：运动、镜头和音频层",
+      "description": "超越场景语义和目标跟踪，我们标注使视频生成具有电影感的维度：物理运动动力学、镜头语法、对话、音乐和音效——全部同步到帧级精度",
+      "items": [
+        {
+          "title": "物理运动动力学",
+          "description": "重力、动量、碰撞、材料变形——逐帧标注物理评分。模型学习物理上合理的运动是什么样的。",
+          "metric": "物理评分 · 碰撞事件 · 材料属性",
+          "overlay": "物理"
+        },
+        {
+          "title": "镜头语法与电影摄影",
+          "description": "镜头类型（特写、广角、中景）、镜头运动（推轨、摇摄、吊臂、希区柯克变焦）、转场和构图规则——电影生成的词汇",
+          "metric": "镜头类型 · 镜头运动 · 转场 · 构图",
+          "overlay": "镜头"
+        },
+        {
+          "title": "对话与音乐",
+          "description": "音素级唇形同步，SyncNet 验证（偏移 ≤3 帧）。节拍标记和节奏检测用于节奏对齐生成。跨多语言内容的说话人 ID 和情感标签。",
+          "metric": "唇形同步 · 节拍标记 · 说话人 ID · 情感 · 多语言",
+          "overlay": "对话与音乐"
+        },
+        {
+          "title": "音效与环境音",
+          "description": "因果动作-声音对应：第 78 帧刀刃碰撞，第 82 帧泥浆飞溅。材料属性标签、空间定位和房间音调，用于物理上合理的 Foley 音频。",
+          "metric": "动作-声音对 · 材料标签 · 空间音频 · 房间音调",
+          "overlay": "SFX"
+        }
+      ]
+    },
+    "cta": {
+      "heading": "面向视频生成的模型就绪训练数据",
+      "description": "场景语义、持久目标跟踪、物理运动、镜头语法和多轨音频——以帧级精度标注，为 Seedance、Sora 和 Veo 训练 pipeline 结构化",
+      "videoAnnotationFlow": "视频标注流程",
+      "items": [
+        {
+          "title": "模型辅助视频标注",
+          "description": "将原始场景转化为机器可读的监督信号，包含时间标签、目标轨迹、镜头边界和同步音频线索",
+          "cta": "查看视频流程",
+          "label": "自动时间线"
+        },
+        {
+          "title": "多模态审核的主动学习",
+          "description": "优先处理不确定帧，更快优化标签，在一个审核循环中保持视频、音频和事件标注对齐",
+          "cta": "探索优化",
+          "label": "人在回路"
+        },
+        {
+          "title": "场景理解的基础模型",
+          "description": "使用多模态基础模型加速长视频的分割、跟踪、语音对齐和事件提取",
+          "cta": "查看模型层",
+          "label": "场景智能"
+        }
+      ]
+    }
+  },
+  "syntheticData": {
+    "breadcrumb": "面向 Agentic LLM 的合成训练数据",
+    "heroTitle": "用合成数据训练 LLM 进行推理、规划和行动",
+    "heroDescription": "生成用于 fine-tuning、RLHF 和评估的结构化训练数据集。我们合成推理轨迹、tool-calling 轨迹、代码执行路径和数学证明——将基础 LLM 转化为有能力的 agent 所需的训练信号。",
+    "capabilityTabs": [
+      "推理轨迹",
+      "代码执行",
+      "数学证明",
+      "Tool Calling"
+    ],
+    "trainingDataTitle": "Agentic 能力的训练数据",
+    "trainingDataSubtitle": "用于 fine-tuning 和 RLHF 的结构化数据集",
+    "trainingDataDescription": "我们生成 LLM 学习 agentic 行为所需的多步推理轨迹、执行感知代码样本和 tool-calling 轨迹。每个数据集都包含验证、批评循环和故障恢复路径。",
+    "trainingPipeline": "训练 Pipeline",
+    "trainingPipelineDesc": "用于 fine-tuning 和 RLHF 的推理、代码、数学和 tool-calling 数据集",
+    "reasoning": "推理",
+    "reasoningDesc": "带有批评循环和证据图谱的多步 CoT，用于 fine-tuning",
+    "coding": "编码",
+    "codingDesc": "经执行验证的样本，包含测试、补丁和错误恢复路径",
+    "maths": "数学",
+    "mathsDesc": "带有检查点和形式化验证的符号证明，用于 RLHF",
+    "toolCalling": "Tool calling",
+    "toolCallingDesc": "Schema 安全的操作，带参数验证和状态跟踪",
+    "sourceSignals": "源信号",
+    "sourceSignalsValue": "种子 prompt、策略、领域知识",
+    "synthesisEngine": "合成引擎",
+    "synthesisEngineValue": "生成推理轨迹、代码路径、工具序列",
+    "verificationLayer": "验证层",
+    "verificationLayerValue": "执行检查、形式化证明、多模型共识",
+    "trainingOutput": "训练输出",
+    "trainingOutputValue": "Fine-tuning 数据集、RLHF 偏好、评估基准",
+    "samples100k": "100K+ 样本",
+    "samples100kDesc": "通过自动化合成 pipeline 扩展到数百万训练样本",
+    "executionVerified": "执行验证",
+    "executionVerifiedDesc": "代码运行、数学检查、tool call 针对 schema 验证",
+    "rlhfReady": "RLHF-ready",
+    "rlhfReadyDesc": "推理质量、安全性和对齐的偏好对",
+    "benefits": {
+      "heading": "为什么用合成数据训练 Agent？",
+      "scalability": "可扩展性",
+      "scalabilityDesc": "无需人工标注即可生成数百万训练样本。自动化 pipeline 从 1K 扩展到 100K+ 样本，质量一致。",
+      "verifiability": "可验证性",
+      "verifiabilityDesc": "每个代码样本都可执行，每个数学证明都可验证，每个 tool call 都针对 schema 检查。基于执行的过滤确保训练数据正确，而非幻觉。",
+      "diversity": "多样性",
+      "diversityDesc": "Evol-Instruct 和难度自适应创建从简单到复杂的训练课程。基于聚类的多样性指标防止在狭窄分布上过拟合。",
+      "platformHeading": "面向 Agentic LLM 的训练数据平台",
+      "seedPromptsHeading": "从种子 prompt 到经验证的训练数据集",
+      "seedPromptsDescription": "我们处理完整的合成 pipeline：种子 prompt → 演化变体 → 执行验证 → 导出训练数据集。在推理轨迹上 fine-tune，在 tool-calling 偏好上运行 RLHF，在执行验证的基准上评估。",
+      "trainingDataFormats": "训练数据格式",
+      "tableHeaders": {
+        "id": "#",
+        "entity": "实体",
+        "state": "状态",
+        "score": "分数",
+        "output": "输出"
+      },
+      "outputFormats": [
+        {
+          "entity": "SFT 数据集",
+          "state": "JSON-L 格式",
+          "metric": "100K+",
+          "output": "推理轨迹 + 答案"
+        },
+        {
+          "entity": "RLHF 偏好",
+          "state": "配对格式",
+          "metric": "50K+",
+          "output": "选中 vs. 拒绝样本"
+        },
+        {
+          "entity": "评估基准",
+          "state": "Parquet 格式",
+          "metric": "10K+",
+          "output": "执行验证测试"
+        },
+        {
+          "entity": "课程阶段",
+          "state": "难度排序",
+          "metric": "5 阶段",
+          "output": "简单 → 专家级进阶"
+        }
+      ]
+    },
+    "fabrication": {
+      "breadcrumb": "合成方法",
+      "heading": "从第一性原理生成训练数据",
+      "description": "我们合成四种核心数据模态——每种都有领域特定的验证——确保 agent 训练的每个样本在结构上都是健全的",
+      "items": [
+        {
+          "title": "推理轨迹",
+          "description": "带有批评循环和证据图谱的多步思维链。方法：Self-Instruct、STaR、Process Reward Models。",
+          "badge": "已验证"
+        },
+        {
+          "title": "代码执行",
+          "description": "带有测试、补丁和错误恢复的执行感知样本。方法：OSS-Instruct、Evol-Instruct、Genetic Instruct。",
+          "badge": "可运行"
+        },
+        {
+          "title": "数学证明",
+          "description": "带有检查点和形式化验证的符号步骤。方法：MetaMath、NuminaMath、定理证明。",
+          "badge": "已证明"
+        },
+        {
+          "title": "Tool Calling",
+          "description": "Schema 安全的操作，带参数验证和状态跟踪。方法：APIGen、ToolACE、环境模拟。",
+          "badge": "已验证"
+        }
+      ]
+    },
+    "impact": {
+      "breadcrumb": "训练影响",
+      "heading": "提升模型能力的合成数据",
+      "description": "在合成数据上训练不仅仅是数据增强——这是现代 LLM 学习推理、编码和使用工具的方式。我们的数据集专为重要的训练循环设计：SFT、RLHF 和持续评估。",
+      "stats": [
+        {
+          "value": "3.2×",
+          "label": "基准测试上的推理准确率提升"
+        },
+        {
+          "value": "100K+",
+          "label": "每个能力领域的多样化训练样本"
+        },
+        {
+          "value": "95%",
+          "label": "执行验证或共识验证"
+        }
+      ],
+      "capabilities": [
+        "推理",
+        "规划",
+        "工具使用",
+        "代码生成",
+        "数学求解",
+        "长上下文",
+        "多模态",
+        "安全"
+      ],
+      "caseStudy": "了解 DeepSeek、Qwen 和 Seed 如何使用合成数据训练专业 agent"
+    },
+    "pipeline": {
+      "breadcrumb": "复合 AI pipeline",
+      "heading": "构思、生成、验证",
+      "description": "多 agent pipeline——构思 agent 头脑风暴边缘案例，生成 agent 合成轨迹，评估 agent 验证正确性。结果：大规模的多样化、执行验证的训练数据。",
+      "calloutText": "将 prompt、策略和源记录转化为机器可读的训练资产",
+      "tableHeaders": {
+        "id": "ID",
+        "mode": "模式",
+        "structure": "结构",
+        "output": "输出"
+      },
+      "items": [
+        {
+          "id": "SCN-204",
+          "type": "推理",
+          "structure": "证据图谱 · 批评循环",
+          "output": "验证答案 + 轨迹"
+        },
+        {
+          "id": "CD-118",
+          "type": "编码",
+          "structure": "补丁 + 测试 + 失败状态",
+          "output": "可执行修复集"
+        },
+        {
+          "id": "MT-087",
+          "type": "数学",
+          "structure": "公式路径 · 检查点",
+          "output": "有据数值链"
+        },
+        {
+          "id": "TC-332",
+          "type": "Tool call",
+          "structure": "意图映射 · 参数",
+          "output": "可操作 agent 工作流"
+        }
+      ],
+      "progressLabel": "Prompt 合成任务",
+      "progressValue": "7.6% 完成",
+      "metrics": [
+        {
+          "label": "构思",
+          "value": "12.4K",
+          "sub": "边缘案例"
+        },
+        {
+          "label": "生成",
+          "value": "8.7K",
+          "sub": "轨迹"
+        },
+        {
+          "label": "验证",
+          "value": "99.2%",
+          "sub": "通过率"
+        }
+      ],
+      "ctaHeading": "找到适合您 fine-tuning 工作流的训练数据 pipeline"
+    },
+    "scale": {
+      "breadcrumb": "训练数据架构",
+      "heading": "从 1K 种子样本扩展到 100K 训练样本",
+      "items": [
+        {
+          "eyebrow": "难度自适应",
+          "title": "课程学习：从简单开始，演化到复杂",
+          "description": "双向演化确保从简单到专家级任务的覆盖。基于模型当前可解性的动态难度缩放。防止在简单任务上停滞，同时保持学习曲线。"
+        },
+        {
+          "eyebrow": "执行验证",
+          "title": "代码运行，数学验证，tool call 检查 schema",
+          "description": "每个代码样本在沙箱中执行，每个数学证明针对形式系统验证，每个 tool call 检查 API schema。主观任务的多模型共识。拒绝采样过滤幻觉。"
+        },
+        {
+          "eyebrow": "多样性控制",
+          "title": "基于聚类的指标确保语义覆盖",
+          "description": "Evol-Instruct 生成变体：更难、更简单、不同约束。基于聚类的多样性指标防止过拟合。覆盖问题空间的广泛语义区域以避免模型崩溃。"
+        }
+      ],
+      "visualLabels": {
+        "testing": "测试",
+        "qa": "QA",
+        "staging": "预发布"
+      }
+    },
+    "suite": {
+      "breadcrumb": "训练数据产品",
+      "heading": "面向常见 agentic 能力的预构建训练数据集",
+      "description": "为您的领域定制合成：法律推理、医疗编码、金融工具使用。与您的 fine-tuning 基础设施集成：HuggingFace、Weights & Biases、Vertex AI。",
+      "suiteHeading": "训练数据产品套件",
+      "items": [
+        {
+          "title": "推理数据集",
+          "description": "面向 GSM8K、MATH、ARC、HellaSwag 的多步 CoT 轨迹。包含批评循环、证据图谱和验证步骤。格式：JSON-L，含推理链和最终答案。"
+        },
+        {
+          "title": "代码执行数据集",
+          "description": "面向 HumanEval、MBPP、SWE-Bench 的执行感知样本。包含补丁、测试、错误恢复和仓库级上下文。格式：Parquet，含代码、测试、执行日志。"
+        },
+        {
+          "title": "Tool-Calling 数据集",
+          "description": "面向 API 调用、网页导航、CLI 工具的 schema 安全轨迹。包含意图映射、参数验证、状态跟踪。格式：JSON-L，含工具 schema 和执行轨迹。"
+        }
+      ]
+    }
+  }
+}

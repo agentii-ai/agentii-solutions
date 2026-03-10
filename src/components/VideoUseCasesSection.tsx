@@ -1,63 +1,27 @@
 import { Clapperboard, Music, AudioLines, Megaphone, Gamepad2, Database } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
-const useCases = [
-  {
-    title: "Film & Cinematic Production",
-    description:
-      "Multi-shot narrative, camera grammar, dialogue lip-sync, score annotation. Train models that understand scene continuity, shot composition, and audio-visual alignment across long-form content.",
-    icon: Clapperboard,
-    tags: ["Scene coherence", "Camera grammar", "Lip-sync", "Score annotation"],
-  },
-  {
-    title: "Music Video Generation",
-    description:
-      "Beat-aligned visuals, lyric-to-lip-sync, song structure segmentation. Annotate temporal relationships between audio beats, visual transitions, and performer motion at frame level.",
-    icon: Music,
-    tags: ["Beat alignment", "Lyric sync", "Song structure", "Multi-track"],
-  },
-  {
-    title: "Foley & Sound Design",
-    description:
-      "Action-sound correspondence, material labels, spatial audio, multi-track separation. Map every on-screen action to its acoustic signature with phoneme-level temporal precision.",
-    icon: AudioLines,
-    tags: ["Action-sound pairs", "Material labels", "Spatial audio", "Source separation"],
-  },
-  {
-    title: "Advertising & Commercial",
-    description:
-      "Short-form generation, product scene understanding, multi-language dubbing. Annotate brand elements, camera control intent, and scene semantics for controllable commercial video.",
-    icon: Megaphone,
-    tags: ["Brand consistency", "Scene understanding", "Camera control", "Dubbing"],
-  },
-  {
-    title: "Gaming & Interactive Media",
-    description:
-      "Physics-aware motion, character consistency, environmental sound. Label dynamic interactions, procedural camera paths, and spatial audio for real-time generation models.",
-    icon: Gamepad2,
-    tags: ["Physics motion", "Character consistency", "Environmental SFX", "Procedural camera"],
-  },
-  {
-    title: "Training Pipeline at Scale",
-    description:
-      "100K+ hour automated pipelines, quality filtering, RLHF curation. End-to-end annotation infrastructure with multi-stage rejection, temporal alignment verification, and human-in-the-loop validation.",
-    icon: Database,
-    tags: ["100K+ hours", "Quality filtering", "Temporal precision", "RLHF curation"],
-  },
-];
+const useCaseIcons = [Clapperboard, Music, AudioLines, Megaphone, Gamepad2, Database];
 
 const VideoUseCasesSection = () => {
+  const { t } = useTranslation('usecases');
+
+  const useCases = (t('video.useCases.items', { returnObjects: true }) as { title: string; description: string; tags: string[] }[]).map(
+    (item, i) => ({ ...item, icon: useCaseIcons[i] })
+  );
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-            Video AI Training Use Cases
+            {t('video.useCases.breadcrumb')}
           </p>
           <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-            From Film Production to Foley Sound Design.
+            {t('video.useCases.heading')}
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Six research-backed use cases spanning cinematic generation, music video production, and automated annotation at scale.
+            {t('video.useCases.subheading')}
           </p>
         </div>
 

@@ -1,19 +1,20 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 interface DropdownItem {
-  label: string;
+  labelKey: string;
   href: string;
 }
 
 interface DropdownColumn {
-  heading?: string;
+  headingKey?: string;
   items: DropdownItem[];
 }
 
 interface NavItem {
-  label: string;
+  labelKey: string;
   href: string;
   dropdown?: DropdownColumn[];
 }
@@ -24,79 +25,81 @@ interface NavbarProps {
   tone?: NavbarTone;
 }
 
-const navItems: NavItem[] = [
+const navItemsDef: NavItem[] = [
   {
-    label: "Solutions",
+    labelKey: "nav.solutions",
     href: "#solutions",
     dropdown: [
       {
-        heading: "DATA SOLUTIONS",
+        headingKey: "nav.dataSolutions",
         items: [
-          { label: "Document Processing", href: "/solutions/document-processing" },
-          { label: "Video & Audio Data", href: "/solutions/video-audio" },
-          { label: "Synthetic Data", href: "/solutions/synthetic-data" },
+          { labelKey: "nav.documentProcessing", href: "/solutions/document-processing" },
+          { labelKey: "nav.videoAudioData", href: "/solutions/video-audio" },
+          { labelKey: "nav.syntheticData", href: "/solutions/synthetic-data" },
         ],
       },
       {
-        heading: "INDUSTRIES",
+        headingKey: "nav.industries",
         items: [
-          { label: "Financial Services", href: "/use-cases/finance" },
-          { label: "Insurance", href: "/use-cases/insurance" },
+          { labelKey: "nav.financialServices", href: "/use-cases/finance" },
+          { labelKey: "nav.insurance", href: "/use-cases/insurance" },
         ],
       },
       {
-        heading: "CAPABILITIES",
+        headingKey: "nav.capabilities",
         items: [
-          { label: "Agentic Pipelines", href: "#pipeline" },
-          { label: "Multi-Format Ingestion", href: "#pipeline" },
-          { label: "Quality Assurance", href: "#pipeline" },
+          { labelKey: "nav.agenticPipelines", href: "#pipeline" },
+          { labelKey: "nav.multiFormatIngestion", href: "#pipeline" },
+          { labelKey: "nav.qualityAssurance", href: "#pipeline" },
         ],
       },
     ],
   },
   {
-    label: "Use Cases",
+    labelKey: "nav.useCases",
     href: "#use-cases",
     dropdown: [
       {
-        heading: "BY INDUSTRY",
+        headingKey: "nav.byIndustry",
         items: [
-          { label: "Finance & Banking", href: "/use-cases/finance" },
-          { label: "Insurance", href: "/use-cases/insurance" },
-          { label: "Video AI Training", href: "/use-cases/video-generation" },
+          { labelKey: "nav.financeBanking", href: "/use-cases/finance" },
+          { labelKey: "nav.insurance", href: "/use-cases/insurance" },
+          { labelKey: "nav.videoAITraining", href: "/use-cases/video-generation" },
         ],
       },
       {
-        heading: "BY APPLICATION",
+        headingKey: "nav.byApplication",
         items: [
-          { label: "Document Extraction", href: "/solutions/document-processing" },
-          { label: "Synthetic Data Generation", href: "/use-cases/synthetic-data" },
-          { label: "Video AI Training", href: "/solutions/video-audio" },
+          { labelKey: "nav.documentExtraction", href: "/solutions/document-processing" },
+          { labelKey: "nav.syntheticDataGeneration", href: "/use-cases/synthetic-data" },
+          { labelKey: "nav.videoAITraining", href: "/solutions/video-audio" },
         ],
       },
     ],
   },
   {
-    label: "Platform",
+    labelKey: "nav.platform",
     href: "#pipeline",
   },
   {
-    label: "Research",
+    labelKey: "nav.research",
     href: "/research/agentic-search",
   },
   {
-    label: "About",
+    labelKey: "nav.about",
     href: "/about",
   },
 ];
 
 const Navbar = ({ tone = "default" }: NavbarProps) => {
+  const { t, i18n } = useTranslation("common");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const aboutTone = tone === "about";
   const demoTone = tone === "demo";
+  const currentLang = i18n.language?.startsWith("zh") ? "zh" : "en";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -111,6 +114,11 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
 
   const handleMouseLeave = () => {
     dropdownTimeout.current = setTimeout(() => setActiveDropdown(null), 150);
+  };
+
+  const switchLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setActiveDropdown(null);
   };
 
   const navShellClass = scrolled
@@ -156,51 +164,51 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
         </a>
 
         <div className="hidden items-center gap-1 lg:flex">
-          {navItems.map((item) => (
+          {navItemsDef.map((item) => (
             <div
-              key={item.label}
+              key={item.labelKey}
               className="relative"
-              onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
+              onMouseEnter={() => item.dropdown && handleMouseEnter(item.labelKey)}
               onMouseLeave={handleMouseLeave}
             >
               <a
                 href={item.href}
                 className={`flex items-center gap-1 border-b-2 px-4 py-2 text-[15px] font-medium transition-colors duration-150 ${
-                  activeDropdown === item.label ? activeBorderClass : "border-transparent"
+                  activeDropdown === item.labelKey ? activeBorderClass : "border-transparent"
                 } ${desktopLinkBaseClass}`}
               >
-                {item.label}
+                {t(item.labelKey)}
                 {item.dropdown && (
                   <ChevronDown
                     size={14}
-                    className={`transition-transform duration-200 ${activeDropdown === item.label ? "rotate-180" : ""}`}
+                    className={`transition-transform duration-200 ${activeDropdown === item.labelKey ? "rotate-180" : ""}`}
                   />
                 )}
               </a>
 
-              {item.dropdown && activeDropdown === item.label && (
+              {item.dropdown && activeDropdown === item.labelKey && (
                 <div
                   className="absolute left-0 top-full mt-0 pt-2"
-                  onMouseEnter={() => handleMouseEnter(item.label)}
+                  onMouseEnter={() => handleMouseEnter(item.labelKey)}
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className="flex min-w-[520px] gap-8 border border-border bg-background p-6 shadow-lg">
                     {item.dropdown.map((col, colIdx) => (
                       <div key={colIdx} className="min-w-[140px]">
-                        {col.heading && (
+                        {col.headingKey && (
                           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
-                            {col.heading}
+                            {t(col.headingKey)}
                           </p>
                         )}
                         <ul className="space-y-2">
                           {col.items.map((link) => (
-                            <li key={link.label}>
+                            <li key={link.labelKey}>
                               <a
                                 href={link.href}
                                 className="text-[15px] font-medium text-foreground transition-colors duration-150 hover:text-primary"
                                 onClick={() => setActiveDropdown(null)}
                               >
-                                {link.label}
+                                {t(link.labelKey)}
                               </a>
                             </li>
                           ))}
@@ -240,27 +248,27 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
               >
                 <div className="min-w-[160px] rounded-lg border border-border bg-background p-2 shadow-lg">
                   <p className="px-3 pt-2 pb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
-                    LANGUAGE
+                    {t("nav.language")}
                   </p>
                   {[
-                    { code: "EN", label: "English" },
-                    { code: "中文", label: "中文" },
+                    { code: "en", label: "English" },
+                    { code: "zh", label: "中文" },
                   ].map((lang) => (
                     <button
                       key={lang.code}
                       className={`flex w-full items-center gap-2.5 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
-                        lang.code === "EN"
+                        currentLang === lang.code
                           ? "bg-muted text-foreground"
                           : "text-muted-foreground hover:bg-muted hover:text-foreground"
                       }`}
-                      onClick={() => setActiveDropdown(null)}
+                      onClick={() => switchLanguage(lang.code)}
                     >
                       <span
                         className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full border-2 ${
-                          lang.code === "EN" ? "border-foreground" : "border-border"
+                          currentLang === lang.code ? "border-foreground" : "border-border"
                         }`}
                       >
-                        {lang.code === "EN" && <span className="h-2 w-2 rounded-full bg-foreground" />}
+                        {currentLang === lang.code && <span className="h-2 w-2 rounded-full bg-foreground" />}
                       </span>
                       {lang.label}
                     </button>
@@ -270,7 +278,7 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
             )}
           </div>
           <Button size="sm" className={actionButtonClass} asChild>
-            <a href="/request-demo">Request a Demo</a>
+            <a href="/request-demo">{t("nav.requestDemo")}</a>
           </Button>
         </div>
 
@@ -285,18 +293,36 @@ const Navbar = ({ tone = "default" }: NavbarProps) => {
 
       {mobileOpen && (
         <div className="fixed inset-0 top-[72px] z-50 flex flex-col items-center justify-start gap-8 bg-navy/98 pt-16 backdrop-blur-md lg:hidden">
-          {navItems.map((item) => (
+          {navItemsDef.map((item) => (
             <a
-              key={item.label}
+              key={item.labelKey}
               href={item.href}
               className="text-lg font-medium text-slate-200 hover:text-primary"
               onClick={() => setMobileOpen(false)}
             >
-              {item.label}
+              {t(item.labelKey)}
             </a>
           ))}
+          <div className="flex gap-4">
+            <button
+              className={`px-4 py-2 text-sm font-medium border rounded-lg transition-colors ${
+                currentLang === "en" ? "border-teal bg-teal/20 text-teal" : "border-slate-600 text-slate-400"
+              }`}
+              onClick={() => switchLanguage("en")}
+            >
+              EN
+            </button>
+            <button
+              className={`px-4 py-2 text-sm font-medium border rounded-lg transition-colors ${
+                currentLang === "zh" ? "border-teal bg-teal/20 text-teal" : "border-slate-600 text-slate-400"
+              }`}
+              onClick={() => switchLanguage("zh")}
+            >
+              中文
+            </button>
+          </div>
           <Button className={actionButtonClass} asChild>
-            <a href="/request-demo">Request a Demo</a>
+            <a href="/request-demo">{t("nav.requestDemo")}</a>
           </Button>
         </div>
       )}

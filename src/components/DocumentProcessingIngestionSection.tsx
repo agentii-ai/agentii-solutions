@@ -1,5 +1,6 @@
 import { ArrowRight, FileImage, FolderKanban, Inbox } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const ingestionSources = [
   { label: "PDF", icon: FileImage },
@@ -11,34 +12,36 @@ const ingestionSources = [
 const destinationSystems = ["ERP", "CRM", "Claims", "Audit"];
 
 const DocumentProcessingIngestionSection = () => {
+  const { t } = useTranslation('solutions');
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-16">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-              Ingestion
+              {t('documentProcessing.ingestion.breadcrumb')}
             </p>
             <h2 className="mt-5 max-w-[520px] font-brand text-[36px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-              Standardize document intake across every source.
+              {t('documentProcessing.ingestion.heading')}
             </h2>
             <p className="mt-6 max-w-[520px] text-lg leading-relaxed text-muted-foreground">
-              Pull from inboxes, scanners, portals, and shared drives into one pipeline. Every file is parsed, validated, and routed before agents see it.
+              {t('documentProcessing.ingestion.description')}
             </p>
             <div className="mt-8 max-w-[520px] space-y-4 border-l-2 border-primary pl-5">
               <p className="text-sm leading-relaxed text-foreground">
-                Supports PDF, PNG, HTML, email attachments, and scanned images.
+                {t('documentProcessing.ingestion.supports')}
               </p>
               <p className="text-sm leading-relaxed text-foreground">
-                No changes to existing operational tooling required.
+                {t('documentProcessing.ingestion.noChanges')}
               </p>
             </div>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-lg px-8">
-                Learn More <ArrowRight size={16} />
+                {t('buttons.learnMore', { ns: 'common' })} <ArrowRight size={16} />
               </Button>
               <Button variant="outline" size="lg" className="rounded-lg px-8">
-                See intake model
+                {t('documentProcessing.ingestion.seeIntakeModel')}
               </Button>
             </div>
           </div>
@@ -60,7 +63,7 @@ const DocumentProcessingIngestionSection = () => {
                       <Icon className="h-4 w-4" />
                     </div>
                     <div>
-                      <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Source</p>
+                      <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{t('documentProcessing.ingestion.source')}</p>
                       <p className="mt-2 font-brand text-[22px] leading-none text-foreground">{label}</p>
                     </div>
                   </article>
@@ -77,7 +80,7 @@ const DocumentProcessingIngestionSection = () => {
               </div>
 
               <div className="space-y-4 border-l border-primary/20 bg-foreground px-5 py-5 text-background">
-                <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-background/60">Destinations</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-background/60">{t('documentProcessing.ingestion.destinations')}</p>
                 {destinationSystems.map((system) => (
                   <div key={system} className="flex items-center justify-between border border-background/15 bg-background/5 px-4 py-4">
                     <span className="text-sm font-medium uppercase tracking-[0.16em] text-background/80">{system}</span>

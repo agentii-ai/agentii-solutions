@@ -1,0 +1,679 @@
+{
+  "finance": {
+    "breadcrumb": "应用场景 · 金融与银行",
+    "heroTitle1": "Agent-use-ready 数据",
+    "heroTitle2": "服务于金融运营",
+    "heroDescription": "将 SEC 文件、银行对账单和贷款文档转化为结构化记录，供对账、承保和合规 agent 直接使用——无需后处理",
+    "bulletPoints": [
+      "从 10-K、银行对账单和贷款包中提取字段、表格和行项目",
+      "每个值都带有置信度分数、字段溯源和 GAAP/IFRS 映射",
+      "异常路由仅将低置信度提取发送到人工审核"
+    ],
+    "documentTypes": "文档类型",
+    "documentTypesValue": "10-K · 10-Q · 报表 · 合同",
+    "outputShape": "输出格式",
+    "outputShapeValue": "类型化 JSON · GAAP 映射 · 证据轨迹",
+    "accuracy": "准确率",
+    "accuracyValue": "金融问答基准测试 99%",
+    "workflows": {
+      "breadcrumb": "金融工作流",
+      "heading": "从文档到决策——无需手动数据录入",
+      "subheading": "每个工作流从文档提取开始。每次提取以 agent-ready 记录结束。",
+      "creditUnderwriting": "信贷承保",
+      "creditUnderwritingDesc": "将财务报表、纳税申报和银行对账单提取为类型化记录。Agent 计算偿债覆盖率、验证收入并标记异常——全部基于带字段溯源的结构化数据。",
+      "creditUnderwritingDocs": [
+        "纳税申报",
+        "银行对账单",
+        "财务报表"
+      ],
+      "accountsPayable": "应付账款对账",
+      "accountsPayableDesc": "将发票与采购订单和付款记录匹配。Agent 对账行项目、检测差异并将异常路由到审核队列——附带源文档的完整审计轨迹。",
+      "accountsPayableDocs": [
+        "发票",
+        "采购订单",
+        "付款记录"
+      ],
+      "regulatoryCompliance": "监管合规",
+      "regulatoryComplianceDesc": "从 10-K、10-Q 和监管文件中提取数据到 GAAP/IFRS 映射结构。合规 agent 验证披露、检查计算并生成审计就绪报告。",
+      "regulatoryComplianceDocs": [
+        "10-K 文件",
+        "10-Q 文件",
+        "监管报告"
+      ],
+      "commercialLoan": "商业贷款入账",
+      "commercialLoanDesc": "将贷款申请、信用备忘录和抵押品文档处理为结构化记录。Agent 验证条款、计算风险指标并路由审批——每个决策都有证据轨迹。",
+      "commercialLoanDocs": [
+        "贷款申请",
+        "信用备忘录",
+        "抵押品文档"
+      ],
+      "exploreAllUseCases": "探索所有应用场景"
+    },
+    "dataMapping": {
+      "breadcrumb": "数据映射",
+      "heading": "金融问答准确率 99%，而非 25%",
+      "description": "传统 RAG 在金融问题上失败，因为它从 embedding 中猜测。我们的 agentic 数据映射构建实体图谱、字段溯源和检索就绪索引——让 agent 精确导航，而非相似性匹配。",
+      "note1": "数据映射将发行人连接到账户再到交易——每个字段都可追溯到其源坐标（页面、表格、行、单元格）",
+      "note2": "这是将关键词匹配与金融级检索区分开来的层：每个查询都解析到正确的实体、时间段和证据轨迹",
+      "readBenchmark": "阅读基准测试",
+      "seeExampleQueries": "查看示例查询",
+      "financialQA": "金融问答准确率",
+      "benchmarkComparison": "基准对比",
+      "traditionalRag": "传统 RAG",
+      "traditionalRagDesc": "原始文本上的关键词匹配——金融问答准确率 25-30%",
+      "kgRag": "KG-RAG",
+      "kgRagDesc": "知识图谱上的多跳推理——准确率 65%，构建成本高",
+      "agenticSearch": "Agentic Search",
+      "agenticSearchDesc": "多 agent 验证 + 实体图谱——金融基准测试准确率 99%",
+      "financialReasoning": "金融推理",
+      "financialReasoningDesc": "Agent 遍历连接发行人 → 账户 → 交易 → 义务的实体图谱。无需猜测。每个关系都是显式的、类型化的，可追溯到源文档。",
+      "precisionRetrieval": "精准检索",
+      "precisionRetrievalDesc": "将查询路由到精确的字段、表格和实体——附带证据轨迹。'Q3 收入是多少？'解析到第 12 页、表 B、第 3 行、第 4 个单元格——而非模糊文本匹配。",
+      "reliableCalculation": "可靠计算",
+      "reliableCalculationDesc": "将数值运算锚定到标准化、类型化的值及 GAAP/IFRS 映射。债务比率、利润率计算和趋势分析保持可靠，因为每个数字都可追溯。"
+    },
+    "cta": {
+      "breadcrumb": "金融服务",
+      "heading": "为受监管的数据密集型运营而建",
+      "industryTabs": [
+        "银行",
+        "资产管理",
+        "保险",
+        "私募股权",
+        "金融科技"
+      ],
+      "useCases": [
+        [
+          "信贷承保",
+          "KYC 与身份验证",
+          "贷款发放",
+          "开户"
+        ],
+        [
+          "应付账款对账",
+          "发票处理",
+          "付款对账",
+          "费用管理"
+        ],
+        [
+          "监管合规",
+          "SEC 文件分析",
+          "审计轨迹生成",
+          "风险评估"
+        ]
+      ],
+      "seeItWork": "在您的金融文档上体验效果"
+    }
+  },
+  "insurance": {
+    "breadcrumb": "应用场景 · 保险",
+    "heroTitle1": "Agent-use-ready 数据",
+    "heroTitle2": "服务于保险运营",
+    "heroDescription": "将 ACORD 表单、保单文档和理赔文件转化为结构化记录，供承保、理赔和合规 agent 直接使用——无需手动数据录入",
+    "bulletPoints": [
+      "从保单、理赔和医疗记录中提取字段、表格和条款",
+      "每个输出都包含置信度分数、字段溯源和监管映射",
+      "异常路由将模糊理赔和边缘案例发送到理算员审核"
+    ],
+    "documentTypes": "文档类型",
+    "documentTypesValue": "ACORD 表单 · 保单 · 理赔 · 医疗记录",
+    "outputShape": "输出格式",
+    "outputShapeValue": "类型化 JSON · 条款映射 · 证据轨迹",
+    "accuracy": "准确率",
+    "accuracyValue": "理赔数据提取基准测试 99%",
+    "workflows": {
+      "breadcrumb": "保险工作流",
+      "heading": "从接收到裁决——无需手动数据录入",
+      "subheading": "每个工作流从文档提取开始。每次提取以 agent-ready 记录结束。",
+      "claimsProcessing": "理赔处理",
+      "claimsProcessingDesc": "将理赔表单、损失报告和支持文档提取为类型化记录。Agent 验证保障范围、计算准备金并路由审批——证据轨迹将每个决策链接到源文档。",
+      "claimsProcessingDocs": [
+        "ACORD 表单",
+        "损失报告",
+        "警方报告"
+      ],
+      "underwriting": "承保",
+      "underwritingDesc": "将申请、财务报表和风险评估处理为结构化记录。Agent 评分风险、验证披露并标记异常——全部基于带字段溯源的 GAAP 映射数据。",
+      "underwritingDocs": [
+        "申请",
+        "财务报表",
+        "风险评估"
+      ],
+      "medicalRecords": "医疗记录审核",
+      "medicalRecordsDesc": "从医疗记录和 EOB 中提取诊断、治疗历史和计费代码。Agent 将理赔与保单条款交叉引用，并标记不一致之处供理算员审核。",
+      "medicalRecordsDocs": [
+        "医疗记录",
+        "EOB",
+        "医生笔记"
+      ],
+      "policyAdmin": "保单管理",
+      "policyAdminDesc": "将保单文档、批注和续保包解析为条款映射结构。Agent 比较条款、检测保障缺口并生成带完整审计轨迹的合规报告。",
+      "policyAdminDocs": [
+        "保单文档",
+        "批注",
+        "续保包"
+      ],
+      "exploreAllUseCases": "探索所有应用场景"
+    },
+    "dataMapping": {
+      "breadcrumb": "数据映射",
+      "heading": "理赔数据提取准确率 99%，而非 25%",
+      "description": "传统 RAG 在保险问题上失败，因为它从 embedding 中猜测。我们的 agentic 数据映射构建实体图谱、条款溯源和检索就绪索引——让 agent 精确导航，而非相似性匹配。",
+      "note1": "数据映射将投保人连接到理赔再到保障条款——每个字段都可追溯到其源坐标（页面、条款、章节、段落）",
+      "note2": "这是将关键词匹配与保险级检索区分开来的层：每个查询都解析到正确的保单、理赔和证据轨迹",
+      "readBenchmark": "阅读基准测试",
+      "seeExampleQueries": "查看示例查询",
+      "chartTitle": "理赔数据提取准确率",
+      "chartSubtitle": "基准对比",
+      "benchmarkRows": {
+        "traditionalRag": {
+          "label": "传统 RAG",
+          "value": "原始文本上的关键词匹配——理赔数据提取准确率 25-30%"
+        },
+        "kgRag": {
+          "label": "KG-RAG",
+          "value": "知识图谱上的多跳推理——准确率 65%，构建成本高"
+        },
+        "agenticSearch": {
+          "label": "Agentic Search",
+          "value": "多 agent 验证 + 实体图谱——保险基准测试准确率 99%"
+        }
+      },
+      "capabilities": {
+        "claimsReasoning": {
+          "title": "理赔推理",
+          "description": "Agent 遍历连接投保人 → 理赔 → 保障条款 → 义务的实体图谱。无需猜测。每个关系都是显式的、类型化的，可追溯到源文档。"
+        },
+        "policyRetrieval": {
+          "title": "保单检索",
+          "description": "将查询路由到精确的条款、批注和保障条款——附带证据轨迹。'水灾的免赔额是多少？'解析到保单第 4 节、条款 B、第 3 段——而非模糊文本匹配。"
+        },
+        "reserveCalculation": {
+          "title": "准备金计算",
+          "description": "将数值运算锚定到标准化、类型化的值及监管映射。损失准备金、保障限额和保费计算保持可靠，因为每个数字都可追溯。"
+        }
+      }
+    },
+    "cta": {
+      "breadcrumb": "保险运营",
+      "heading": "为理赔、承保和合规而建",
+      "industryTabs": [
+        "财产与意外险",
+        "寿险与健康险",
+        "再保险",
+        "理赔管理",
+        "承保"
+      ],
+      "useCases": [
+        [
+          "理赔处理",
+          "首次损失通知",
+          "损失理算",
+          "代位求偿"
+        ],
+        [
+          "保单承保",
+          "风险评估",
+          "申请处理",
+          "续保管理"
+        ],
+        [
+          "医疗记录审核",
+          "残疾理赔",
+          "工伤赔偿",
+          "健康保险理赔"
+        ]
+      ],
+      "seeItWork": "在您的保险文档上体验效果"
+    }
+  },
+  "video": {
+    "hero": {
+      "breadcrumb": "应用场景",
+      "title1": "Agent原生数据",
+      "title2": "服务于视频生成",
+      "description": "将场景、运动、镜头意图和时间一致性转化为机器可读数据集，供 agent 训练和评估视频模型",
+      "signalCards": [
+        {
+          "label": "场景图谱",
+          "value": "物体 · 运动 · 时序"
+        },
+        {
+          "label": "提示词追踪",
+          "value": "帧级语义控制"
+        },
+        {
+          "label": "回放",
+          "value": "Agent-ready 视频推理数据"
+        }
+      ],
+      "vizTitle": "视频信号栈",
+      "vizDescription": "帧、运动向量、提示词和评估追踪",
+      "inputLabel": "输入",
+      "inputValue": "提示词 + 分镜 + 运动规则",
+      "outputLabel": "输出",
+      "outputValue": "跨时间和场景状态的密集标注",
+      "useLabel": "用途",
+      "useValue": "训练、评估和可控性基准测试"
+    },
+    "useCases": {
+      "breadcrumb": "视频 AI 训练应用场景",
+      "heading": "从电影制作到拟音设计",
+      "subheading": "六个基于研究的应用场景，涵盖电影生成、音乐视频制作和大规模自动化标注",
+      "items": [
+        {
+          "title": "电影与影视制作",
+          "description": "多镜头叙事、镜头语法、对白口型同步、配乐标注。训练理解场景连续性、镜头构图和长内容音视频对齐的模型。",
+          "tags": [
+            "场景连贯性",
+            "镜头语法",
+            "口型同步",
+            "配乐标注"
+          ]
+        },
+        {
+          "title": "音乐视频生成",
+          "description": "节拍对齐视觉、歌词到口型同步、歌曲结构分割。在帧级别标注音频节拍、视觉转场和表演者动作之间的时间关系。",
+          "tags": [
+            "节拍对齐",
+            "歌词同步",
+            "歌曲结构",
+            "多轨道"
+          ]
+        },
+        {
+          "title": "拟音与声音设计",
+          "description": "动作-声音对应、材质标签、空间音频、多轨分离。将每个画面动作映射到其声学特征，精确到音素级时间精度。",
+          "tags": [
+            "动作-声音配对",
+            "材质标签",
+            "空间音频",
+            "声源分离"
+          ]
+        },
+        {
+          "title": "广告与商业视频",
+          "description": "短视频生成、产品场景理解、多语言配音。标注品牌元素、镜头控制意图和场景语义，用于可控商业视频生成。",
+          "tags": [
+            "品牌一致性",
+            "场景理解",
+            "镜头控制",
+            "配音"
+          ]
+        },
+        {
+          "title": "游戏与互动媒体",
+          "description": "物理感知运动、角色一致性、环境音效。标注动态交互、程序化镜头路径和空间音频，用于实时生成模型。",
+          "tags": [
+            "物理运动",
+            "角色一致性",
+            "环境 SFX",
+            "程序化镜头"
+          ]
+        },
+        {
+          "title": "大规模训练 Pipeline",
+          "description": "100K+ 小时自动化 pipeline、质量过滤、RLHF 策展。端到端标注基础设施，包含多阶段拒绝、时间对齐验证和人机协同验证。",
+          "tags": [
+            "100K+ 小时",
+            "质量过滤",
+            "时间精度",
+            "RLHF 策展"
+          ]
+        }
+      ]
+    },
+    "pipeline": {
+      "tabs": [
+        "自动化标注 pipeline",
+        "质量过滤",
+        "模型就绪导出"
+      ],
+      "breadcrumb": "标注 Pipeline",
+      "heading": "从原始素材到模型就绪数据，六个阶段完成",
+      "description": "自动化 MLLM pipeline 可扩展至 100K+ 小时，配合多阶段质量过滤。每个阶段拒绝 15–60% 的样本，确保只有高质量标注进入训练。",
+      "rejectionRateLabel": "拒绝率",
+      "rejectionRateValue": "所有 pipeline 阶段中 70–80% 因质量被过滤",
+      "temporalPrecisionLabel": "时间精度",
+      "temporalPrecisionValue": "30fps 下 33ms，对白对齐达音素级",
+      "pipelineLabel": "6 阶段 Pipeline",
+      "pipelineTitle": "标注工作流",
+      "stages": [
+        {
+          "stage": "采集",
+          "description": "从制作、网络和授权来源摄取原始视频"
+        },
+        {
+          "stage": "基础过滤",
+          "description": "音频存在性、静音比率（<80%）、采样率（≥32kHz）"
+        },
+        {
+          "stage": "质量评估",
+          "description": "SNR（≥20dB）、美学评分、音频分类"
+        },
+        {
+          "stage": "对齐验证",
+          "description": "ImageBind 语义（>0.5）、SyncNet 口型同步（≤3 帧）"
+        },
+        {
+          "stage": "自动标注",
+          "description": "MLLM 描述生成、Whisper 转录、节拍追踪、事件检测"
+        },
+        {
+          "stage": "人工验证",
+          "description": "基于抽样的 QA（5–10%）、边缘案例优化、质量评级"
+        }
+      ]
+    },
+    "compatibility": {
+      "breadcrumb": "模型兼容性",
+      "heading": "一套标注框架，覆盖所有前沿模型",
+      "description": "我们的 8 维标注框架映射到每个主流视频生成模型——从纯视觉架构到完整音视频系统。一次标注，覆盖所有模型。",
+      "note1": "无需为每个模型的输入格式重新标注，我们的框架捕获 Seedance、Veo、Sora、Kling、Wan 和 HunyuanVideo 的维度超集",
+      "note2": "这消除了冗余标注，确保您的训练数据投资可跨模型代际扩展",
+      "matrixLabel": "兼容性矩阵",
+      "matrixTitle": "8 维覆盖",
+      "modelHeader": "模型",
+      "dimensions": [
+        "场景",
+        "追踪",
+        "运动",
+        "镜头",
+        "对白",
+        "音乐",
+        "SFX",
+        "环境音"
+      ],
+      "summaryCards": [
+        {
+          "label": "完整覆盖",
+          "value": "Seedance 2.0、HunyuanVideo——支持全部 8 个维度"
+        },
+        {
+          "label": "音频优先模型",
+          "value": "Veo 3、Seedance——对白、音乐和环境音标注"
+        },
+        {
+          "label": "视觉优先模型",
+          "value": "Sora 2、Kling、Wan——场景、追踪、运动、镜头"
+        }
+      ]
+    },
+    "cta": {
+      "breadcrumb": "视频生成训练数据",
+      "heading": "为正在构建视频未来的模型而建",
+      "applicationTabs": [
+        "电影与影视",
+        "音乐视频",
+        "拟音与声音",
+        "广告",
+        "游戏"
+      ],
+      "checklistColumns": [
+        [
+          "场景内容与语义",
+          "叙事与故事讲述",
+          "物体与角色追踪",
+          "物理运动动力学"
+        ],
+        [
+          "镜头语法与电影摄影",
+          "对白与语音标注",
+          "音乐与配乐标注",
+          "音效与环境音"
+        ],
+        [
+          "100K+ 小时 Pipeline",
+          "多阶段质量过滤",
+          "帧级时间精度",
+          "RLHF 偏好策展"
+        ]
+      ],
+      "seeItWork": "在您的视频训练数据上体验效果"
+    }
+  },
+  "syntheticUseCase": {
+    "hero": {
+      "breadcrumb": "应用场景 · Agent训练合成数据",
+      "title1": "六大能力",
+      "title2": "一条合成pipeline",
+      "description": "每种agentic能力——推理、编码、数学、工具使用、规划和多模态理解——都需要独特的训练数据形态。我们从种子提示合成全部六种，每个样本都内置领域特定验证。",
+      "capabilityCards": [
+        {
+          "label": "推理",
+          "value": "CoT轨迹 · 批判循环 · 证据图谱"
+        },
+        {
+          "label": "代码",
+          "value": "执行验证 · 测试 · 补丁 · 恢复"
+        },
+        {
+          "label": "数学",
+          "value": "符号证明 · 检查点 · 形式化验证"
+        },
+        {
+          "label": "工具调用",
+          "value": "Schema安全操作 · 状态追踪 · API验证"
+        },
+        {
+          "label": "规划",
+          "value": "长期轨迹 · 重新规划 · 记忆"
+        },
+        {
+          "label": "多模态",
+          "value": "GUI定位 · 视觉问答 · 跨模态推理"
+        }
+      ]
+    },
+    "grid": {
+      "breadcrumb": "6大agentic能力",
+      "heading": "每种能力都需要独特的训练数据形态",
+      "description": "推理轨迹与工具调用轨迹完全不同。代码执行数据需要沙箱验证。规划数据需要重新规划分支。我们处理这些结构差异，让您无需操心。",
+      "methodsLabel": "方法：",
+      "benchmarksLabel": "基准测试：",
+      "outputLabel": "输出：",
+      "items": [
+        {
+          "title": "思维链推理",
+          "subtitle": "教模型逐步思考",
+          "description": "生成带有批判循环、证据图谱和自我纠正路径的多步推理轨迹。在这些轨迹上训练的模型学会分解问题、验证中间步骤并从逻辑错误中恢复。",
+          "methods": "Self-Instruct · STaR · Process Reward Models · Rejection Sampling",
+          "benchmarks": "GSM8K · MATH · ARC · HotpotQA · MuSiQue",
+          "output": "带证据链接和置信度分数的已验证CoT轨迹",
+          "metric": "3.2×",
+          "metricLabel": "多跳基准测试推理准确率"
+        },
+        {
+          "title": "代码生成与修复",
+          "subtitle": "带测试和补丁的执行验证样本",
+          "description": "合成代码问题、解决方案、测试套件和故障恢复路径。每个样本都在沙箱中执行——代码不能运行就不会发布。覆盖仓库级任务、稀有语言和自我纠正循环。",
+          "methods": "OSS-Instruct · Evol-Instruct · Genetic Instruct · SYNTHETIC-1",
+          "benchmarks": "HumanEval · MBPP · SWE-Bench · LiveCodeBench",
+          "output": "带测试套件、补丁和执行日志的可运行代码",
+          "metric": "95%",
+          "metricLabel": "沙箱执行通过率"
+        },
+        {
+          "title": "数学推理",
+          "subtitle": "带形式化验证的符号证明",
+          "description": "通过改写、反转和难度缩放演化种子问题。每个解决方案都带有符号步骤、中间检查点和形式化验证。支持从算术到竞赛级证明的课程学习。",
+          "methods": "MetaMath · NuminaMath · DeepSeekMath · GRPO · Theorem Proving",
+          "benchmarks": "GSM8K · MATH · Olympiad · AMC/AIME",
+          "output": "带步骤级验证的有根据数值链",
+          "metric": "90K+",
+          "metricLabel": "从种子演化生成的数学训练样本"
+        },
+        {
+          "title": "工具调用与函数使用",
+          "subtitle": "带状态追踪的Schema安全轨迹",
+          "description": "合成具有模糊意图、变化目标和执行失败的多轮工具调用场景。LLM充当环境模拟器，生成连贯的API响应和状态转换。Agent学会何时澄清、行动或修正。",
+          "methods": "APIGen · ToolACE · BUTTON · TOUCAN · Environment Simulation",
+          "benchmarks": "ToolBench · API-Bank · BFCL · Nexus",
+          "output": "带Schema检查的已验证工具使用轨迹",
+          "metric": "99%",
+          "metricLabel": "Schema验证通过率"
+        },
+        {
+          "title": "长期规划",
+          "subtitle": "多步工作流的轨迹合成",
+          "description": "生成教模型分解目标、维护记忆并在失败时动态重新规划的规划数据。Plan-and-Act pipeline回溯性地为成功轨迹标注高级计划。AgentGen创造多样化的环境和任务。",
+          "methods": "Plan-and-Act · AgentGen · WebArena · OSWorld · TheAgentCompany",
+          "benchmarks": "WebArena (57% SOTA) · OSWorld · MiniWoB++",
+          "output": "带重新规划分支的有根据计划-行动对",
+          "metric": "57%",
+          "metricLabel": "WebArena成功率（Plan-and-Act SOTA）"
+        },
+        {
+          "title": "多模态与GUI Agent",
+          "subtitle": "带跨模态推理的视觉定位",
+          "description": "合成GUI导航任务、视觉文档理解和跨模态推理数据。Graph2Eval等知识图谱框架生成多跳网页交互任务。支持VLM、机器人VLA模型和合成世界中的RL。",
+          "methods": "Graph2Eval · VL-DAC · GUI Grounding · Knowledge Graph Sampling",
+          "benchmarks": "VisualWebArena · ScreenSpot · Mind2Web",
+          "output": "带视觉-文本链接的空间感知交互轨迹",
+          "metric": "Multi-hop",
+          "metricLabel": "带视觉定位的跨模态推理"
+        }
+      ]
+    },
+    "pipeline": {
+      "breadcrumb": "合成pipeline",
+      "heading": "种子 → 演化 → 合成 → 验证 → 导出",
+      "description": "一条pipeline服务全部六种能力。验证层按模态自适应——代码用沙箱执行，数学用形式化证明，工具调用用Schema检查，推理用共识投票。",
+      "steps": [
+        {
+          "step": "01",
+          "label": "种子",
+          "detail": "领域提示、策略、现有数据集或任务定义"
+        },
+        {
+          "step": "02",
+          "label": "演化",
+          "detail": "Evol-Instruct生成更难、更简单和约束变化的样本"
+        },
+        {
+          "step": "03",
+          "label": "合成",
+          "detail": "复合AI agent生成推理轨迹、代码、数学、工具调用"
+        },
+        {
+          "step": "04",
+          "label": "验证",
+          "detail": "沙箱执行、形式化证明、Schema检查、多模型共识"
+        },
+        {
+          "step": "05",
+          "label": "导出",
+          "detail": "JSON-L、Parquet、HuggingFace——可用于SFT、RLHF或评估"
+        }
+      ],
+      "qualityHeading": "每个样本内置四个质量维度",
+      "qualityDimensions": [
+        {
+          "title": "多样性",
+          "description": "基于聚类的指标确保语义覆盖整个问题空间。防止窄分布导致的模型崩溃。"
+        },
+        {
+          "title": "可验证性",
+          "description": "沙箱中的执行过滤、形式化证明验证和多模型共识投票。幻觉样本永远不会进入训练。"
+        },
+        {
+          "title": "难度自适应",
+          "description": "双向演化从简单扩展到专家级。动态难度根据模型当前的可解性前沿进行调整。"
+        },
+        {
+          "title": "长上下文一致性",
+          "description": "基于文档的任务和多轮模拟在大量token长度上保持逻辑一致性。无上下文漂移。"
+        }
+      ]
+    },
+    "comparison": {
+      "breadcrumb": "统一需求框架",
+      "heading": "一条Pipeline，六种验证策略",
+      "description": "每种能力对应特定的生成方法、验证策略、规模目标和输出格式。Pipeline自适应——质量标准不变。",
+      "tableHeaders": {
+        "capability": "能力",
+        "generationMethod": "生成方法",
+        "verification": "验证",
+        "scale": "规模",
+        "outputFormat": "输出格式"
+      },
+      "rows": [
+        {
+          "capability": "推理",
+          "method": "Self-Instruct, STaR, PRMs",
+          "verification": "多模型共识",
+          "scale": "100K+轨迹",
+          "format": "JSON-L + CoT链"
+        },
+        {
+          "capability": "代码",
+          "method": "OSS-Instruct, Evol-Instruct",
+          "verification": "沙箱执行",
+          "scale": "50K+样本",
+          "format": "Parquet + 测试和日志"
+        },
+        {
+          "capability": "数学",
+          "method": "MetaMath, NuminaMath, GRPO",
+          "verification": "形式化证明验证",
+          "scale": "90K+问题",
+          "format": "JSON-L + 步骤证明"
+        },
+        {
+          "capability": "工具调用",
+          "method": "APIGen, ToolACE, TOUCAN",
+          "verification": "Schema + 状态检查",
+          "scale": "30K+轨迹",
+          "format": "JSON-L + 工具Schema"
+        },
+        {
+          "capability": "规划",
+          "method": "Plan-and-Act, AgentGen",
+          "verification": "环境回放",
+          "scale": "20K+轨迹",
+          "format": "JSON-L + 计划-行动对"
+        },
+        {
+          "capability": "多模态",
+          "method": "Graph2Eval, VL-DAC",
+          "verification": "视觉定位检查",
+          "scale": "15K+任务",
+          "format": "Parquet + 图像引用"
+        }
+      ],
+      "footerCards": [
+        {
+          "label": "训练循环",
+          "value": "SFT · RLHF (PPO/GRPO/DPO) · 持续评估"
+        },
+        {
+          "label": "基础设施",
+          "value": "HuggingFace · Weights & Biases · NVIDIA NeMo · Vertex AI"
+        },
+        {
+          "label": "合规",
+          "value": "PII过滤 · 毒性检查 · 去重 · 领域对齐"
+        }
+      ]
+    },
+    "cta": {
+      "breadcrumb": "开始生成训练数据",
+      "heading": "用真正能运行的合成数据训练您的agent",
+      "description": "告诉我们您的agent需要哪些能力——推理、代码、数学、工具调用、规划或多模态——我们将以您偏好的格式生成经过执行验证的训练数据集",
+      "footerCards": [
+        {
+          "label": "格式",
+          "value": "JSON-L · Parquet · HuggingFace Datasets · 自定义Schema"
+        },
+        {
+          "label": "交付",
+          "value": "API访问 · S3/GCS导出 · HuggingFace Hub · 直接集成"
+        },
+        {
+          "label": "响应",
+          "value": "48小时内提供试点数据集 · 2周内完成全量生产"
+        }
+      ]
+    }
+  }
+}

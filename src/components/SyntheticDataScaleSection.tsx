@@ -1,46 +1,36 @@
 import { ArrowRight, Database, ShieldCheck, Workflow } from "lucide-react";
-
-const featureCards = [
-  {
-    eyebrow: "Difficulty adaptation",
-    title: "Curriculum learning: start simple, evolve to complex.",
-    description:
-      "Bidirectional evolution ensures coverage from trivial to expert-level tasks. Dynamic difficulty scaling based on model's current solvability. Prevents plateauing on simple tasks while maintaining learning curve.",
-    linkLabel: "Learn more",
-    alignment: "visual-left",
-    icon: Database,
-  },
-  {
-    eyebrow: "Execution verification",
-    title: "Code runs, math validates, tool calls check schemas.",
-    description:
-      "Every code sample executes in sandboxes, every math proof validates against formal systems, every tool call checks API schemas. Multi-model consensus for subjective tasks. Rejection sampling filters hallucinations.",
-    linkLabel: "Learn more",
-    alignment: "visual-right",
-    icon: Workflow,
-  },
-  {
-    eyebrow: "Diversity control",
-    title: "Clustering-based metrics ensure semantic coverage.",
-    description:
-      "Evol-Instruct generates variations: harder, easier, different constraints. Clustering-based diversity metrics prevent overfitting. Covers wide semantic area across problem space to avoid model collapse.",
-    linkLabel: "Learn more",
-    alignment: "visual-left",
-    icon: ShieldCheck,
-  },
-] as const;
+import { useTranslation } from 'react-i18next';
 
 const SyntheticDataScaleSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const featureCards = (t('syntheticData.scale.items', { returnObjects: true }) as Array<{
+    eyebrow: string;
+    title: string;
+    description: string;
+  }>).map((item, index) => ({
+    ...item,
+    linkLabel: "Learn more",
+    alignment: index === 1 ? "visual-right" : "visual-left",
+    icon: [Database, Workflow, ShieldCheck][index],
+  })) as const;
+
+  const visualLabels = t('syntheticData.scale.visualLabels', { returnObjects: true }) as {
+    testing: string;
+    qa: string;
+    staging: string;
+  };
+
   return (
     <section className="bg-secondary py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-[760px] text-center">
             <p className="font-mono-data text-[11px] font-medium uppercase tracking-[0.28em] text-[hsl(var(--color-purple-dark))]">
-              Training data architecture
+              {t('syntheticData.scale.breadcrumb')}
             </p>
             <h2 className="mt-4 font-brand text-[34px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[56px]">
-              Scale From 1K Seed Examples to 100K Training Samples.
+              {t('syntheticData.scale.heading')}
             </h2>
           </div>
 
@@ -67,7 +57,7 @@ const SyntheticDataScaleSection = () => {
                         }}
                       />
 
-                      {eyebrow === "Difficulty adaptation" && (
+                      {eyebrow === t('syntheticData.scale.items.0.eyebrow') && (
                         <div className="relative flex w-full max-w-[360px] items-center justify-center">
                           <div className="absolute left-0 top-8 h-36 w-40 border border-[hsl(var(--color-gray-300))] bg-background shadow-[0_12px_30px_-20px_hsl(var(--color-navy)/0.18)]" />
                           <div className="absolute left-4 top-4 h-36 w-40 border border-[hsl(var(--color-gray-300))] bg-background shadow-[0_12px_30px_-20px_hsl(var(--color-navy)/0.18)]" />
@@ -83,7 +73,7 @@ const SyntheticDataScaleSection = () => {
                         </div>
                       )}
 
-                      {eyebrow === "Execution verification" && (
+                      {eyebrow === t('syntheticData.scale.items.1.eyebrow') && (
                         <div className="relative flex w-full max-w-[360px] items-center justify-center">
                           <div
                             className="pointer-events-none absolute inset-x-0 top-1/2 h-40 -translate-y-1/2 opacity-90"
@@ -101,20 +91,20 @@ const SyntheticDataScaleSection = () => {
                         </div>
                       )}
 
-                      {eyebrow === "Diversity control" && (
+                      {eyebrow === t('syntheticData.scale.items.2.eyebrow') && (
                         <div className="relative flex w-full max-w-[380px] items-center justify-center">
                           <div className="grid grid-cols-3 gap-6">
                             <div className="flex flex-col items-center gap-3">
                               <div className="h-16 w-20 border border-[hsl(var(--color-gray-300))] bg-background" />
-                              <span className="font-mono-data text-[12px] uppercase tracking-[0.18em] text-muted-foreground">Testing</span>
+                              <span className="font-mono-data text-[12px] uppercase tracking-[0.18em] text-muted-foreground">{visualLabels.testing}</span>
                             </div>
                             <div className="flex flex-col items-center gap-3">
                               <div className="h-16 w-20 border border-[hsl(var(--color-gray-300))] bg-background" />
-                              <span className="font-mono-data text-[12px] uppercase tracking-[0.18em] text-muted-foreground">QA</span>
+                              <span className="font-mono-data text-[12px] uppercase tracking-[0.18em] text-muted-foreground">{visualLabels.qa}</span>
                             </div>
                             <div className="flex flex-col items-center gap-3">
                               <div className="h-16 w-20 border border-[hsl(var(--color-gray-300))] bg-background" />
-                              <span className="font-mono-data text-[12px] uppercase tracking-[0.18em] text-muted-foreground">Staging</span>
+                              <span className="font-mono-data text-[12px] uppercase tracking-[0.18em] text-muted-foreground">{visualLabels.staging}</span>
                             </div>
                           </div>
                           <div className="absolute bottom-0 left-1/2 flex h-20 w-28 -translate-x-1/2 items-center justify-center border border-[hsl(var(--color-teal-dark))] bg-[linear-gradient(180deg,hsl(var(--color-cyan-light))_0%,hsl(var(--color-cyan))_100%)] text-[hsl(var(--color-navy))] shadow-[0_18px_32px_-18px_hsl(var(--color-cyan)/0.5)]">
@@ -141,7 +131,7 @@ const SyntheticDataScaleSection = () => {
                         href="#"
                         className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-[hsl(var(--color-purple-dark))]"
                       >
-                        {linkLabel}
+                        {t('buttons.learnMore', { ns: 'common' })}
                         <ArrowRight className="h-4 w-4" />
                       </a>
                     </div>

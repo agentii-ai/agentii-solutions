@@ -1,5 +1,6 @@
 import { Play, Sparkles, Users2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const colorBar = [
   "bg-navy w-16",
@@ -18,34 +19,36 @@ const colorBar = [
   "bg-teal w-10",
 ];
 
-const signals = [
-  {
-    label: "Founded",
-    value: "Agentic systems for production data work.",
-    icon: Sparkles,
-  },
-  {
-    label: "Global Team",
-    value: "Experts with cross-market delivery depth.",
-    icon: Users2,
-  },
-  {
-    label: "Watch Story",
-    value: "Strategy, research, and execution in one stack.",
-    icon: Play,
-  },
-];
-
 const AboutHeroSection = () => {
+  const { t } = useTranslation('about');
+
+  const signals = [
+    {
+      label: t('founded'),
+      value: t('foundedValue'),
+      icon: Sparkles,
+    },
+    {
+      label: t('globalTeam'),
+      value: t('globalTeamValue'),
+      icon: Users2,
+    },
+    {
+      label: t('watchStory'),
+      value: t('watchStoryValue'),
+      icon: Play,
+    },
+  ];
+
   return (
     <section className="bg-background pt-[72px]">
       <div className="bg-teal-light">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex min-h-[340px] items-end py-16 md:min-h-[420px] md:py-20 lg:min-h-[520px] lg:py-24">
             <div className="max-w-[720px]">
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-gray-700">About</p>
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-gray-700">{t('breadcrumb')}</p>
               <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-foreground md:text-[68px] lg:text-[84px]">
-                About agentii.Solutions
+                {t('heroTitle')}
               </h1>
             </div>
           </div>
@@ -65,7 +68,7 @@ const AboutHeroSection = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-[920px]">
             <h2 className="font-brand text-[34px] leading-[1.05] tracking-[-0.02em] text-foreground md:text-[48px] lg:text-[60px]">
-              We build agentic-native data systems that make AI useful in production.
+              {t('mainHeading')}
             </h2>
           </div>
 
@@ -74,19 +77,19 @@ const AboutHeroSection = () => {
               <div>
                 <div className="mb-8 h-1.5 w-10 bg-purple" aria-hidden="true" />
                 <p className="max-w-[480px] text-lg leading-relaxed text-foreground">
-                  Since our founding, we have focused on structured data for agents: document intelligence, multimodal training sets, and synthetic reasoning traces that can be trusted in real workflows.
+                  {t('description1')}
                 </p>
                 <p className="mt-6 max-w-[480px] text-base leading-relaxed text-muted-foreground">
-                  We combine research fluency, delivery rigor, and lattice-based system design to turn raw enterprise inputs into machine-readable assets for training, evaluation, and automation.
+                  {t('description2')}
                 </p>
               </div>
 
               <div className="mt-10 flex flex-wrap gap-4">
                 <Button size="lg" className="rounded-lg px-8">
-                  Explore customer stories
+                  {t('buttons.exploreCustomerStories', { ns: 'common' })}
                 </Button>
                 <Button variant="outline" size="lg" className="rounded-lg px-8">
-                  Our platform approach
+                  {t('buttons.ourPlatformApproach', { ns: 'common' })}
                 </Button>
               </div>
             </div>
@@ -111,9 +114,9 @@ const AboutHeroSection = () => {
                 </div>
 
                 <div className="mt-8 self-end border border-navy bg-background px-5 py-4 shadow-sm">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-muted-foreground">Operating model</p>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-muted-foreground">{t('operatingModel')}</p>
                   <p className="mt-2 max-w-[260px] text-sm leading-relaxed text-foreground">
-                    Research-grade data design, production-grade execution, and measurable outcomes for enterprise AI teams.
+                    {t('operatingModelDesc')}
                   </p>
                 </div>
               </div>

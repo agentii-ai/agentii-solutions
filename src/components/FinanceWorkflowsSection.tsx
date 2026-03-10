@@ -1,46 +1,49 @@
 import { ArrowRight, Building2, FileText, Scale, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const workflows = [
-  {
-    title: "Credit Underwriting",
-    description: "Extract financial statements, tax returns, and bank statements into typed records. Agents calculate debt-service coverage ratios, verify income, and flag exceptions — all from structured data with field lineage.",
-    icon: TrendingUp,
-    documents: ["Tax returns", "Bank statements", "Financial statements"],
-  },
-  {
-    title: "Accounts Payable Reconciliation",
-    description: "Match invoices to purchase orders and payment records. Agents reconcile line items, detect discrepancies, and route exceptions to review queues — with full audit trails from source documents.",
-    icon: FileText,
-    documents: ["Invoices", "Purchase orders", "Payment records"],
-  },
-  {
-    title: "Regulatory Compliance",
-    description: "Extract data from 10-Ks, 10-Qs, and regulatory filings into GAAP/IFRS-mapped structures. Compliance agents verify disclosures, check calculations, and generate audit-ready reports.",
-    icon: Scale,
-    documents: ["10-K filings", "10-Q filings", "Regulatory reports"],
-  },
-  {
-    title: "Commercial Loan Booking",
-    description: "Process loan applications, credit memos, and collateral documents into structured records. Agents validate terms, calculate risk metrics, and route approvals — with evidence traces for every decision.",
-    icon: Building2,
-    documents: ["Loan applications", "Credit memos", "Collateral docs"],
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const FinanceWorkflowsSection = () => {
+  const { t } = useTranslation('usecases');
+
+  const workflows = [
+    {
+      title: t('finance.workflows.creditUnderwriting'),
+      description: t('finance.workflows.creditUnderwritingDesc'),
+      icon: TrendingUp,
+      documents: t('finance.workflows.creditUnderwritingDocs', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('finance.workflows.accountsPayable'),
+      description: t('finance.workflows.accountsPayableDesc'),
+      icon: FileText,
+      documents: t('finance.workflows.accountsPayableDocs', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('finance.workflows.regulatoryCompliance'),
+      description: t('finance.workflows.regulatoryComplianceDesc'),
+      icon: Scale,
+      documents: t('finance.workflows.regulatoryComplianceDocs', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('finance.workflows.commercialLoan'),
+      description: t('finance.workflows.commercialLoanDesc'),
+      icon: Building2,
+      documents: t('finance.workflows.commercialLoanDocs', { returnObjects: true }) as string[],
+    },
+  ];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-            Financial workflows
+            {t('finance.workflows.breadcrumb')}
           </p>
           <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-            From documents to decisions — no manual data entry.
+            {t('finance.workflows.heading')}
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Every workflow starts with document extraction. Every extraction ends with agent-ready records.
+            {t('finance.workflows.subheading')}
           </p>
         </div>
 
@@ -71,7 +74,7 @@ const FinanceWorkflowsSection = () => {
 
         <div className="mt-12 flex justify-center">
           <Button size="lg" className="rounded-lg px-8">
-            Explore All Use Cases <ArrowRight size={16} />
+            {t('finance.workflows.exploreAllUseCases')} <ArrowRight size={16} />
           </Button>
         </div>
       </div>

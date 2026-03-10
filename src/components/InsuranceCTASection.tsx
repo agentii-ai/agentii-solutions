@@ -1,40 +1,23 @@
 import { ArrowRight, CheckCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const industryTabs = ["P&C Insurance", "Life & Health", "Reinsurance", "Claims Management", "Underwriting"];
-
-const useCaseColumns = [
-  [
-    "Claims Processing",
-    "First Notice of Loss",
-    "Loss Adjustment",
-    "Subrogation",
-  ],
-  [
-    "Policy Underwriting",
-    "Risk Assessment",
-    "Application Processing",
-    "Renewal Management",
-  ],
-  [
-    "Medical Records Review",
-    "Disability Claims",
-    "Workers' Compensation",
-    "Health Insurance Claims",
-  ],
-];
+import { useTranslation } from "react-i18next";
 
 const InsuranceCTASection = () => {
+  const { t } = useTranslation('usecases');
+
+  const industryTabs = t('insurance.cta.industryTabs', { returnObjects: true }) as string[];
+  const useCaseColumns = t('insurance.cta.useCases', { returnObjects: true }) as string[][];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[1280px]">
           <div className="mx-auto max-w-[760px] text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-              Insurance operations
+              {t('insurance.cta.breadcrumb')}
             </p>
             <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-              Built for claims, underwriting, and compliance.
+              {t('insurance.cta.heading')}
             </h2>
           </div>
 
@@ -76,9 +59,9 @@ const InsuranceCTASection = () => {
           </div>
 
           <div className="mt-12 flex flex-col items-center gap-4">
-            <p className="text-lg text-muted-foreground">See it work on your insurance documents.</p>
+            <p className="text-lg text-muted-foreground">{t('insurance.cta.seeItWork')}</p>
             <Button size="lg" className="rounded-lg px-8">
-              Request a Demo <ArrowRight size={16} />
+              {t('buttons.requestDemo', { ns: 'common' })} <ArrowRight size={16} />
             </Button>
           </div>
         </div>

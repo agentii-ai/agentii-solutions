@@ -1,29 +1,6 @@
 import { ArrowRight, CheckCircle2, FileSearch, TableProperties } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const bulletPoints = [
-  "Extract fields, line items, and nested tables from statements, reports, and compliance documents.",
-  "Every output includes confidence scores, field lineage, and evidence traces.",
-  "Exception routing keeps agents moving — only edge cases reach human review.",
-];
-
-const metricCards = [
-  {
-    label: "Input mix",
-    value: "PDF · scans · tables · forms",
-    icon: FileSearch,
-  },
-  {
-    label: "Output shape",
-    value: "Fields · tables · reasoning trace",
-    icon: TableProperties,
-  },
-  {
-    label: "Validation",
-    value: "Confidence scoring + review queue",
-    icon: CheckCircle2,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const fieldRows = [
   { label: "Net Revenue (Q3)", value: "$ 4,891,200" },
@@ -63,6 +40,28 @@ const incomeStatementRows: { label: string; q1: string; q2: string; q3: string; 
 ];
 
 const DocumentProcessingHeroSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const bulletPoints = t('documentProcessing.bulletPoints', { returnObjects: true }) as string[];
+
+  const metricCards = [
+    {
+      label: t('documentProcessing.inputMix'),
+      value: t('documentProcessing.inputMixValue'),
+      icon: FileSearch,
+    },
+    {
+      label: t('documentProcessing.outputShape'),
+      value: t('documentProcessing.outputShapeValue'),
+      icon: TableProperties,
+    },
+    {
+      label: t('documentProcessing.validation'),
+      value: t('documentProcessing.validationValue'),
+      icon: CheckCircle2,
+    },
+  ];
+
   return (
     <section className="bg-background pt-[88px] md:pt-[96px]">
       <div className="bg-navy text-slate-200">
@@ -70,14 +69,14 @@ const DocumentProcessingHeroSection = () => {
           <div className="max-w-[820px] pb-14 md:pb-20">
             <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
               <span className="h-[3px] w-4 bg-primary" aria-hidden="true" />
-              Solutions
+              {t('documentProcessing.breadcrumb')}
             </div>
             <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[80px]">
-              Agent-use-ready
+              {t('documentProcessing.heroTitle1')}
               <br />
-              document extraction.
+              {t('documentProcessing.heroTitle2')}
               <br />
-              <span className="text-primary">Financial-grade precision.</span>
+              <span className="text-primary">{t('documentProcessing.heroTitle3')}</span>
             </h1>
           </div>
         </div>
@@ -88,7 +87,7 @@ const DocumentProcessingHeroSection = () => {
           <div className="flex flex-col justify-between px-6 py-12 md:px-10 md:py-14 lg:px-12">
             <div>
               <p className="max-w-[520px] text-lg leading-relaxed text-foreground md:text-[20px]">
-                Turn PDFs, scans, and forms into structured records with reasoning traces — so agents can act on the data, not just read it.
+                {t('documentProcessing.heroDescription')}
               </p>
 
               <div className="mt-8 space-y-5">
@@ -104,10 +103,10 @@ const DocumentProcessingHeroSection = () => {
 
               <div className="mt-10 flex flex-wrap gap-4">
                 <Button size="lg" className="rounded-lg px-8">
-                  Get Started
+                  {t('buttons.getStarted', { ns: 'common' })}
                 </Button>
                 <Button variant="outline" size="lg" className="rounded-lg px-8">
-                  Explore Features <ArrowRight size={16} />
+                  {t('buttons.exploreFeatures', { ns: 'common' })} <ArrowRight size={16} />
                 </Button>
               </div>
             </div>
@@ -135,8 +134,8 @@ const DocumentProcessingHeroSection = () => {
               <div className="relative w-full max-w-[560px]">
                 <div className="absolute right-0 top-0 h-[480px] w-[74%] border border-border bg-background/95 shadow-sm md:h-[560px]">
                   <div className="flex h-full flex-col px-3 py-3 md:px-4 md:py-4">
-                    <p className="text-center font-brand text-[12px] tracking-[-0.01em] text-foreground md:text-[14px]">CONSOLIDATED INCOME STATEMENT</p>
-                    <p className="mb-1.5 text-center text-[7px] text-muted-foreground md:text-[8px]">Unaudited, in thousands ($)</p>
+                    <p className="text-center font-brand text-[12px] tracking-[-0.01em] text-foreground md:text-[14px]">{t('documentProcessing.consolidatedIncomeStatement')}</p>
+                    <p className="mb-1.5 text-center text-[7px] text-muted-foreground md:text-[8px]">{t('documentProcessing.unaudited')}</p>
                     <div className="grid grid-cols-[1fr_46px_46px_46px] gap-x-1 border-b border-border/80 pb-1 text-[7px] font-semibold uppercase tracking-wider text-muted-foreground md:grid-cols-[1fr_54px_54px_54px] md:gap-x-1.5 md:text-[8px]">
                       <span />
                       <span className="text-right">Q1 FY24</span>
@@ -164,7 +163,7 @@ const DocumentProcessingHeroSection = () => {
 
                 <div className="relative mt-10 w-[68%] border border-border bg-secondary/80 px-5 py-5 shadow-sm backdrop-blur-sm">
                   <div className="flex items-center justify-between border-b border-border/60 pb-4">
-                    <p className="font-brand text-[18px] tracking-[-0.01em] text-foreground">Income statement</p>
+                    <p className="font-brand text-[18px] tracking-[-0.01em] text-foreground">{t('documentProcessing.incomeStatement')}</p>
                     <span className="inline-flex h-5 w-5 items-center justify-center bg-primary text-primary-foreground">‹</span>
                   </div>
 
@@ -180,7 +179,7 @@ const DocumentProcessingHeroSection = () => {
                   </div>
 
                   <Button size="sm" className="mt-4 rounded-lg px-5">
-                    Save
+                    {t('buttons.save', { ns: 'common' })}
                   </Button>
                 </div>
 

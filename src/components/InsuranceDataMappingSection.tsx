@@ -1,61 +1,64 @@
 import { ArrowRight, Database, Network, Sigma } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const benchmarkRows = [
-  { label: "Traditional RAG", value: "Keyword matching on policy text — misses clause relationships and coverage conditions", pct: 28 },
-  { label: "KG-RAG", value: "Knowledge graph reasoning — better on structured policies, fails on unstructured claims", pct: 65 },
-  { label: "Agentic Search", value: "Multi-agent verification across claims, policies, and medical records — production-grade accuracy", pct: 99 },
-];
-
-const capabilities = [
-  {
-    title: "Claims Reasoning",
-    description: "Agents traverse entity graphs connecting claimants → policies → coverages → exclusions. Every coverage determination is traceable to specific policy clauses and claim evidence.",
-    icon: Network,
-  },
-  {
-    title: "Policy Retrieval",
-    description: "Route queries to exact clauses, endorsements, and coverage terms — with evidence traces. 'Is flood damage covered?' resolves to Section 4.2.1, Endorsement E-17, not a text similarity guess.",
-    icon: Database,
-  },
-  {
-    title: "Reserve Calculation",
-    description: "Anchor loss calculations to normalized claim values with source lineage. Reserve estimates, subrogation amounts, and payout calculations stay reliable because every number traces to a document.",
-    icon: Sigma,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const InsuranceDataMappingSection = () => {
+  const { t } = useTranslation('usecases');
+
+  const benchmarkRows = [
+    { label: t('insurance.dataMapping.benchmarkRows.traditionalRag.label'), value: t('insurance.dataMapping.benchmarkRows.traditionalRag.value'), pct: 28 },
+    { label: t('insurance.dataMapping.benchmarkRows.kgRag.label'), value: t('insurance.dataMapping.benchmarkRows.kgRag.value'), pct: 65 },
+    { label: t('insurance.dataMapping.benchmarkRows.agenticSearch.label'), value: t('insurance.dataMapping.benchmarkRows.agenticSearch.value'), pct: 99 },
+  ];
+
+  const capabilities = [
+    {
+      title: t('insurance.dataMapping.capabilities.claimsReasoning.title'),
+      description: t('insurance.dataMapping.capabilities.claimsReasoning.description'),
+      icon: Network,
+    },
+    {
+      title: t('insurance.dataMapping.capabilities.policyRetrieval.title'),
+      description: t('insurance.dataMapping.capabilities.policyRetrieval.description'),
+      icon: Database,
+    },
+    {
+      title: t('insurance.dataMapping.capabilities.reserveCalculation.title'),
+      description: t('insurance.dataMapping.capabilities.reserveCalculation.description'),
+      icon: Sigma,
+    },
+  ];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:gap-16">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-              Data mapping
+              {t('insurance.dataMapping.breadcrumb')}
             </p>
             <h2 className="mt-5 max-w-[520px] font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[62px]">
-              Claims accuracy that adjusters trust.
+              {t('insurance.dataMapping.heading')}
             </h2>
             <p className="mt-6 max-w-[560px] text-lg leading-relaxed text-muted-foreground">
-              Traditional search fails on insurance questions because policies are clause-heavy and claims span multiple documents. Our agentic data maps build entity graphs across claimants, policies, and evidence — so agents resolve claims with precision, not guesswork.
+              {t('insurance.dataMapping.description')}
             </p>
 
             <div className="mt-8 max-w-[560px] space-y-4 border-l-2 border-primary pl-5">
               <p className="text-sm leading-relaxed text-foreground">
-                The data map connects claimants to policies to coverages to exclusions — with every field traceable to its source document, page, and clause.
+                {t('insurance.dataMapping.note1')}
               </p>
               <p className="text-sm leading-relaxed text-foreground">
-                This is the layer that separates keyword-matching from adjudication-grade retrieval: every query resolves to the correct coverage term, condition, and evidence trace.
+                {t('insurance.dataMapping.note2')}
               </p>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-lg px-8">
-                Read the Benchmark <ArrowRight size={16} />
+                {t('insurance.dataMapping.readBenchmark')} <ArrowRight size={16} />
               </Button>
               <Button variant="outline" size="lg" className="rounded-lg px-8">
-                See Example Queries
+                {t('insurance.dataMapping.seeExampleQueries')}
               </Button>
             </div>
           </div>
@@ -65,10 +68,10 @@ const InsuranceDataMappingSection = () => {
               <div className="flex items-start justify-between">
                 <div>
                   <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                    Claims Q&A Accuracy
+                    {t('insurance.dataMapping.chartTitle')}
                   </p>
                   <p className="mt-2 font-brand text-[28px] leading-tight text-foreground">
-                    Benchmark Comparison
+                    {t('insurance.dataMapping.chartSubtitle')}
                   </p>
                 </div>
               </div>

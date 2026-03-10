@@ -1,22 +1,25 @@
 import { Upload, Bot, CheckCircle, Send } from "lucide-react";
-
-const steps = [
-  { icon: Upload, label: "Ingest", description: "Connect any data source — documents, video, audio, APIs", color: "border-primary bg-primary/5" },
-  { icon: Bot, label: "Annotate", description: "AI agents process, classify, and enrich your data automatically", color: "border-teal bg-teal/5" },
-  { icon: CheckCircle, label: "Validate", description: "Human-in-the-loop QA with real-time accuracy monitoring", color: "border-teal bg-teal/5" },
-  { icon: Send, label: "Deliver", description: "Export agent-ready structured data to any downstream system", color: "border-cyan bg-cyan/5" },
-];
+import { useTranslation } from "react-i18next";
 
 const PipelineSection = () => {
+  const { t } = useTranslation('home');
+
+  const steps = [
+    { icon: Upload, label: t('pipeline.ingest.label'), description: t('pipeline.ingest.description'), color: "border-primary bg-primary/5" },
+    { icon: Bot, label: t('pipeline.annotate.label'), description: t('pipeline.annotate.description'), color: "border-teal bg-teal/5" },
+    { icon: CheckCircle, label: t('pipeline.validate.label'), description: t('pipeline.validate.description'), color: "border-teal bg-teal/5" },
+    { icon: Send, label: t('pipeline.deliver.label'), description: t('pipeline.deliver.description'), color: "border-cyan bg-cyan/5" },
+  ];
+
   return (
     <section className="py-24 lg:py-32 gradient-hero relative overflow-hidden">
       <div className="absolute inset-0 gradient-hero-mesh" />
       <div className="container relative mx-auto px-6 lg:px-12">
         <h2 className="text-3xl lg:text-[42px] font-semibold text-slate-200 leading-tight tracking-tight mb-4">
-          How it works
+          {t('pipeline.heading')}
         </h2>
         <p className="text-lg text-slate-400 max-w-[560px] mb-16">
-          Four steps from raw data to agent-ready intelligence.
+          {t('pipeline.subheading')}
         </p>
 
         <div className="grid md:grid-cols-4 gap-0">

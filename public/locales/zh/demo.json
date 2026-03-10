@@ -1,0 +1,51 @@
+{
+  "breadcrumb": "申请演示",
+  "heroTitle": "与我们的专家预约演示",
+  "heroDescription": "了解 agentii.Solutions 如何将文档、视频、音频和合成数据结构化为 agentic 系统的机器可读输出",
+  "formTitle": "开启您的 AI 之旅",
+  "formDescription": "分享一些细节，我们将根据您的数据工作流和目标成果定制演示",
+  "seeHow": "了解 agentii.Solutions 如何为您的团队服务",
+  "seeHowDescription": "我们的文档处理解决方案为 agent 构建数据映射，大幅提升 agentic 系统在处理后对结构化数据的操作能力。该数据映射是准确推理、检索和数值计算的基础。",
+  "highlights": [
+    "面向文档、视频、音频和合成数据 pipeline 的行业特定工作流",
+    "帮助 agent 在结构化输出上进行推理、检索和计算的数据映射",
+    "从试点数据集到受治理的生产交付的实用推进路径"
+  ],
+  "deliverHeading": "快速交付提升 agent 性能的结构化数据",
+  "outcomes": {
+    "fasterDelivery": "更快的数据集交付",
+    "fasterDeliveryValue": "10×",
+    "higherPrecision": "更高的检索精度",
+    "higherPrecisionValue": "75%",
+    "lowerOverhead": "更低的审核开销",
+    "lowerOverheadValue": "48%"
+  },
+  "form": {
+    "firstName": "名 *",
+    "lastName": "姓 *",
+    "jobTitle": "职位 *",
+    "company": "公司 *",
+    "workEmail": "工作邮箱 *",
+    "country": "国家/地区 *",
+    "selectCountry": "选择您的国家/地区",
+    "useCase": "告诉我们您的应用场景",
+    "useCasePlaceholder": "您希望改进哪些工作流、数据集或 agent？",
+    "submit": "申请演示",
+    "successTitle": "演示申请已提交",
+    "successDescription": "感谢 {{firstName}}——我们将尽快与您联系",
+    "errorTitle": "出现问题",
+    "errorDescription": "请重试",
+    "connectionError": "连接错误",
+    "connectionErrorDescription": "无法连接服务器，请稍后重试"
+  },
+  "countries": [
+    "美国",
+    "加拿大",
+    "英国",
+    "德国",
+    "新加坡",
+    "日本",
+    "澳大利亚",
+    "中国"
+  ]
+}

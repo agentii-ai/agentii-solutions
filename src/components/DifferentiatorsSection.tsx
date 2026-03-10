@@ -1,25 +1,22 @@
 import { Check } from "lucide-react";
-
-const differentiators = [
-  "Agentic-native architecture — not retrofitted automation",
-  "Replace 50+ point AI tools with a unified platform",
-  "Launch your first agent in days, not quarters",
-  "Run anywhere: on-prem, hybrid, or cross-cloud",
-  "Enterprise-grade security and compliance built-in",
-  "Human-in-the-loop validation for production confidence",
-];
+import { useTranslation } from "react-i18next";
 
 const DifferentiatorsSection = () => {
+  const { t } = useTranslation('home');
+
+  const differentiators = t('differentiators.items', { returnObjects: true }) as string[];
+  const tableRows = t('differentiators.table.rows', { returnObjects: true }) as string[];
+
   return (
     <section className="py-24 lg:py-32 bg-gray-50">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <h2 className="text-3xl lg:text-[42px] font-semibold text-foreground leading-tight tracking-tight mb-4">
-              Why agentii.Solutions
+              {t('differentiators.heading')}
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-[480px]">
-              Deliberately designed to unify complex enterprise environments.
+              {t('differentiators.subheading')}
             </p>
             <ul className="space-y-4">
               {differentiators.map((d, i) => (
@@ -36,19 +33,19 @@ const DifferentiatorsSection = () => {
             <table className="w-full">
               <thead>
                 <tr className="bg-gray-50 border-b-2 border-gray-300">
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-700 uppercase tracking-widest">Feature</th>
-                  <th className="text-center px-4 py-3 text-xs font-semibold text-primary uppercase tracking-widest">agentii</th>
-                  <th className="text-center px-4 py-3 text-xs font-semibold text-muted-foreground uppercase tracking-widest">Others</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-700 uppercase tracking-widest">{t('differentiators.table.feature')}</th>
+                  <th className="text-center px-4 py-3 text-xs font-semibold text-primary uppercase tracking-widest">{t('differentiators.table.agentii')}</th>
+                  <th className="text-center px-4 py-3 text-xs font-semibold text-muted-foreground uppercase tracking-widest">{t('differentiators.table.others')}</th>
                 </tr>
               </thead>
               <tbody className="text-sm">
                 {[
-                  ["Agentic-native", true, false],
-                  ["Multi-modal support", true, false],
-                  ["On-prem deployment", true, false],
-                  ["Real-time monitoring", true, true],
-                  ["Human-in-the-loop", true, false],
-                  ["50+ format support", true, false],
+                  [tableRows[0], true, false],
+                  [tableRows[1], true, false],
+                  [tableRows[2], true, false],
+                  [tableRows[3], true, true],
+                  [tableRows[4], true, false],
+                  [tableRows[5], true, false],
                 ].map(([feature, us, them], i) => (
                   <tr key={i} className="border-b border-border hover:bg-gray-50 transition-colors">
                     <td className="px-4 py-3 text-foreground font-medium">{feature as string}</td>

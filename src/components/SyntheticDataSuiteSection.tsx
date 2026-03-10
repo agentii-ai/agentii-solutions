@@ -1,27 +1,17 @@
 import { ArrowRight, Boxes, Database, FileText, Layers3 } from "lucide-react";
-
-const suiteCards = [
-  {
-    title: "Reasoning Datasets",
-    description:
-      "Multi-step CoT traces for GSM8K, MATH, ARC, HellaSwag. Includes critique loops, evidence graphs, and verification steps. Format: JSON-L with reasoning chains and final answers.",
-    icon: Layers3,
-  },
-  {
-    title: "Code Execution Datasets",
-    description:
-      "Execution-aware samples for HumanEval, MBPP, SWE-Bench. Includes patches, tests, error recovery, and repo-level context. Format: Parquet with code, tests, execution logs.",
-    icon: Database,
-  },
-  {
-    title: "Tool-Calling Datasets",
-    description:
-      "Schema-safe trajectories for API calling, web navigation, CLI tools. Includes intent mapping, argument validation, state tracking. Format: JSON-L with tool schemas and execution traces.",
-    icon: FileText,
-  },
-] as const;
+import { useTranslation } from 'react-i18next';
 
 const SyntheticDataSuiteSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const suiteCards = (t('syntheticData.suite.items', { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+  }>).map((item, index) => ({
+    ...item,
+    icon: [Layers3, Database, FileText][index],
+  }));
+
   return (
     <section className="bg-secondary py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
@@ -29,19 +19,19 @@ const SyntheticDataSuiteSection = () => {
           <article className="grid overflow-hidden border border-border bg-background shadow-[0_18px_50px_-34px_hsl(var(--color-navy)/0.18)] lg:grid-cols-2">
             <div className="flex flex-col justify-center p-8 lg:p-10">
               <p className="font-mono-data text-[11px] uppercase tracking-[0.24em] text-[hsl(var(--color-purple-dark))]">
-                Training data products
+                {t('syntheticData.suite.breadcrumb')}
               </p>
               <h2 className="mt-4 max-w-[520px] font-brand text-[34px] leading-[1.06] tracking-[-0.03em] text-foreground md:text-[46px]">
-                Pre-built training datasets for common agentic capabilities.
+                {t('syntheticData.suite.heading')}
               </h2>
               <p className="mt-5 max-w-[520px] text-[17px] leading-8 text-foreground/80">
-                Custom synthesis for your domain: legal reasoning, medical coding, financial tool use. Integrate with your fine-tuning infrastructure: HuggingFace, Weights & Biases, Vertex AI.
+                {t('syntheticData.suite.description')}
               </p>
               <a
                 href="#"
                 className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-[hsl(var(--color-purple-dark))]"
               >
-                Learn more
+                {t('buttons.learnMore', { ns: 'common' })}
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -89,7 +79,7 @@ const SyntheticDataSuiteSection = () => {
 
           <div className="mt-20 text-center">
             <h3 className="font-brand text-[36px] leading-[1.08] tracking-[-0.03em] text-foreground md:text-[52px]">
-              The training data product suite
+              {t('syntheticData.suite.suiteHeading')}
             </h3>
           </div>
 
@@ -115,7 +105,7 @@ const SyntheticDataSuiteSection = () => {
                     href="#"
                     className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-[hsl(var(--color-purple-dark))]"
                   >
-                    Learn more
+                    {t('buttons.learnMore', { ns: 'common' })}
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>

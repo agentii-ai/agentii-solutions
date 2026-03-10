@@ -1,25 +1,34 @@
-const footerLinks = {
-  Solutions: [
-    { label: "Document Processing", href: "/solutions/document-processing" },
-    { label: "Video & Audio", href: "/solutions/video-audio" },
-    { label: "Synthetic Data", href: "/solutions/synthetic-data" },
-    { label: "Custom Pipelines", href: "#" },
-  ],
-  Company: [
-    { label: "About", href: "/about" },
-    { label: "Careers", href: "#" },
-    { label: "Partners", href: "#" },
-    { label: "Press", href: "#" },
-  ],
-  Resources: [
-    { label: "Blog", href: "#" },
-    { label: "Documentation", href: "#" },
-    { label: "Support", href: "#" },
-    { label: "API Reference", href: "#" },
-  ],
-};
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t, i18n } = useTranslation("common");
+  const currentLang = i18n.language?.startsWith("zh") ? "zh" : "en";
+
+  const switchLanguage = () => {
+    i18n.changeLanguage(currentLang === "en" ? "zh" : "en");
+  };
+
+  const footerLinks = {
+    [t("footer.solutions")]: [
+      { label: t("footer.documentProcessing"), href: "/solutions/document-processing" },
+      { label: t("footer.videoAudio"), href: "/solutions/video-audio" },
+      { label: t("footer.syntheticData"), href: "/solutions/synthetic-data" },
+      { label: t("footer.customPipelines"), href: "#" },
+    ],
+    [t("footer.company")]: [
+      { label: t("footer.about"), href: "/about" },
+      { label: t("footer.careers"), href: "#" },
+      { label: t("footer.partners"), href: "#" },
+      { label: t("footer.press"), href: "#" },
+    ],
+    [t("footer.resources")]: [
+      { label: t("footer.blog"), href: "#" },
+      { label: t("footer.documentation"), href: "#" },
+      { label: t("footer.support"), href: "#" },
+      { label: t("footer.apiReference"), href: "#" },
+    ],
+  };
+
   return (
     <footer className="bg-slate py-16 lg:py-20">
       <div className="container mx-auto px-6 lg:px-12">
@@ -33,10 +42,10 @@ const Footer = () => {
               <span className="text-lg font-medium text-slate-200">.Solutions</span>
             </div>
             <p className="text-sm text-slate-400 max-w-[280px] leading-relaxed mb-4">
-              Agentic-native data solutions for financial document processing and video generation AI training.
+              {t("footer.tagline")}
             </p>
             <p className="text-xs text-slate-400">
-              A business unit of{" "}
+              {t("footer.businessUnit")}{" "}
               <a href="https://agentii.ai" className="text-primary hover:text-teal transition-colors">
                 agentii.ai
               </a>
@@ -68,17 +77,20 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-slate-400">
-            © 2024 agentii.Solutions. All rights reserved.
+            {t("footer.copyright")}
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-slate-400 hover:text-teal transition-colors">
-              Privacy
+              {t("footer.privacy")}
             </a>
             <a href="#" className="text-xs text-slate-400 hover:text-teal transition-colors">
-              Terms
+              {t("footer.terms")}
             </a>
-            <button className="text-xs text-slate-400 hover:text-teal transition-colors">
-              EN / 中文
+            <button
+              className="text-xs text-slate-400 hover:text-teal transition-colors"
+              onClick={switchLanguage}
+            >
+              {currentLang === "en" ? "EN / 中文" : "中文 / EN"}
             </button>
           </div>
         </div>

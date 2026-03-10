@@ -1,16 +1,17 @@
 import { ArrowRight, Brain, Code2, Pi, Wrench, Route, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from 'react-i18next';
 
-const capabilityCards = [
-  { label: "Reasoning", value: "CoT traces · critique loops · evidence graphs", icon: Brain },
-  { label: "Code", value: "Execution-verified · tests · patches · recovery", icon: Code2 },
-  { label: "Math", value: "Symbolic proofs · checkpoints · formal verification", icon: Pi },
-  { label: "Tool calling", value: "Schema-safe actions · state tracking · API validation", icon: Wrench },
-  { label: "Planning", value: "Long-horizon trajectories · replanning · memory", icon: Route },
-  { label: "Multimodal", value: "GUI grounding · visual QA · cross-modal reasoning", icon: Eye },
-];
+const capabilityIcons = [Brain, Code2, Pi, Wrench, Route, Eye];
 
 const SyntheticUseCaseHeroSection = () => {
+  const { t } = useTranslation('usecases');
+
+  const capabilityCards = (t('syntheticUseCase.hero.capabilityCards', { returnObjects: true }) as { label: string; value: string }[]).map((card, i) => ({
+    ...card,
+    icon: capabilityIcons[i],
+  }));
+
   return (
     <section className="bg-background pt-[88px] md:pt-[96px]">
       <div className="bg-navy text-slate-200">
@@ -18,12 +19,12 @@ const SyntheticUseCaseHeroSection = () => {
           <div className="max-w-[820px] pb-14 md:pb-20">
             <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
               <span className="h-[3px] w-4 bg-purple" aria-hidden="true" />
-              Use Cases · Synthetic Data for Agent Training
+              {t('syntheticUseCase.hero.breadcrumb')}
             </div>
             <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[80px]">
-              Six capabilities.
+              {t('syntheticUseCase.hero.title1')}
               <br />
-              One synthesis pipeline.
+              {t('syntheticUseCase.hero.title2')}
             </h1>
           </div>
         </div>
@@ -34,14 +35,14 @@ const SyntheticUseCaseHeroSection = () => {
           <div className="flex flex-col justify-between px-6 py-12 md:px-10 md:py-14 lg:px-12">
             <div>
               <p className="max-w-[520px] text-lg leading-relaxed text-foreground md:text-[20px]">
-                Every agentic capability — reasoning, coding, math, tool use, planning, and multimodal understanding — requires its own training data shape. We synthesize all six from seed prompts, with domain-specific verification built into every sample.
+                {t('syntheticUseCase.hero.description')}
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button size="lg" className="rounded-lg bg-[hsl(var(--color-purple-dark))] px-8 text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--color-purple))]">
-                  Request a Demo
+                  {t('buttons.requestDemo', { ns: 'common' })}
                 </Button>
                 <Button variant="outline" size="lg" className="rounded-lg border-[hsl(var(--color-purple-dark))] px-8 text-[hsl(var(--color-purple-dark))] hover:bg-[hsl(var(--color-purple-dark))] hover:text-[hsl(var(--primary-foreground))]">
-                  See Example Datasets <ArrowRight size={16} />
+                  {t('buttons.learnMore', { ns: 'common' })} <ArrowRight size={16} />
                 </Button>
               </div>
             </div>

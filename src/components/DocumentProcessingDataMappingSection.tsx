@@ -1,59 +1,62 @@
 import { ArrowRight, Database, Network, Sigma, TableProperties } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const mappingRows = [
-  { label: "KG-RAG", value: "Multi-hop reasoning over knowledge graphs — high construction cost, limited scalability", pct: 65 },
-  { label: "NL2SQL", value: "Structured queries against relational databases — schema-dependent, structured data only", pct: 70 },
-  { label: "Agentic Search", value: "Multi-agent verification + iterative refinement — production-grade financial accuracy", pct: 99 },
-];
-
-const capabilities = [
-  {
-    title: "Reasoning",
-    description: "Agents traverse explicit semantic relationships instead of inferring structure from raw text. Entity graphs connect issuers to accounts to transactions — no guesswork.",
-    icon: Network,
-  },
-  {
-    title: "Retrieval",
-    description: "Route each query to the exact field, table, and entity — with evidence traces. Traditional RAG hits 25-30% on financial questions. Agentic data maps reach 99%.",
-    icon: Database,
-  },
-  {
-    title: "Calculation",
-    description: "Anchor numerical operations to normalized, typed values with source lineage. Comparisons, ratios, and totals stay reliable because every number is traceable.",
-    icon: Sigma,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const DocumentProcessingDataMappingSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const mappingRows = [
+    { label: "KG-RAG", value: t('documentProcessing.dataMapping.kgRagDesc'), pct: 65 },
+    { label: "NL2SQL", value: t('documentProcessing.dataMapping.nl2sqlDesc'), pct: 70 },
+    { label: "Agentic Search", value: t('documentProcessing.dataMapping.agenticSearchDesc'), pct: 99 },
+  ];
+
+  const capabilities = [
+    {
+      title: t('documentProcessing.dataMapping.reasoning'),
+      description: t('documentProcessing.dataMapping.reasoningDesc'),
+      icon: Network,
+    },
+    {
+      title: t('documentProcessing.dataMapping.retrieval'),
+      description: t('documentProcessing.dataMapping.retrievalDesc'),
+      icon: Database,
+    },
+    {
+      title: t('documentProcessing.dataMapping.calculation'),
+      description: t('documentProcessing.dataMapping.calculationDesc'),
+      icon: Sigma,
+    },
+  ];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid gap-0 lg:grid-cols-[0.88fr_1.12fr]">
           <div className="bg-background px-0 pb-12 pt-0 lg:px-0 lg:pb-0 lg:pr-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">Data mapping</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">{t('documentProcessing.dataMapping.breadcrumb')}</p>
             <h2 className="mt-5 max-w-[520px] font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[62px]">
-              Agents are only as reliable as the data map they retrieve.
+              {t('documentProcessing.dataMapping.heading')}
             </h2>
             <p className="mt-6 max-w-[560px] text-lg leading-relaxed text-muted-foreground">
-              Traditional RAG achieves 25-30% accuracy on financial questions. Our agentic data maps achieve 99%. The difference: structured entity graphs, field-level lineage, and retrieval-ready indexes that agents can navigate with precision — not guess from raw embeddings.
+              {t('documentProcessing.dataMapping.description')}
             </p>
 
             <div className="mt-8 max-w-[560px] space-y-4 border-l-2 border-primary pl-5">
               <p className="text-sm leading-relaxed text-foreground">
-                The data map connects entities, fields, tables, and evidence locations — so agents operate on structured records, not fragmented document text.
+                {t('documentProcessing.dataMapping.dataMapNote1')}
               </p>
               <p className="text-sm leading-relaxed text-foreground">
-                This is the layer that separates keyword-matching from financial-grade retrieval: every query resolves to the correct entity, time period, and source coordinate.
+                {t('documentProcessing.dataMapping.dataMapNote2')}
               </p>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-lg px-8">
-                Explore the benchmark <ArrowRight size={16} />
+                {t('documentProcessing.dataMapping.exploreBenchmark')} <ArrowRight size={16} />
               </Button>
               <Button variant="outline" size="lg" className="rounded-lg px-8">
-                Learn about our mapping
+                {t('documentProcessing.dataMapping.learnAboutMapping')}
               </Button>
             </div>
           </div>
@@ -62,9 +65,9 @@ const DocumentProcessingDataMappingSection = () => {
             <div className="border border-border bg-background p-5 shadow-sm md:p-7">
               <div className="flex items-center justify-between gap-4 border-b border-border pb-4">
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Agent retrieval map</p>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{t('documentProcessing.dataMapping.agentRetrievalMap')}</p>
                   <p className="mt-2 font-brand text-[26px] leading-tight tracking-[-0.02em] text-foreground md:text-[32px]">
-                    Structured access across agent configurations
+                    {t('documentProcessing.dataMapping.structuredAccess')}
                   </p>
                 </div>
                 <div className="inline-flex h-12 w-12 items-center justify-center border border-primary/20 bg-primary-light text-primary">

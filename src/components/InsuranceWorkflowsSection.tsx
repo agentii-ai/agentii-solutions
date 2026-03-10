@@ -1,46 +1,49 @@
 import { ArrowRight, ClipboardCheck, FileText, HeartPulse, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const workflows = [
-  {
-    title: "Claims Processing",
-    description: "Extract claim forms, loss reports, and supporting documents into typed records. Agents validate coverage, calculate reserves, and route approvals — with evidence traces linking every decision to source documents.",
-    icon: ClipboardCheck,
-    documents: ["ACORD forms", "Loss reports", "Police reports"],
-  },
-  {
-    title: "Underwriting",
-    description: "Process applications, financial statements, and risk assessments into structured records. Agents score risk, verify disclosures, and flag exceptions — all from GAAP-mapped data with field lineage.",
-    icon: ShieldCheck,
-    documents: ["Applications", "Financial statements", "Risk assessments"],
-  },
-  {
-    title: "Medical Records Review",
-    description: "Extract diagnoses, treatment histories, and billing codes from medical records and EOBs. Agents cross-reference claims against policy terms and flag inconsistencies for adjuster review.",
-    icon: HeartPulse,
-    documents: ["Medical records", "EOBs", "Physician notes"],
-  },
-  {
-    title: "Policy Administration",
-    description: "Parse policy documents, endorsements, and renewal packages into clause-mapped structures. Agents compare terms, detect coverage gaps, and generate compliance reports with full audit trails.",
-    icon: FileText,
-    documents: ["Policy documents", "Endorsements", "Renewal packages"],
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const InsuranceWorkflowsSection = () => {
+  const { t } = useTranslation('usecases');
+
+  const workflows = [
+    {
+      title: t('insurance.workflows.claimsProcessing'),
+      description: t('insurance.workflows.claimsProcessingDesc'),
+      icon: ClipboardCheck,
+      documents: t('insurance.workflows.claimsProcessingDocs', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('insurance.workflows.underwriting'),
+      description: t('insurance.workflows.underwritingDesc'),
+      icon: ShieldCheck,
+      documents: t('insurance.workflows.underwritingDocs', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('insurance.workflows.medicalRecords'),
+      description: t('insurance.workflows.medicalRecordsDesc'),
+      icon: HeartPulse,
+      documents: t('insurance.workflows.medicalRecordsDocs', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('insurance.workflows.policyAdmin'),
+      description: t('insurance.workflows.policyAdminDesc'),
+      icon: FileText,
+      documents: t('insurance.workflows.policyAdminDocs', { returnObjects: true }) as string[],
+    },
+  ];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-            Insurance workflows
+            {t('insurance.workflows.breadcrumb')}
           </p>
           <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-            From intake to adjudication — no manual data entry.
+            {t('insurance.workflows.heading')}
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Every workflow starts with document extraction. Every extraction ends with agent-ready records.
+            {t('insurance.workflows.subheading')}
           </p>
         </div>
 
@@ -71,7 +74,7 @@ const InsuranceWorkflowsSection = () => {
 
         <div className="mt-12 flex justify-center">
           <Button size="lg" className="rounded-lg px-8">
-            Explore All Use Cases <ArrowRight size={16} />
+            {t('insurance.workflows.exploreAllUseCases')} <ArrowRight size={16} />
           </Button>
         </div>
       </div>

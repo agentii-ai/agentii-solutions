@@ -1,5 +1,6 @@
 import { ArrowRight, Play, ScanLine, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from 'react-i18next';
 
 const topBars = [
   "bg-teal/95 w-6",
@@ -38,25 +39,15 @@ const bottomBars = [
   "bg-teal/55 w-24",
 ];
 
-const signalCards = [
-  {
-    label: "Scene Graph",
-    value: "Objects · motion · timing",
-    icon: ScanLine,
-  },
-  {
-    label: "Prompt Trace",
-    value: "Frame-level semantic control",
-    icon: Sparkles,
-  },
-  {
-    label: "Playback",
-    value: "Agent-ready video reasoning data",
-    icon: Play,
-  },
-];
+const signalCardIcons = [ScanLine, Sparkles, Play];
 
 const VideoHeroSection = () => {
+  const { t } = useTranslation('usecases');
+
+  const signalCards = (t('video.hero.signalCards', { returnObjects: true }) as { label: string; value: string }[]).map(
+    (card, i) => ({ ...card, icon: signalCardIcons[i] })
+  );
+
   return (
     <section className="bg-background pt-[88px] md:pt-[96px]">
       <div className="bg-navy text-slate-200">
@@ -64,12 +55,12 @@ const VideoHeroSection = () => {
           <div className="max-w-[820px] pb-14 md:pb-20">
             <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
               <span className="h-[3px] w-4 bg-teal" aria-hidden="true" />
-              Use Cases
+              {t('video.hero.breadcrumb')}
             </div>
             <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[80px]">
-              Agentic data for
+              {t('video.hero.title1')}
               <br />
-              video generation.
+              {t('video.hero.title2')}
             </h1>
           </div>
         </div>
@@ -80,14 +71,14 @@ const VideoHeroSection = () => {
           <div className="flex flex-col justify-between px-6 py-10 md:px-10 md:py-12 lg:px-12">
             <div>
               <p className="max-w-[500px] text-lg leading-relaxed text-foreground md:text-[20px]">
-                Turn scenes, motion, camera intent, and temporal consistency into machine-readable datasets that agents can use to train and evaluate video models.
+                {t('video.hero.description')}
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button size="lg" className="rounded-lg px-8">
-                  Request a Demo
+                  {t('buttons.requestDemo', { ns: 'common' })}
                 </Button>
                 <Button variant="outline" size="lg" className="rounded-lg px-8">
-                  Explore Features <ArrowRight size={16} />
+                  {t('buttons.exploreFeatures', { ns: 'common' })} <ArrowRight size={16} />
                 </Button>
               </div>
             </div>
@@ -115,8 +106,8 @@ const VideoHeroSection = () => {
             <div className="relative flex min-h-[260px] flex-col justify-center px-2 py-10 md:min-h-[320px] md:px-8 lg:px-10">
               <div className="mb-5 flex items-center justify-between border-b border-slate-700/80 pb-4">
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400">Video signal stack</p>
-                  <p className="mt-2 text-sm text-slate-300">Frames, motion vectors, prompts, and evaluation traces.</p>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-400">{t('video.hero.vizTitle')}</p>
+                  <p className="mt-2 text-sm text-slate-300">{t('video.hero.vizDescription')}</p>
                 </div>
                 <div className="hidden items-center gap-2 md:flex">
                   <span className="h-2.5 w-2.5 rounded-full bg-teal" aria-hidden="true" />
@@ -147,16 +138,16 @@ const VideoHeroSection = () => {
 
               <div className="mt-6 grid gap-px border border-slate-700/80 bg-slate-700/80 sm:grid-cols-3">
                 <div className="bg-navy px-4 py-3">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">Input</p>
-                  <p className="mt-2 text-sm text-slate-200">Prompt + storyboard + motion rules</p>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">{t('video.hero.inputLabel')}</p>
+                  <p className="mt-2 text-sm text-slate-200">{t('video.hero.inputValue')}</p>
                 </div>
                 <div className="bg-navy px-4 py-3">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">Output</p>
-                  <p className="mt-2 text-sm text-slate-200">Dense labels across time and scene state</p>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">{t('video.hero.outputLabel')}</p>
+                  <p className="mt-2 text-sm text-slate-200">{t('video.hero.outputValue')}</p>
                 </div>
                 <div className="bg-navy px-4 py-3">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">Use</p>
-                  <p className="mt-2 text-sm text-slate-200">Training, evals, and controllability benchmarks</p>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-500">{t('video.hero.useLabel')}</p>
+                  <p className="mt-2 text-sm text-slate-200">{t('video.hero.useValue')}</p>
                 </div>
               </div>
             </div>

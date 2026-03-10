@@ -1,0 +1,15 @@
+{
+  "breadcrumb": "About",
+  "heroTitle": "About agentii.Solutions",
+  "mainHeading": "We build agentic-native data systems that make AI useful in production.",
+  "description1": "Since our founding, we have focused on structured data for agents: document intelligence, multimodal training sets, and synthetic reasoning traces that can be trusted in real workflows.",
+  "description2": "We combine research fluency, delivery rigor, and lattice-based system design to turn raw enterprise inputs into machine-readable assets for training, evaluation, and automation.",
+  "founded": "Founded",
+  "foundedValue": "Agentic systems for production data work.",
+  "globalTeam": "Global Team",
+  "globalTeamValue": "Experts with cross-market delivery depth.",
+  "watchStory": "Watch Story",
+  "watchStoryValue": "Strategy, research, and execution in one stack.",
+  "operatingModel": "Operating model",
+  "operatingModelDesc": "Research-grade data design, production-grade execution, and measurable outcomes for enterprise AI teams."
+}

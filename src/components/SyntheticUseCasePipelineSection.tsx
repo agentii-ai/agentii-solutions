@@ -1,75 +1,42 @@
 import { ArrowRight, Sparkles, ShieldCheck, Layers3, GitBranch } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
-const pipelineSteps = [
-  {
-    step: "01",
-    label: "Seed",
-    detail: "Domain prompts, policies, existing datasets, or task definitions",
-    accent: "bg-[hsl(var(--color-purple))]",
-  },
-  {
-    step: "02",
-    label: "Evolve",
-    detail: "Evol-Instruct generates harder, easier, and constraint-varied samples",
-    accent: "bg-[hsl(var(--color-purple-dark))]",
-  },
-  {
-    step: "03",
-    label: "Synthesize",
-    detail: "Compound AI agents generate reasoning traces, code, math, tool calls",
-    accent: "bg-[hsl(var(--color-cyan))]",
-  },
-  {
-    step: "04",
-    label: "Verify",
-    detail: "Sandbox execution, formal proofs, schema checks, multi-model consensus",
-    accent: "bg-[hsl(var(--color-teal-dark))]",
-  },
-  {
-    step: "05",
-    label: "Export",
-    detail: "JSON-L, Parquet, HuggingFace — ready for SFT, RLHF, or evaluation",
-    accent: "bg-[hsl(var(--color-purple))]",
-  },
+const stepAccents = [
+  "bg-[hsl(var(--color-purple))]",
+  "bg-[hsl(var(--color-purple-dark))]",
+  "bg-[hsl(var(--color-cyan))]",
+  "bg-[hsl(var(--color-teal-dark))]",
+  "bg-[hsl(var(--color-purple))]",
 ];
 
-const qualityDimensions = [
-  {
-    title: "Diversity",
-    description: "Clustering-based metrics ensure semantic coverage across the full problem space. Prevents model collapse from narrow distributions.",
-    icon: GitBranch,
-  },
-  {
-    title: "Verifiability",
-    description: "Execution-based filtering in sandboxes, formal proof validation, and multi-model consensus voting. Hallucinated samples never reach training.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Difficulty Adaptation",
-    description: "Bidirectional evolution scales from trivial to expert-level. Dynamic difficulty adjusts to the model's current solvability frontier.",
-    icon: Layers3,
-  },
-  {
-    title: "Long-Context Coherence",
-    description: "Document-grounded tasks and multi-turn simulations maintain logical consistency over massive token lengths. No context drift.",
-    icon: Sparkles,
-  },
-];
+const qualityIcons = [GitBranch, ShieldCheck, Layers3, Sparkles];
 
 const SyntheticUseCasePipelineSection = () => {
+  const { t } = useTranslation('usecases');
+
+  const pipelineSteps = (t('syntheticUseCase.pipeline.steps', { returnObjects: true }) as { step: string; label: string; detail: string }[]).map((s, i) => ({
+    ...s,
+    accent: stepAccents[i],
+  }));
+
+  const qualityDimensions = (t('syntheticUseCase.pipeline.qualityDimensions', { returnObjects: true }) as { title: string; description: string }[]).map((d, i) => ({
+    ...d,
+    icon: qualityIcons[i],
+  }));
+
   return (
     <section className="bg-secondary py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-[760px] text-center">
             <p className="font-mono-data text-[11px] font-medium uppercase tracking-[0.28em] text-[hsl(var(--color-purple-dark))]">
-              Synthesis pipeline
+              {t('syntheticUseCase.pipeline.breadcrumb')}
             </p>
             <h2 className="mt-4 font-brand text-[34px] leading-[1.04] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[56px]">
-              Seed → Evolve → Synthesize → Verify → Export.
+              {t('syntheticUseCase.pipeline.heading')}
             </h2>
             <p className="mx-auto mt-6 max-w-[600px] text-base leading-8 text-muted-foreground md:text-lg">
-              One pipeline serves all six capabilities. The verification layer adapts per modality — sandbox execution for code, formal proofs for math, schema checks for tool calls, consensus voting for reasoning.
+              {t('syntheticUseCase.pipeline.description')}
             </p>
           </div>
 
@@ -99,7 +66,7 @@ const SyntheticUseCasePipelineSection = () => {
 
           <div className="mt-14 text-center">
             <h3 className="font-brand text-[28px] leading-tight tracking-[-0.02em] text-foreground md:text-[40px]">
-              Four Quality Dimensions Built Into Every Sample.
+              {t('syntheticUseCase.pipeline.qualityHeading')}
             </h3>
           </div>
 

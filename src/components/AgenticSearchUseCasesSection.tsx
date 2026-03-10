@@ -1,46 +1,49 @@
 import { ArrowRight, FileText, Landmark, HeartPulse, Scale } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const useCases = [
-  {
-    title: "Financial Services",
-    description: "SEC filings, bank statements, loan documents, financial statements. Agents calculate ratios, verify disclosures, and reconcile across documents with field-level evidence.",
-    icon: Landmark,
-    link: "/use-cases/finance",
-  },
-  {
-    title: "Insurance",
-    description: "ACORD forms, policy documents, claims files, medical records. Agents determine coverage, estimate reserves, and flag inconsistencies with clause-level traceability.",
-    icon: HeartPulse,
-    link: "/use-cases/insurance",
-  },
-  {
-    title: "Legal & Compliance",
-    description: "Contracts, regulatory filings, audit reports, disclosure documents. Agents extract obligations, compare terms, and verify compliance with cross-reference evidence.",
-    icon: Scale,
-    link: "#",
-  },
-  {
-    title: "Document-Heavy Operations",
-    description: "Any workflow where agents need to reason over structured and unstructured documents — invoices, applications, reports, correspondence — with production-grade accuracy.",
-    icon: FileText,
-    link: "/solutions/document-processing",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const AgenticSearchUseCasesSection = () => {
+  const { t } = useTranslation('research');
+
+  const useCases = [
+    {
+      title: t('useCases.financialServices'),
+      description: t('useCases.financialServicesDesc'),
+      icon: Landmark,
+      link: "/use-cases/finance",
+    },
+    {
+      title: t('useCases.insurance'),
+      description: t('useCases.insuranceDesc'),
+      icon: HeartPulse,
+      link: "/use-cases/insurance",
+    },
+    {
+      title: t('useCases.legalCompliance'),
+      description: t('useCases.legalComplianceDesc'),
+      icon: Scale,
+      link: "#",
+    },
+    {
+      title: t('useCases.documentHeavy'),
+      description: t('useCases.documentHeavyDesc'),
+      icon: FileText,
+      link: "/solutions/document-processing",
+    },
+  ];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-            Applications
+            {t('useCases.breadcrumb')}
           </p>
           <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-            Where agentic search delivers.
+            {t('useCases.heading')}
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Agentic search is purpose-built for regulated, document-heavy industries where accuracy isn't optional and every answer needs an evidence trail.
+            {t('useCases.description')}
           </p>
         </div>
 
@@ -59,7 +62,7 @@ const AgenticSearchUseCasesSection = () => {
                 href={link}
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
               >
-                Explore use case <ArrowRight size={14} />
+                {t('useCases.exploreUseCase')} <ArrowRight size={14} />
               </a>
             </article>
           ))}

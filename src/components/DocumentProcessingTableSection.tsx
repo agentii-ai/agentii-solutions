@@ -1,11 +1,6 @@
 import { ArrowRight, CheckCheck, FileSpreadsheet, PenTool, PlugZap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const workflowTabs = [
-  "Smart table extraction",
-  "Annotate to automate",
-  "API integration",
-];
+import { useTranslation } from "react-i18next";
 
 const tableRows = [
   ["Unit", "Floorplan", "Move-in", "Lease End", "Balance"],
@@ -17,6 +12,10 @@ const tableRows = [
 const toolIcons = [CheckCheck, FileSpreadsheet, PenTool];
 
 const DocumentProcessingTableSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const workflowTabs = t('documentProcessing.table.tabs', { returnObjects: true }) as string[];
+
   return (
     <section className="bg-foreground py-20 text-background md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
@@ -38,30 +37,30 @@ const DocumentProcessingTableSection = () => {
         <div className="mt-12 grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-center lg:gap-16">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-background/60">
-              Smart table extraction
+              {t('documentProcessing.table.breadcrumb')}
             </p>
             <h2 className="mt-5 max-w-[460px] font-brand text-[36px] leading-[1.04] tracking-[-0.03em] text-background md:text-[48px] lg:text-[58px]">
-              Capture every row, column, and nested structure.
+              {t('documentProcessing.table.heading')}
             </h2>
             <p className="mt-6 max-w-[500px] text-lg leading-relaxed text-background/78">
-              Extract tabular data from financial statements, rent rolls, and operational reports — then pass structured records to the data mapping layer for semantic indexing.
+              {t('documentProcessing.table.description')}
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               <div className="border border-background/15 bg-background/5 px-4 py-4">
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">Table fidelity</p>
-                <p className="mt-2 text-sm leading-relaxed text-background/80">Preserve rows, columns, and key-value relationships across noisy layouts.</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">{t('documentProcessing.table.tableFidelity')}</p>
+                <p className="mt-2 text-sm leading-relaxed text-background/80">{t('documentProcessing.table.tableFidelityDesc')}</p>
               </div>
               <div className="border border-background/15 bg-background/5 px-4 py-4">
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">Agent handoff</p>
-                <p className="mt-2 text-sm leading-relaxed text-background/80">Pass normalized outputs into review queues, ERP flows, or rules engines.</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">{t('documentProcessing.table.agentHandoff')}</p>
+                <p className="mt-2 text-sm leading-relaxed text-background/80">{t('documentProcessing.table.agentHandoffDesc')}</p>
               </div>
             </div>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-lg px-8">
-                Talk To An Expert <ArrowRight size={16} />
+                {t('documentProcessing.table.talkToExpert')} <ArrowRight size={16} />
               </Button>
               <Button variant="outline" size="lg" className="rounded-lg border-background/30 bg-background text-foreground hover:bg-background/90 px-8">
-                Check Support Docs
+                {t('documentProcessing.table.checkSupportDocs')}
               </Button>
             </div>
           </div>
@@ -120,7 +119,7 @@ const DocumentProcessingTableSection = () => {
             <div className="mt-6 flex items-start gap-3 border-l-2 border-primary pl-5">
               <PlugZap className="mt-1 h-5 w-5 text-primary" />
               <p className="max-w-[560px] text-sm leading-relaxed text-foreground">
-                Designed for finance-heavy workflows where tables need to be trusted, compared, and routed without manual spreadsheet cleanup.
+                {t('documentProcessing.table.designNote')}
               </p>
             </div>
           </div>

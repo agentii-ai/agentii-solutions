@@ -1,27 +1,27 @@
-const solutionCards = [
-  {
-    title: "Foundational agents",
-    description:
-      "Core data pipelines and evaluation layers that make enterprise agent systems stable, auditable, and fast to deploy.",
-    accent: "text-teal",
-  },
-  {
-    title: "Business agents",
-    description:
-      "Integrations, structured workflows, and machine-readable outputs that connect agent operations to production systems.",
-    accent: "text-primary",
-    badge: "CERTIFIED DELIVERY LAYER",
-    badgeNote: "Built for workflow orchestration, semantic enrichment, and downstream system compatibility.",
-  },
-  {
-    title: "Purpose-built agents",
-    description:
-      "Outcome-specific agent stacks designed for financial documents, multimodal review, and synthetic data generation.",
-    accent: "text-teal",
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const MetricsBar = () => {
+  const { t } = useTranslation('home');
+
+  const solutionCards = [
+    {
+      title: t('metrics.foundational.title'),
+      description: t('metrics.foundational.description'),
+      accent: "text-teal",
+    },
+    {
+      title: t('metrics.business.title'),
+      description: t('metrics.business.description'),
+      accent: "text-primary",
+      badge: t('metrics.business.badge'),
+      badgeNote: t('metrics.business.badgeNote'),
+    },
+    {
+      title: t('metrics.purposeBuilt.title'),
+      description: t('metrics.purposeBuilt.description'),
+      accent: "text-teal",
+    },
+  ];
   return (
     <section className="bg-navy py-20 lg:py-24" aria-labelledby="platform-section-heading">
       <div className="container mx-auto px-6 lg:px-12">
@@ -30,7 +30,7 @@ const MetricsBar = () => {
             id="platform-section-heading"
             className="font-brand text-[32px] md:text-[42px] lg:text-[52px] font-bold leading-[1.05] tracking-[-0.02em] text-slate-200"
           >
-            Deliberately designed to unify complex enterprise data environments.
+            {t('metrics.heading')}
           </h2>
         </div>
 
@@ -62,21 +62,21 @@ const MetricsBar = () => {
 
         <article className="mt-3 border border-slate-700/80 bg-slate/70 p-6 lg:p-7">
           <h3 className="font-brand text-[28px] font-semibold leading-tight text-teal">
-            Agent Workforce Platform
+            {t('metrics.platform.title')}
           </h3>
           <p className="mt-2 max-w-[920px] text-lg leading-8 text-slate-400">
-            The end-to-end operating layer for secure, scalable, production-grade agent data workflows across document, video, and synthetic pipelines.
+            {t('metrics.platform.description')}
           </p>
 
           <div className="mt-10 border-t border-slate-700 pt-5">
             <div className="inline-flex flex-wrap items-center gap-3">
               <span className="font-brand text-2xl font-bold text-slate-200">OPS</span>
               <span className="font-mono-data text-[11px] uppercase tracking-[0.16em] text-slate-200">
-                CO-ENGINEERED FOR ENTERPRISE DEPLOYMENT
+                {t('metrics.platform.badge')}
               </span>
             </div>
             <p className="mt-4 max-w-[420px] text-sm leading-6 text-slate-400">
-              Governance, QA, and agent-ready delivery in one lattice-based platform built for regulated environments.
+              {t('metrics.platform.badgeNote')}
             </p>
           </div>
         </article>

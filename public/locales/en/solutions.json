@@ -1,0 +1,485 @@
+{
+  "documentProcessing": {
+    "breadcrumb": "Solutions",
+    "heroTitle1": "agent-use-ready",
+    "heroTitle2": "document extraction.",
+    "heroTitle3": "Financial-grade precision.",
+    "heroDescription": "Turn PDFs, scans, and forms into structured records with reasoning traces — so agents can act on the data, not just read it.",
+    "bulletPoints": [
+      "Extract fields, line items, and nested tables from statements, reports, and compliance documents.",
+      "Every output includes confidence scores, field lineage, and evidence traces.",
+      "Exception routing keeps agents moving — only edge cases reach human review."
+    ],
+    "inputMix": "Input mix",
+    "inputMixValue": "PDF · scans · tables · forms",
+    "outputShape": "Output shape",
+    "outputShapeValue": "Fields · tables · reasoning trace",
+    "validation": "Validation",
+    "validationValue": "Confidence scoring + review queue",
+    "incomeStatement": "Income statement",
+    "consolidatedIncomeStatement": "CONSOLIDATED INCOME STATEMENT",
+    "unaudited": "Unaudited, in thousands ($)",
+    "features": {
+      "breadcrumb": "Extraction pipeline",
+      "heading": "Structured extraction that agents trust.",
+      "description": "Schema control, table fidelity, and evidence traces — every output is validated before it reaches a downstream agent.",
+      "seePipeline": "See pipeline",
+      "fieldTableExtraction": "Field + table extraction",
+      "fieldTableExtractionDesc": "Single fields, repeated sections, nested tables, and multi-page structures — all typed and schema-validated.",
+      "confidenceScored": "Confidence-scored validation",
+      "confidenceScoredDesc": "Every extracted value carries a confidence score, field lineage, and review state. Agents know what to trust.",
+      "agentHandoff": "Agent handoff",
+      "agentHandoffDesc": "Pass validated records into reconciliation, underwriting, or compliance agents with clear schemas and evidence traces.",
+      "pipelineView": "Pipeline view",
+      "pipelineHeading": "From raw document to trusted structured record.",
+      "pipelineDescription": "A lattice-style system view keeps the page aligned with the existing use-case architecture while introducing the document extraction workflow shown in the reference.",
+      "source": "Source",
+      "sourceValue": "PDFs, scans, statements, forms",
+      "parsing": "Parsing",
+      "parsingValue": "OCR + layout + table segmentation",
+      "structuring": "Structuring",
+      "structuringValue": "Typed JSON records + extracted evidence",
+      "downstream": "Downstream",
+      "downstreamValue": "Agent actions, QA queues, analytics"
+    },
+    "ingestion": {
+      "breadcrumb": "Ingestion",
+      "heading": "Standardize document intake across every source.",
+      "description": "Pull from inboxes, scanners, portals, and shared drives into one pipeline. Every file is parsed, validated, and routed before agents see it.",
+      "supports": "Supports PDF, PNG, HTML, email attachments, and scanned images.",
+      "noChanges": "No changes to existing operational tooling required.",
+      "seeIntakeModel": "See intake model",
+      "source": "Source",
+      "destinations": "Destinations"
+    },
+    "classification": {
+      "breadcrumb": "Document classification",
+      "heading": "Classify first. Extract with precision.",
+      "description": "Identify document types, segment pages, and route each section to the right extraction model — before extraction begins.",
+      "autoClassification": "AUTO-CLASSIFICATION",
+      "signalModel": "Signal model",
+      "signalModelDesc": "Combine content, layout, and metadata cues for reliable routing.",
+      "opsControl": "Ops control",
+      "opsControlDesc": "Map categories to queues, workflows, or agent actions with clear review gates.",
+      "viewRoutingModel": "View routing model",
+      "taxonomyNote": "Build custom document taxonomies for finance, operations, claims, or compliance-heavy workflows without sacrificing auditability.",
+      "layoutCues": "Layout cues",
+      "pageIntent": "Page intent",
+      "entityPatterns": "Entity patterns",
+      "evidenceTrace": "Evidence trace",
+      "secFilings": "SEC Filings",
+      "taxForms": "Tax Forms",
+      "banking": "Banking",
+      "bankStatement": "Bank Statement",
+      "ledger": "Ledger",
+      "commercial": "Commercial",
+      "invoice": "Invoice",
+      "receipt": "Receipt",
+      "contract": "Contract"
+    },
+    "table": {
+      "tabs": ["Smart table extraction", "Annotate to automate", "API integration"],
+      "breadcrumb": "Smart table extraction",
+      "heading": "Capture every row, column, and nested structure.",
+      "description": "Extract tabular data from financial statements, rent rolls, and operational reports — then pass structured records to the data mapping layer for semantic indexing.",
+      "tableFidelity": "Table fidelity",
+      "tableFidelityDesc": "Preserve rows, columns, and key-value relationships across noisy layouts.",
+      "agentHandoff": "Agent handoff",
+      "agentHandoffDesc": "Pass normalized outputs into review queues, ERP flows, or rules engines.",
+      "talkToExpert": "Talk To An Expert",
+      "checkSupportDocs": "Check Support Docs",
+      "designNote": "Designed for finance-heavy workflows where tables need to be trusted, compared, and routed without manual spreadsheet cleanup."
+    },
+    "dataMapping": {
+      "breadcrumb": "Data mapping",
+      "heading": "Agents are only as reliable as the data map they retrieve.",
+      "description": "Traditional RAG achieves 25-30% accuracy on financial questions. Our agentic data maps achieve 99%. The difference: structured entity graphs, field-level lineage, and retrieval-ready indexes that agents can navigate with precision — not guess from raw embeddings.",
+      "dataMapNote1": "The data map connects entities, fields, tables, and evidence locations — so agents operate on structured records, not fragmented document text.",
+      "dataMapNote2": "This is the layer that separates keyword-matching from financial-grade retrieval: every query resolves to the correct entity, time period, and source coordinate.",
+      "exploreBenchmark": "Explore the benchmark",
+      "learnAboutMapping": "Learn about our mapping",
+      "agentRetrievalMap": "Agent retrieval map",
+      "structuredAccess": "Structured access across agent configurations",
+      "kgRag": "KG-RAG",
+      "kgRagDesc": "Multi-hop reasoning over knowledge graphs — high construction cost, limited scalability",
+      "nl2sql": "NL2SQL",
+      "nl2sqlDesc": "Structured queries against relational databases — schema-dependent, structured data only",
+      "agenticSearch": "Agentic Search",
+      "agenticSearchDesc": "Multi-agent verification + iterative refinement — production-grade financial accuracy",
+      "reasoning": "Reasoning",
+      "reasoningDesc": "Agents traverse explicit semantic relationships instead of inferring structure from raw text. Entity graphs connect issuers to accounts to transactions — no guesswork.",
+      "retrieval": "Retrieval",
+      "retrievalDesc": "Route each query to the exact field, table, and entity — with evidence traces. Traditional RAG hits 25-30% on financial questions. Agentic data maps reach 99%.",
+      "calculation": "Calculation",
+      "calculationDesc": "Anchor numerical operations to normalized, typed values with source lineage. Comparisons, ratios, and totals stay reliable because every number is traceable."
+    },
+    "humanReview": {
+      "breadcrumb": "Human review",
+      "heading": "Human review where it matters. Automation everywhere else.",
+      "tabs": ["Field-level annotation", "Edge-case handling", "Shareable review screen", "Role-based access"],
+      "subheading": "Confidence thresholds determine what flows and what stops.",
+      "description": "Flagged fields get annotation. Resolved fields flow downstream. Every correction feeds back into the extraction model — so the exception queue shrinks over time.",
+      "exceptionQueue": "Exception queue",
+      "exceptionQueueDesc": "Escalate only low-confidence fields, ambiguous entities, or missing evidence.",
+      "auditTrail": "Audit trail",
+      "auditTrailDesc": "Keep reviewer actions, approvals, and corrections tied to the source record.",
+      "talkToExpert": "Talk To An Expert",
+      "checkSupportDocs": "Check Support Docs",
+      "reviewQueue": "Review queue",
+      "reviewerControls": "Reviewer controls",
+      "reviewerControlsDesc": "Approve, reject, or correct extracted values with source context preserved.",
+      "confidenceRouting": "Confidence routing",
+      "confidenceRoutingDesc": "Send only edge cases to humans while trusted fields continue automatically."
+    },
+    "cta": {
+      "breadcrumb": "Use cases",
+      "heading": "Built for regulated, data-heavy industries.",
+      "industryTabs": ["Finance", "Logistics", "Real Estate", "Healthcare", "Insurance"],
+      "useCases": [
+        ["Accounts Payable and Reconciliation", "Identity Verification", "Bank Check Processing", "Account Opening KYC"],
+        ["Mortgage Income Verification", "Invoice Data Entry", "Mortgage Lending", "Trade Finance"],
+        ["Payment Origination", "PO Invoice Validation", "Fraud Detection", "Commercial Loan Booking"]
+      ],
+      "seeItWork": "See it work on your documents."
+    }
+  },
+  "videoAudio": {
+    "breadcrumb": "Video & Audio Annotation",
+    "subtitle": "8-dimension multimodal annotation for video generation models.",
+    "heroTitle": "Train Video Generation Models With Real Multimodal Data.",
+    "heroDescription": "From raw footage to model-ready training data—we annotate the 8 dimensions that Seedance, Sora, and Veo actually need: scene semantics, object tracking, physical motion, camera grammar, dialogue, music, and sound effects.",
+    "liveLabeled": "Live labeled video",
+    "playingAnnotation": "Playing annotation timeline with synchronized tracks",
+    "active": "Active",
+    "shotLabel": "Shot label",
+    "wideUrban": "Wide urban driving sequence",
+    "camera": "Camera",
+    "trackingLeftRight": "Tracking left → right",
+    "dimensionStack": "8-dimension stack",
+    "dimensionStackDesc": "Scene, tracking, motion, camera, and audio layers synchronized to frame-level precision.",
+    "timecoded": "Timecoded",
+    "scene": "Scene",
+    "sceneValue": "Semantics + narrative",
+    "tracking": "Tracking",
+    "trackingValue": "Persistent IDs + masks",
+    "motion": "Motion",
+    "motionValue": "Physics + camera grammar",
+    "audio": "Audio",
+    "audioValue": "Dialogue · music · SFX",
+    "hours100k": "100K+ hours",
+    "hours100kDesc": "Automated MLLM pipelines scale to 100K+ hours with consistent quality.",
+    "frameLevelPrecision": "Frame-level precision",
+    "frameLevelPrecisionDesc": "33ms temporal precision at 30fps. Phoneme-level alignment for dialogue.",
+    "modelCompatibility": "Model compatibility",
+    "modelCompatibilityDesc": "Direct input to Seedance, Sora, Veo, Kling, Wan training pipelines.",
+    "capabilities": {
+      "breadcrumb": "8 annotation dimensions",
+      "heading": "Scene Understanding Annotation: The Foundation for Video Generation.",
+      "description": "State-of-the-art video generation models don't train on isolated labels. They need 8 annotation dimensions working together—scene content, narrative arcs, object tracking, physical motion, camera grammar, dialogue, music, and sound effects—all synchronized to frame-level precision.",
+      "foundationNote1": "Scene understanding annotation is the semantic foundation. It classifies what's happening, who's involved, and why—so every other dimension has context.",
+      "foundationNote2": "The remaining 7 dimensions build on that foundation: tracking maintains identity, motion captures physics, camera encodes cinematography, and audio layers synchronize dialogue, music, and sound effects.",
+      "items": [
+        {
+          "title": "Scene Content & Semantics",
+          "description": "Dense scene descriptions: subjects, actions, environment, lighting, atmosphere, art style. The semantic foundation that all other dimensions reference.",
+          "detail": "Scene type · narrative beat · actor roles · event boundaries"
+        },
+        {
+          "title": "Narrative & Storytelling",
+          "description": "Emotional progression, dramatic tension, story beats, character motivations. Enables models to generate coherent storytelling—not just random motion.",
+          "detail": "Three-act structure · emotional valence · narrative function"
+        },
+        {
+          "title": "Object & Character Tracking",
+          "description": "Multi-object identity persistence across occlusions and scene changes. Character consistency labels maintained across shots with pose estimation.",
+          "detail": "Persistent IDs · cross-scene re-ID · keypoint tracking"
+        },
+        {
+          "title": "Physical Motion Dynamics",
+          "description": "Physics-aware motion labels: gravity, momentum, collision, material deformation. Annotates whether motion obeys real-world physical laws.",
+          "detail": "Physics scoring · collision detection · material properties"
+        },
+        {
+          "title": "Camera Grammar & Cinematography",
+          "description": "Professional cinematography labels: shot types, camera movements (dolly, pan, crane), transitions, depth of field, composition rules.",
+          "detail": "Shot types · camera movements · transitions · composition"
+        },
+        {
+          "title": "Dialogue & Speech",
+          "description": "Phoneme-level lip-sync alignment, speaker identification, emotion labels, multilingual/dialect support. Frame-precise word-to-mouth mapping.",
+          "detail": "Lip-sync · speaker ID · emotion · multilingual support"
+        },
+        {
+          "title": "Music & Score",
+          "description": "Beat markers, tempo detection, genre classification, mood labels. Enables models to generate video that moves in rhythm with music.",
+          "detail": "Beat markers · tempo · genre · mood · key progression"
+        },
+        {
+          "title": "Sound Effects & Ambient",
+          "description": "Causal action-sound correspondence: 'glass shatters because it hit the floor.' Material properties, spatial positioning, room tone.",
+          "detail": "Action-sound mapping · material labels · spatial audio"
+        }
+      ]
+    },
+    "sceneUnderstanding": {
+      "breadcrumb": "Dimension 1: Scene Understanding",
+      "heading": "The Foundation Layer: What's Happening, Where, and Why.",
+      "description1": "Before tracking objects or annotating audio, we establish the scene foundation: What type of scene is this? What's the narrative intent? Who are the actors? What actions are unfolding?",
+      "description2": "This semantic layer anchors all other annotations. Every tracking ID, motion label, camera movement, and audio cue references this foundation.",
+      "liveSceneParsing": "Live scene parsing",
+      "liveSceneParsingDesc": "Timecoded multimodal understanding with linked evidence",
+      "sceneLabel": "Scene label",
+      "sceneLabelValue": "Urban crossing / pedestrian flow",
+      "multimodalLinks": "Multimodal links",
+      "actors": "Actors",
+      "actorsValue": "5 tracked",
+      "dialogue": "Dialogue",
+      "dialogueValue": "aligned",
+      "intent": "Intent",
+      "intentValue": "crossing scene",
+      "timeline": "Timeline",
+      "timelineValue": "00:42–01:08",
+      "timelineDetail": "Scene graph · evidence trace",
+      "items": [
+        {
+          "title": "Scene classification & intent",
+          "description": "Classify scene type (urban crossing, indoor cafe, wuxia fight), narrative beat (setup, climax, resolution), and actor roles—the semantic anchor for all other dimensions.",
+          "metric": "Scene type · narrative beat · actor roles · event boundaries"
+        },
+        {
+          "title": "Cross-modal evidence linking",
+          "description": "Link dialogue to speaker, sound effects to visual events, and camera movement to narrative intent—so every annotation references the scene foundation.",
+          "metric": "Speaker links · action-sound pairs · camera-narrative mapping"
+        }
+      ]
+    },
+    "trackingSegmentation": {
+      "breadcrumb": "Dimensions 2 & 3: Tracking & Segmentation",
+      "heading": "From Scene Semantics to Object-Level Precision.",
+      "description1": "Once the scene foundation is established, we track individual entities across time. Persistent IDs maintain character consistency. Segmentation masks capture precise boundaries.",
+      "description2": "Both dimensions reference the scene understanding layer for context—tracking IDs map to scene actors, segmentation masks align with scene geometry.",
+      "items": [
+        {
+          "title": "Object & Character Tracking",
+          "description": "Multi-object identity persistence across occlusions and scene changes. Persistent IDs maintain character consistency. Pose estimation and keypoint tracking capture movement. All tracking references the scene understanding foundation for context.",
+          "metric": "Persistent IDs · cross-scene re-ID · pose estimation · keypoint tracking"
+        },
+        {
+          "title": "Instance Segmentation",
+          "description": "Pixel-precise object boundaries frame-by-frame. Material property labels for physics modeling. Occlusion handling maintains mask quality. Segmentation references scene geometry and spatial relationships from the foundation layer.",
+          "metric": "Instance masks · material properties · occlusion handling · scene geometry"
+        }
+      ]
+    },
+    "annotationShowcase": {
+      "breadcrumb": "Dimensions 4–8: Motion, Camera, Audio",
+      "heading": "The Full Multimodal Stack: Motion, Camera, and Audio Layers.",
+      "description": "Beyond scene semantics and object tracking, we annotate the dimensions that make video generation cinematic: physical motion dynamics, camera grammar, dialogue, music, and sound effects—all synchronized to frame-level precision.",
+      "items": [
+        {
+          "title": "Physical Motion Dynamics",
+          "description": "Gravity, momentum, collision, material deformation—annotated with physics scoring per frame. Models learn what physically plausible motion looks like.",
+          "metric": "Physics score · collision events · material properties",
+          "overlay": "Physical"
+        },
+        {
+          "title": "Camera Grammar & Cinematography",
+          "description": "Shot types (close-up, wide, medium), camera movements (dolly, pan, crane, Hitchcock zoom), transitions, and composition rules—the vocabulary of cinematic generation.",
+          "metric": "Shot types · camera movements · transitions · composition",
+          "overlay": "Camera"
+        },
+        {
+          "title": "Dialogue & Music",
+          "description": "Phoneme-level lip-sync with SyncNet validation (offset ≤3 frames). Beat markers and tempo detection for rhythm-aligned generation. Speaker ID and emotion labels across multilingual content.",
+          "metric": "Lip-sync · beat markers · speaker ID · emotion · multilingual",
+          "overlay": "Dialogue and Music"
+        },
+        {
+          "title": "Sound Effects & Ambient",
+          "description": "Causal action-sound correspondence: blade clash at frame 78, mud splash at frame 82. Material property labels, spatial positioning, and room tone for physically plausible Foley audio.",
+          "metric": "Action-sound pairs · material labels · spatial audio · room tone",
+          "overlay": "SFX"
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Model-Ready Training Data for Video Generation.",
+      "description": "Scene semantics, persistent object tracking, physical motion, camera grammar, and multi-track audio—annotated at frame-level precision and structured for Seedance, Sora, and Veo training pipelines.",
+      "videoAnnotationFlow": "Video annotation flow",
+      "items": [
+        {
+          "title": "Model-Assisted Video Labeling",
+          "description": "Turn raw scenes into machine-readable supervision with temporal tags, object tracks, shot boundaries, and synchronized audio cues.",
+          "cta": "See the video flow",
+          "label": "Auto timeline"
+        },
+        {
+          "title": "Active Learning for Multimodal Review",
+          "description": "Prioritize uncertain frames, refine labels faster, and keep video, audio, and event annotations aligned in one review loop.",
+          "cta": "Explore refinement",
+          "label": "Human in loop"
+        },
+        {
+          "title": "Foundation Models for Scene Understanding",
+          "description": "Use multimodal foundation models to accelerate segmentation, tracking, speech alignment, and event extraction across long-form video.",
+          "cta": "View model layers",
+          "label": "Scene intelligence"
+        }
+      ]
+    }
+  },
+  "syntheticData": {
+    "breadcrumb": "Synthetic Training Data for Agentic LLMs",
+    "heroTitle": "Train LLMs to Reason, Plan, and Act With Synthetic Data.",
+    "heroDescription": "Generate structured training datasets for fine-tuning, RLHF, and evaluation. We synthesize reasoning traces, tool-calling trajectories, code execution paths, and mathematical proofs—the training signals that transform base LLMs into capable agents.",
+    "capabilityTabs": ["Reasoning Traces", "Code Execution", "Math Proofs", "Tool Calling"],
+    "trainingDataTitle": "Training Data for Agentic Capabilities",
+    "trainingDataSubtitle": "Structured datasets for fine-tuning and RLHF.",
+    "trainingDataDescription": "We generate the multi-step reasoning traces, execution-aware code samples, and tool-calling trajectories that LLMs need to learn agentic behaviors. Every dataset includes verification, critique loops, and failure recovery paths.",
+    "trainingPipeline": "Training pipeline",
+    "trainingPipelineDesc": "Reasoning, code, math, and tool-calling datasets for fine-tuning and RLHF.",
+    "reasoning": "Reasoning",
+    "reasoningDesc": "Multi-step CoT with critique loops and evidence graphs for fine-tuning.",
+    "coding": "Coding",
+    "codingDesc": "Execution-verified samples with tests, patches, and error recovery paths.",
+    "maths": "Maths",
+    "mathsDesc": "Symbolic proofs with checkpoints and formal verification for RLHF.",
+    "toolCalling": "Tool calling",
+    "toolCallingDesc": "Schema-safe actions with argument validation and state tracking.",
+    "sourceSignals": "Source signals",
+    "sourceSignalsValue": "Seed prompts, policies, domain knowledge",
+    "synthesisEngine": "Synthesis engine",
+    "synthesisEngineValue": "Generate reasoning traces, code paths, tool sequences",
+    "verificationLayer": "Verification layer",
+    "verificationLayerValue": "Execution checks, formal proofs, multi-model consensus",
+    "trainingOutput": "Training output",
+    "trainingOutputValue": "Fine-tuning datasets, RLHF preferences, evaluation benchmarks",
+    "samples100k": "100K+ samples",
+    "samples100kDesc": "Scale to millions of training examples with automated synthesis pipelines.",
+    "executionVerified": "Execution-verified",
+    "executionVerifiedDesc": "Code runs, math checks, tool calls validate against schemas.",
+    "rlhfReady": "RLHF-ready",
+    "rlhfReadyDesc": "Preference pairs for reasoning quality, safety, and alignment.",
+    "benefits": {
+      "heading": "Why Synthetic Data for Agent Training?",
+      "scalability": "Scalability",
+      "scalabilityDesc": "Generate millions of training examples without human annotation. Automated pipelines scale from 1K to 100K+ samples with consistent quality.",
+      "verifiability": "Verifiability",
+      "verifiabilityDesc": "Every code sample executes, every math proof validates, every tool call checks against schemas. Execution-based filtering ensures training data is correct, not hallucinated.",
+      "diversity": "Diversity",
+      "diversityDesc": "Evol-Instruct and difficulty adaptation create training curricula from simple to complex. Clustering-based diversity metrics prevent overfitting on narrow distributions.",
+      "platformHeading": "The Training Data Platform for Agentic LLMs.",
+      "seedPromptsHeading": "From seed prompts to verified training datasets.",
+      "seedPromptsDescription": "We handle the full synthesis pipeline: seed prompts → evolve variations → execute verification → export training datasets. Fine-tune on reasoning traces, run RLHF on tool-calling preferences, evaluate on execution-verified benchmarks.",
+      "trainingDataFormats": "Training data formats",
+      "tableHeaders": {
+        "id": "#",
+        "entity": "Entity",
+        "state": "State",
+        "score": "Score",
+        "output": "Output"
+      },
+      "outputFormats": [
+        { "entity": "SFT datasets", "state": "JSON-L format", "metric": "100K+", "output": "Reasoning traces + answers" },
+        { "entity": "RLHF preferences", "state": "Paired format", "metric": "50K+", "output": "Chosen vs. rejected samples" },
+        { "entity": "Eval benchmarks", "state": "Parquet format", "metric": "10K+", "output": "Execution-verified tests" },
+        { "entity": "Curriculum stages", "state": "Difficulty-sorted", "metric": "5 stages", "output": "Simple → expert progression" }
+      ]
+    },
+    "fabrication": {
+      "breadcrumb": "Synthesis methods",
+      "heading": "Generate Training Data From First Principles.",
+      "description": "We synthesize four core data modalities — each with domain-specific verification — so every sample an agent trains on is structurally sound.",
+      "items": [
+        { "title": "Reasoning Traces", "description": "Multi-step chain-of-thought with critique loops and evidence graphs. Methods: Self-Instruct, STaR, Process Reward Models.", "badge": "Verified" },
+        { "title": "Code Execution", "description": "Execution-aware samples with tests, patches, and error recovery. Methods: OSS-Instruct, Evol-Instruct, Genetic Instruct.", "badge": "Runnable" },
+        { "title": "Math Proofs", "description": "Symbolic steps with checkpoints and formal verification. Methods: MetaMath, NuminaMath, theorem proving.", "badge": "Proven" },
+        { "title": "Tool Calling", "description": "Schema-safe actions with argument validation and state tracking. Methods: APIGen, ToolACE, environment simulation.", "badge": "Validated" }
+      ]
+    },
+    "impact": {
+      "breadcrumb": "Training impact",
+      "heading": "Synthetic Data That Improves Model Capabilities.",
+      "description": "Training on synthetic data isn't just augmentation—it's how modern LLMs learn to reason, code, and use tools. Our datasets are designed for the training loops that matter: supervised fine-tuning, RLHF, and continuous evaluation.",
+      "stats": [
+        { "value": "3.2×", "label": "Reasoning accuracy improvement on benchmarks" },
+        { "value": "100K+", "label": "Diverse training samples per capability domain" },
+        { "value": "95%", "label": "Execution-verified or consensus-validated" }
+      ],
+      "capabilities": ["Reasoning", "Planning", "Tool Use", "Code Gen", "Math Solving", "Long-Context", "Multimodal", "Safety"],
+      "caseStudy": "See how DeepSeek, Qwen, and Seed use synthetic data to train specialized agents."
+    },
+    "pipeline": {
+      "breadcrumb": "Compound AI pipeline",
+      "heading": "Ideate, Generate, Verify.",
+      "description": "Multi-agent pipelines — Ideator agents brainstorm edge cases, Generator agents synthesize trajectories, Evaluator agents verify correctness. The result: diverse, execution-verified training data at scale.",
+      "calloutText": "Turn prompts, policies, and source records into machine-readable training assets.",
+      "tableHeaders": {
+        "id": "ID",
+        "mode": "Mode",
+        "structure": "Structure",
+        "output": "Output"
+      },
+      "items": [
+        { "id": "SCN-204", "type": "Reasoning", "structure": "Evidence graph · critique loop", "output": "Verified answer + trace" },
+        { "id": "CD-118", "type": "Coding", "structure": "Patch + tests + failure state", "output": "Executable repair set" },
+        { "id": "MT-087", "type": "Maths", "structure": "Formula path · checkpoints", "output": "Grounded numeric chain" },
+        { "id": "TC-332", "type": "Tool call", "structure": "Intent map · arguments", "output": "Actionable agent workflow" }
+      ],
+      "progressLabel": "Prompt synthesis job",
+      "progressValue": "7.6% complete",
+      "metrics": [
+        { "label": "Ideation", "value": "12.4K", "sub": "edge cases" },
+        { "label": "Generation", "value": "8.7K", "sub": "trajectories" },
+        { "label": "Verification", "value": "99.2%", "sub": "pass rate" }
+      ],
+      "ctaHeading": "Find the training data pipeline that fits your fine-tuning workflow."
+    },
+    "scale": {
+      "breadcrumb": "Training data architecture",
+      "heading": "Scale From 1K Seed Examples to 100K Training Samples.",
+      "items": [
+        {
+          "eyebrow": "Difficulty adaptation",
+          "title": "Curriculum learning: start simple, evolve to complex.",
+          "description": "Bidirectional evolution ensures coverage from trivial to expert-level tasks. Dynamic difficulty scaling based on model's current solvability. Prevents plateauing on simple tasks while maintaining learning curve."
+        },
+        {
+          "eyebrow": "Execution verification",
+          "title": "Code runs, math validates, tool calls check schemas.",
+          "description": "Every code sample executes in sandboxes, every math proof validates against formal systems, every tool call checks API schemas. Multi-model consensus for subjective tasks. Rejection sampling filters hallucinations."
+        },
+        {
+          "eyebrow": "Diversity control",
+          "title": "Clustering-based metrics ensure semantic coverage.",
+          "description": "Evol-Instruct generates variations: harder, easier, different constraints. Clustering-based diversity metrics prevent overfitting. Covers wide semantic area across problem space to avoid model collapse."
+        }
+      ],
+      "visualLabels": {
+        "testing": "Testing",
+        "qa": "QA",
+        "staging": "Staging"
+      }
+    },
+    "suite": {
+      "breadcrumb": "Training data products",
+      "heading": "Pre-built training datasets for common agentic capabilities.",
+      "description": "Custom synthesis for your domain: legal reasoning, medical coding, financial tool use. Integrate with your fine-tuning infrastructure: HuggingFace, Weights & Biases, Vertex AI.",
+      "suiteHeading": "The training data product suite",
+      "items": [
+        {
+          "title": "Reasoning Datasets",
+          "description": "Multi-step CoT traces for GSM8K, MATH, ARC, HellaSwag. Includes critique loops, evidence graphs, and verification steps. Format: JSON-L with reasoning chains and final answers."
+        },
+        {
+          "title": "Code Execution Datasets",
+          "description": "Execution-aware samples for HumanEval, MBPP, SWE-Bench. Includes patches, tests, error recovery, and repo-level context. Format: Parquet with code, tests, execution logs."
+        },
+        {
+          "title": "Tool-Calling Datasets",
+          "description": "Schema-safe trajectories for API calling, web navigation, CLI tools. Includes intent mapping, argument validation, state tracking. Format: JSON-L with tool schemas and execution traces."
+        }
+      ]
+    }
+  }
+}

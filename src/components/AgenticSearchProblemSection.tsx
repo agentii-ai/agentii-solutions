@@ -1,39 +1,39 @@
 import { AlertTriangle, Search, Shuffle } from "lucide-react";
-
-const problems = [
-  {
-    title: "Semantic Mismatch",
-    description:
-      "Embedding-based retrieval matches surface-level text similarity, not meaning. 'Is flood damage covered?' retrieves paragraphs mentioning 'flood' — not the exclusion clause in Section 4.2.1 that actually answers the question.",
-    icon: Search,
-  },
-  {
-    title: "No Reasoning Over Structure",
-    description:
-      "RAG treats documents as flat text. Financial statements have hierarchical relationships — line items roll up to subtotals, subtotals to totals, totals to ratios. Chunking destroys these relationships.",
-    icon: Shuffle,
-  },
-  {
-    title: "Hallucination Without Evidence",
-    description:
-      "When retrieval returns partial or irrelevant context, LLMs fill gaps with plausible-sounding fabrications. In regulated industries, a confident wrong answer is worse than no answer at all.",
-    icon: AlertTriangle,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const AgenticSearchProblemSection = () => {
+  const { t } = useTranslation('research');
+
+  const problems = [
+    {
+      title: t('problem.semanticMismatch'),
+      description: t('problem.semanticMismatchDesc'),
+      icon: Search,
+    },
+    {
+      title: t('problem.noReasoning'),
+      description: t('problem.noReasoningDesc'),
+      icon: Shuffle,
+    },
+    {
+      title: t('problem.hallucination'),
+      description: t('problem.hallucinationDesc'),
+      icon: AlertTriangle,
+    },
+  ];
+
   return (
     <section className="bg-secondary py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-            The problem
+            {t('problem.breadcrumb')}
           </p>
           <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-            Why RAG fails on real-world documents.
+            {t('problem.heading')}
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Retrieval-augmented generation was a breakthrough for simple Q&A. But when documents are clause-heavy, table-dense, and relationally complex, embedding similarity isn't enough.
+            {t('problem.description')}
           </p>
         </div>
 
@@ -63,10 +63,10 @@ const AgenticSearchProblemSection = () => {
             </div>
             <div>
               <p className="font-brand text-[18px] leading-tight text-foreground">
-                The core issue: retrieval quality, not generation quality.
+                {t('problem.coreIssue')}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Most RAG failures aren't LLM failures — they're retrieval failures. The model generates reasonable answers from the context it receives. The problem is that the context is wrong, incomplete, or structurally flattened. Fix retrieval, and generation accuracy follows.
+                {t('problem.coreIssueDesc')}
               </p>
             </div>
           </div>

@@ -1,34 +1,23 @@
 import { ArrowRight, FileCode2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const syntheticRows = [
-  {
-    id: "SCN-204",
-    type: "Reasoning",
-    structure: "Evidence graph · critique loop",
-    output: "Verified answer + trace",
-  },
-  {
-    id: "CD-118",
-    type: "Coding",
-    structure: "Patch + tests + failure state",
-    output: "Executable repair set",
-  },
-  {
-    id: "MT-087",
-    type: "Maths",
-    structure: "Formula path · checkpoints",
-    output: "Grounded numeric chain",
-  },
-  {
-    id: "TC-332",
-    type: "Tool call",
-    structure: "Intent map · arguments",
-    output: "Actionable agent workflow",
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const SyntheticDataPipelineSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const syntheticRows = t('syntheticData.pipeline.items', { returnObjects: true }) as Array<{
+    id: string;
+    type: string;
+    structure: string;
+    output: string;
+  }>;
+
+  const pipelineMetrics = t('syntheticData.pipeline.metrics', { returnObjects: true }) as Array<{
+    label: string;
+    value: string;
+    sub: string;
+  }>;
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
@@ -53,25 +42,25 @@ const SyntheticDataPipelineSection = () => {
                   </div>
                   <div>
                     <p className="font-mono-data text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
-                      Compound AI pipeline
+                      {t('syntheticData.pipeline.breadcrumb')}
                     </p>
                   </div>
                 </div>
 
                 <h2 className="mt-8 font-brand text-[32px] leading-tight tracking-[-0.02em] text-foreground md:text-[42px]">
-                  Ideate, Generate, Verify.
+                  {t('syntheticData.pipeline.heading')}
                 </h2>
                 <p className="mt-5 text-base leading-8 text-muted-foreground md:text-lg">
-                  Multi-agent pipelines — Ideator agents brainstorm edge cases, Generator agents synthesize trajectories, Evaluator agents verify correctness. The result: diverse, execution-verified training data at scale.
+                  {t('syntheticData.pipeline.description')}
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Button size="lg" className="rounded-lg px-8">
-                    Book a Demo
+                    {t('buttons.bookDemo', { ns: 'common' })}
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                   <Button variant="outline" size="lg" className="rounded-lg border-[hsl(var(--color-purple)/0.28)] px-8 text-[hsl(var(--color-purple-dark))] hover:bg-[hsl(var(--color-purple-light))] hover:text-[hsl(var(--color-purple-dark))]">
-                    Explore Capabilities
+                    {t('buttons.exploreFeatures', { ns: 'common' })}
                   </Button>
                 </div>
 
@@ -82,13 +71,13 @@ const SyntheticDataPipelineSection = () => {
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-sm leading-6 text-muted-foreground">
-                        Turn prompts, policies, and source records into machine-readable training assets.
+                        {t('syntheticData.pipeline.calloutText')}
                       </p>
                       <a
                         href="#"
                         className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-[hsl(var(--color-purple-dark))]"
                       >
-                        Read the guide
+                        {t('buttons.learnMore', { ns: 'common' })}
                         <ArrowRight className="h-4 w-4" />
                       </a>
                     </div>
@@ -103,10 +92,10 @@ const SyntheticDataPipelineSection = () => {
                   <table className="min-w-full border-collapse text-left">
                     <thead className="border-b border-border bg-secondary">
                       <tr className="font-mono-data text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                        <th className="px-4 py-3 font-medium">ID</th>
-                        <th className="px-4 py-3 font-medium">Mode</th>
-                        <th className="px-4 py-3 font-medium">Structure</th>
-                        <th className="px-4 py-3 font-medium">Output</th>
+                        <th className="px-4 py-3 font-medium">{t('syntheticData.pipeline.tableHeaders.id')}</th>
+                        <th className="px-4 py-3 font-medium">{t('syntheticData.pipeline.tableHeaders.mode')}</th>
+                        <th className="px-4 py-3 font-medium">{t('syntheticData.pipeline.tableHeaders.structure')}</th>
+                        <th className="px-4 py-3 font-medium">{t('syntheticData.pipeline.tableHeaders.output')}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -125,9 +114,9 @@ const SyntheticDataPipelineSection = () => {
                 <div className="border-t border-[hsl(var(--color-slate-700))] bg-[hsl(var(--color-navy))] p-4 text-[hsl(var(--color-slate-200))]">
                   <div className="flex items-center justify-between gap-4 text-xs">
                     <span className="font-mono-data uppercase tracking-[0.2em] text-[hsl(var(--color-slate-400))]">
-                      Prompt synthesis job
+                      {t('syntheticData.pipeline.progressLabel')}
                     </span>
-                    <span>7.6% complete</span>
+                    <span>{t('syntheticData.pipeline.progressValue')}</span>
                   </div>
                   <div className="mt-3 h-2 w-full bg-[hsl(var(--color-slate-700))]">
                     <div className="h-full w-[38%] bg-[hsl(var(--color-cyan))]" />
@@ -136,11 +125,7 @@ const SyntheticDataPipelineSection = () => {
               </div>
 
               <div className="mt-6 grid grid-cols-3 gap-3">
-                {[
-                  { label: "Ideation", value: "12.4K", sub: "edge cases" },
-                  { label: "Generation", value: "8.7K", sub: "trajectories" },
-                  { label: "Verification", value: "99.2%", sub: "pass rate" },
-                ].map(({ label, value, sub }) => (
+                {pipelineMetrics.map(({ label, value, sub }) => (
                   <div key={label} className="border border-border bg-background px-4 py-4 text-center">
                     <p className="font-mono-data text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{label}</p>
                     <p className="mt-2 font-brand text-[24px] leading-tight tracking-[-0.02em] text-foreground">{value}</p>
@@ -160,11 +145,11 @@ const SyntheticDataPipelineSection = () => {
                   style={{ transform: "rotate(-10deg)" }}
                 />
                 <p className="relative max-w-[560px] font-brand text-[30px] leading-tight tracking-[-0.02em] text-[hsl(var(--primary-foreground))] md:text-[42px]">
-                  Find the training data pipeline that fits your fine-tuning workflow.
+                  {t('syntheticData.pipeline.ctaHeading')}
                 </p>
               </div>
               <Button size="lg" className="rounded-lg bg-[hsl(var(--color-purple-dark))] px-8 text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--color-purple))]">
-                View pricing
+                {t('buttons.learnMore', { ns: 'common' })}
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>

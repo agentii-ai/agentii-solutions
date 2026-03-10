@@ -1,12 +1,6 @@
 import { ArrowRight, BadgeCheck, Check, FileText, ShieldCheck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const reviewTabs = [
-  "Field-level annotation",
-  "Edge-case handling",
-  "Shareable review screen",
-  "Role-based access",
-];
+import { useTranslation } from "react-i18next";
 
 const reviewRows = [
   { label: "Invoice No", value: "RC20-0827", state: "flagged" },
@@ -15,13 +9,17 @@ const reviewRows = [
 ];
 
 const HumanReviewSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const reviewTabs = t('documentProcessing.humanReview.tabs', { returnObjects: true }) as string[];
+
   return (
     <section className="bg-foreground py-20 text-background md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[860px] text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-background/58">Human review</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-background/58">{t('documentProcessing.humanReview.breadcrumb')}</p>
           <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-background md:text-[48px] lg:text-[60px]">
-            Human review where it matters. Automation everywhere else.
+            {t('documentProcessing.humanReview.heading')}
           </h2>
         </div>
 
@@ -43,33 +41,33 @@ const HumanReviewSection = () => {
         <div className="mt-12 grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-center lg:gap-16">
           <div>
             <h3 className="font-brand text-[32px] leading-[1.04] tracking-[-0.03em] text-background md:text-[40px]">
-              Confidence thresholds determine what flows and what stops.
+              {t('documentProcessing.humanReview.subheading')}
             </h3>
             <p className="mt-6 max-w-[460px] text-lg leading-relaxed text-background/78">
-              Flagged fields get annotation. Resolved fields flow downstream. Every correction feeds back into the extraction model — so the exception queue shrinks over time.
+              {t('documentProcessing.humanReview.description')}
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               <div className="border border-background/15 bg-background/5 px-4 py-4">
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">Exception queue</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">{t('documentProcessing.humanReview.exceptionQueue')}</p>
                 <p className="mt-2 text-sm leading-relaxed text-background/80">
-                  Escalate only low-confidence fields, ambiguous entities, or missing evidence.
+                  {t('documentProcessing.humanReview.exceptionQueueDesc')}
                 </p>
               </div>
               <div className="border border-background/15 bg-background/5 px-4 py-4">
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">Audit trail</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">{t('documentProcessing.humanReview.auditTrail')}</p>
                 <p className="mt-2 text-sm leading-relaxed text-background/80">
-                  Keep reviewer actions, approvals, and corrections tied to the source record.
+                  {t('documentProcessing.humanReview.auditTrailDesc')}
                 </p>
               </div>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-lg px-8">
-                Talk To An Expert <ArrowRight size={16} />
+                {t('documentProcessing.humanReview.talkToExpert')} <ArrowRight size={16} />
               </Button>
               <Button variant="outline" size="lg" className="rounded-lg border-background/30 bg-background text-foreground hover:bg-background/90 px-8">
-                Check Support Docs
+                {t('documentProcessing.humanReview.checkSupportDocs')}
               </Button>
             </div>
           </div>
@@ -113,7 +111,7 @@ const HumanReviewSection = () => {
                     <div className="flex items-center justify-between">
                       <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-background/55">
                         <ShieldCheck className="h-4 w-4 text-primary" />
-                        Review queue
+                        {t('documentProcessing.humanReview.reviewQueue')}
                       </div>
                       <span className="text-background/45">×</span>
                     </div>
@@ -160,18 +158,18 @@ const HumanReviewSection = () => {
                   <div className="inline-flex h-10 w-10 items-center justify-center border border-primary/25 bg-background text-primary">
                     <FileText className="h-4 w-4" />
                   </div>
-                  <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">Reviewer controls</p>
+                  <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">{t('documentProcessing.humanReview.reviewerControls')}</p>
                   <p className="mt-2 text-sm leading-relaxed text-background/80">
-                    Approve, reject, or correct extracted values with source context preserved.
+                    {t('documentProcessing.humanReview.reviewerControlsDesc')}
                   </p>
                 </article>
                 <article className="border border-background/15 bg-background/5 px-4 py-4">
                   <div className="inline-flex h-10 w-10 items-center justify-center border border-primary/25 bg-background text-primary">
                     <BadgeCheck className="h-4 w-4" />
                   </div>
-                  <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">Confidence routing</p>
+                  <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-background/55">{t('documentProcessing.humanReview.confidenceRouting')}</p>
                   <p className="mt-2 text-sm leading-relaxed text-background/80">
-                    Send only edge cases to humans while trusted fields continue automatically.
+                    {t('documentProcessing.humanReview.confidenceRoutingDesc')}
                   </p>
                 </article>
               </div>

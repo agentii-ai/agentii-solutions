@@ -1,66 +1,41 @@
 import { ArrowRight, DatabaseZap, Rocket, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const benefitCards = [
-  {
-    title: "Scalability",
-    description:
-      "Generate millions of training examples without human annotation. Automated pipelines scale from 1K to 100K+ samples with consistent quality.",
-    icon: DatabaseZap,
-  },
-  {
-    title: "Verifiability",
-    description:
-      "Every code sample executes, every math proof validates, every tool call checks against schemas. Execution-based filtering ensures training data is correct, not hallucinated.",
-    icon: Rocket,
-  },
-  {
-    title: "Diversity",
-    description:
-      "Evol-Instruct and difficulty adaptation create training curricula from simple to complex. Clustering-based diversity metrics prevent overfitting on narrow distributions.",
-    icon: ShieldCheck,
-  },
-];
-
-const tableRows = [
-  {
-    id: "1",
-    entity: "SFT datasets",
-    state: "JSON-L format",
-    metric: "100K+",
-    output: "Reasoning traces + answers",
-  },
-  {
-    id: "2",
-    entity: "RLHF preferences",
-    state: "Paired format",
-    metric: "50K+",
-    output: "Chosen vs. rejected samples",
-  },
-  {
-    id: "3",
-    entity: "Eval benchmarks",
-    state: "Parquet format",
-    metric: "10K+",
-    output: "Execution-verified tests",
-  },
-  {
-    id: "4",
-    entity: "Curriculum stages",
-    state: "Difficulty-sorted",
-    metric: "5 stages",
-    output: "Simple → expert progression",
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const SyntheticDataBenefitsSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const benefitCards = [
+    {
+      title: t('syntheticData.benefits.scalability'),
+      description: t('syntheticData.benefits.scalabilityDesc'),
+      icon: DatabaseZap,
+    },
+    {
+      title: t('syntheticData.benefits.verifiability'),
+      description: t('syntheticData.benefits.verifiabilityDesc'),
+      icon: Rocket,
+    },
+    {
+      title: t('syntheticData.benefits.diversity'),
+      description: t('syntheticData.benefits.diversityDesc'),
+      icon: ShieldCheck,
+    },
+  ];
+
+  const tableRows = t('syntheticData.benefits.outputFormats', { returnObjects: true }) as Array<{
+    entity: string;
+    state: string;
+    metric: string;
+    output: string;
+  }>;
   return (
     <section className="bg-[linear-gradient(180deg,hsl(var(--background))_0%,hsl(var(--secondary))_100%)] py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-[980px] text-center">
             <h2 className="font-brand text-[34px] leading-[1.06] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[56px]">
-              Why Synthetic Data for Agent Training?
+              {t('syntheticData.benefits.heading')}
             </h2>
           </div>
 
@@ -84,12 +59,12 @@ const SyntheticDataBenefitsSection = () => {
           <div className="mt-20 grid items-start gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
             <div className="max-w-[620px]">
               <p className="font-brand text-[34px] leading-[1.08] tracking-[-0.03em] text-foreground md:text-[52px]">
-                The Training Data Platform for Agentic LLMs.
+                {t('syntheticData.benefits.platformHeading')}
               </p>
             </div>
             <div className="lg:pt-6">
               <Button size="lg" className="rounded-lg bg-[hsl(var(--color-purple-dark))] px-8 text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--color-purple))]">
-                Book a demo
+                {t('buttons.bookDemo', { ns: 'common' })}
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
@@ -99,16 +74,16 @@ const SyntheticDataBenefitsSection = () => {
             <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
               <div className="border-b border-border p-8 lg:border-b-0 lg:border-r lg:p-10">
                 <p className="font-brand text-[26px] leading-tight tracking-[-0.02em] text-foreground md:text-[38px]">
-                  From seed prompts to verified training datasets.
+                  {t('syntheticData.benefits.seedPromptsHeading')}
                 </p>
                 <p className="mt-5 text-[17px] leading-8 text-foreground/80">
-                  We handle the full synthesis pipeline: seed prompts → evolve variations → execute verification → export training datasets. Fine-tune on reasoning traces, run RLHF on tool-calling preferences, evaluate on execution-verified benchmarks.
+                  {t('syntheticData.benefits.seedPromptsDescription')}
                 </p>
                 <a
                   href="#"
                   className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-purple-dark))] transition-colors duration-200 hover:text-[hsl(var(--color-purple))]"
                 >
-                  Learn more
+                  {t('buttons.learnMore', { ns: 'common' })}
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -117,7 +92,7 @@ const SyntheticDataBenefitsSection = () => {
                 <div className="overflow-hidden rounded-[14px] border border-[hsl(var(--color-gray-700))] bg-background shadow-[0_16px_44px_-24px_hsl(var(--color-navy)/0.4)]">
                   <div className="flex items-center justify-between border-b border-border px-4 py-3">
                     <span className="font-mono-data text-[12px] uppercase tracking-[0.18em] text-foreground">
-                      Training data formats
+                      {t('syntheticData.benefits.trainingDataFormats')}
                     </span>
                     <div className="flex gap-2">
                       <span className="h-2.5 w-2.5 rounded-full border border-[hsl(var(--color-gray-500))]" />
@@ -129,17 +104,17 @@ const SyntheticDataBenefitsSection = () => {
                     <table className="min-w-full border-collapse text-left">
                       <thead className="bg-secondary">
                         <tr className="border-b border-border font-mono-data text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-                          <th className="px-4 py-3 font-medium">#</th>
-                          <th className="px-4 py-3 font-medium">Entity</th>
-                          <th className="px-4 py-3 font-medium">State</th>
-                          <th className="px-4 py-3 font-medium">Score</th>
-                          <th className="px-4 py-3 font-medium">Output</th>
+                          <th className="px-4 py-3 font-medium">{t('syntheticData.benefits.tableHeaders.id')}</th>
+                          <th className="px-4 py-3 font-medium">{t('syntheticData.benefits.tableHeaders.entity')}</th>
+                          <th className="px-4 py-3 font-medium">{t('syntheticData.benefits.tableHeaders.state')}</th>
+                          <th className="px-4 py-3 font-medium">{t('syntheticData.benefits.tableHeaders.score')}</th>
+                          <th className="px-4 py-3 font-medium">{t('syntheticData.benefits.tableHeaders.output')}</th>
                         </tr>
                       </thead>
                       <tbody>
                         {tableRows.map((row, index) => (
-                          <tr key={row.id} className={index % 2 === 0 ? "bg-background" : "bg-[hsl(var(--color-gray-50))]"}>
-                            <td className="px-4 py-4 font-mono-data text-[12px] text-foreground">{row.id}</td>
+                          <tr key={index} className={index % 2 === 0 ? "bg-background" : "bg-[hsl(var(--color-gray-50))]"}>
+                            <td className="px-4 py-4 font-mono-data text-[12px] text-foreground">{index + 1}</td>
                             <td className="px-4 py-4 text-sm font-medium text-[hsl(var(--color-cyan-dark))]">{row.entity}</td>
                             <td className="px-4 py-4 text-sm text-foreground">{row.state}</td>
                             <td className="px-4 py-4 text-sm text-foreground">{row.metric}</td>

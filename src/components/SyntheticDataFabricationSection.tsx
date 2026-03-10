@@ -1,49 +1,30 @@
 import { Brain, Code2, Pi, Wrench } from "lucide-react";
-
-const synthesisModes = [
-  {
-    title: "Reasoning Traces",
-    description:
-      "Multi-step chain-of-thought with critique loops and evidence graphs. Methods: Self-Instruct, STaR, Process Reward Models.",
-    badge: "Verified",
-    icon: Brain,
-  },
-  {
-    title: "Code Execution",
-    description:
-      "Execution-aware samples with tests, patches, and error recovery. Methods: OSS-Instruct, Evol-Instruct, Genetic Instruct.",
-    badge: "Runnable",
-    icon: Code2,
-  },
-  {
-    title: "Math Proofs",
-    description:
-      "Symbolic steps with checkpoints and formal verification. Methods: MetaMath, NuminaMath, theorem proving.",
-    badge: "Proven",
-    icon: Pi,
-  },
-  {
-    title: "Tool Calling",
-    description:
-      "Schema-safe actions with argument validation and state tracking. Methods: APIGen, ToolACE, environment simulation.",
-    badge: "Validated",
-    icon: Wrench,
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const SyntheticDataFabricationSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const synthesisModes = (t('syntheticData.fabrication.items', { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+    badge: string;
+  }>).map((item, index) => ({
+    ...item,
+    icon: [Brain, Code2, Pi, Wrench][index],
+  }));
+
   return (
     <section className="bg-secondary py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="font-mono-data text-[11px] font-medium uppercase tracking-[0.28em] text-[hsl(var(--color-purple))]">
-            Synthesis methods
+            {t('syntheticData.fabrication.breadcrumb')}
           </p>
           <h2 className="mt-4 font-brand text-[34px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[56px]">
-            Generate Training Data From First Principles.
+            {t('syntheticData.fabrication.heading')}
           </h2>
           <p className="mx-auto mt-6 max-w-[600px] text-base leading-8 text-muted-foreground md:text-lg">
-            We synthesize four core data modalities — each with domain-specific verification — so every sample an agent trains on is structurally sound.
+            {t('syntheticData.fabrication.description')}
           </p>
         </div>
 

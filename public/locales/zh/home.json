@@ -1,0 +1,166 @@
+{
+  "hero": {
+    "headline1": "Agent 创建数据，为 Agent 所用",
+    "headline2": "规模化 Agent-Use-Ready 数据",
+    "description": "从金融文档到推理、规划、执行——为 agent 结构化处理，而非供人类使用",
+    "featureHeadline": "数据由 agent 生成，agent 标注，\n由 agent 使用，为 agent 训练",
+    "features": [
+      "Agent 通过推理轨迹和执行日志进行标注",
+      "机器可读的结构化数据，agent 无需后处理即可直接使用",
+      "推理轨迹、tool call 和决策路径——不仅仅是标签",
+      "Agent 大规模生成合成训练数据"
+    ]
+  },
+  "solutions": {
+    "heading": "Agent原生数据解决方案",
+    "subheading": "为 agent 生命周期的每个阶段量身打造",
+    "document": {
+      "title": "文档处理",
+      "description": "将复杂的金融文档转化为结构化、agent-ready 的数据，具备企业级精度"
+    },
+    "video": {
+      "title": "视频与音频智能",
+      "description": "从视频和音频源中提取、标注和结构化多模态数据，服务于 AI 训练 pipeline"
+    },
+    "synthetic": {
+      "title": "合成数据生成",
+      "description": "生成高保真合成数据集，用于训练、测试和验证 agentic AI 模型"
+    }
+  },
+  "metrics": {
+    "heading": "精心设计，统一复杂的企业数据环境",
+    "foundational": {
+      "title": "基础 Agent",
+      "description": "核心数据 pipeline 和评估层，使企业 agent 系统稳定、可审计且快速部署"
+    },
+    "business": {
+      "title": "业务 Agent",
+      "description": "集成、结构化工作流和机器可读输出，将 agent 操作连接到生产系统",
+      "badge": "认证交付层",
+      "badgeNote": "专为工作流编排、语义增强和下游系统兼容性而构建"
+    },
+    "purposeBuilt": {
+      "title": "专用 Agent",
+      "description": "面向特定成果的 agent 技术栈，专为金融文档、多模态审核和合成数据生成设计"
+    },
+    "platform": {
+      "title": "Agent Workforce 平台",
+      "description": "端到端运营层，为文档、视频和合成 pipeline 提供安全、可扩展、生产级的 agent 数据工作流",
+      "badge": "为企业部署协同设计",
+      "badgeNote": "治理、QA 和 agent-ready 交付集于一体的格构化平台，专为受监管环境构建"
+    }
+  },
+  "pipeline": {
+    "heading": "工作原理",
+    "subheading": "从原始数据到 agent-ready 智能的四个步骤",
+    "ingest": {
+      "label": "接入",
+      "description": "连接任何数据源——文档、视频、音频、API"
+    },
+    "annotate": {
+      "label": "标注",
+      "description": "AI agent 自动处理、分类和增强您的数据"
+    },
+    "validate": {
+      "label": "验证",
+      "description": "Human-in-the-loop QA，实时精度监控"
+    },
+    "deliver": {
+      "label": "交付",
+      "description": "将 agent-use-ready 结构化数据导出到任何下游系统"
+    }
+  },
+  "useCases": {
+    "heading": "按行业分类的应用场景",
+    "subheading": "为成果而生——而非无尽的试点",
+    "categories": {
+      "all": "全部",
+      "finance": "金融",
+      "insurance": "保险",
+      "videoAI": "视频 AI",
+      "syntheticData": "合成数据"
+    },
+    "items": [
+      {
+        "title": "财务报表提取",
+        "category": "Finance",
+        "description": "自动解析和结构化 10-K、10-Q 和年度报告，生成结构化数据集"
+      },
+      {
+        "title": "保险理赔处理",
+        "category": "Insurance",
+        "description": "大规模提取理赔表单、医疗记录和保单文档中的关键数据"
+      },
+      {
+        "title": "视频训练数据 Pipeline",
+        "category": "Video AI",
+        "description": "生成帧级标注和结构化元数据，用于视频模型训练"
+      },
+      {
+        "title": "合成金融记录",
+        "category": "Synthetic Data",
+        "description": "创建逼真的合成交易数据用于模型训练，无隐私风险"
+      },
+      {
+        "title": "KYC 文档验证",
+        "category": "Finance",
+        "description": "自动化身份文档处理和验证，服务于合规工作流"
+      },
+      {
+        "title": "多模态内容分析",
+        "category": "Video AI",
+        "description": "同时处理视频、音频和文本，实现全面的内容理解"
+      }
+    ]
+  },
+  "differentiators": {
+    "heading": "为什么选择 agentii.Solutions",
+    "subheading": "精心设计，统一复杂的企业环境",
+    "items": [
+      "Agentic-native 架构——非改造的自动化",
+      "用统一平台替代 50+ 个 AI 工具",
+      "数天内启动您的第一个 agent，而非数季度",
+      "随处运行：本地部署、混合或跨云",
+      "内置企业级安全和合规",
+      "Human-in-the-loop 验证，确保生产信心"
+    ],
+    "table": {
+      "feature": "功能",
+      "agentii": "agentii",
+      "others": "其他",
+      "rows": [
+        "Agentic-native",
+        "多模态支持",
+        "本地部署",
+        "实时监控",
+        "Human-in-the-loop",
+        "50+ 格式支持"
+      ]
+    }
+  },
+  "testimonials": {
+    "heading": "客户评价",
+    "items": [
+      {
+        "quote": "agentii.Solutions 彻底改变了我们的文档处理 pipeline。过去需要数周的工作现在只需数小时，且精度高于人工审核。",
+        "name": "Sarah Chen",
+        "title": "全球投资银行数据工程副总裁"
+      },
+      {
+        "quote": "该平台让我们轻松整合多种格式的数据——并帮助我们自动化和加速了整个预测流程",
+        "name": "James Park",
+        "title": "世界500强保险公司 AI/ML 总监"
+      },
+      {
+        "quote": "他们的 agentic 视频数据标注方法将我们的训练数据成本降低了 60%，同时全面提升了模型精度",
+        "name": "Elena Volkov",
+        "title": "视频 AI 初创公司 AI 训练负责人"
+      }
+    ]
+  },
+  "cta": {
+    "heading1": "准备好改变您的",
+    "heading2": "数据 pipeline 了吗？",
+    "description": "与我们的团队预约演示，亲身体验 agentii.Solutions"
+  }
+}

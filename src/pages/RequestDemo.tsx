@@ -2,6 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, CheckSquare2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -23,20 +24,6 @@ const requestDemoSchema = z.object({
 
 type RequestDemoValues = z.infer<typeof requestDemoSchema>;
 
-const highlights = [
-  "Industry-specific workflows for document, video, audio, and synthetic data pipelines",
-  "Data maps that help agents reason, retrieve, and calculate on structured outputs",
-  "A practical rollout path from pilot datasets to governed production delivery",
-];
-
-const outcomes = [
-  { label: "Faster dataset delivery", value: "10×" },
-  { label: "Higher retrieval precision", value: "75%" },
-  { label: "Lower review overhead", value: "48%" },
-];
-
-const countries = ["United States", "Canada", "United Kingdom", "Germany", "Singapore", "Japan", "Australia"];
-
 const signalColors = [
   "bg-primary",
   "bg-purple",
@@ -50,6 +37,17 @@ const signalColors = [
 
 const RequestDemo = () => {
   const { toast } = useToast();
+  const { t } = useTranslation('demo');
+
+  const highlights = t('highlights', { returnObjects: true }) as string[];
+
+  const outcomes = [
+    { label: t('outcomes.fasterDelivery'), value: t('outcomes.fasterDeliveryValue') },
+    { label: t('outcomes.higherPrecision'), value: t('outcomes.higherPrecisionValue') },
+    { label: t('outcomes.lowerOverhead'), value: t('outcomes.lowerOverheadValue') },
+  ];
+
+  const countries = t('countries', { returnObjects: true }) as string[];
 
   const form = useForm<RequestDemoValues>({
     resolver: zodResolver(requestDemoSchema),
@@ -76,21 +74,21 @@ const RequestDemo = () => {
 
       if (data.success) {
         toast({
-          title: "Demo request submitted",
-          description: `Thanks ${values.firstName} — we'll be in touch soon.`,
+          title: t('form.successTitle'),
+          description: t('form.successDescription', { firstName: values.firstName }),
         });
         form.reset();
       } else {
         toast({
-          title: "Something went wrong",
-          description: data.message || "Please try again.",
+          title: t('form.errorTitle'),
+          description: data.message || t('form.errorDescription'),
           variant: "destructive",
         });
       }
     } catch {
       toast({
-        title: "Connection error",
-        description: "Could not reach the server. Please try again later.",
+        title: t('form.connectionError'),
+        description: t('form.connectionErrorDescription'),
         variant: "destructive",
       });
     }
@@ -104,13 +102,13 @@ const RequestDemo = () => {
           <div className="container mx-auto px-6 pb-20 lg:px-12 lg:pb-24">
             <div className="max-w-[860px]">
               <p className="font-mono-data text-[11px] font-medium uppercase tracking-[0.28em] text-lilac-dark">
-                Request a demo
+                {t('breadcrumb')}
               </p>
               <h1 className="mt-6 font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-foreground md:text-[60px] lg:text-[72px]">
-                Book a demo with our experts.
+                {t('heroTitle')}
               </h1>
               <p className="mt-6 max-w-[760px] text-lg leading-8 text-foreground/80 md:text-[20px]">
-                See how agentii.Solutions structures document, video, audio, and synthetic data into machine-readable outputs for agentic systems.
+                {t('heroDescription')}
               </p>
             </div>
           </div>
@@ -130,10 +128,10 @@ const RequestDemo = () => {
               <div className="space-y-10">
                 <div className="max-w-[760px]">
                   <h2 className="font-brand text-[34px] leading-[1.04] tracking-[-0.02em] text-foreground md:text-[46px]">
-                    See how agentii.Solutions works for your team.
+                    {t('seeHow')}
                   </h2>
                   <p className="mt-5 text-[17px] leading-8 text-foreground/80">
-                    Our document processing solution builds a data map for agents, greatly increasing what agentic systems can do with structured data after processing. That data map is foundational for accurate reasoning, retrieval, and numerical calculation.
+                    {t('seeHowDescription')}
                   </p>
                 </div>
 
@@ -149,7 +147,7 @@ const RequestDemo = () => {
                 <div className="overflow-hidden rounded-xl border border-border bg-navy text-slate-200 shadow-[0_18px_60px_-30px_hsl(var(--color-navy)/0.55)]">
                   <div className="border-b border-slate-700/80 px-7 py-6">
                     <p className="font-brand text-[34px] leading-[1.02] tracking-[-0.03em] text-primary-foreground md:text-[46px]">
-                      Quickly deliver structured data that improves agent performance.
+                      {t('deliverHeading')}
                     </p>
                   </div>
 
@@ -177,10 +175,10 @@ const RequestDemo = () => {
               <div className="rounded-xl border border-border bg-background p-6 shadow-[0_16px_40px_-28px_hsl(var(--foreground)/0.18)] lg:sticky lg:top-28">
                 <div className="mb-6">
                   <h2 className="font-brand text-[30px] leading-tight tracking-[-0.02em] text-foreground">
-                    Start your AI journey.
+                    {t('formTitle')}
                   </h2>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    Share a few details and we will tailor the walkthrough to your data workflows and target outcomes.
+                    {t('formDescription')}
                   </p>
                 </div>
 
@@ -192,7 +190,7 @@ const RequestDemo = () => {
                         name="firstName"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-medium text-foreground">First name *</FormLabel>
+                            <FormLabel className="text-sm font-medium text-foreground">{t('form.firstName')}</FormLabel>
                             <FormControl>
                               <Input {...field} autoComplete="given-name" className="h-11 rounded-lg" />
                             </FormControl>
@@ -206,7 +204,7 @@ const RequestDemo = () => {
                         name="lastName"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-medium text-foreground">Last name *</FormLabel>
+                            <FormLabel className="text-sm font-medium text-foreground">{t('form.lastName')}</FormLabel>
                             <FormControl>
                               <Input {...field} autoComplete="family-name" className="h-11 rounded-lg" />
                             </FormControl>
@@ -221,7 +219,7 @@ const RequestDemo = () => {
                       name="jobTitle"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-foreground">Job title *</FormLabel>
+                          <FormLabel className="text-sm font-medium text-foreground">{t('form.jobTitle')}</FormLabel>
                           <FormControl>
                             <Input {...field} autoComplete="organization-title" className="h-11 rounded-lg" />
                           </FormControl>
@@ -235,7 +233,7 @@ const RequestDemo = () => {
                       name="company"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-foreground">Company *</FormLabel>
+                          <FormLabel className="text-sm font-medium text-foreground">{t('form.company')}</FormLabel>
                           <FormControl>
                             <Input {...field} autoComplete="organization" className="h-11 rounded-lg" />
                           </FormControl>
@@ -249,7 +247,7 @@ const RequestDemo = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-foreground">Work email *</FormLabel>
+                          <FormLabel className="text-sm font-medium text-foreground">{t('form.workEmail')}</FormLabel>
                           <FormControl>
                             <Input {...field} type="email" autoComplete="email" inputMode="email" className="h-11 rounded-lg" />
                           </FormControl>
@@ -263,11 +261,11 @@ const RequestDemo = () => {
                       name="country"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-foreground">Country *</FormLabel>
+                          <FormLabel className="text-sm font-medium text-foreground">{t('form.country')}</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
                               <SelectTrigger className="h-11 rounded-lg">
-                                <SelectValue placeholder="Select your country" />
+                                <SelectValue placeholder={t('form.selectCountry')} />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
@@ -288,12 +286,12 @@ const RequestDemo = () => {
                       name="interests"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-foreground">Tell us about your use case</FormLabel>
+                          <FormLabel className="text-sm font-medium text-foreground">{t('form.useCase')}</FormLabel>
                           <FormControl>
                             <Textarea
                               {...field}
                               className="min-h-[128px] rounded-lg"
-                              placeholder="What workflows, datasets, or agents are you looking to improve?"
+                              placeholder={t('form.useCasePlaceholder')}
                             />
                           </FormControl>
                           <FormMessage />
@@ -302,7 +300,7 @@ const RequestDemo = () => {
                     />
 
                     <Button type="submit" size="lg" className="w-full rounded-lg bg-lilac-dark text-primary-foreground hover:bg-lilac">
-                      Request a Demo
+                      {t('buttons.requestDemo', { ns: 'common' })}
                       <ArrowRight className="h-4 w-4" />
                     </Button>
                   </form>

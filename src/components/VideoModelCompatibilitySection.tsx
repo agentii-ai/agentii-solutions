@@ -1,7 +1,6 @@
 import { ArrowRight, Check, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const dimensions = ["Scene", "Tracking", "Motion", "Camera", "Dialogue", "Music", "SFX", "Ambient"];
+import { useTranslation } from 'react-i18next';
 
 const models = [
   { name: "Seedance 2.0", support: [true, true, true, true, true, true, true, true] },
@@ -12,52 +11,42 @@ const models = [
   { name: "HunyuanVideo", support: [true, true, true, true, true, true, true, true] },
 ];
 
-const summaryCards = [
-  {
-    label: "Full Coverage",
-    value: "Seedance 2.0, HunyuanVideo — all 8 dimensions supported",
-  },
-  {
-    label: "Audio-First Models",
-    value: "Veo 3, Seedance — dialogue, music, and ambient annotation",
-  },
-  {
-    label: "Vision-First Models",
-    value: "Sora 2, Kling, Wan — scene, tracking, motion, camera",
-  },
-];
-
 const VideoModelCompatibilitySection = () => {
+  const { t } = useTranslation('usecases');
+
+  const dimensions = t('video.compatibility.dimensions', { returnObjects: true }) as string[];
+  const summaryCards = t('video.compatibility.summaryCards', { returnObjects: true }) as { label: string; value: string }[];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:gap-16">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-              Model Compatibility
+              {t('video.compatibility.breadcrumb')}
             </p>
             <h2 className="mt-5 max-w-[520px] font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[62px]">
-              One annotation framework. Every frontier model.
+              {t('video.compatibility.heading')}
             </h2>
             <p className="mt-6 max-w-[560px] text-lg leading-relaxed text-muted-foreground">
-              Our 8-dimension annotation framework maps to every major video generation model — from vision-only architectures to full audio-visual systems. One labeling pass, every model covered.
+              {t('video.compatibility.description')}
             </p>
 
             <div className="mt-8 max-w-[560px] space-y-4 border-l-2 border-teal pl-5">
               <p className="text-sm leading-relaxed text-foreground">
-                Instead of re-annotating for each model's input format, our framework captures the superset of dimensions across Seedance, Veo, Sora, Kling, Wan, and HunyuanVideo.
+                {t('video.compatibility.note1')}
               </p>
               <p className="text-sm leading-relaxed text-foreground">
-                This eliminates redundant labeling and ensures your training data investment scales across model generations.
+                {t('video.compatibility.note2')}
               </p>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-lg bg-teal px-8 text-navy hover:bg-teal-dark">
-                Request a Demo <ArrowRight size={16} />
+                {t('buttons.requestDemo', { ns: 'common' })} <ArrowRight size={16} />
               </Button>
               <Button variant="outline" size="lg" className="rounded-lg border-teal px-8 text-teal hover:bg-teal hover:text-navy">
-                See Labeled Outputs
+                {t('buttons.seeLabeledOutputs', { ns: 'common' })}
               </Button>
             </div>
           </div>
@@ -66,10 +55,10 @@ const VideoModelCompatibilitySection = () => {
             <div className="border border-border bg-background p-6 shadow-sm md:p-8">
               <div>
                 <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                  Compatibility Matrix
+                  {t('video.compatibility.matrixLabel')}
                 </p>
                 <p className="mt-2 font-brand text-[28px] leading-tight text-foreground">
-                  8-Dimension Coverage
+                  {t('video.compatibility.matrixTitle')}
                 </p>
               </div>
 
@@ -78,7 +67,7 @@ const VideoModelCompatibilitySection = () => {
                   <thead>
                     <tr className="border-b border-border">
                       <th className="pb-3 text-left font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                        Model
+                        {t('video.compatibility.modelHeader')}
                       </th>
                       {dimensions.map((dim) => (
                         <th

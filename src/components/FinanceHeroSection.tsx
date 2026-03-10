@@ -1,19 +1,18 @@
 import { ArrowRight, CheckCircle2, FileSearch, TableProperties } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const bulletPoints = [
-  "Extract fields, tables, and line items from 10-Ks, bank statements, and loan packages.",
-  "Every value carries confidence scores, field lineage, and GAAP/IFRS mapping.",
-  "Exception routing sends only low-confidence extractions to human review.",
-];
-
-const metricCards = [
-  { label: "Document types", value: "10-K · 10-Q · statements · contracts", icon: FileSearch },
-  { label: "Output shape", value: "Typed JSON · GAAP-mapped · evidence traces", icon: TableProperties },
-  { label: "Accuracy", value: "99% on financial Q&A benchmarks", icon: CheckCircle2 },
-];
+import { useTranslation } from "react-i18next";
 
 const FinanceHeroSection = () => {
+  const { t } = useTranslation('usecases');
+
+  const bulletPoints = t('finance.bulletPoints', { returnObjects: true }) as string[];
+
+  const metricCards = [
+    { label: t('finance.documentTypes'), value: t('finance.documentTypesValue'), icon: FileSearch },
+    { label: t('finance.outputShape'), value: t('finance.outputShapeValue'), icon: TableProperties },
+    { label: t('finance.accuracy'), value: t('finance.accuracyValue'), icon: CheckCircle2 },
+  ];
+
   return (
     <section className="bg-background pt-[88px] md:pt-[96px]">
       <div className="bg-navy text-slate-200">
@@ -21,12 +20,12 @@ const FinanceHeroSection = () => {
           <div className="max-w-[820px] pb-14 md:pb-20">
             <div className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
               <span className="h-[3px] w-4 bg-primary" aria-hidden="true" />
-              Use Cases · Finance & Banking
+              {t('finance.breadcrumb')}
             </div>
             <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-white md:text-[64px] lg:text-[80px]">
-              Agent-use-ready data
+              {t('finance.heroTitle1')}
               <br />
-              for financial operations.
+              {t('finance.heroTitle2')}
             </h1>
           </div>
         </div>
@@ -37,7 +36,7 @@ const FinanceHeroSection = () => {
           <div className="flex flex-col justify-between px-6 py-12 md:px-10 md:py-14 lg:px-12">
             <div>
               <p className="max-w-[520px] text-lg leading-relaxed text-foreground md:text-[20px]">
-                Turn SEC filings, bank statements, and loan documents into structured records that reconciliation, underwriting, and compliance agents act on — without post-processing.
+                {t('finance.heroDescription')}
               </p>
               <div className="mt-8 space-y-5">
                 {bulletPoints.map((point) => (
@@ -50,10 +49,10 @@ const FinanceHeroSection = () => {
             </div>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button size="lg" className="rounded-lg px-8">
-                Request a Demo
+                {t('buttons.requestDemo', { ns: 'common' })}
               </Button>
               <Button variant="outline" size="lg" className="rounded-lg px-8">
-                See Example Output <ArrowRight size={16} />
+                {t('buttons.seeExampleOutput', { ns: 'common' })} <ArrowRight size={16} />
               </Button>
             </div>
           </div>

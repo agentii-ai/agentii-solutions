@@ -1,38 +1,21 @@
 import { ArrowRight, CheckCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const industryTabs = ["Finance", "Logistics", "Real Estate", "Healthcare", "Insurance"];
-
-const useCaseColumns = [
-  [
-    "Accounts Payable and Reconciliation",
-    "Identity Verification",
-    "Bank Check Processing",
-    "Account Opening KYC",
-  ],
-  [
-    "Mortgage Income Verification",
-    "Invoice Data Entry",
-    "Mortgage Lending",
-    "Trade Finance",
-  ],
-  [
-    "Payment Origination",
-    "PO Invoice Validation",
-    "Fraud Detection",
-    "Commercial Loan Booking",
-  ],
-];
+import { useTranslation } from "react-i18next";
 
 const DocumentProcessingCTASection = () => {
+  const { t } = useTranslation('solutions');
+
+  const industryTabs = t('documentProcessing.cta.industryTabs', { returnObjects: true }) as string[];
+  const useCaseColumns = t('documentProcessing.cta.useCases', { returnObjects: true }) as string[][];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[1280px]">
           <div className="mx-auto max-w-[760px] text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">Use cases</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">{t('documentProcessing.cta.breadcrumb')}</p>
             <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-              Built for regulated, data-heavy industries.
+              {t('documentProcessing.cta.heading')}
             </h2>
           </div>
 
@@ -74,9 +57,9 @@ const DocumentProcessingCTASection = () => {
           </div>
 
           <div className="mt-12 flex flex-col items-center gap-4">
-            <p className="text-lg text-muted-foreground">See it work on your documents.</p>
+            <p className="text-lg text-muted-foreground">{t('documentProcessing.cta.seeItWork')}</p>
             <Button size="lg" className="rounded-lg px-8">
-              Request a Demo <ArrowRight size={16} />
+              {t('buttons.requestDemo', { ns: 'common' })} <ArrowRight size={16} />
             </Button>
           </div>
         </div>

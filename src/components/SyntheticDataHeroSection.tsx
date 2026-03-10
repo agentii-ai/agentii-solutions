@@ -1,60 +1,58 @@
 import { ArrowRight, Binary, Blocks, Braces, Calculator, ChevronRight, Sparkles, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const capabilityTabs = [
-  "Reasoning Traces",
-  "Code Execution",
-  "Math Proofs",
-  "Tool Calling",
-];
-
-const trainingTracks = [
-  {
-    label: "Reasoning",
-    detail: "Multi-step CoT with critique loops and evidence graphs for fine-tuning.",
-    icon: Sparkles,
-  },
-  {
-    label: "Coding",
-    detail: "Execution-verified samples with tests, patches, and error recovery paths.",
-    icon: Braces,
-  },
-  {
-    label: "Maths",
-    detail: "Symbolic proofs with checkpoints and formal verification for RLHF.",
-    icon: Calculator,
-  },
-  {
-    label: "Tool calling",
-    detail: "Schema-safe actions with argument validation and state tracking.",
-    icon: Wrench,
-  },
-];
-
-const orchestrationNodes = [
-  {
-    label: "Source signals",
-    value: "Seed prompts, policies, domain knowledge",
-    accent: "bg-purple",
-  },
-  {
-    label: "Synthesis engine",
-    value: "Generate reasoning traces, code paths, tool sequences",
-    accent: "bg-primary",
-  },
-  {
-    label: "Verification layer",
-    value: "Execution checks, formal proofs, multi-model consensus",
-    accent: "bg-cyan",
-  },
-  {
-    label: "Training output",
-    value: "Fine-tuning datasets, RLHF preferences, evaluation benchmarks",
-    accent: "bg-purple",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const SyntheticDataHeroSection = () => {
+  const { t } = useTranslation('solutions');
+
+  const capabilityTabs = t('syntheticData.capabilityTabs', { returnObjects: true }) as string[];
+
+  const trainingTracks = [
+    {
+      label: t('syntheticData.reasoning'),
+      detail: t('syntheticData.reasoningDesc'),
+      icon: Sparkles,
+    },
+    {
+      label: t('syntheticData.coding'),
+      detail: t('syntheticData.codingDesc'),
+      icon: Braces,
+    },
+    {
+      label: t('syntheticData.maths'),
+      detail: t('syntheticData.mathsDesc'),
+      icon: Calculator,
+    },
+    {
+      label: t('syntheticData.toolCalling'),
+      detail: t('syntheticData.toolCallingDesc'),
+      icon: Wrench,
+    },
+  ];
+
+  const orchestrationNodes = [
+    {
+      label: t('syntheticData.sourceSignals'),
+      value: t('syntheticData.sourceSignalsValue'),
+      accent: "bg-purple",
+    },
+    {
+      label: t('syntheticData.synthesisEngine'),
+      value: t('syntheticData.synthesisEngineValue'),
+      accent: "bg-primary",
+    },
+    {
+      label: t('syntheticData.verificationLayer'),
+      value: t('syntheticData.verificationLayerValue'),
+      accent: "bg-cyan",
+    },
+    {
+      label: t('syntheticData.trainingOutput'),
+      value: t('syntheticData.trainingOutputValue'),
+      accent: "bg-purple",
+    },
+  ];
+
   return (
     <section className="bg-background pt-[88px] md:pt-[96px]">
       <div className="bg-secondary">
@@ -62,20 +60,20 @@ const SyntheticDataHeroSection = () => {
           <div className="mx-auto max-w-[920px] text-center">
             <div className="mb-6 inline-flex items-center gap-3 border border-border bg-background px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
               <span className="h-[3px] w-4 bg-purple" aria-hidden="true" />
-              Synthetic Training Data for Agentic LLMs
+              {t('syntheticData.breadcrumb')}
             </div>
             <h1 className="font-brand text-[44px] leading-[0.98] tracking-[-0.03em] text-foreground md:text-[64px] lg:text-[80px]">
-              Train LLMs to Reason, Plan, and Act With Synthetic Data.
+              {t('syntheticData.heroTitle')}
             </h1>
             <p className="mx-auto mt-6 max-w-[860px] text-lg leading-relaxed text-muted-foreground md:text-[20px]">
-              Generate structured training datasets for fine-tuning, RLHF, and evaluation. We synthesize reasoning traces, tool-calling trajectories, code execution paths, and mathematical proofs—the training signals that transform base LLMs into capable agents.
+              {t('syntheticData.heroDescription')}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Button size="lg" className="rounded-lg px-8">
-                Book a Demo <ArrowRight size={16} />
+                {t('buttons.requestDemo', { ns: 'common' })} <ArrowRight size={16} />
               </Button>
               <Button variant="outline" size="lg" className="rounded-lg px-8">
-                Explore Features <ChevronRight size={16} />
+                {t('buttons.exploreFeatures', { ns: 'common' })} <ChevronRight size={16} />
               </Button>
             </div>
           </div>
@@ -103,13 +101,13 @@ const SyntheticDataHeroSection = () => {
                     <Binary className="h-6 w-6" />
                   </div>
                   <h2 className="mt-8 font-brand text-[34px] leading-tight tracking-[-0.02em] text-foreground md:text-[42px]">
-                    Training Data for Agentic Capabilities
+                    {t('syntheticData.trainingDataTitle')}
                   </h2>
                   <p className="mt-4 text-lg leading-relaxed text-foreground">
-                    Structured datasets for fine-tuning and RLHF.
+                    {t('syntheticData.trainingDataSubtitle')}
                   </p>
                   <p className="mt-4 max-w-[280px] text-base leading-relaxed text-muted-foreground">
-                    We generate the multi-step reasoning traces, execution-aware code samples, and tool-calling trajectories that LLMs need to learn agentic behaviors. Every dataset includes verification, critique loops, and failure recovery paths.
+                    {t('syntheticData.trainingDataDescription')}
                   </p>
                 </div>
 
@@ -117,7 +115,7 @@ const SyntheticDataHeroSection = () => {
                   href="#"
                   className="mt-10 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-foreground transition-colors duration-300 hover:text-purple"
                 >
-                  Learn more
+                  {t('buttons.learnMore', { ns: 'common' })}
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -131,10 +129,10 @@ const SyntheticDataHeroSection = () => {
                     <div className="flex items-center justify-between border-b border-border pb-4">
                       <div>
                         <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
-                          Training pipeline
+                          {t('syntheticData.trainingPipeline')}
                         </p>
                         <p className="mt-2 text-sm text-foreground">
-                          Reasoning, code, math, and tool-calling datasets for fine-tuning and RLHF.
+                          {t('syntheticData.trainingPipelineDesc')}
                         </p>
                       </div>
                       <div className="hidden items-center gap-2 sm:flex">
@@ -177,16 +175,16 @@ const SyntheticDataHeroSection = () => {
 
                 <div className="relative mt-6 grid gap-px border border-border bg-border md:grid-cols-3">
                   <div className="bg-background px-4 py-4">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">100K+ samples</p>
-                    <p className="mt-2 text-sm text-foreground">Scale to millions of training examples with automated synthesis pipelines.</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{t('syntheticData.samples100k')}</p>
+                    <p className="mt-2 text-sm text-foreground">{t('syntheticData.samples100kDesc')}</p>
                   </div>
                   <div className="bg-background px-4 py-4">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Execution-verified</p>
-                    <p className="mt-2 text-sm text-foreground">Code runs, math checks, tool calls validate against schemas.</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{t('syntheticData.executionVerified')}</p>
+                    <p className="mt-2 text-sm text-foreground">{t('syntheticData.executionVerifiedDesc')}</p>
                   </div>
                   <div className="bg-background px-4 py-4">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">RLHF-ready</p>
-                    <p className="mt-2 text-sm text-foreground">Preference pairs for reasoning quality, safety, and alignment.</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{t('syntheticData.rlhfReady')}</p>
+                    <p className="mt-2 text-sm text-foreground">{t('syntheticData.rlhfReadyDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -199,4 +197,3 @@ const SyntheticDataHeroSection = () => {
 };
 
 export default SyntheticDataHeroSection;
-

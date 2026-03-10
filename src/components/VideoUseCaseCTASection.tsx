@@ -1,46 +1,23 @@
 import { ArrowRight, CheckCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const applicationTabs = [
-  "Film & Cinematic",
-  "Music Video",
-  "Foley & Sound",
-  "Advertising",
-  "Gaming",
-];
-
-const checklistColumns = [
-  [
-    "Scene Content & Semantics",
-    "Narrative & Storytelling",
-    "Object & Character Tracking",
-    "Physical Motion Dynamics",
-  ],
-  [
-    "Camera Grammar & Cinematography",
-    "Dialogue & Speech Annotation",
-    "Music & Score Labeling",
-    "Sound Effects & Ambient",
-  ],
-  [
-    "100K+ Hour Pipelines",
-    "Multi-Stage Quality Filtering",
-    "Frame-Level Temporal Precision",
-    "RLHF Preference Curation",
-  ],
-];
+import { useTranslation } from 'react-i18next';
 
 const VideoUseCaseCTASection = () => {
+  const { t } = useTranslation('usecases');
+
+  const applicationTabs = t('video.cta.applicationTabs', { returnObjects: true }) as string[];
+  const checklistColumns = t('video.cta.checklistColumns', { returnObjects: true }) as string[][];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[1280px]">
           <div className="mx-auto max-w-[760px] text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-              Video Generation Training Data
+              {t('video.cta.breadcrumb')}
             </p>
             <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-              Built for the models that are building the future of video.
+              {t('video.cta.heading')}
             </h2>
           </div>
 
@@ -82,13 +59,13 @@ const VideoUseCaseCTASection = () => {
           </div>
 
           <div className="mt-12 flex flex-col items-center gap-4">
-            <p className="text-lg text-muted-foreground">See it work on your video training data.</p>
+            <p className="text-lg text-muted-foreground">{t('video.cta.seeItWork')}</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="rounded-lg bg-teal px-8 text-navy hover:bg-teal-dark">
-                Request a Demo <ArrowRight size={16} />
+                {t('buttons.requestDemo', { ns: 'common' })} <ArrowRight size={16} />
               </Button>
               <Button variant="outline" size="lg" className="rounded-lg border-teal px-8 text-teal hover:bg-teal hover:text-navy">
-                See Labeled Outputs
+                {t('buttons.seeLabeledOutputs', { ns: 'common' })}
               </Button>
             </div>
           </div>

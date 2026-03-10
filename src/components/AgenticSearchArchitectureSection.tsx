@@ -1,57 +1,54 @@
 import { Bot, GitBranch, Layers, Network, RefreshCw, Shield } from "lucide-react";
-
-const architectureLayers = [
-  {
-    title: "Entity Graph Construction",
-    description:
-      "Documents are parsed into structured entity graphs — not flat chunks. Entities (issuers, accounts, clauses, claimants) are connected by typed relationships. Agents traverse these graphs to resolve queries, not scan text.",
-    icon: Network,
-  },
-  {
-    title: "Multi-Agent Verification",
-    description:
-      "Multiple specialized agents independently retrieve and reason over the same query. A verification agent cross-checks answers, flags disagreements, and escalates ambiguity — eliminating single-point-of-failure hallucinations.",
-    icon: Bot,
-  },
-  {
-    title: "Iterative Refinement",
-    description:
-      "When initial retrieval is insufficient, agents decompose the query, retrieve additional context, and re-reason. Each iteration narrows the answer space until confidence thresholds are met or the query is escalated.",
-    icon: RefreshCw,
-  },
-  {
-    title: "Field-Level Lineage",
-    description:
-      "Every retrieved value carries provenance: source document, page, table, row, cell. Agents don't just return answers — they return evidence chains that auditors and compliance teams can verify.",
-    icon: GitBranch,
-  },
-  {
-    title: "Schema-Aware Retrieval",
-    description:
-      "Queries resolve against typed schemas, not raw text. 'What is the debt-service coverage ratio?' maps to a specific calculation over specific fields — not a keyword search for 'debt service'.",
-    icon: Layers,
-  },
-  {
-    title: "Confidence-Gated Output",
-    description:
-      "Every answer includes a confidence score. High-confidence answers flow to downstream agents automatically. Low-confidence answers route to human review with the specific evidence that triggered uncertainty.",
-    icon: Shield,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const AgenticSearchArchitectureSection = () => {
+  const { t } = useTranslation('research');
+
+  const architectureLayers = [
+    {
+      title: t('architecture.entityGraph'),
+      description: t('architecture.entityGraphDesc'),
+      icon: Network,
+    },
+    {
+      title: t('architecture.multiAgent'),
+      description: t('architecture.multiAgentDesc'),
+      icon: Bot,
+    },
+    {
+      title: t('architecture.iterativeRefinement'),
+      description: t('architecture.iterativeRefinementDesc'),
+      icon: RefreshCw,
+    },
+    {
+      title: t('architecture.fieldLineage'),
+      description: t('architecture.fieldLineageDesc'),
+      icon: GitBranch,
+    },
+    {
+      title: t('architecture.schemaAware'),
+      description: t('architecture.schemaAwareDesc'),
+      icon: Layers,
+    },
+    {
+      title: t('architecture.confidenceGated'),
+      description: t('architecture.confidenceGatedDesc'),
+      icon: Shield,
+    },
+  ];
+
   return (
     <section className="bg-background py-20 md:py-24 lg:py-28">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-            Architecture
+            {t('architecture.breadcrumb')}
           </p>
           <h2 className="mt-5 font-brand text-[36px] leading-[1.02] tracking-[-0.03em] text-foreground md:text-[48px] lg:text-[60px]">
-            How agentic search works.
+            {t('architecture.heading')}
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Agentic search replaces single-pass retrieval with a multi-agent system that constructs, verifies, and refines answers iteratively — achieving production-grade accuracy on complex document queries.
+            {t('architecture.description')}
           </p>
         </div>
 

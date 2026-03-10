@@ -1,0 +1,42 @@
+{
+  "breadcrumb": "Request a demo",
+  "heroTitle": "Book a demo with our experts.",
+  "heroDescription": "See how agentii.Solutions structures document, video, audio, and synthetic data into machine-readable outputs for agentic systems.",
+  "formTitle": "Start your AI journey.",
+  "formDescription": "Share a few details and we will tailor the walkthrough to your data workflows and target outcomes.",
+  "seeHow": "See how agentii.Solutions works for your team.",
+  "seeHowDescription": "Our document processing solution builds a data map for agents, greatly increasing what agentic systems can do with structured data after processing. That data map is foundational for accurate reasoning, retrieval, and numerical calculation.",
+  "highlights": [
+    "Industry-specific workflows for document, video, audio, and synthetic data pipelines",
+    "Data maps that help agents reason, retrieve, and calculate on structured outputs",
+    "A practical rollout path from pilot datasets to governed production delivery"
+  ],
+  "deliverHeading": "Quickly deliver structured data that improves agent performance.",
+  "outcomes": {
+    "fasterDelivery": "Faster dataset delivery",
+    "fasterDeliveryValue": "10×",
+    "higherPrecision": "Higher retrieval precision",
+    "higherPrecisionValue": "75%",
+    "lowerOverhead": "Lower review overhead",
+    "lowerOverheadValue": "48%"
+  },
+  "form": {
+    "firstName": "First name *",
+    "lastName": "Last name *",
+    "jobTitle": "Job title *",
+    "company": "Company *",
+    "workEmail": "Work email *",
+    "country": "Country *",
+    "selectCountry": "Select your country",
+    "useCase": "Tell us about your use case",
+    "useCasePlaceholder": "What workflows, datasets, or agents are you looking to improve?",
+    "submit": "Request a Demo",
+    "successTitle": "Demo request submitted",
+    "successDescription": "Thanks {{firstName}} — we'll be in touch soon.",
+    "errorTitle": "Something went wrong",
+    "errorDescription": "Please try again.",
+    "connectionError": "Connection error",
+    "connectionErrorDescription": "Could not reach the server. Please try again later."
+  },
+  "countries": ["United States", "Canada", "United Kingdom", "Germany", "Singapore", "Japan", "Australia", "China"]
+}

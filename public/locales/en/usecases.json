@@ -1,0 +1,462 @@
+{
+  "finance": {
+    "breadcrumb": "Use Cases · Finance & Banking",
+    "heroTitle1": "Agent-use-ready data",
+    "heroTitle2": "for financial operations.",
+    "heroDescription": "Turn SEC filings, bank statements, and loan documents into structured records that reconciliation, underwriting, and compliance agents act on — without post-processing.",
+    "bulletPoints": [
+      "Extract fields, tables, and line items from 10-Ks, bank statements, and loan packages.",
+      "Every value carries confidence scores, field lineage, and GAAP/IFRS mapping.",
+      "Exception routing sends only low-confidence extractions to human review."
+    ],
+    "documentTypes": "Document types",
+    "documentTypesValue": "10-K · 10-Q · statements · contracts",
+    "outputShape": "Output shape",
+    "outputShapeValue": "Typed JSON · GAAP-mapped · evidence traces",
+    "accuracy": "Accuracy",
+    "accuracyValue": "99% on financial Q&A benchmarks",
+    "workflows": {
+      "breadcrumb": "Financial workflows",
+      "heading": "From documents to decisions — no manual data entry.",
+      "subheading": "Every workflow starts with document extraction. Every extraction ends with agent-ready records.",
+      "creditUnderwriting": "Credit Underwriting",
+      "creditUnderwritingDesc": "Extract financial statements, tax returns, and bank statements into typed records. Agents calculate debt-service coverage ratios, verify income, and flag exceptions — all from structured data with field lineage.",
+      "creditUnderwritingDocs": ["Tax returns", "Bank statements", "Financial statements"],
+      "accountsPayable": "Accounts Payable Reconciliation",
+      "accountsPayableDesc": "Match invoices to purchase orders and payment records. Agents reconcile line items, detect discrepancies, and route exceptions to review queues — with full audit trails from source documents.",
+      "accountsPayableDocs": ["Invoices", "Purchase orders", "Payment records"],
+      "regulatoryCompliance": "Regulatory Compliance",
+      "regulatoryComplianceDesc": "Extract data from 10-Ks, 10-Qs, and regulatory filings into GAAP/IFRS-mapped structures. Compliance agents verify disclosures, check calculations, and generate audit-ready reports.",
+      "regulatoryComplianceDocs": ["10-K filings", "10-Q filings", "Regulatory reports"],
+      "commercialLoan": "Commercial Loan Booking",
+      "commercialLoanDesc": "Process loan applications, credit memos, and collateral documents into structured records. Agents validate terms, calculate risk metrics, and route approvals — with evidence traces for every decision.",
+      "commercialLoanDocs": ["Loan applications", "Credit memos", "Collateral docs"],
+      "exploreAllUseCases": "Explore All Use Cases"
+    },
+    "dataMapping": {
+      "breadcrumb": "Data mapping",
+      "heading": "99% accuracy on financial Q&A. Not 25%.",
+      "description": "Traditional RAG fails on financial questions because it guesses from embeddings. Our agentic data maps build entity graphs, field lineage, and retrieval-ready indexes — so agents navigate with precision, not similarity.",
+      "note1": "The data map connects issuers to accounts to transactions — with every field traceable to its source coordinate (page, table, row, cell).",
+      "note2": "This is the layer that separates keyword-matching from financial-grade retrieval: every query resolves to the correct entity, time period, and evidence trace.",
+      "readBenchmark": "Read the Benchmark",
+      "seeExampleQueries": "See Example Queries",
+      "financialQA": "Financial Q&A Accuracy",
+      "benchmarkComparison": "Benchmark Comparison",
+      "traditionalRag": "Traditional RAG",
+      "traditionalRagDesc": "Keyword matching on raw text — 25-30% accuracy on financial Q&A",
+      "kgRag": "KG-RAG",
+      "kgRagDesc": "Multi-hop reasoning over knowledge graphs — 65% accuracy, high construction cost",
+      "agenticSearch": "Agentic Search",
+      "agenticSearchDesc": "Multi-agent verification + entity graphs — 99% accuracy on financial benchmarks",
+      "financialReasoning": "Financial Reasoning",
+      "financialReasoningDesc": "Agents traverse entity graphs connecting issuers → accounts → transactions → obligations. No guesswork. Every relationship is explicit, typed, and traceable to source documents.",
+      "precisionRetrieval": "Precision Retrieval",
+      "precisionRetrievalDesc": "Route queries to exact fields, tables, and entities — with evidence traces. 'What was Q3 revenue?' resolves to page 12, table B, row 3, cell 4 — not a fuzzy text match.",
+      "reliableCalculation": "Reliable Calculation",
+      "reliableCalculationDesc": "Anchor numerical operations to normalized, typed values with GAAP/IFRS mapping. Debt ratios, margin calculations, and trend analysis stay reliable because every number is traceable."
+    },
+    "cta": {
+      "breadcrumb": "Financial services",
+      "heading": "Built for regulated, data-heavy operations.",
+      "industryTabs": ["Banking", "Asset Management", "Insurance", "Private Equity", "Fintech"],
+      "useCases": [
+        ["Credit Underwriting", "KYC & Identity Verification", "Loan Origination", "Account Opening"],
+        ["Accounts Payable Reconciliation", "Invoice Processing", "Payment Reconciliation", "Expense Management"],
+        ["Regulatory Compliance", "SEC Filing Analysis", "Audit Trail Generation", "Risk Assessment"]
+      ],
+      "seeItWork": "See it work on your financial documents."
+    }
+  },
+  "insurance": {
+    "breadcrumb": "Use Cases · Insurance",
+    "heroTitle1": "Agent-use-ready data",
+    "heroTitle2": "for insurance operations.",
+    "heroDescription": "Turn ACORD forms, policy documents, and claims files into structured records that underwriting, claims, and compliance agents act on — without manual data entry.",
+    "bulletPoints": [
+      "Extract fields, tables, and clauses from policies, claims, and medical records.",
+      "Every output includes confidence scores, field lineage, and regulatory mapping.",
+      "Exception routing sends ambiguous claims and edge cases to adjuster review."
+    ],
+    "documentTypes": "Document types",
+    "documentTypesValue": "ACORD forms · policies · claims · medical records",
+    "outputShape": "Output shape",
+    "outputShapeValue": "Typed JSON · clause-mapped · evidence traces",
+    "accuracy": "Accuracy",
+    "accuracyValue": "99% on claims data extraction benchmarks",
+    "workflows": {
+      "breadcrumb": "Insurance workflows",
+      "heading": "From intake to adjudication — no manual data entry.",
+      "subheading": "Every workflow starts with document extraction. Every extraction ends with agent-ready records.",
+      "claimsProcessing": "Claims Processing",
+      "claimsProcessingDesc": "Extract claim forms, loss reports, and supporting documents into typed records. Agents validate coverage, calculate reserves, and route approvals — with evidence traces linking every decision to source documents.",
+      "claimsProcessingDocs": ["ACORD forms", "Loss reports", "Police reports"],
+      "underwriting": "Underwriting",
+      "underwritingDesc": "Process applications, financial statements, and risk assessments into structured records. Agents score risk, verify disclosures, and flag exceptions — all from GAAP-mapped data with field lineage.",
+      "underwritingDocs": ["Applications", "Financial statements", "Risk assessments"],
+      "medicalRecords": "Medical Records Review",
+      "medicalRecordsDesc": "Extract diagnoses, treatment histories, and billing codes from medical records and EOBs. Agents cross-reference claims against policy terms and flag inconsistencies for adjuster review.",
+      "medicalRecordsDocs": ["Medical records", "EOBs", "Physician notes"],
+      "policyAdmin": "Policy Administration",
+      "policyAdminDesc": "Parse policy documents, endorsements, and renewal packages into clause-mapped structures. Agents compare terms, detect coverage gaps, and generate compliance reports with full audit trails.",
+      "policyAdminDocs": ["Policy documents", "Endorsements", "Renewal packages"],
+      "exploreAllUseCases": "Explore All Use Cases"
+    },
+    "dataMapping": {
+      "breadcrumb": "Data mapping",
+      "heading": "99% accuracy on claims data extraction. Not 25%.",
+      "description": "Traditional RAG fails on insurance questions because it guesses from embeddings. Our agentic data maps build entity graphs, clause lineage, and retrieval-ready indexes — so agents navigate with precision, not similarity.",
+      "note1": "The data map connects policyholders to claims to coverage terms — with every field traceable to its source coordinate (page, clause, section, paragraph).",
+      "note2": "This is the layer that separates keyword-matching from insurance-grade retrieval: every query resolves to the correct policy, claim, and evidence trace.",
+      "readBenchmark": "Read the Benchmark",
+      "seeExampleQueries": "See Example Queries",
+      "chartTitle": "Claims Data Extraction Accuracy",
+      "chartSubtitle": "Benchmark Comparison",
+      "benchmarkRows": {
+        "traditionalRag": {
+          "label": "Traditional RAG",
+          "value": "Keyword matching on raw text — 25-30% accuracy on claims data extraction"
+        },
+        "kgRag": {
+          "label": "KG-RAG",
+          "value": "Multi-hop reasoning over knowledge graphs — 65% accuracy, high construction cost"
+        },
+        "agenticSearch": {
+          "label": "Agentic Search",
+          "value": "Multi-agent verification + entity graphs — 99% accuracy on insurance benchmarks"
+        }
+      },
+      "capabilities": {
+        "claimsReasoning": {
+          "title": "Claims Reasoning",
+          "description": "Agents traverse entity graphs connecting policyholders → claims → coverage terms → obligations. No guesswork. Every relationship is explicit, typed, and traceable to source documents."
+        },
+        "policyRetrieval": {
+          "title": "Policy Retrieval",
+          "description": "Route queries to exact clauses, endorsements, and coverage terms — with evidence traces. 'What is the deductible for water damage?' resolves to policy section 4, clause B, paragraph 3 — not a fuzzy text match."
+        },
+        "reserveCalculation": {
+          "title": "Reserve Calculation",
+          "description": "Anchor numerical operations to normalized, typed values with regulatory mapping. Loss reserves, coverage limits, and premium calculations stay reliable because every number is traceable."
+        }
+      }
+    },
+    "cta": {
+      "breadcrumb": "Insurance operations",
+      "heading": "Built for claims, underwriting, and compliance.",
+      "industryTabs": ["P&C Insurance", "Life & Health", "Reinsurance", "Claims Management", "Underwriting"],
+      "useCases": [
+        ["Claims Processing", "First Notice of Loss", "Loss Adjustment", "Subrogation"],
+        ["Policy Underwriting", "Risk Assessment", "Application Processing", "Renewal Management"],
+        ["Medical Records Review", "Disability Claims", "Workers' Compensation", "Health Insurance Claims"]
+      ],
+      "seeItWork": "See it work on your insurance documents."
+    }
+  },
+  "video": {
+    "hero": {
+      "breadcrumb": "Use Cases",
+      "title1": "Agentic data for",
+      "title2": "video generation.",
+      "description": "Turn scenes, motion, camera intent, and temporal consistency into machine-readable datasets that agents can use to train and evaluate video models.",
+      "signalCards": [
+        {
+          "label": "Scene Graph",
+          "value": "Objects · motion · timing"
+        },
+        {
+          "label": "Prompt Trace",
+          "value": "Frame-level semantic control"
+        },
+        {
+          "label": "Playback",
+          "value": "Agent-ready video reasoning data"
+        }
+      ],
+      "vizTitle": "Video signal stack",
+      "vizDescription": "Frames, motion vectors, prompts, and evaluation traces.",
+      "inputLabel": "Input",
+      "inputValue": "Prompt + storyboard + motion rules",
+      "outputLabel": "Output",
+      "outputValue": "Dense labels across time and scene state",
+      "useLabel": "Use",
+      "useValue": "Training, evals, and controllability benchmarks"
+    },
+    "useCases": {
+      "breadcrumb": "Video AI Training Use Cases",
+      "heading": "From Film Production to Foley Sound Design.",
+      "subheading": "Six research-backed use cases spanning cinematic generation, music video production, and automated annotation at scale.",
+      "items": [
+        {
+          "title": "Film & Cinematic Production",
+          "description": "Multi-shot narrative, camera grammar, dialogue lip-sync, score annotation. Train models that understand scene continuity, shot composition, and audio-visual alignment across long-form content.",
+          "tags": ["Scene coherence", "Camera grammar", "Lip-sync", "Score annotation"]
+        },
+        {
+          "title": "Music Video Generation",
+          "description": "Beat-aligned visuals, lyric-to-lip-sync, song structure segmentation. Annotate temporal relationships between audio beats, visual transitions, and performer motion at frame level.",
+          "tags": ["Beat alignment", "Lyric sync", "Song structure", "Multi-track"]
+        },
+        {
+          "title": "Foley & Sound Design",
+          "description": "Action-sound correspondence, material labels, spatial audio, multi-track separation. Map every on-screen action to its acoustic signature with phoneme-level temporal precision.",
+          "tags": ["Action-sound pairs", "Material labels", "Spatial audio", "Source separation"]
+        },
+        {
+          "title": "Advertising & Commercial",
+          "description": "Short-form generation, product scene understanding, multi-language dubbing. Annotate brand elements, camera control intent, and scene semantics for controllable commercial video.",
+          "tags": ["Brand consistency", "Scene understanding", "Camera control", "Dubbing"]
+        },
+        {
+          "title": "Gaming & Interactive Media",
+          "description": "Physics-aware motion, character consistency, environmental sound. Label dynamic interactions, procedural camera paths, and spatial audio for real-time generation models.",
+          "tags": ["Physics motion", "Character consistency", "Environmental SFX", "Procedural camera"]
+        },
+        {
+          "title": "Training Pipeline at Scale",
+          "description": "100K+ hour automated pipelines, quality filtering, RLHF curation. End-to-end annotation infrastructure with multi-stage rejection, temporal alignment verification, and human-in-the-loop validation.",
+          "tags": ["100K+ hours", "Quality filtering", "Temporal precision", "RLHF curation"]
+        }
+      ]
+    },
+    "pipeline": {
+      "tabs": [
+        "Automated annotation pipeline",
+        "Quality filtering",
+        "Model-ready export"
+      ],
+      "breadcrumb": "Annotation Pipeline",
+      "heading": "From raw footage to model-ready data in six stages.",
+      "description": "Automated MLLM pipelines scale to 100K+ hours with multi-stage quality filtering. Each stage rejects 15–60% of samples, ensuring only high-quality annotations reach training.",
+      "rejectionRateLabel": "Rejection rate",
+      "rejectionRateValue": "70–80% filtered for quality across all pipeline stages.",
+      "temporalPrecisionLabel": "Temporal precision",
+      "temporalPrecisionValue": "33ms at 30fps, phoneme-level for dialogue alignment.",
+      "pipelineLabel": "6-Stage Pipeline",
+      "pipelineTitle": "Annotation Workflow",
+      "stages": [
+        {
+          "stage": "Collection",
+          "description": "Raw video ingestion from production, web, and licensed sources"
+        },
+        {
+          "stage": "Basic Filtering",
+          "description": "Audio presence, silence ratio (<80%), sampling rate (≥32kHz)"
+        },
+        {
+          "stage": "Quality Assessment",
+          "description": "SNR (≥20dB), aesthetic scoring, audio classification"
+        },
+        {
+          "stage": "Alignment Verification",
+          "description": "ImageBind semantic (>0.5), SyncNet lip-sync (≤3 frames)"
+        },
+        {
+          "stage": "Automated Annotation",
+          "description": "MLLM captioning, Whisper transcription, beat tracking, event detection"
+        },
+        {
+          "stage": "Human Validation",
+          "description": "Sample-based QA (5–10%), edge case refinement, quality rating"
+        }
+      ]
+    },
+    "compatibility": {
+      "breadcrumb": "Model Compatibility",
+      "heading": "One annotation framework. Every frontier model.",
+      "description": "Our 8-dimension annotation framework maps to every major video generation model — from vision-only architectures to full audio-visual systems. One labeling pass, every model covered.",
+      "note1": "Instead of re-annotating for each model's input format, our framework captures the superset of dimensions across Seedance, Veo, Sora, Kling, Wan, and HunyuanVideo.",
+      "note2": "This eliminates redundant labeling and ensures your training data investment scales across model generations.",
+      "matrixLabel": "Compatibility Matrix",
+      "matrixTitle": "8-Dimension Coverage",
+      "modelHeader": "Model",
+      "dimensions": ["Scene", "Tracking", "Motion", "Camera", "Dialogue", "Music", "SFX", "Ambient"],
+      "summaryCards": [
+        {
+          "label": "Full Coverage",
+          "value": "Seedance 2.0, HunyuanVideo — all 8 dimensions supported"
+        },
+        {
+          "label": "Audio-First Models",
+          "value": "Veo 3, Seedance — dialogue, music, and ambient annotation"
+        },
+        {
+          "label": "Vision-First Models",
+          "value": "Sora 2, Kling, Wan — scene, tracking, motion, camera"
+        }
+      ]
+    },
+    "cta": {
+      "breadcrumb": "Video Generation Training Data",
+      "heading": "Built for the models that are building the future of video.",
+      "applicationTabs": [
+        "Film & Cinematic",
+        "Music Video",
+        "Foley & Sound",
+        "Advertising",
+        "Gaming"
+      ],
+      "checklistColumns": [
+        [
+          "Scene Content & Semantics",
+          "Narrative & Storytelling",
+          "Object & Character Tracking",
+          "Physical Motion Dynamics"
+        ],
+        [
+          "Camera Grammar & Cinematography",
+          "Dialogue & Speech Annotation",
+          "Music & Score Labeling",
+          "Sound Effects & Ambient"
+        ],
+        [
+          "100K+ Hour Pipelines",
+          "Multi-Stage Quality Filtering",
+          "Frame-Level Temporal Precision",
+          "RLHF Preference Curation"
+        ]
+      ],
+      "seeItWork": "See it work on your video training data."
+    }
+  },
+  "syntheticUseCase": {
+    "hero": {
+      "breadcrumb": "Use Cases · Synthetic Data for Agent Training",
+      "title1": "Six capabilities.",
+      "title2": "One synthesis pipeline.",
+      "description": "Every agentic capability — reasoning, coding, math, tool use, planning, and multimodal understanding — requires its own training data shape. We synthesize all six from seed prompts, with domain-specific verification built into every sample.",
+      "capabilityCards": [
+        { "label": "Reasoning", "value": "CoT traces · critique loops · evidence graphs" },
+        { "label": "Code", "value": "Execution-verified · tests · patches · recovery" },
+        { "label": "Math", "value": "Symbolic proofs · checkpoints · formal verification" },
+        { "label": "Tool calling", "value": "Schema-safe actions · state tracking · API validation" },
+        { "label": "Planning", "value": "Long-horizon trajectories · replanning · memory" },
+        { "label": "Multimodal", "value": "GUI grounding · visual QA · cross-modal reasoning" }
+      ]
+    },
+    "grid": {
+      "breadcrumb": "6 agentic capabilities",
+      "heading": "Each Capability Needs Its Own Training Data Shape.",
+      "description": "Reasoning traces look nothing like tool-calling trajectories. Code execution data requires sandbox verification. Planning data needs replanning branches. We handle the structural differences so you don't have to.",
+      "methodsLabel": "Methods: ",
+      "benchmarksLabel": "Benchmarks: ",
+      "outputLabel": "Output: ",
+      "items": [
+        {
+          "title": "Chain-of-Thought Reasoning",
+          "subtitle": "Teach models to think step by step",
+          "description": "Generate multi-step reasoning traces with critique loops, evidence graphs, and self-correction paths. Models trained on these traces learn to decompose problems, verify intermediate steps, and recover from logical errors.",
+          "methods": "Self-Instruct · STaR · Process Reward Models · Rejection Sampling",
+          "benchmarks": "GSM8K · MATH · ARC · HotpotQA · MuSiQue",
+          "output": "Verified CoT traces with evidence links and confidence scores",
+          "metric": "3.2×",
+          "metricLabel": "reasoning accuracy on multi-hop benchmarks"
+        },
+        {
+          "title": "Code Generation & Repair",
+          "subtitle": "Execution-verified samples with tests and patches",
+          "description": "Synthesize code problems, solutions, test suites, and failure recovery paths. Every sample executes in a sandbox — if the code doesn't run, it doesn't ship. Covers repo-level tasks, rare languages, and self-correction loops.",
+          "methods": "OSS-Instruct · Evol-Instruct · Genetic Instruct · SYNTHETIC-1",
+          "benchmarks": "HumanEval · MBPP · SWE-Bench · LiveCodeBench",
+          "output": "Runnable code with test suites, patches, and execution logs",
+          "metric": "95%",
+          "metricLabel": "sandbox execution pass rate"
+        },
+        {
+          "title": "Mathematical Reasoning",
+          "subtitle": "Symbolic proofs with formal verification",
+          "description": "Evolve seed problems through rephrasing, reversal, and difficulty scaling. Each solution carries symbolic steps, intermediate checkpoints, and formal verification. Supports curriculum learning from arithmetic to competition-level proofs.",
+          "methods": "MetaMath · NuminaMath · DeepSeekMath · GRPO · Theorem Proving",
+          "benchmarks": "GSM8K · MATH · Olympiad · AMC/AIME",
+          "output": "Grounded numeric chains with step-level verification",
+          "metric": "90K+",
+          "metricLabel": "math training samples from seed evolution"
+        },
+        {
+          "title": "Tool Calling & Function Use",
+          "subtitle": "Schema-safe trajectories with state tracking",
+          "description": "Synthesize multi-turn tool-calling scenarios with ambiguous intents, shifting goals, and execution failures. LLMs act as environment simulators, generating coherent API responses and state transitions. Agents learn when to clarify, act, or revise.",
+          "methods": "APIGen · ToolACE · BUTTON · TOUCAN · Environment Simulation",
+          "benchmarks": "ToolBench · API-Bank · BFCL · Nexus",
+          "output": "Validated tool-use trajectories with schema checks",
+          "metric": "99%",
+          "metricLabel": "schema validation pass rate"
+        },
+        {
+          "title": "Long-Horizon Planning",
+          "subtitle": "Trajectory synthesis for multi-step workflows",
+          "description": "Generate planning data that teaches models to decompose goals, maintain memory, and dynamically replan on failure. Plan-and-Act pipelines retroactively annotate successful trajectories with high-level plans. AgentGen invents diverse environments and tasks.",
+          "methods": "Plan-and-Act · AgentGen · WebArena · OSWorld · TheAgentCompany",
+          "benchmarks": "WebArena (57% SOTA) · OSWorld · MiniWoB++",
+          "output": "Grounded plan-action pairs with replanning branches",
+          "metric": "57%",
+          "metricLabel": "WebArena success rate (SOTA with Plan-and-Act)"
+        },
+        {
+          "title": "Multimodal & GUI Agents",
+          "subtitle": "Visual grounding with cross-modal reasoning",
+          "description": "Synthesize GUI navigation tasks, visual document comprehension, and cross-modal reasoning data. Knowledge graph frameworks like Graph2Eval generate multi-hop web interaction tasks. Supports VLMs, robotic VLA models, and RL in synthetic worlds.",
+          "methods": "Graph2Eval · VL-DAC · GUI Grounding · Knowledge Graph Sampling",
+          "benchmarks": "VisualWebArena · ScreenSpot · Mind2Web",
+          "output": "Spatial-aware interaction traces with visual-textual links",
+          "metric": "Multi-hop",
+          "metricLabel": "cross-modal reasoning with visual grounding"
+        }
+      ]
+    },
+    "pipeline": {
+      "breadcrumb": "Synthesis pipeline",
+      "heading": "Seed → Evolve → Synthesize → Verify → Export.",
+      "description": "One pipeline serves all six capabilities. The verification layer adapts per modality — sandbox execution for code, formal proofs for math, schema checks for tool calls, consensus voting for reasoning.",
+      "steps": [
+        { "step": "01", "label": "Seed", "detail": "Domain prompts, policies, existing datasets, or task definitions" },
+        { "step": "02", "label": "Evolve", "detail": "Evol-Instruct generates harder, easier, and constraint-varied samples" },
+        { "step": "03", "label": "Synthesize", "detail": "Compound AI agents generate reasoning traces, code, math, tool calls" },
+        { "step": "04", "label": "Verify", "detail": "Sandbox execution, formal proofs, schema checks, multi-model consensus" },
+        { "step": "05", "label": "Export", "detail": "JSON-L, Parquet, HuggingFace — ready for SFT, RLHF, or evaluation" }
+      ],
+      "qualityHeading": "Four Quality Dimensions Built Into Every Sample.",
+      "qualityDimensions": [
+        { "title": "Diversity", "description": "Clustering-based metrics ensure semantic coverage across the full problem space. Prevents model collapse from narrow distributions." },
+        { "title": "Verifiability", "description": "Execution-based filtering in sandboxes, formal proof validation, and multi-model consensus voting. Hallucinated samples never reach training." },
+        { "title": "Difficulty Adaptation", "description": "Bidirectional evolution scales from trivial to expert-level. Dynamic difficulty adjusts to the model's current solvability frontier." },
+        { "title": "Long-Context Coherence", "description": "Document-grounded tasks and multi-turn simulations maintain logical consistency over massive token lengths. No context drift." }
+      ]
+    },
+    "comparison": {
+      "breadcrumb": "Unified requirements framework",
+      "heading": "One Pipeline, Six Verification Strategies.",
+      "description": "Each capability maps to a specific generation method, verification strategy, scale target, and output format. The pipeline adapts — the quality bar doesn't.",
+      "tableHeaders": {
+        "capability": "Capability",
+        "generationMethod": "Generation Method",
+        "verification": "Verification",
+        "scale": "Scale",
+        "outputFormat": "Output Format"
+      },
+      "rows": [
+        { "capability": "Reasoning", "method": "Self-Instruct, STaR, PRMs", "verification": "Multi-model consensus", "scale": "100K+ traces", "format": "JSON-L with CoT chains" },
+        { "capability": "Code", "method": "OSS-Instruct, Evol-Instruct", "verification": "Sandbox execution", "scale": "50K+ samples", "format": "Parquet with tests + logs" },
+        { "capability": "Math", "method": "MetaMath, NuminaMath, GRPO", "verification": "Formal proof validation", "scale": "90K+ problems", "format": "JSON-L with step proofs" },
+        { "capability": "Tool Calling", "method": "APIGen, ToolACE, TOUCAN", "verification": "Schema + state checks", "scale": "30K+ trajectories", "format": "JSON-L with tool schemas" },
+        { "capability": "Planning", "method": "Plan-and-Act, AgentGen", "verification": "Environment replay", "scale": "20K+ trajectories", "format": "JSON-L with plan-action pairs" },
+        { "capability": "Multimodal", "method": "Graph2Eval, VL-DAC", "verification": "Visual grounding checks", "scale": "15K+ tasks", "format": "Parquet with image refs" }
+      ],
+      "footerCards": [
+        { "label": "Training loops", "value": "SFT · RLHF (PPO/GRPO/DPO) · Continuous Evaluation" },
+        { "label": "Infrastructure", "value": "HuggingFace · Weights & Biases · NVIDIA NeMo · Vertex AI" },
+        { "label": "Compliance", "value": "PII filtering · toxicity checks · deduplication · domain alignment" }
+      ]
+    },
+    "cta": {
+      "breadcrumb": "Start generating training data",
+      "heading": "Train your agent on synthetic data that actually runs.",
+      "description": "Tell us which capabilities your agent needs — reasoning, code, math, tool calling, planning, or multimodal — and we'll generate execution-verified training datasets in your preferred format.",
+      "footerCards": [
+        { "label": "Formats", "value": "JSON-L · Parquet · HuggingFace Datasets · Custom schemas" },
+        { "label": "Delivery", "value": "API access · S3/GCS export · HuggingFace Hub · Direct integration" },
+        { "label": "Response", "value": "Pilot datasets within 48 hours · Full production in 2 weeks" }
+      ]
+    }
+  }
+}
