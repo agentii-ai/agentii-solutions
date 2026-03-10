@@ -1,7 +1,7 @@
 {
   "finance": {
     "breadcrumb": "Use Cases · Finance & Banking",
-    "heroTitle1": "Agent-use-ready data",
+    "heroTitle1": "agent-use-ready data",
     "heroTitle2": "for financial operations.",
     "heroDescription": "Turn SEC filings, bank statements, and loan documents into structured records that reconciliation, underwriting, and compliance agents act on — without post-processing.",
     "bulletPoints": [
@@ -70,7 +70,7 @@
   },
   "insurance": {
     "breadcrumb": "Use Cases · Insurance",
-    "heroTitle1": "Agent-use-ready data",
+    "heroTitle1": "agent-use-ready data",
     "heroTitle2": "for insurance operations.",
     "heroDescription": "Turn ACORD forms, policy documents, and claims files into structured records that underwriting, claims, and compliance agents act on — without manual data entry.",
     "bulletPoints": [
